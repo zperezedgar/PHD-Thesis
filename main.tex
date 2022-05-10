@@ -14,6 +14,9 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{braket} % Dirac notation packet
 \usepackage{comment} % to comment large sections
+\usepackage{mhchem} % left superscripts
+\usepackage{subcaption} % use subfigures see: https://tex.stackexchange.com/questions/200994/environment-subfigure-undefined-on-journal-submission
+\captionsetup{compatibility=false} % use subfigures
 
 \title{Gravimeter with Magnetic Gradient}
 \author{Edgar Zuniga}
@@ -29,13 +32,17 @@ Your abstract.
 
 \subsection{Semi-classical Proof of the Condition for Atomic Interference}
 
-In this section, we review the condition needed to generate atomic interference in a gravimeter within a magnetic gradient. Consider a transition between two hyperfine levels within a magnetic gradient of the following form
+In this section, we review the condition needed to generate atomic interference in a gravimeter within a magnetic gradient. Let's consider an atom with total angular momentum number $F$. We will consider transitions between two stretch states with quantum magnetic number $m_{F}=\pm F$. Let's call the stretch state with $m_{F}=F$ as $\ket{1}$, and the stretch state with $m_{F}=-F$ as $\ket{2}$.
+
+The atom is immersed inside a magnetic field gradient of the following form
 
 \begin{equation}
 B = \eta z \hat{\textbf{z}}\
 \end{equation}
 
-Let $a_m$ be the acceleration due to the magnetic gradient for the hyperfine state $\ket{1}$ and $-a_m$ the acceleration for the hyperfine state\footnote{I am using a notation just to distinguish between the two hyperfine levels of interest. This notation does not tell you anything about the angular momentum or magnetic moment numbers except that they do not represent the same state and that we can consider transitions between them.} $\ket{2}$. Thus, the total accelerations for state $\ket{1}$ and state $\ket{2}$ are respectively
+where z is the position and $\eta$ is a constant with units of $[Tesla/meter]$.
+
+The atom will feel an acceleration due to the magnetic field gradient that depends on the hyperfine level. Let $a_m$ be the acceleration due to the magnetic gradient for the hyperfine state $\ket{1}$ and $-a_m$ the acceleration for the hyperfine state $\ket{2}$. Thus, the effective accelerations for state $\ket{1}$ and state $\ket{2}$ are respectively
 
 \begin{equation}
 a_{1} = g + a_m
@@ -44,7 +51,13 @@ a_{1} = g + a_m
 a_{2} = g - a_m
 \end{equation}
 
-where g is the acceleration due to gravity.
+where g is the acceleration due to gravity, and $a_m$ is given by
+
+\begin{equation}
+a_m = \mu \eta / m
+\end{equation}
+
+where $\mu$ is the total magnetic moment of the atom under consideration, and $m$ is its mass.
 
 In order to produce interference between these two states, we have to apply a $\frac{\pi}{2}$-pulse followed by a sequence of $\pi$-pulses and finally another $\frac{\pi}{2}$-pulse. The question that arises is, how many $\pi$-pulses do we need to apply in order to produce interference? To answer this question, we can picture a semi-classical approach where the interference condition is that the final position and the final velocity must coincide for both states.
 
@@ -113,22 +126,32 @@ $\frac{\pi}{2}$-pulse followed by a $\pi$-pulse after a time $T$ has elapsed, th
 \boldsymbol{\pi/2} \xrightarrow[]{T} \boldsymbol{\pi} \xrightarrow[]{2T} \boldsymbol{\pi} \xrightarrow[]{T} \boldsymbol{\pi/2}
 \end{equation}
 
+After the first $\frac{\pi}{2}$-pulse is applied, a superposition of states is created. In this semi-classical picture, each state moves independently with a different acceleration, that depends on the hyperfine levels under consideration and the magnitude of the gradient field at the position where each the state is located. Every time that a $\pi$-pulse is applied, the velocity of each state changes as shown in Fig. \ref{velocity_graph}. The final velocity for both states is the same as was required by the interference condition. Similarly, the final position for both states is the same just before the last $\frac{\pi}{2}$-pulse is applied in order to produce interference as can be seen in Fig. \ref{position_graph}. Interestingly, the position curves never cross each other during the lifetime of the superposition, unlike the velocity curves which cross each other once.
+
 \begin{figure}
-\centering
-\includegraphics[width=0.7\textwidth]{posicion.png}
-\caption{\label{fig:frog}This frog was uploaded via the file-tree menu.}
+    \centering
+    \begin{subfigure}{1\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{velocidad.png}
+        \caption{Velocity-time graph.}
+        \label{velocity_graph}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{1\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{posicion.png}
+        \caption{Position-time graph.}
+        \label{position_graph}
+    \end{subfigure}
+    \caption{Velocity and position vs. time graphs for each state after the superposition of hyperfine levels is created and just before they are made interfere. In these graphs $g=-9.8m/s^2$, the mass $m$ is taken to be $87*1.6*10^{-27} Kg$ (approximately the mass of $\ce{^{87}_{}Rb}$), $\mu$ is taken to be the Bohr magneton with value $9.27*10^{-24} J/T$, $\eta$ has a value of $0.05 Tesla/meter$, and $T=100ms$. 
+    The hyperfine state $\ket{1}$ has a quantum magnetic number of $m_{F}=F$ whereas the state $\ket{2}$ has a value of $m_{F}=-F$.}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth]{velocidad.png}
+\includegraphics[width=0.9\textwidth]{fase.png}
 \caption{\label{fig:frog}This frog was uploaded via the file-tree menu.}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.7\textwidth]{fase.png}
-\caption{\label{fig:frog}This frog was uploaded via the file-tree menu.}
+\label{phase_graph}
 \end{figure}
 
 

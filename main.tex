@@ -34,30 +34,34 @@ Your abstract.
 
 In this section, we review the condition needed to generate atomic interference in a gravimeter within a magnetic gradient. Let's consider an atom with total angular momentum number $F$. We will consider transitions between two stretch states with quantum magnetic number $m_{F}=\pm F$. Let's call the stretch state with $m_{F}=F$ as $\ket{1}$, and the stretch state with $m_{F}=-F$ as $\ket{2}$.
 
-The atom is immersed inside a magnetic field gradient of the following form
+The atom is immersed inside a magnetic field of the following form
 
 \begin{equation}
 B = \eta z \hat{\textbf{z}}\
 \end{equation}
 
-where z is the position and $\eta$ is a constant with units of $[Tesla/meter]$.
+where z is the position and $\eta$ is a constant with units of $[Tesla/meter]$. The atom will feel a force given by the gradient of the magnetic energy caused by the coupling of the total magnetic moment of the atom $\mu$ and the magnetic field, i.e.,
 
-The atom will feel an acceleration due to the magnetic field gradient that depends on the hyperfine level. Let $a_m$ be the acceleration due to the magnetic gradient for the hyperfine state $\ket{1}$ and $-a_m$ the acceleration for the hyperfine state $\ket{2}$. Thus, the effective accelerations for state $\ket{1}$ and state $\ket{2}$ are respectively
-
-\begin{equation}
-a_{1} = g + a_m
-\end{equation}
-\begin{equation}
-a_{2} = g - a_m
+\begin{equation}\label{magnetic_force}
+F = - \nabla (\pm \mu \eta z ) = \mp \mu \eta \
 \end{equation}
 
-where g is the acceleration due to gravity, and $a_m$ is given by
+Therefore, the atom will feel an acceleration due to the magnetic field proportional to its total magnetic moment. The total magnetic moment of the atom depends on its internal state, hence, the acceleration will depend on the hyperfine level under consideration. Let $a_m$ be the acceleration due to the magnetic gradient for the hyperfine state $\ket{1}$ and $-a_m$ the acceleration for the hyperfine state $\ket{2}$. Thus, the effective accelerations for state $\ket{1}$ and state $\ket{2}$ are respectively
+
+\begin{equation}\label{a1}
+a_{1} = -g + a_m
+\end{equation}
+\begin{equation}\label{a2}
+a_{2} = -g - a_m
+\end{equation}
+
+where g is the acceleration due to gravity (taken to be positive), and $a_m$ is given by
 
 \begin{equation}
 a_m = \mu \eta / m
 \end{equation}
 
-where $\mu$ is the total magnetic moment of the atom under consideration, and $m$ is its mass.
+where $m$ is the mass of the atom under consideration.
 
 In order to produce interference between these two states, we have to apply a $\frac{\pi}{2}$-pulse followed by a sequence of $\pi$-pulses and finally another $\frac{\pi}{2}$-pulse. The question that arises is, how many $\pi$-pulses do we need to apply in order to produce interference? To answer this question, we can picture a semi-classical approach where the interference condition is that the final position and the final velocity must coincide for both states.
 
@@ -122,7 +126,7 @@ T_{1} = T_{3}
 These equations hold independently of the values for $a_{1}$ and $a_{2}$, as can be shown by substituting them into Eqs. (\ref{final_v1} and \ref{final_v2}). Therefore, the condition to get interference is to apply a 
 $\frac{\pi}{2}$-pulse followed by a $\pi$-pulse after a time $T$ has elapsed, then apply another $\pi$-pulse after a time $2T$ has elapsed, and finally, apply a $\frac{\pi}{2}$-pulse after a time $T$ elapsed, i.e., the sequence of pulses is
 
-\begin{equation}
+\begin{equation}\label{pulses}
 \boldsymbol{\pi/2} \xrightarrow[]{T} \boldsymbol{\pi} \xrightarrow[]{2T} \boldsymbol{\pi} \xrightarrow[]{T} \boldsymbol{\pi/2}
 \end{equation}
 
@@ -143,9 +147,47 @@ After the first $\frac{\pi}{2}$-pulse is applied, a superposition of states is c
         \caption{Position-time graph.}
         \label{position_graph}
     \end{subfigure}
-    \caption{Velocity and position vs. time graphs for each state after the superposition of hyperfine levels is created and just before they are made interfere. In these graphs $g=-9.8m/s^2$, the mass $m$ is taken to be $87*1.6*10^{-27} Kg$ (approximately the mass of $\ce{^{87}_{}Rb}$), $\mu$ is taken to be the Bohr magneton with value $9.27*10^{-24} J/T$, $\eta$ has a value of $0.05 Tesla/meter$, and $T=100ms$. 
+    \caption{Velocity and position vs. time graphs for each state after the superposition of hyperfine levels is created and just before they are made interfere. In these graphs $g=9.8m/s^2$, the mass $m$ is taken to be $87*1.6*10^{-27} Kg$ (approximately the mass of $\ce{^{87}_{}Rb}$), $\mu$ is taken to be the Bohr magneton with value $9.27*10^{-24} J/T$, $\eta$ has a value of $0.05 Tesla/meter$, and $T=100ms$. 
     The hyperfine state $\ket{1}$ has a quantum magnetic number of $m_{F}=F$ whereas the state $\ket{2}$ has a value of $m_{F}=-F$.}
 \end{figure}
+
+\subsubsection*{Calculation of the Signal for Gravimetry}
+Now that we have settled down the sequence of pulses needed to produce interference, we are in a position to compute the expected signal for gravimetry. In the semi-classical picture, each state of the superposition follows a different path and consequently accumulates a different phase. Therefore, to obtain the gravimetry signal, we need to compute the phase accumulated by each state during the lifetime of the superposition and then compute the difference between these two phases. 
+
+The phase accumulated for each path is given by
+
+\begin{equation}
+\Phi = \int_{t_{0}}^{t} \omega(\ce{^{}_{}t{'}_{}})d\ce{^{}_{}t{'}_{}}
+\end{equation}
+
+where the angular frequency is given by the Planck relation $\omega = E / \hbar$, and the energy is given by the sum of the magnetic energy (Eq. \ref{magnetic_force}) and the energy due to the gravity field, i.e.,
+
+\begin{equation}
+E = \pm \mu B + mgz = (\pm \mu \eta + mg)z = C_{\pm} z
+\end{equation}
+
+where we have defined the constant $C_{\pm} \equiv \pm \mu \eta + mg$, with units of $[Joule/meter]$. Thus, accumulated phase will be given by
+
+\begin{equation}
+\Phi = \frac{C_{\pm}}{\hbar} \int_{t_{0}}^{t} z(\ce{^{}_{}t{'}_{}})d\ce{^{}_{}t{'}_{}}
+\end{equation}
+
+Each state's path is composed by three intervals $T_{1}=T$, $T_{2}=2T$, and $T_{3}=T$ (see Eq. \ref{pulses}). Thereby, for the first interval, the phase accumulated by each state will be respectively
+
+\begin{equation}
+\Phi_{1, T_{1}} = \frac{C_{-}}{\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{1} \frac{t^{2}}{2})dt
+\end{equation}
+
+\begin{equation}
+\Phi_{2, T_{1}} = \frac{C_{+}}{\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{2} \frac{t^{2}}{2})dt
+\end{equation}
+
+where $z_{0}$ and $v_{0}$ are respectively the initial position and velocity,
+and the accelerations $a_{1}$ and $a_{2}$ are given by Eqs. \ref{a1} and \ref{a2}. The phase difference accumulated during the first interval is
+
+\begin{equation}
+\Delta \Phi_{T_{1}} = \Phi_{1, T_{1}} - \Phi_{2, T_{1}}
+\end{equation}
 
 \begin{figure}
 \centering

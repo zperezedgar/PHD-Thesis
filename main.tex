@@ -18,6 +18,15 @@
 \usepackage{subcaption} % use subfigures see: https://tex.stackexchange.com/questions/200994/environment-subfigure-undefined-on-journal-submission
 \captionsetup{compatibility=false} % use subfigures
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec} % use paragraphs with numbers
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \title{Gravimeter with Magnetic Gradient}
 \author{Edgar Zuniga}
 
@@ -30,13 +39,14 @@ Your abstract.
 
 \section{Theoretical Framework}
 
-\subsection{Semi-classical Proof of the Condition for Atomic Interference}
+\subsection{Condition for Atomic Interference within a Magnetic Gradient Field}
+\subsubsection{Semi-classical Picture}
 
 In this section, we review the condition needed to generate atomic interference in a gravimeter within a magnetic gradient. Let's consider an atom with total angular momentum number $F$. We will consider transitions between two stretch states with quantum magnetic number $m_{F}=\pm F$. Let's call the stretch state with $m_{F}=F$ as $\ket{1}$, and the stretch state with $m_{F}=-F$ as $\ket{2}$.
 
 The atom is immersed inside a magnetic field of the following form
 
-\begin{equation}
+\begin{equation}\label{magnetic_field}
 B = \eta z \hat{\textbf{z}}\
 \end{equation}
 
@@ -57,7 +67,7 @@ a_{2} = -g - a_m
 
 where g is the acceleration due to gravity (taken to be positive), and $a_m$ is given by
 
-\begin{equation}
+\begin{equation}\label{am}
 a_m = \mu \eta / m
 \end{equation}
 
@@ -65,13 +75,15 @@ where $m$ is the mass of the atom under consideration.
 
 In order to produce interference between these two states, we have to apply a $\frac{\pi}{2}$-pulse followed by a sequence of $\pi$-pulses and finally another $\frac{\pi}{2}$-pulse. The question that arises is, how many $\pi$-pulses do we need to apply in order to produce interference? To answer this question, we can picture a semi-classical approach where the interference condition is that the final position and the final velocity must coincide for both states.
 
-\subsubsection*{Sequence of pulses $\frac{\pi}{2} - \pi - \frac{\pi}{2}$}
+\paragraph{Sequence of pulses $\frac{\pi}{2} - \pi - \frac{\pi}{2}$}
+Let's study the classic sequence of pulses used to perform gravimetry and let's see if it can be used to obtain a signal for gravimetry in the presence of the magnetic force Eq.\ref{magnetic_force}.
+
 Let $z_0$ and $v_0$ be the initial position and velocity respectively. The final velocity for each state is given respectively by the classical equation
 
-\begin{equation}
+\begin{equation}\label{v1_sequence_classic}
 v_{1} = v_{0} + a_{1} T_{1} + a_{2} T_{2}
 \end{equation}
-\begin{equation}
+\begin{equation}\label{v2_sequence_classic}
 v_{2} = v_{0} + a_{2} T_{1} + a_{1} T_{2}
 \end{equation}
 
@@ -79,18 +91,18 @@ where $T_{1}$ is the time elapsed between the first $\frac{\pi}{2}$-pulse and th
 
 On the other hand, the final position for each state is given by the classical equation of motion
 
-\begin{equation}
+\begin{equation}\label{z1_sequence_classic}
 z_{1} = (z_{0} + v_{0} T_{1} + \frac{a_{1} T^{2}_{1}}{2}) + (v_{0}+a_{1}T_{1})T_{2} + \frac{a_{2} T^{2}_{2}}{2}
 \end{equation}
-\begin{equation}
+\begin{equation}\label{z2_sequence_classic}
 z_{2} = (z_{0} + v_{0} T_{1} + \frac{a_{2} T^{2}_{1}}{2}) + (v_{0}+a_{2}T_{1})T_{2} + \frac{a_{1} T^{2}_{2}}{2}
 \end{equation}
 
-From the condition on the final velocities, we get that in order to get interference, the acceleration $a_{1}$ must equal $a_{2}$ or alternatively, $T_{1}$ must equal $T_{2}$. Since, by assumption $a_{1}$ and $a_{2}$ cannot be the same, the only acceptable condition is $T_{1}=T_{2}$. By accepting this condition on the duration of the pulses and by demanding the condition on the final positions, we recover the unacceptable condition $a_{1}=a_{2}$. Therefore, we cannot produce interference within a magnetic field by applying just one $\pi$-pulse between the $\frac{\pi}{2}$ pulses.
+By using Eqs.\ref{v1_sequence_classic}-\ref{v2_sequence_classic}, and by demanding that the final velocities must be equal, we get that in order to produce interference, the acceleration $a_{1}$ must equal $a_{2}$ or alternatively, $T_{1}$ must equal $T_{2}$. Since, by assumption, $a_{1}$ and $a_{2}$ cannot be the same, then, the only acceptable condition is $T_{1}=T_{2}$. By accepting this condition on the duration of the pulses, and by using Eqs.\ref{z1_sequence_classic}-\ref{z2_sequence_classic} to demand that the final positions must be the same, we recover the unacceptable condition $a_{1}=a_{2}$. Therefore, we cannot produce interference in the presence of a magnetic force by applying just one $\pi$-pulse between the $\frac{\pi}{2}$ pulses.
 
-\subsubsection*{Sequence of pulses $\frac{\pi}{2} - \pi - \pi - \frac{\pi}{2}$}
+\paragraph{Sequence of pulses $\frac{\pi}{2} - \pi - \pi - \frac{\pi}{2}$}
 
-In this case, the equations for the final velocities are
+Let's study the sequence of pulses with an extra $\pi$-pulse before the last $\frac{\pi}{2}$-pulse. In this case, the equations for the final velocities are
 
 \begin{equation}\label{final_v1}
 v_{1} = v_{0} + a_{1} T_{1} + a_{2} T_{2} + a_{1} T_{3}
@@ -123,7 +135,7 @@ T_{1} = T_{3}
 \end{aligned}
 \end{equation}
 
-These equations hold independently of the values for $a_{1}$ and $a_{2}$, as can be shown by substituting them into Eqs. (\ref{final_v1} and \ref{final_v2}). Therefore, the condition to get interference is to apply a 
+These equations hold independently of the values for $a_{1}$ and $a_{2}$, as can be shown by substituting them into Eqs. (\ref{final_v1} and \ref{final_v2}). Therefore, the condition to get interference in the presence of a magnetic force is to apply a 
 $\frac{\pi}{2}$-pulse followed by a $\pi$-pulse after a time $T$ has elapsed, then apply another $\pi$-pulse after a time $2T$ has elapsed, and finally, apply a $\frac{\pi}{2}$-pulse after a time $T$ elapsed, i.e., the sequence of pulses is
 
 \begin{equation}\label{pulses}
@@ -149,9 +161,10 @@ After the first $\frac{\pi}{2}$-pulse is applied, a superposition of states is c
     \end{subfigure}
     \caption{Velocity and position vs. time graphs for each state after the superposition of hyperfine levels is created and just before they are made interfere. In these graphs $g=9.8m/s^2$, the mass $m$ is taken to be $87*1.6*10^{-27} Kg$ (approximately the mass of $\ce{^{87}_{}Rb}$), $\mu$ is taken to be the Bohr magneton with value $9.27*10^{-24} J/T$, $\eta$ has a value of $0.05 Tesla/meter$, and $T=100ms$. 
     The hyperfine state $\ket{1}$ has a quantum magnetic number of $m_{F}=F$ whereas the state $\ket{2}$ has a value of $m_{F}=-F$.}
+    \label{velocity_position_graphs}
 \end{figure}
 
-\subsubsection*{Calculation of the Signal for Gravimetry}
+\paragraph{Calculation of the Signal for Gravimetry}
 Now that we have settled down the sequence of pulses needed to produce interference, we are in a position to compute the expected signal for gravimetry. In the semi-classical picture, each state of the superposition follows a different path and consequently accumulates a different phase. Therefore, to obtain the gravimetry signal, we need to compute the phase accumulated by each state during the lifetime of the superposition and then compute the difference between these two phases. 
 
 The phase accumulated for each path is given by
@@ -174,7 +187,7 @@ where we have defined the constant $C_{\pm} \equiv \pm \mu \eta + mg$, with unit
 
 Each state's path is composed by three intervals $T_{1}=T$, $T_{2}=2T$, and $T_{3}=T$ (see Eq. \ref{pulses}). Thereby, for the first interval, the phase accumulated by each state will be respectively
 
-\begin{equation}
+\begin{equation}\label{phi1t1}
 \Phi_{1, T_{1}} = \frac{C_{-}}{\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{1} \frac{t^{2}}{2})dt
 \end{equation}
 
@@ -189,12 +202,131 @@ and the accelerations $a_{1}$ and $a_{2}$ are given by Eqs. \ref{a1} and \ref{a2
 \Delta \Phi_{T_{1}} = \Phi_{1, T_{1}} - \Phi_{2, T_{1}}
 \end{equation}
 
+Likewise, the phase accumulated during the second interval for each state is
+
+\begin{equation}
+\Phi_{1, T_{2}} = \frac{C_{+}}{\hbar} \int_{0}^{2T} [(z_{0}+v_{0}T+a_{1} \frac{T^{2}}{2}) + (v_{0}+a_{1}T)t + a_{2} \frac{t^{2}}{2}]dt
+\end{equation}
+
+\begin{equation}
+\Phi_{2, T_{2}} = \frac{C_{-}}{\hbar} \int_{0}^{2T} [(z_{0}+v_{0}T+a_{2} \frac{T^{2}}{2}) + (v_{0}+a_{2}T)t + a_{1} \frac{t^{2}}{2}]dt
+\end{equation}
+
+The corresponding phase difference for this interval is
+
+\begin{equation}
+\Delta \Phi_{T_{2}} = \Phi_{1, T_{2}} - \Phi_{2, T_{2}}
+\end{equation}
+
+Finally, for the last interval, the phase accumulated by each state is
+
+\begin{equation}
+\Phi_{1, T_{3}} = \frac{C_{-}}{\hbar} \int_{0}^{T} [((z_{0}+v_{0}T+a_{1} \frac{T^{2}}{2}) + (v_{0}+a_{1}T)(2T) + a_{2} \frac{(2T)^{2}}{2}) + (v_{0}+a_{1}T + a_{2}(2T))t + a_{1} \frac{t^{2}}{2}]dt
+\end{equation}
+
+\begin{equation}
+\Phi_{2, T_{3}} = \frac{C_{+}}{\hbar} \int_{0}^{T} [((z_{0}+v_{0}T+a_{2} \frac{T^{2}}{2}) + (v_{0}+a_{2}T)(2T) + a_{1} \frac{(2T)^{2}}{2}) + (v_{0}+a_{2}T + a_{1}(2T))t + a_{2} \frac{t^{2}}{2}]dt
+\end{equation}
+
+The phase difference accumulated during the last interval is
+
+\begin{equation}\label{delphi3}
+\Delta \Phi_{T_{3}} = \Phi_{1, T_{3}} - \Phi_{2, T_{3}}
+\end{equation}
+
+Therefore, by using Eqs.(\ref{a1}-\ref{a2} , and \ref{phi1t1}-\ref{delphi3}), the total phase difference accumulated during the three intervals is
+
+\begin{equation}
+\Delta \Phi = \Delta \Phi_{T_{1}} + \Delta \Phi_{T_{2}} + \Delta \Phi_{T_{3}} = 8 \frac{mga_{m}T^3}{\hbar}
+\end{equation}
+
+\begin{equation}\label{gravimetry_signal}
+\Delta \Phi = 8 \frac{\mu \eta g T^3}{\hbar}
+\end{equation}
+
+where in the last equation we have used the definition of $a_m$ (Eq.\ref{am}). 
+
+The Eq.\ref{gravimetry_signal} is the signal for gravimetry, which is proportional to $T^3$ and also proportional to the magnetic field via the constant $\eta$, these are the parameters we can adjust within a gravimetric experiment in order to increase the precision of the measurement. In Fig.\ref{phase_graph}, we can see the strong of the gravimetry signal for typical values of the constants in Eq.\ref{gravimetry_signal}.
+
 \begin{figure}
 \centering
 \includegraphics[width=0.9\textwidth]{fase.png}
-\caption{\label{fig:frog}This frog was uploaded via the file-tree menu.}
+\caption{Gravimetry signal for an atom falling down inside a linear magnetic field. This graph was obtained by using the same constant values as described in Fig.\ref{velocity_position_graphs}.}
 \label{phase_graph}
 \end{figure}
+
+\subsubsection{Quantum Picture}
+The calculations above were made by using a semi-classical picture to represent the superposition of states. Nevertheless, a correct calculation of the signal for gravimetry demands solving the Schrodinger equation for the evolution of each state in the superposition. 
+
+In the following, we will consider a coherent wave packet of alkali-metal atoms with quantized center-of-mass motion along the z-axis, subject to a constant gravitational field and interacting with a classical magnetic field of the form given by Eq.\ref{magnetic_field}. The wave packet is given at time $t=0$ by
+
+\begin{equation}\label{wave_packet}
+\psi(z,0) = 
+\left[\frac{1}{2 \pi (\Delta Z(0))^2} \right]^{1/4} \exp \left[-\frac{1}{4} \left[\frac{z-z_{0}}{\Delta Z(0)}\right]^{2}  + i \frac{p_{0}}{\hbar}z \right]
+\end{equation}
+
+where $z$ is the position coordinate, $\Delta Z(0)$ is the width of the wave packet centered at $z_{0}$, and $\frac{p_{0}}{\hbar}$ is the wave number of the wave packet. 
+
+Before continuing, we introduce the non-dimensional position $z\equiv x/\kappa$, and define the non-dimensional representation of this wave packet as
+
+\begin{equation}\label{wave_packet_non_dimensional}
+\phi(x,0) \equiv \frac{1}{\sqrt{\kappa}} \psi(\frac{x}{\kappa}, 0)
+\end{equation}
+
+where we have defined the inverse of the characteristic length of the system as
+
+\begin{equation}\label{wave_packet}
+\kappa \equiv (g_{s}\frac{\mu_{B}}{\hbar} + g_{n}\frac{\mu_{N}}{\hbar}) \frac{\eta}{\Delta W} > 0
+\end{equation}
+
+where $g_{s}$ is the electron spin $g$ factor, $g_{n}$ is the nuclear $g$ factor, $\hbar \Delta W$ is the field-free ground-state hyperfine splitting energy, and $\eta$ is the proportionality constant of the magnetic field (Eq.\ref{magnetic_field}). Also, notice that we have defined $x \equiv \kappa z$.
+
+The time-evolution of the non-dimensional wave packet (Eq.\ref{wave_packet_non_dimensional}) is given by (see [] for additional details)
+
+\begin{equation}\label{wave_packet_non_dimensional_evolution}
+\phi(z,\tau) = 
+\left[\frac{1}{2 \pi (\sigma_{x}(\tau))^2} \right]^{1/4} \exp \left[-\frac{1}{4} \left[\frac{x-\xi_{\tau}}{\sigma_{x}(\tau)}\right]^{2}  + i\Theta_{p}(x, \tau) - \frac{i}{2}\arctan\left[\frac{\epsilon \tau}{(\sigma_{x}(0))^{2}}\right] \right]
+\end{equation}
+
+where $\tau\equiv \Delta W t$ is the non-dimensional time, and we have defined 
+
+\begin{multline}
+\Theta_{p}(x,\tau) = -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2}^{2} \tau^{2}\bigg) + \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} (\rho_{0} - q_{2} \tau)(x-\rho_{0} \epsilon \tau) \\
++ \frac{\epsilon \tau}{4 [\sigma_{x}(\tau)\sigma_{x}(0)]^{2}} \left[(x-x_{0})^{2} + 4\rho_{0} x_{0} \epsilon \tau -2q_{2} \epsilon \tau^{2} \bigg(x+x_{0}- \frac{q_{2}}{2} \epsilon \tau^{2} \bigg)\right]
+\end{multline}
+
+where we have introduced the following non-dimensional quantities
+
+\begin{equation}
+\sigma_{x}(0) = \kappa \Delta Z(0)\mathrm{,}\quad \rho_{0}=\frac{p_{0}}{\hbar \kappa} \mathrm{,}\quad 
+x_{0}=\kappa z_{0} \mathrm{,}\quad 
+\sigma_{x}(\tau) = \sqrt{(\sigma_{x}(0))^{2} + \left[\frac{\epsilon \tau}{[\sigma_{x}(0)]^{2}} \right]}\mathrm{,}\quad 
+\xi(\tau) = x_{0} + 2 \rho_{0} \epsilon \tau - q_{2}(\epsilon \tau^{2})
+\end{equation}
+
+were $\epsilon$ is given by 
+
+\begin{equation}
+\epsilon = \frac{\hbar \kappa^{2}}{2 M \Delta W}
+\end{equation}
+
+where $M$ is the mass of the atom, and we have defined
+
+\begin{equation}
+q_{1} = \frac{1}{2} \mathrm{,}\quad q_{2} = \bigg(\frac{M g_{0}}{\hbar \Delta W \kappa} \pm  \gamma_{1} \bigg)
+\end{equation}
+
+where $g_{0}$ is the acceleration of gravity, and 
+
+\begin{equation}
+\gamma_{1} = \frac{g_{s}-2 I g_{n} \frac{m_{e}}{m_{p}}}{2(g_{s}+g_{n}\frac{m_{e}}{m_{p}})}
+\end{equation}
+
+where $m_{e}$ and $m_{p}$ are the electron mass and the proton mass respectively, and $I$ is the nuclear spin (assumed to be $I\ \ge 1/2$).
+
+\paragraph{Calculation of the Signal for Gravimetry}
+
+Now, we proceed to compute the signal for gravimetry by using Eq.\ref{wave_packet_non_dimensional_evolution}. In order to do so, we identify the phase of the wave packet to be
 
 
 

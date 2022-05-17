@@ -275,11 +275,11 @@ Before continuing, we introduce the non-dimensional position $z\equiv x/\kappa$,
 
 where we have defined the inverse of the characteristic length of the system as
 
-\begin{equation}\label{wave_packet}
-\kappa \equiv (g_{s}\frac{\mu_{B}}{\hbar} + g_{n}\frac{\mu_{N}}{\hbar}) \frac{\eta}{\Delta W} > 0
+\begin{equation}\label{kappa}
+\kappa \equiv (g_{s}\frac{\mu_{B}}{\hbar} + g_{n}\frac{\mu_{n}}{\hbar}) \frac{\eta}{\Delta W} > 0
 \end{equation}
 
-where $g_{s}$ is the electron spin $g$ factor, $g_{n}$ is the nuclear $g$ factor, $\hbar \Delta W$ is the field-free ground-state hyperfine splitting energy, and $\eta$ is the proportionality constant of the magnetic field (Eq.\ref{magnetic_field}). Also, notice that we have defined $x \equiv \kappa z$.
+where $g_{s}$ is the electron spin $g$ factor, $g_{n}$ is the nuclear $g$ factor, $\mu_{B}$ is the Bohr magneton, $\mu_{n}$ is the nuclear magneton, $\hbar \Delta W$ is the field-free ground-state hyperfine splitting energy, and $\eta$ is the proportionality constant of the magnetic field (Eq.\ref{magnetic_field}). Also, notice that we have defined $x \equiv \kappa z$.
 
 The time-evolution of the non-dimensional wave packet (Eq.\ref{wave_packet_non_dimensional}) is given by (see [] for additional details)
 
@@ -372,16 +372,39 @@ Thereby, the total phase difference accumulated during the three intervals is gi
 \Delta \Phi = \Delta \Phi_{T_{1}} + \Delta \Phi_{T_{2}} + \Delta \Phi_{T_{3}} 
 \end{equation}
 
-Now, we will make additional some approximations. First,
+Now, we will make additional some approximations. Firstly, we need an approximation for $\kappa$ defined in Eq.\ref{kappa}. The Bohr magneton, and the nuclear magneton are defined as
 
+\begin{equation}
+\mu_{B} = \frac{\hbar e}{2 m_{e}} \mathrm{,}\quad \mu_{n} = \frac{\hbar e}{2 m_{p}}
+\end{equation}
 
-by using Eqs.(\ref{approx_quantum_phase}-\ref{pre_total_quantum_phase}) and the definitions Eqs.(\ref{epsilon}-\ref{gamma_1}) we obtain
+where $m_{e}$ and $m_{p}$ are the electron and proton mass respectively. However, the proton mass is several orders of magnitude larger than the electron mass, therefore, we can use the following approximation
+
+\begin{equation}\label{kappa_approx}
+\kappa \approx g_{s}\frac{\mu_{B}}{\hbar} \frac{\eta}{\Delta W}
+\end{equation}
+
+Additionally, by considering the alkali atoms to be $\ce{^{87}_{}Rb}$ atoms. We have the following values for this atom []
+
+\begin{equation}
+g_{s} \approx 2.002 \mathrm{,}\quad g_{n} \frac{m_{e}}{m_{p}} \approx 2.002 \mathrm{,}\quad I = \frac{3}{2}
+\end{equation}
+
+thereby, we can approximate $\gamma_{1}$ defined in Eq.\ref{gamma_1} as
+
+\begin{equation}\label{gamma_1_approx}
+\gamma_{1} \approx 1/2
+\end{equation}
+
+finally, by using Eqs.(\ref{approx_quantum_phase}-\ref{pre_total_quantum_phase}), the definitions Eqs.(\ref{epsilon}-\ref{gamma_1}) alongside the approximations in Eqs. \ref{kappa_approx} and \ref{gamma_1_approx}, we obtain
 
 \begin{equation}\label{quantum_gravimetry_signal}
 \Delta \Phi = 8 \frac{\mu \eta g \tau^{3}}{\hbar (\Delta W)^{3}}
 \end{equation}
 
-and by remembering that the non-dimensional time is defined as $\tau\equiv \Delta W t$, we see that this result agrees with the result obtained by using the semi-classical picture Eq.\ref{gravimetry_signal}.
+were the non-dimensional time was defined as $\tau\equiv \Delta W t$. Thus, we see that this result agrees with the result obtained by using the semi-classical picture Eq.\ref{gravimetry_signal}.
+
+
 
 
 

@@ -284,8 +284,8 @@ where $g_{s}$ is the electron spin $g$ factor, $g_{n}$ is the nuclear $g$ factor
 The time-evolution of the non-dimensional wave packet (Eq.\ref{wave_packet_non_dimensional}) is given by (see \cite{Castanos2014} for additional details)
 
 \begin{equation}\label{wave_packet_non_dimensional_evolution}
-\phi(z,\tau) = 
-\left[\frac{1}{2 \pi (\sigma_{x}(\tau))^2} \right]^{1/4} \exp \left[-\frac{1}{4} \left[\frac{x-\xi_{\tau}}{\sigma_{x}(\tau)}\right]^{2}  + i\Theta_{p}(x, \tau) - \frac{i}{2}\arctan\left[\frac{\epsilon \tau}{(\sigma_{x}(0))^{2}}\right] \right]
+\phi(x,\tau) = 
+\left[\frac{1}{2 \pi (\sigma_{x}(\tau))^2} \right]^{1/4} \exp \left[-\frac{1}{4} \left[\frac{x-\xi(\tau)}{\sigma_{x}(\tau)}\right]^{2}  + i\Theta_{p}(x, \tau) - \frac{i}{2}\arctan\left[\frac{\epsilon \tau}{(\sigma_{x}(0))^{2}}\right] \right]
 \end{equation}
 
 where $\tau\equiv \Delta W t$ is the non-dimensional time, and we have defined 
@@ -297,11 +297,10 @@ where $\tau\equiv \Delta W t$ is the non-dimensional time, and we have defined
 
 where we have introduced the following non-dimensional quantities
 
-\begin{equation}
+\begin{equation}\label{non_dimensional_definitions}
 \sigma_{x}(0) = \kappa \Delta Z(0)\mathrm{,}\quad \rho_{0}=\frac{p_{0}}{\hbar \kappa} \mathrm{,}\quad 
 x_{0}=\kappa z_{0} \mathrm{,}\quad 
-\sigma_{x}(\tau) = \sqrt{(\sigma_{x}(0))^{2} + \left[\frac{\epsilon \tau}{[\sigma_{x}(0)]^{2}} \right]}\mathrm{,}\quad 
-\xi(\tau) = x_{0} + 2 \rho_{0} \epsilon \tau - q_{2}(\epsilon \tau^{2})
+\sigma_{x}(\tau) = \sqrt{(\sigma_{x}(0))^{2} + \left[\frac{\epsilon \tau}{[\sigma_{x}(0)]^{2}} \right]}
 \end{equation}
 
 were $\epsilon$ is given by 
@@ -310,7 +309,7 @@ were $\epsilon$ is given by
 \epsilon = \frac{\hbar \kappa^{2}}{2 M \Delta W}
 \end{equation}
 
-where $M$ is the mass of the atom, and we have defined
+where $M$ is the mass of the atom. Also, we have defined
 
 \begin{equation}\label{q1_q2}
 q_{1} = \frac{1}{2} \mathrm{,}\quad q_{2} = \bigg(\frac{M g}{\hbar \Delta W \kappa} \pm  \gamma_{1} \bigg)
@@ -324,18 +323,50 @@ where $g_{0}$ is the acceleration of gravity, and
 
 where $m_{e}$ and $m_{p}$ are the electron mass and the proton mass respectively, and $I$ is the nuclear spin (assumed to be $I\ \ge 1/2$).
 
+Additionally, we have defined the following non-dimensional quantity
+
+\begin{equation}\label{xi}
+\xi(\tau) = x_{0} + 2 \rho_{0} \epsilon \tau - q_{2}\epsilon \tau^{2}
+\end{equation}
+
+The above equation describes the motion of the center of the wave packet with respect to the non-dimensional time $\tau$ as can be seen by using Eqs.\ref{non_dimensional_definitions} and \ref{epsilon} to cast the equation into its dimensional form as follows
+
+\begin{equation}\label{xi_dimensional}
+z(t) = \frac{\xi}{\kappa} = z_{0} +  v_{0} t +  \frac{a t^{2}}{2}
+\end{equation}
+
+where the initial velocity is
+
+\begin{equation}
+v_{0} = \frac{p_{0}}{M}
+\end{equation}
+
+and the acceleration is given by
+
+\begin{equation}
+a = -q_{2} \frac{ \hbar \kappa \Delta W}{M}
+\end{equation}
+
+Therefore, the velocity of the center of the (non-dimensional) wave packet will be given by the derivative of Eq.\ref{xi} with respect to $\tau$, i.e.,
+
+\begin{equation}\label{xi_derivative}
+\frac{d\xi}{d\tau} = \xi^{\prime}(\tau) =  2 \rho_{0} \epsilon - 2 q_{2}\epsilon \tau
+\end{equation}
+
+For that reason, Eqs. \ref{xi} and \ref{xi_derivative} are the equations of motion of the center of the (non-dimensional) wave packet.
+
 \paragraph{Calculation of the Signal for Gravimetry}
 
 Now, we proceed to compute the signal for gravimetry by using Eq.\ref{wave_packet_non_dimensional_evolution}. In order to do so, we identify the phase of the wave packet
 
 \begin{equation}
-\varphi(\tau) = \Theta_{p}(x, \tau) - \frac{1}{2}\arctan\left[\frac{\epsilon \tau}{(\sigma_{x}(0))^{2}}\right]
+\varphi(x, \tau) = \Theta_{p}(x, \tau) - \frac{1}{2}\arctan\left[\frac{\epsilon \tau}{(\sigma_{x}(0))^{2}}\right]
 \end{equation}
 
 or more explicitly, using Eq.\ref{theta_p}
 
 \begin{multline}\label{quantum_phase}
-\varphi(\tau) = -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2}^{2} \tau^{2}\bigg) + \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} (\rho_{0} - q_{2} \tau)(x-\rho_{0} \epsilon \tau) \\
+\varphi(x, \tau) = -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2}^{2} \tau^{2}\bigg) + \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} (\rho_{0} - q_{2} \tau)(x-\rho_{0} \epsilon \tau) \\
 + \frac{\epsilon \tau}{4 [\sigma_{x}(\tau)\sigma_{x}(0)]^{2}} \left[(x-x_{0})^{2} + 4\rho_{0} x_{0} \epsilon \tau -2q_{2} \epsilon \tau^{2} \bigg(x+x_{0}- \frac{q_{2}}{2} \epsilon \tau^{2} \bigg)\right] 
 - \frac{1}{2}\arctan\left[\frac{\epsilon \tau}{(\sigma_{x}(0))^{2}}\right]
 \end{multline}
@@ -343,15 +374,16 @@ or more explicitly, using Eq.\ref{theta_p}
 The above equation contains several corrections to the phase computed by using Eq.\ref{semi_classical_phase} which was obtained by using a semi-classical approach. The semi-classical result (Eq.\ref{gravimetry_signal}) can be reproduced by ignoring all the terms in Eq.\ref{quantum_phase} except the first one, i.e., by taking the phase to be
 
 \begin{equation}\label{approx_quantum_phase}
-\varphi_{\pm}(\tau) \approx -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2}^{2} \tau^{2}\bigg)
+\varphi_{\pm}(x, \tau) \approx -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2}^{2} \tau^{2}\bigg)
 \end{equation}
 
 where the term $q_{2}$, defined in Eq.\ref{q1_q2}, contains the information about the difference in acceleration for each of the states in the superposition created by applying the first $\frac{\pi}{2}$-pulse, for that reason, we have used a sub-index to indicate whether we are considering $q_{2}$ with the plus or minus sign in front of the constant $\gamma_{1}$. In the following calculations we will consider the phase to be given by Eq.\ref{approx_quantum_phase}, and the sequence of pulses shown in Eq.\ref{pulses}.
 
-Therefore, the phase difference accumulated during the first interval is given by 
+At $\tau=0$, the wave packet is centered at $x_{0}$, and, as time goes on, the center of the packet moves according to Eq.\ref{xi}.
+Therefore, the phase difference accumulated at the end of the first interval, and at the center of the wave packet will be given by
 
 \begin{equation}
-\Delta \Phi_{T_{1}} = \varphi_{+}(\tau) - \varphi_{-}(\tau)
+\Delta \Phi_{T_{1}} = \varphi_{+}(\xi(\tau), \tau) - \varphi_{-}(\xi(\tau), \tau)
 \end{equation}
 
 whereas for the second interval we have
@@ -363,7 +395,7 @@ whereas for the second interval we have
 and finally, for the last interval, we have
 
 \begin{equation}
-\Delta \Phi_{T_{2}} = [\varphi_{+}(4\tau) - \varphi_{+}(3\tau)] - [\varphi_{-}(4\tau) - \varphi_{-}(3\tau)]
+\Delta \Phi_{T_{3}} = [\varphi_{+}(4\tau) - \varphi_{+}(3\tau)] - [\varphi_{-}(4\tau) - \varphi_{-}(3\tau)]
 \end{equation}
 
 Thereby, the total phase difference accumulated during the three intervals is given by 

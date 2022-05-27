@@ -246,7 +246,7 @@ Therefore, by using Eqs.(\ref{a1}-\ref{a2} , and \ref{phi1t1}-\ref{delphi3}), th
 
 where in the last equation we have used the definition of $a_m$ (Eq.\ref{am}). 
 
-The Eq.\ref{gravimetry_signal} is the signal for gravimetry, which is proportional to $T^3$ and also proportional to the magnetic field via the constant $\eta$, these are the parameters we can adjust within a gravimetric experiment in order to increase the precision of the measurement. In Fig.\ref{phase_graph}, we can see the strong of the gravimetry signal for typical values of the constants in Eq.\ref{gravimetry_signal}.
+The Eq.\ref{gravimetry_signal} is the signal for gravimetry, which is proportional to $T^3$ and also proportional to the magnetic field via the constant $\eta$, these are the parameters we can adjust within a gravimetric experiment in order to increase the precision of the measurement. In Fig.\ref{phase_graph}, we can see the strong of the gravimetry signal for typical values of the constants in Eq.\ref{gravimetry_signal}. (\textcolor{red}{¿Ahora sí cuadran el cálculo teórico y el numérico del programa?})
 
 \begin{figure}
 \centering
@@ -279,7 +279,7 @@ where we have defined the inverse of the characteristic length of the system as
 \kappa \equiv (g_{s}\frac{\mu_{B}}{\hbar} + g_{n}\frac{\mu_{n}}{\hbar}) \frac{\eta}{\Delta W} > 0
 \end{equation}
 
-where $g_{s}$ is the electron spin $g$ factor, $g_{n}$ is the nuclear $g$ factor, $\mu_{B}$ is the Bohr magneton, $\mu_{n}$ is the nuclear magneton, $\hbar \Delta W$ is the field-free ground-state hyperfine splitting energy, and $\eta$ is the proportionality constant of the magnetic field (Eq.\ref{magnetic_field}).
+(\textcolor{red}{luego discutimos el significado de kapa, epsilon y otros símbolos de aquí.}) where $g_{s}$ is the electron spin $g$ factor, $g_{n}$ is the nuclear $g$ factor, $\mu_{B}$ is the Bohr magneton, $\mu_{n}$ is the nuclear magneton, $\hbar \Delta W$ is the field-free ground-state hyperfine splitting energy, and $\eta$ is the proportionality constant of the magnetic field (Eq.\ref{magnetic_field}).
 
 The time-evolution of the non-dimensional wave packet (Eq.\ref{wave_packet_non_dimensional}) is given by (see \cite{Castanos2014} for additional details)
 
@@ -332,28 +332,40 @@ Additionally, we have defined the following non-dimensional quantity
 The above equation describes the motion of the center of the wave packet with respect to the non-dimensional time $\tau$ as can be seen by using Eqs.\ref{non_dimensional_definitions} and \ref{epsilon} to cast the equation into its dimensional form as follows
 
 \begin{equation}\label{xi_dimensional}
-z(t) = \frac{\xi}{\kappa} = z_{0} +  v_{0} t +  \frac{a t^{2}}{2}
+z(t) = \frac{\xi}{\kappa} = z_{0} +  \beta_{0} t +  \frac{\alpha t^{2}}{2}
 \end{equation}
 
 where the initial velocity is
 
 \begin{equation}
-v_{0} = \frac{p_{0}}{M}
+\beta_{0} = \frac{p_{0}}{M}
 \end{equation}
 
 and the acceleration is given by
 
 \begin{equation}\label{q2_a}
-a = -q_{2} \frac{ \hbar \kappa \Delta W}{M}
+\alpha = -q_{2} \frac{ \hbar \kappa \Delta W}{M}
+\end{equation}
+
+Therefore, it is convenient to re-write Eq.\ref{xi} as
+
+\begin{equation}\label{xi_eq_motion}
+\xi(\tau) = x_{0} + v_{0} \tau + \frac{a \tau^{2}}{2}
+\end{equation}
+
+where 
+
+\begin{equation}\label{xi_defs_eq_motion}
+v_{0} = 2\rho_{0} \epsilon \mathrm{,}\quad a = -2 q_{2} \epsilon
 \end{equation}
 
 Therefore, the velocity of the center of the (non-dimensional) wave packet will be given by the derivative of Eq.\ref{xi} with respect to $\tau$, i.e.,
 
 \begin{equation}\label{xi_derivative}
-\frac{d\xi}{d\tau} = \xi^{\prime}(\tau) =  2 \rho_{0} \epsilon - 2 q_{2}\epsilon \tau
+\frac{d\xi}{d\tau} = \xi^{\prime}(\tau) =  2 \rho_{0} \epsilon - 2 q_{2}\epsilon \tau = v_{0} + a \tau
 \end{equation}
 
-For that reason, Eqs. \ref{xi} and \ref{xi_derivative} are the equations of motion of the center of the (non-dimensional) wave packet.
+For that reason, Eqs. \ref{xi} and \ref{xi_derivative} are the equations of motion of the center of the (non-dimensional) wave packet. Additionally, we notice that the information about the acceleration of the wave-packet is contained in the parameter $q_{2}$.
 
 \paragraph{Calculation of the Signal for Gravimetry}
 
@@ -371,41 +383,87 @@ or more explicitly, using Eq.\ref{theta_p}
 - \frac{1}{2}\arctan\left[\frac{\epsilon \tau}{(\sigma_{x}(0))^{2}}\right]
 \end{multline}
 
-The above equation contains several corrections to the phase computed by using Eq.\ref{semi_classical_phase} which was obtained by using a semi-classical approach. The semi-classical result (Eq.\ref{gravimetry_signal}) can be reproduced by ignoring all the terms in Eq.\ref{quantum_phase} except the first two\footnote{Actually, all the terms without a dependency on $q_{2}$ could also be included, since their contribution to the phase will be zero (like the last term). For simplicity, we will omit those terms for which the contribution to the phase will be trivially zero.}, i.e., by taking the phase to be
+The above equation contains several corrections to the phase computed by using Eq.\ref{semi_classical_phase} which was obtained by using a semi-classical approach. The semi-classical result (Eq.\ref{gravimetry_signal}) can be reproduced by ignoring all the terms in Eq.\ref{quantum_phase} except the first two\footnote{Actually, all the terms without a dependency on $q_{2}$ could also be included, since their contribution to the phase difference will be zero (like the last term). For simplicity, we will omit those terms for which the contribution to the phase will be trivially zero.}, i.e., by taking the phase to be
 
-\begin{equation}\label{approx_quantum_phase}
-\varphi_{\pm}(x, \tau) \approx -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2}^{2} \tau^{2}\bigg) + \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} (\rho_{0} - q_{2} \tau)(x-\rho_{0} \epsilon \tau)
+\begin{equation}\label{pre_approx_quantum_phase}
+\varphi_{\pm}(x, \tau) \approx -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} (\rho_{0} - q_{2_{\pm}} \tau)(x-\rho_{0} \epsilon \tau)
 \end{equation}
 
-where the term $q_{2}$, defined in Eq.\ref{q1_q2}, contains information about the difference in acceleration for each of the states in the superposition, as can be seen from Eq.\ref{q2_a}, for that reason, we have used a sub-index to indicate whether we are considering $q_{2}$ with the plus or minus sign in front of the constant $\gamma_{1}$. 
+(\textcolor{red}{Luego me dices si te dió la misma correspondencia de términos que yo decía. Y más adelante tratamos de identificar los restantes comparándolo con la expansión de un paquete en espacio libre. O lo analizamos en el espacio de momentos.}) where we have used a sub-index to indicate whether we are considering $q_{2}$ with the plus or minus sign in front of the constant $\gamma_{1}$. 
 
-In the following calculations we will consider the phase to be given by Eq.\ref{approx_quantum_phase}, and the sequence of pulses shown in Eq.\ref{pulses}. Also, according to Eq.\ref{approx_quantum_phase}, the phase obtained will depend on the non-dimensional position $x$, thereby, all the contributions to the phase have to be computed with respect to the same $x$ which we will call\footnote{$x_{d}$ can be, for instance, the position of the detector at the end of the experiment.} $x_{d}$.
+Additionally, we will use the following approximation
 
-Therefore, the phase difference accumulated at the end of the first interval, and evaluated at the position $x_{d}$ will be given by
+\begin{equation}\label{sigma_quotient_approx}
+\left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \approx 1
+\end{equation}
+
+thus, the phase will be given by
+
+\begin{equation}\label{approx_quantum_phase}
+\varphi_{\pm}(x, \tau) \approx -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + (\rho_{0} - q_{2_{\pm}} \tau)(x-\rho_{0} \epsilon \tau)
+\end{equation}
+
+Before diving deep into the computation of the phase difference, let's analyze the above equation. The second term is the product of two differences. The first term is 
+
+\begin{equation}\label{momentum_change}
+(\rho_{0} - q_{2_{\pm}} \tau),
+\end{equation}
+
+according to Eq.\ref{non_dimensional_definitions}, this term accounts for the increase in momentum of the wave-packet, therefore, it can be interpreted as the difference between the initial momentum $\rho_{0}$ and the final momentum $q_{2_{\pm}} \tau$ acquired due to the acceleration. In the same way, the second term is
+
+\begin{equation}\label{position_change}
+(x-\rho_{0} \epsilon \tau),
+\end{equation}
+
+according to Eq.\ref{xi_defs_eq_motion}, the product $\rho_{0} \epsilon$ represents the initial velocity of the wave packet, therefore, the above term represents the difference between the non-dimensional position $x$ and half of the non-dimensional distance acquired due to the initial velocity of the wave packet.
+
+Now, we are in position to compute the signal for gravimetry using Eq.\ref{approx_quantum_phase}, and the sequence of pulses shown in Eq.\ref{pulses}. Also, according to Eq.\ref{approx_quantum_phase}, the phase obtained will depend on the non-dimensional position $x$, thereby, all the contributions to the phase have to be computed with respect to the same $x$ which we will call\footnote{$x_{d}$ can be, for instance, the position of the detector at the end of the experiment.} $x_{d}$.
+
+Let's analyze the first interval. The initial momentum and velocity of the wave packet are respectively $\rho_{0}$ and $v_{0}$. Thereby, the phase acquired during the first interval will be
+
+\begin{equation}\label{approx_quantum_phase_1}
+\varphi_{\pm, \tau_{1}}(x) \approx -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + (\rho_{0} - q_{2_{\pm}} \tau)(x-\frac{v_{0} \tau}{2})
+\end{equation}
+
+where we have used the definition of $v_{0}$, Eq.\ref{xi_defs_eq_motion}.
+For the second interval (with period $2\tau$), the initial momentum of the wave-packet will be $(\rho_{0} - q_{2_{\pm}} \tau)$ and the initial velocity will be $(v_{0}+a_{\pm}\tau)$, where the acceleration $a_{\pm}$ was defined in Eq.\ref{xi_defs_eq_motion} and the sub-index indicates the sign used in $q_{2}$ (Eq.\ref{q1_q2}). Therefore, the phase accumulated during the second interval will be given by
+
+\begin{equation}\label{approx_quantum_phase_2}
+\varphi_{\pm, \tau_{2}}(x) \approx -(2\tau) \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\mp}}^{2} (2\tau)^{2}\bigg) + ((\rho_{0} - q_{2_{\pm}} \tau)-q_{2_{\mp}} (2\tau))(x-\frac{(v_{0}+a_{\pm}\tau) (2\tau)}{2})
+\end{equation}
+
+where we have used a sub-index in $a$ to indicate the sign of $\gamma_{1}$ in the definition of $q_{2}$.
+Similarly, the initial momentum of the wave-packet for the third interval will be $(\rho_{0} - q_{2_{\pm}} \tau-2q_{2_{\mp}}\tau)$ and the initial velocity will be $(v_{0}+a_{\pm}\tau + 2 a_{\mp}\tau)$, thus the phase acquired during this interval will be given by
+
+\begin{equation}\label{approx_quantum_phase_3}
+\varphi_{\pm, \tau_{3}}(x) \approx -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + ((\rho_{0} - q_{2_{\pm}} \tau-2q_{2_{\mp}}\tau)-q_{2_{\pm}} \tau)(x-\frac{(v_{0}+a_{\pm}\tau + 2a_{\mp}\tau) \tau}{2})
+\end{equation}
+
+Therefore, the phase difference accumulated during the first interval, and evaluated at the position $x_{d}$ will be given by
 
 \begin{equation}
-\Delta \Phi_{T_{1}}(x_{d}) = \varphi_{+}(x_{d}, \tau) - \varphi_{-}(x_{d}, \tau)
+\Delta \Phi_{\tau_{1}}(x_{d}) = \varphi_{+,\tau_{1}}(x_{d}) - \varphi_{-,\tau_{1}}(x_{d})
 \end{equation}
 
 whereas for the second interval, evaluated at $x_{d}$, we have
 
 \begin{equation}
-\Delta \Phi_{T_{2}}(x_{d}) = [\varphi_{-}(x_{d}, 3\tau) - \varphi_{-}(x_{d}, \tau)] - [\varphi_{+}(x_{d}, 3\tau) - \varphi_{+}(x_{d}, \tau)]
+\Delta \Phi_{\tau_{2}}(x_{d}) = \varphi_{-,\tau_{2}}(x_{d}) - \varphi_{+,\tau_{2}}(x_{d})
 \end{equation}
 
 and finally, for the last interval, evaluated at $x_{d}$, we have
 
 \begin{equation}
-\Delta \Phi_{T_{3}}(x_{d}) = [\varphi_{+}(x_{d}, 4\tau) - \varphi_{+}(x_{d}, 3\tau)] - [\varphi_{-}(x_{d}, 4\tau) - \varphi_{-}(x_{d}, 3\tau)]
+\Delta \Phi_{\tau_{3}}(x_{d}) = \varphi_{+,\tau_{3}}(x_{d}) - \varphi_{-,\tau_{3}}(x_{d})
 \end{equation}
 
 Thereby, the total phase difference accumulated during the three intervals at $x_{d}$ is given by 
 
 \begin{equation}\label{pre_total_quantum_phase}
-\Delta \Phi (x_{d}) = \Delta \Phi_{T_{1}}(x_{d}) + \Delta \Phi_{T_{2}}(x_{d}) + \Delta \Phi_{T_{3}}(x_{d})
+\Delta \Phi (x_{d}) = \Delta \Phi_{\tau_{1}}(x_{d}) + \Delta \Phi_{\tau_{2}}(x_{d}) + \Delta \Phi_{\tau_{3}}(x_{d})
 \end{equation}
 
-Now, we will make additional some approximations. Firstly, we need an approximation for $\kappa$ defined in Eq.\ref{kappa}. The Bohr magneton, and the nuclear magneton are defined as
+Now, before substituting numerical values, we will make additional approximations. Firstly, we need an approximation for $\kappa$ defined in Eq.\ref{kappa}. The Bohr magneton, and the nuclear magneton are defined as
 
 \begin{equation}
 \mu_{B} = \frac{\hbar e}{2 m_{e}} \mathrm{,}\quad \mu_{n} = \frac{\hbar e}{2 m_{p}}
@@ -429,31 +487,25 @@ thereby, we can approximate $\gamma_{1}$ defined in Eq.\ref{gamma_1} as
 \gamma_{1} \approx 1/2
 \end{equation}
 
-The last approximation needed to reproduce the semi-classical result is the following
-
-\begin{equation}\label{sigma_quotient_approx}
-\left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \approx 1
-\end{equation}
-
 Finally, by using Eqs.(\ref{approx_quantum_phase}-\ref{pre_total_quantum_phase}), the definitions Eqs.(\ref{epsilon}-\ref{gamma_1}) alongside the approximations in Eqs. \ref{kappa_approx}, \ref{gamma_1_approx}, and \ref{sigma_quotient_approx}, we obtain
 
 \begin{equation}
-\Delta \Phi_{T_{1}}(x_{d}) = -x_{d}\tau + \frac{\eta \mu \tau^{2} p_{0}}{M \hbar \Delta W^{2}} - \frac{2 \eta \mu \tau^{3} g_{0}}{3 \hbar \Delta W^{3}}
+\Delta \Phi_{\tau_{1}}(x_{d}) = -x_{d}\tau + \frac{\eta \mu \tau^{2} p_{0}}{M \hbar \Delta W^{2}} - \frac{2 \eta \mu \tau^{3} g_{0}}{3 \hbar \Delta W^{3}}
 \end{equation}
 
 \begin{equation}
-\Delta \Phi_{T_{1}}(x_{d}) = 2x_{d}\tau -\frac{8\eta \mu \tau^{2} p_{0}}{M \hbar \Delta W^{2}} + \frac{52 \eta \mu \tau^{3} g_{0}}{3 \hbar \Delta W^{3}}
+\Delta \Phi_{\tau_{2}}(x_{d}) = x_{d}\tau + \frac{4 \eta \mu \tau^{3} g_{0}}{3 \hbar \Delta W^{3}}
 \end{equation}
 
 \begin{equation}
-\Delta \Phi_{T_{1}}(x_{d}) = -x_{d}\tau + \frac{7\eta \mu \tau^{2} p_{0}}{M \hbar \Delta W^{2}} - \frac{74 \eta \mu \tau^{3} g_{0}}{3 \hbar \Delta W^{3}}
+\Delta \Phi_{\tau_{3}}(x_{d}) = -\frac{\eta \mu \tau^{2} p_{0}}{M \hbar \Delta W^{2}} + \frac{10 \eta \mu \tau^{3} g_{0}}{3 \hbar \Delta W^{3}}
 \end{equation}
 
 \begin{equation}\label{quantum_gravimetry_signal}
-\Delta \Phi = 8 \frac{\mu \eta g \tau^{3}}{\hbar (\Delta W)^{3}}
+\Delta \Phi = 4 \frac{\mu \eta g \tau^{3}}{\hbar (\Delta W)^{3}}
 \end{equation}
 
-were the non-dimensional time was defined as $\tau\equiv \Delta W t$. Thus, we see that this result agrees with the result obtained by using the semi-classical picture Eq.\ref{gravimetry_signal}.
+were the non-dimensional time was defined as $\tau\equiv \Delta W t$. Thus, we see that this result agrees with the result obtained by using the semi-classical picture Eq.\ref{gravimetry_signal}, except for a factor of 2. In addition, it can be seen that the total phase difference does not depend on the position $x_{d}$.
 
 
 

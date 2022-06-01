@@ -505,9 +505,52 @@ Finally, by using Eqs.(\ref{approx_quantum_phase_1}-\ref{pre_total_quantum_phase
 \Delta \Phi = 4 \frac{\mu \eta g \tau^{3}}{\hbar (\Delta W)^{3}}
 \end{equation}
 
-were the non-dimensional time was defined as $\tau\equiv \Delta W t$. Thus, we see that this result agrees with the result obtained by using the semi-classical picture Eq.\ref{gravimetry_signal}, except for a factor of 2. In addition, it can be seen that the total phase difference does not depend on the position $x_{d}$.
+were the non-dimensional time was defined as $\tau\equiv \Delta W t$. Thus, we see that in the quantum picture, the total phase difference is half the phase difference obtained in the semi-classical computation Eq.\ref{gravimetry_signal}. In addition, it can be seen that the total phase difference does not depend on the position $x_{d}$ as expected.
 
 \paragraph{Calculation of the Signal for Gravimetry in Momentum Space}
+The result of the last section was obtained by considering a coherent state wave packet in position space (Eq. \ref{wave_packet}). However, the same result can be obtained by considering the state and its evolution in the momentum space \cite{Castanos2014}
+
+\begin{equation}
+\widehat{\phi}(k, \tau) = \widehat{\phi}(k + q_{2}\tau, 0) exp\left[-i q_{1} \tau + i \frac{\epsilon}{3q_{2}} k^{3} - i \frac{\epsilon}{3q_{2}} (k + q_{2} \tau)^{3} \right]
+\end{equation}
+
+where $k$ is the momentum of the state and the rest of the parameters were defined in the last section. The above equation gives the evolution of the state in the momentum space recursively. Therefore, by considering the same sequence of pulses as before (Eq. \ref{pulses}), the state at the end of the first interval will be given by
+
+\begin{equation}\label{state_t1_momentum_space}
+\widehat{\phi}_{\pm}(k, \tau) = \widehat{\phi}_{\pm}(k + q_{2_{\pm}}\tau, 0) exp\left[-i q_{1} \tau + i \frac{\epsilon}{3q_{2_{\pm}}} k^{3} - i \frac{\epsilon}{3q_{2_{\pm}}} (k + q_{2_{\pm}} \tau)^{3} \right]
+\end{equation}
+
+where, one more time, the sub-index indicates whether we are considering a plus/minus sign in front of $\gamma_{1}$ in the definition of $q_{2}$ (Eq. \ref{q1_q2}). In the same way, at the end of the second interval the state will be given by
+
+\begin{equation}\label{state_t2_momentum_space}
+\widehat{\phi}_{\pm}(k, \tau+2\tau) = \widehat{\phi}_{\pm}(k + 2q_{2_{\mp}}\tau, \tau) exp\left[-2i q_{1} \tau + i \frac{\epsilon}{3q_{2_{\mp}}} k^{3} - i \frac{\epsilon}{3q_{2_{\mp}}} (k + 2q_{2_{\mp}} \tau)^{3} \right]
+\end{equation}
+
+whereas at the end of the last interval, the state will be given by
+
+\begin{equation}\label{state_t3_momentum_space}
+\widehat{\phi}_{\pm}(k, \tau+2\tau+\tau) = \widehat{\phi}_{\pm}(k + q_{2_{\pm}}\tau, \tau+2\tau) exp\left[-i q_{1} \tau + i \frac{\epsilon}{3q_{2_{\pm}}} k^{3} - i \frac{\epsilon}{3q_{2_{\pm}}} (k + q_{2_{\pm}} \tau)^{3} \right].
+\end{equation}
+
+We can substitute Eq.\ref{state_t2_momentum_space} into Eq.\ref{state_t3_momentum_space} to get
+
+\begin{multline}\label{state_t3_momentum_space_2}
+\widehat{\phi}_{\pm}(k, \tau+2\tau+\tau) = \widehat{\phi}_{\pm}(k + q_{2_{\pm}}\tau + 2q_{2_{\mp}}\tau, \tau)  \\ 
+exp\left[-2i q_{1} \tau + i \frac{\epsilon}{3q_{2_{\mp}}} (k+q_{2_{\pm}}\tau)^{3} - i \frac{\epsilon}{3q_{2_{\mp}}} ((k+ q_{2_{\pm}}\tau) + 2q_{2_{\mp}} \tau)^{3} \right] \\
+exp\left[-i q_{1} \tau + i \frac{\epsilon}{3q_{2_{\pm}}} k^{3} - i \frac{\epsilon}{3q_{2_{\pm}}} (k + q_{2_{\pm}} \tau)^{3} \right].
+\end{multline}
+
+Similarly, we can substitute Eq.\ref{state_t1_momentum_space} into the last equation to get
+
+\begin{multline}\label{state_t3_momentum_space_final}
+\widehat{\phi}_{\pm}(k, \tau+2\tau+\tau) = \widehat{\phi}_{\pm}(k + q_{2_{\pm}}\tau + 2q_{2_{\mp}}\tau + q_{2_{\pm}}\tau , 0) \\ 
+exp\left[-i q_{1} \tau + i \frac{\epsilon}{3q_{2_{\pm}}} (k+ q_{2_{\pm}}\tau + 2q_{2_{\mp}}\tau)^{3} - i \frac{\epsilon}{3q_{2_{\pm}}} ((k+q_{2_{\pm}}\tau + 2q_{2_{\mp}}\tau) + q_{2_{\pm}} \tau)^{3} \right] \\
+exp\left[-2i q_{1} \tau + i \frac{\epsilon}{3q_{2_{\mp}}} (k+q_{2_{\pm}}\tau)^{3} - i \frac{\epsilon}{3q_{2_{\mp}}} ((k+ q_{2_{\pm}}\tau) + 2q_{2_{\mp}} \tau)^{3} \right] \\
+exp\left[-i q_{1} \tau + i \frac{\epsilon}{3q_{2_{\pm}}} k^{3} - i \frac{\epsilon}{3q_{2_{\pm}}} (k + q_{2_{\pm}} \tau)^{3} \right].
+\end{multline}
+
+The above equation describes the state at the end of the last interval. Thereby, we can use this equation to identify the total phase gained by each of the two states in the superposition after the sequence of $\pi$-pulses is applied
+
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}

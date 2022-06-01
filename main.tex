@@ -549,11 +549,37 @@ exp\left[-2i q_{1} \tau + i \frac{\epsilon}{3q_{2_{\mp}}} (k+q_{2_{\pm}}\tau)^{3
 exp\left[-i q_{1} \tau + i \frac{\epsilon}{3q_{2_{\pm}}} k^{3} - i \frac{\epsilon}{3q_{2_{\pm}}} (k + q_{2_{\pm}} \tau)^{3} \right].
 \end{multline}
 
-The above equation describes the state at the end of the last interval. Thereby, we can use this equation to identify the total phase gained by each of the two states in the superposition after the sequence of $\pi$-pulses is applied
+The above equation describes the state at the end of the last interval. From this equation, we can identify the total phase gained by each of the two states of the superposition after the sequence of $\pi$-pulses is applied, i.e.,
 
+\begin{multline}\label{phase_momentum_space}
+\widehat{\varphi}_{\pm}(k) = -4q_{1}\tau \\
++ \frac{\epsilon}{3q_{2_{\pm}}} \left[(k+ q_{2_{\pm}}\tau + 2q_{2_{\mp}}\tau)^{3} - ((k+q_{2_{\pm}}\tau + 2q_{2_{\mp}}\tau) + q_{2_{\pm}} \tau)^{3} + k^{3} - (k+q_{2_{\pm}}\tau)^{3} \right] \\
++ \frac{\epsilon}{3q_{2_{\mp}}} \left[(k+q_{2_{\pm}}\tau)^{3} - ((k+q_{2_{\pm}}\tau)+2q_{2_{\mp}}\tau)^{3} \right].
+\end{multline}
+
+Thereby, the total phase difference between both states when the last $\frac{\pi}{2}$-pulse is applied will be given by
+
+\begin{equation}
+\Delta \Phi = \widehat{\varphi}_{+}(k) - \widehat{\varphi}_{-}(k) = 2\left[(q_{2_{+}})^{2} - (q_{2_{-}})^{2} \right]\epsilon \tau^{3} 
+\end{equation}
+
+Thus, by using Eqs. \ref{epsilon}-\ref{q1_q2} and the approximations in Eqs. \ref{kappa_approx} and \ref{gamma_1_approx}, we finally get the total phase difference
+
+\begin{equation}\label{quantum_gravimetry_signal_momentum_space}
+\Delta \Phi = 4 \frac{\mu \eta g \tau^{3}}{\hbar (\Delta W)^{3}},
+\end{equation}
+
+we can notice that this result is independent of the momentum k and that it coincides with the result obtained in position space as expected.
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}
+
+
+
+
+
+
+
 
 
 

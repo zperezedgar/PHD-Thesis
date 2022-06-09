@@ -383,23 +383,39 @@ or more explicitly, using Eq.\ref{theta_p}
 - \frac{1}{2}\arctan\left[\frac{\epsilon \tau}{(\sigma_{x}(0))^{2}}\right]
 \end{multline}
 
-The above equation contains several corrections to the phase computed by using Eq.\ref{semi_classical_phase} which was obtained by using a semi-classical approach. The semi-classical result (Eq.\ref{gravimetry_signal}) can be reproduced by ignoring all the terms in Eq.\ref{quantum_phase} except the first two\footnote{Actually, we can omit the last term because it does not have any dependence on the initial velocity, initial position, and/or $q_{2}$, therefore, its contribution to the phase difference will be zero. We will analyze the rest of the terms and their contribution to the phase in the next section.}, i.e., by taking the phase to be
+The above equation contains several corrections to the phase computed by using Eq.\ref{semi_classical_phase} which was obtained by using a semi-classical approach. The last term in Eq.\ref{quantum_phase} does not contribute to the phase difference, as we will see in the next section\footnote{The last term does not have any dependence on the initial velocity, initial position, and/or $q_{2}$, therefore, its contribution to the phase difference will be zero.}, and we can ignore it. The semi-classical result (Eq.\ref{gravimetry_signal}) can be reproduced by using the following approximation
 
-\begin{equation}\label{pre_approx_quantum_phase}
-\varphi_{\pm}(x, \tau) \approx -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} (\rho_{0} - q_{2_{\pm}} \tau)(x-\rho_{0} \epsilon \tau)
+\begin{equation}\label{sigma_zero_approx}
+\sigma_{x}(0) \gg \epsilon \tau,
 \end{equation}
 
-(\textcolor{red}{Luego me dices si te dió la misma correspondencia de términos que yo decía. Y más adelante tratamos de identificar los restantes comparándolo con la expansión de un paquete en espacio libre. O lo analizamos en el espacio de momentos.}) where we have used a sub-index to indicate whether we are considering $q_{2}$ with the plus or minus sign in front of the constant $\gamma_{1}$.  In addition, we have to use the following approximation
+in the definition of $\sigma_{x}(\tau)$ which we rewrite here
+
+\begin{equation*}
+\sigma_{x}(\tau) = \sqrt{[\sigma_{x}(0)]^{2} + \left[\frac{\epsilon \tau}{\sigma_{x}(0)} \right]^{2}},
+\end{equation*}
+
+therefore, using this approximation we can write
+
+\begin{equation*}
+\sigma_{x}(\tau) \approx \sigma_{x}(0),
+\end{equation*}
+
+so we will have the following
 
 \begin{equation}\label{sigma_quotient_approx}
-\left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \approx 1
+\left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \approx 1 \mathrm{,}\quad \frac{\epsilon \tau}{ [\sigma_{x}(\tau)\sigma_{x}(0)]^{2}} \approx 0.
 \end{equation}
 
-thus, the phase will be given by
+Therefore, the approximation in Eq.\ref{sigma_zero_approx} (and discarding the term that does not contribute at all) allows us to approximate the phase (Eq.\ref{quantum_phase}) as
 
 \begin{equation}\label{approx_quantum_phase}
 \varphi_{\pm}(x, \tau) \approx -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + (\rho_{0} - q_{2_{\pm}} \tau)(x-\rho_{0} \epsilon \tau)
 \end{equation}
+
+(\textcolor{red}{Luego me dices si te dió la misma correspondencia de términos que yo decía. Y más adelante tratamos de identificar los restantes comparándolo con la expansión de un paquete en espacio libre. O lo analizamos en el espacio de momentos.}) where we have used a sub-index to indicate whether we are considering $q_{2}$ with the plus or minus sign in front of the constant $\gamma_{1}$. 
+
+\textcolor{blue}{The interpretation of the approximation in Eq.\ref{sigma_zero_approx} is that the initial wave packet has to have a wide spread.????}
 
 Before diving deep into the computation of the phase difference, let's analyze the above equation. The second term is the product of two differences. The first term is 
 
@@ -506,7 +522,7 @@ Finally, by using Eqs.(\ref{approx_quantum_phase_1}-\ref{pre_total_quantum_phase
 were the non-dimensional time was defined as $\tau\equiv \Delta W t$. Thus, we see that in the quantum picture, the total phase difference is half the phase difference obtained in the semi-classical computation Eq.\ref{gravimetry_signal}. In addition, it can be seen that the total phase difference does not depend on the position $x_{d}$ as expected.
 
 \paragraph{Analysis of the Phase Terms in Position Space}
-In this section, we will analyze the rest the terms in Eq.\ref{quantum_phase}, which we re-write here
+In this section, we will analyze the contribution of the rest of the terms in Eq.\ref{quantum_phase}, which we re-write here
 
 \begin{multline*}\label{quantum_phase_revisited}
 \varphi(x, \tau) = -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2}^{2} \tau^{2}\bigg) + \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} (\rho_{0} - q_{2} \tau)(x-\rho_{0} \epsilon \tau) \\
@@ -588,7 +604,7 @@ The result obtained by considering the terms that include the standard deviation
     \Delta \Phi \neq 0
 \end{equation}
 
-(\textcolor{red}{pareciera que los terminos que incluyen la desviación standard si deben ser ignorados?})
+(\textcolor{red}{en momento no existe ensanchamiento y el resultado concuerda con el semiclasico, en posición solo concuerda si ignoramos el ensanchamiento, parece que los terminos de ensanchamiento son el problema, , entonces debemos ignorar estos terminos de ensanchamiento?.})
 (\textcolor{red}{existira algun error en la ec. que describe la evolucion del paquete de onda?})
 
 \paragraph{Calculation of the Signal for Gravimetry in Momentum Space}

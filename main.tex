@@ -407,7 +407,7 @@ so we will have the following
 \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \approx 1 \mathrm{,}\quad \frac{\epsilon \tau}{ [\sigma_{x}(\tau)\sigma_{x}(0)]^{2}} \approx 0.
 \end{equation}
 
-Therefore, the approximation in Eq.\ref{sigma_zero_approx} (and discarding the term that does not contribute at all) allows us to approximate the phase (Eq.\ref{quantum_phase}) as
+Therefore, using the approximation in Eq.\ref{sigma_zero_approx} (and discarding the term that does not contribute at all) allows us to approximate the phase (Eq.\ref{quantum_phase}) as
 
 \begin{equation}\label{approx_quantum_phase}
 \varphi_{\pm}(x, \tau) \approx -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + (\rho_{0} - q_{2_{\pm}} \tau)(x-\rho_{0} \epsilon \tau)
@@ -521,7 +521,7 @@ Finally, by using Eqs.(\ref{approx_quantum_phase_1}-\ref{pre_total_quantum_phase
 
 were the non-dimensional time was defined as $\tau\equiv \Delta W t$. Thus, we see that in the quantum picture, the total phase difference is half the phase difference obtained in the semi-classical computation Eq.\ref{gravimetry_signal}. In addition, it can be seen that the total phase difference does not depend on the position $x_{d}$ as expected.
 
-\paragraph{Analysis of the Phase Terms in Position Space}
+\paragraph{First-Order Correction to the Gravimetry Signal}
 In this section, we will analyze the contribution of the rest of the terms in Eq.\ref{quantum_phase}, which we re-write here
 
 \begin{multline*}\label{quantum_phase_revisited}
@@ -537,14 +537,14 @@ In the computation of the last section, we ignored the following terms
 - \frac{1}{2}\arctan\left[\frac{\epsilon \tau}{(\sigma_{x}(0))^{2}}\right]
 \end{equation*}
 
-We want to prove that it was legitimate to ignore these terms. Let us begin using Eq.\ref{xi_defs_eq_motion} to re-write the above terms as 
+We want to know what is the contribution of these terms to the total phase difference and get a correction for the result obtained in Eq.\ref{quantum_gravimetry_signal}. Let us begin using Eq.\ref{xi_defs_eq_motion} to re-write the above terms as 
 
 \begin{equation}\label{quantum_phase_ignored_terms}
 \frac{\epsilon \tau}{4 [\sigma_{x}(\tau)\sigma_{x}(0)]^{2}} \left[(x-x_{0})^{2} + 2v_{0} x_{0} \tau +a \tau^{2} \bigg(x+x_{0}+ \frac{a}{4} \tau^{2} \bigg)\right] 
 - \frac{1}{2}\arctan\left[\frac{\epsilon \tau}{(\sigma_{x}(0))^{2}}\right]
 \end{equation}
 
-We can notice in the above equation that the last term does not have any dependence on the initial conditions (position and/or velocity) nor the acceleration. Therefore, since the initial conditions will have a dependence on $a$ (and consequently a dependence on $q_{2}$) for the second and third intervals, the contribution of the last term to the final phase difference will be trivially zero. Then, we can safely ignore the last term since its contribution will be zero
+We can notice in the above equation that the last term does not have any dependence on the initial conditions (position and/or velocity) nor the acceleration. Therefore, since the initial conditions will have a dependence on $a$ (and consequently a dependence on $q_{2}$) for the second and third intervals, the contribution of the last term to the final phase difference will be trivially zero. Then, we can safely ignore the last term since its contribution will be zero and only consider the following terms:
 
 \begin{equation}\label{quantum_phase_ignored_terms_simplified}
 \frac{\epsilon \tau}{4 [\sigma_{x}(\tau)\sigma_{x}(0)]^{2}} \left[(x-x_{0})^{2} + 2v_{0} x_{0} \tau +a \tau^{2} \bigg(x+x_{0}+ \frac{a}{4} \tau^{2} \bigg)\right].
@@ -556,11 +556,12 @@ Now, we can expand the first term inside the square brackets and use the same ar
 \frac{\epsilon \tau}{4 [\sigma_{x}(\tau)\sigma_{x}(0)]^{2}} \left[-2x x_{0}+x_{0}^{2} + 2v_{0} x_{0} \tau +a \tau^{2} \bigg(x+x_{0}+ \frac{a}{4} \tau^{2} \bigg)\right].
 \end{equation}
 
-The contribution of these terms to the final signal is not trivial. We will study its contribution using Eq.\ref{quantum_phase_ignored_terms_simplified}  because it is easier to manipulate. At the end of the first interval, the phase due to the terms that we ignored in the last section will be given by
+The contribution of these terms to the final signal is not trivial. We will study its contribution to the final result using the Eq.\ref{quantum_phase_ignored_terms_simplified}  because it is easier to manipulate. We will repeat the computation of the last section, however, this time, we will not use the approximation in Eq.\ref{sigma_zero_approx} Therefore, at the end of the first interval, the phase will be given by
 
-\begin{equation}\label{quantum_phase_ignored_terms_simplified_t1}
-\varphi_{\pm, \tau_{1}}(x) = \frac{\epsilon \tau}{4 [\sigma_{x, \tau_{1}}\sigma_{x, \tau_{0}}]^{2}} \left[(x-x_{0})^{2} + 2v_{0} x_{0} \tau +a_{\pm} \tau^{2} \bigg(x+x_{0}+ \frac{a_{\pm}}{4} \tau^{2} \bigg)\right].
-\end{equation}
+\begin{multline}\label{quantum_phase_ignored_terms_simplified_t1}
+\varphi_{\pm, \tau_{1}}(x) =-\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + (\rho_{0} - q_{2_{\pm}} \tau)(x-\frac{v_{0} \tau}{2}) \\
++ \frac{\epsilon \tau}{4 [\sigma_{x, \tau_{1}}\sigma_{x, \tau_{0}}]^{2}} \left[(x-x_{0})^{2} + 2v_{0} x_{0} \tau +a_{\pm} \tau^{2} \bigg(x+x_{0}+ \frac{a_{\pm}}{4} \tau^{2} \bigg)\right],
+\end{multline}
 
 where we have used, as usual, a sub-index in $a$ to indicate the sign used in the definition of $q_{2}$, and the non-dimensional standard deviation $\sigma_{x, \tau_{1}}$ is given by 
 
@@ -573,7 +574,8 @@ where $\sigma_{x, \tau_{0}}$ is the initial standard deviation of the wave-packe
 For the second interval, the initial conditions will have changed such that the phase will be given by
 
 \begin{multline}\label{quantum_phase_ignored_terms_simplified_t2}
-\varphi_{\pm, \tau_{2}}(x) = \frac{\epsilon (2\tau)}{4 [\sigma_{x, \tau_{2}}\sigma_{x, \tau_{1}}]^{2}} \bigg[\bigg(x-(x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2})\bigg)^{2}\\ 
+\varphi_{\pm, \tau_{2}}(x) = -(2\tau) \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\mp}}^{2} (2\tau)^{2}\bigg) + ((\rho_{0} - q_{2_{\pm}} \tau)-q_{2_{\mp}} (2\tau))(x-\frac{(v_{0}+a_{\pm}\tau) (2\tau)}{2})\\ 
++\frac{\epsilon (2\tau)}{4 [\sigma_{x, \tau_{2}}\sigma_{x, \tau_{1}}]^{2}} \bigg[\bigg(x-(x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2})\bigg)^{2}
 + 2(v_{0} + a_{\pm} \tau) (x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2}) (2\tau) \\ 
 +a_{\mp} (2\tau)^{2} \bigg(x+(x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2})+ \frac{a_{\mp}}{4} (2\tau)^{2} \bigg)\bigg],
 \end{multline}
@@ -587,7 +589,8 @@ where the new standard deviation $\sigma_{x, \tau_{2}}$ will be given in terms o
 Similarly, for the last interval we will have
 
 \begin{multline}\label{quantum_phase_ignored_terms_simplified_t3}
-\varphi_{\pm, \tau_{3}}(x) = \frac{\epsilon \tau}{4 [\sigma_{x, \tau_{3}}\sigma_{x, \tau_{3}}]^{2}} \bigg[\bigg(x-\Big((x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2}) + (v_{0}+a_{\pm}\tau)(2\tau) + \frac{a_{\mp}(2\tau)^{2}}{2}\Big)\bigg)^{2}\\
+\varphi_{\pm, \tau_{3}}(x) = -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + ((\rho_{0} - q_{2_{\pm}} \tau-2q_{2_{\mp}}\tau)-q_{2_{\pm}} \tau)(x-\frac{(v_{0}+a_{\pm}\tau + 2a_{\mp}\tau) \tau}{2}) \\
++ \frac{\epsilon \tau}{4 [\sigma_{x, \tau_{3}}\sigma_{x, \tau_{3}}]^{2}} \bigg[\bigg(x-\Big((x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2}) + (v_{0}+a_{\pm}\tau)(2\tau) + \frac{a_{\mp}(2\tau)^{2}}{2}\Big)\bigg)^{2}\\
 + 2\bigg(v_{0} + a_{\pm} \tau + 2a_{\mp} \tau\bigg)\bigg((x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2}) + (v_{0}+a_{\pm}\tau)(2\tau) + \frac{a_{\mp}(2\tau)^{2}}{2}\bigg) \tau\\
 +a_{\pm} \tau^{2} \bigg(x+\Big((x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2}) + (v_{0}+a_{\pm}\tau)(2\tau) + \frac{a_{\mp}(2\tau)^{2}}{2}\Big)+ \frac{a_{\pm}}{4} \tau^{2} \bigg)\bigg],
 \end{multline}
@@ -598,14 +601,43 @@ where the new standard deviation $\sigma_{x, \tau_{3}}$ will be given by
 \sigma_{x, \tau_{3}} = \sqrt{[\sigma_{x, \tau_{2}}]^{2} + \left[\frac{\epsilon \tau}{\sigma_{x, \tau_{2}}} \right]^{2}}.
 \end{equation}
 
-The result obtained by considering the terms that include the standard deviation is
+Before proceeding to the final computation, we will write the inverse of $\sigma_{x}(\tau)$ as follows
+
+\begin{equation}\label{sigma_x_beta}
+\frac{1}{\sigma_{x}(\tau)} = \frac{\left[1 + \beta^{2}\right]^{-1/2}}{\sigma_{x}(0)},
+\end{equation}
+
+where we have defined the parameter $\beta$ as follows
+
+\begin{equation}
+\beta \equiv \frac{\epsilon \tau}{[\sigma_{x}(0)]^{2}}.
+\end{equation}
+
+By using a Maclaurin expansion for Eq.\ref{sigma_x_beta} in terms of $\beta$, we can see that the approximation used in the last section (Eq.\ref{sigma_zero_approx}) was just the zeroth-order expansion of $1/\sigma_{x}(\tau)$. In order to get a correction, we will use the first-order expansion of Eq.\ref{sigma_x_beta}, i.e.,
+
+\begin{equation}
+\frac{1}{\sigma_{x}(\tau)} \approx \frac{\left[1 - \frac{1}{2}\beta^{2}\right]}{\sigma_{x}(0)},
+\end{equation}
+
+Therefore, at first order we can write
+
+\begin{equation}\label{sigma_x_t1_first_order}
+[\sigma_{x, \tau_{1}}]^{-1} = [\sigma_{x, \tau_{0}}]^{-1} \left[1 - \frac{1}{2}\bigg(\frac{\epsilon \tau}{[\sigma_{x, \tau_{0}}]^{2}}\bigg)^{2}\right],
+\end{equation}
+
+\begin{equation}\label{sigma_x_t2_first_order}
+[\sigma_{x, \tau_{2}}]^{-1} = [\sigma_{x, \tau_{1}}]^{-1} \left[1 - \frac{1}{2}\bigg(\frac{\epsilon \tau}{[\sigma_{x, \tau_{1}}]^{2}}\bigg)^{2}\right],
+\end{equation}
+
+\begin{equation}\label{sigma_x_t3_first_order}
+[\sigma_{x, \tau_{3}}]^{-1} = [\sigma_{x, \tau_{2}}]^{-1} \left[1 - \frac{1}{2}\bigg(\frac{\epsilon \tau}{[\sigma_{x, \tau_{2}}]^{2}}\bigg)^{2}\right].
+\end{equation}
+
+Finally, by using Eqs.(\ref{quantum_phase_ignored_terms_simplified_t1}, \ref{quantum_phase_ignored_terms_simplified_t2}, \ref{quantum_phase_ignored_terms_simplified_t3}) alongside Eqs.(\ref{sigma_x_t1_first_order}, \ref{sigma_x_t2_first_order}, \ref{sigma_x_t3_first_order}) we get the first order correction to the gravimetry signal
 
 \begin{equation}
     \Delta \Phi \neq 0
 \end{equation}
-
-(\textcolor{red}{en momento no existe ensanchamiento y el resultado concuerda con el semiclasico, en posición solo concuerda si ignoramos el ensanchamiento, parece que los terminos de ensanchamiento son el problema, , entonces debemos ignorar estos terminos de ensanchamiento?.})
-(\textcolor{red}{existira algun error en la ec. que describe la evolucion del paquete de onda?})
 
 \paragraph{Calculation of the Signal for Gravimetry in Momentum Space}
 The result of the last section was obtained by considering a coherent state wave packet in position space (Eq. \ref{wave_packet}). However, the same result can be obtained by considering the state and its evolution in the momentum space \cite{Castanos2014}

@@ -159,7 +159,7 @@ After the first $\frac{\pi}{2}$-pulse is applied, a superposition of states is c
         \caption{Position-time graph.}
         \label{position_graph}
     \end{subfigure}
-    \caption{Velocity and position vs. time graphs for each state after the superposition of hyperfine levels is created and just before they are made interfere. In these graphs $g=9.8m/s^2$, the mass $m$ is taken to be $87*1.6*10^{-27} Kg$ (approximately the mass of $\ce{^{87}_{}Rb}$), $\mu$ is taken to be the Bohr magneton with value $9.27*10^{-24} J/T$, $\eta$ has a value of $0.05 Tesla/meter$, and $T=100ms$. 
+    \caption{Velocity and position vs. time graphs for each state after the superposition of hyperfine levels is created and just before they are made interfere. In these graphs $g=9.8m/s^2$, the mass $m$ is taken to be $87*1.6*10^{-27} Kg$ (approximately the mass of $\ce{^{87}_{}Rb}$), $\mu$ is taken to be the Bohr magneton with value $9.27*10^{-24} J/T$, $\eta$ has a value of $0.05 T/m$, and $T=100ms$. 
     The hyperfine state $\ket{1}$ has a quantum magnetic number of $m_{F}=F$ whereas the state $\ket{2}$ has a value of $m_{F}=-F$.}
     \label{velocity_position_graphs}
 \end{figure}
@@ -353,13 +353,13 @@ Therefore, it is convenient to re-write Eq.\ref{xi} as
 \xi(\tau) = x_{0} + v_{0} \tau + \frac{a \tau^{2}}{2}
 \end{equation}
 
-where 
+where $v_{0}$ is the non-dimensional initial velocity and $a$ is the non-dimensional acceleration given by
 
 \begin{equation}\label{xi_defs_eq_motion}
 v_{0} = 2\rho_{0} \epsilon \mathrm{,}\quad a = -2 q_{2} \epsilon
 \end{equation}
 
-Therefore, the velocity of the center of the (non-dimensional) wave packet will be given by the derivative of Eq.\ref{xi} with respect to $\tau$, i.e.,
+Therefore, the non-dimensional velocity of the center of the wave packet will be given by the derivative of Eq.\ref{xi} with respect to $\tau$, i.e.,
 
 \begin{equation}\label{xi_derivative}
 \frac{d\xi}{d\tau} = \xi^{\prime}(\tau) =  2 \rho_{0} \epsilon - 2 q_{2}\epsilon \tau = v_{0} + a \tau
@@ -504,15 +504,15 @@ thereby, we can approximate $\gamma_{1}$ defined in Eq.\ref{gamma_1} as
 Finally, by using Eqs.(\ref{approx_quantum_phase_1}-\ref{pre_total_quantum_phase}), the definitions Eqs.(\ref{non_dimensional_definitions}-\ref{gamma_1}) alongside the approximations in Eqs. \ref{kappa_approx}, \ref{gamma_1_approx}, we obtain
 
 \begin{equation}
-\Delta \Phi_{\tau_{1}}(x_{d}) = -x_{d}\tau + \frac{\eta \mu \tau^{2} p_{0}}{M \hbar \Delta W^{2}} - \frac{2 \eta \mu \tau^{3} g_{0}}{3 \hbar \Delta W^{3}}
+\Delta \Phi_{\tau_{1}}(x_{d}) = -x_{d}\tau + \frac{\eta \mu \tau^{2} p_{0}}{M \hbar \Delta W^{2}} - \frac{2 \eta \mu \tau^{3} g}{3 \hbar \Delta W^{3}}
 \end{equation}
 
 \begin{equation}
-\Delta \Phi_{\tau_{2}}(x_{d}) = x_{d}\tau + \frac{4 \eta \mu \tau^{3} g_{0}}{3 \hbar \Delta W^{3}}
+\Delta \Phi_{\tau_{2}}(x_{d}) = x_{d}\tau + \frac{4 \eta \mu \tau^{3} g}{3 \hbar \Delta W^{3}}
 \end{equation}
 
 \begin{equation}
-\Delta \Phi_{\tau_{3}}(x_{d}) = -\frac{\eta \mu \tau^{2} p_{0}}{M \hbar \Delta W^{2}} + \frac{10 \eta \mu \tau^{3} g_{0}}{3 \hbar \Delta W^{3}}
+\Delta \Phi_{\tau_{3}}(x_{d}) = -\frac{\eta \mu \tau^{2} p_{0}}{M \hbar \Delta W^{2}} + \frac{10 \eta \mu \tau^{3} g}{3 \hbar \Delta W^{3}}
 \end{equation}
 
 \begin{equation}\label{quantum_gravimetry_signal}
@@ -521,7 +521,7 @@ Finally, by using Eqs.(\ref{approx_quantum_phase_1}-\ref{pre_total_quantum_phase
 
 were the non-dimensional time was defined as $\tau\equiv \Delta W t$. Thus, we see that in the quantum picture, the total phase difference is half the phase difference obtained in the semi-classical computation Eq.\ref{gravimetry_signal}. In addition, it can be seen that the total phase difference does not depend on the position $x_{d}$ as expected.
 
-\paragraph{First-Order Correction to the Gravimetry Signal}
+\paragraph{First-Zeroth-Zeroth Order Correction to the Gravimetry Signal}
 In this section, we will analyze the contribution of the rest of the terms in Eq.\ref{quantum_phase}, which we re-write here
 
 \begin{multline*}\label{quantum_phase_revisited}
@@ -559,13 +559,13 @@ Now, we can expand the first term inside the square brackets and use the same ar
 The contribution of these terms to the final signal is not trivial. We will study its contribution to the final result using the Eq.\ref{quantum_phase_ignored_terms_simplified}  because it is easier to manipulate. We will repeat the computation of the last section, however, this time, we will not use the approximation in Eq.\ref{sigma_zero_approx} Therefore, at the end of the first interval, the phase will be given by
 
 \begin{multline}\label{quantum_phase_ignored_terms_simplified_t1}
-\varphi_{\pm, \tau_{1}}(x) =-\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + (\rho_{0} - q_{2_{\pm}} \tau)(x-\frac{v_{0} \tau}{2}) \\
+\varphi_{\pm, \tau_{1}}(x) =-\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + \bigg[\frac{\sigma_{x, \tau_{0}}}{\sigma_{x, \tau_{1}}}\bigg]^{2}(\rho_{0} - q_{2_{\pm}} \tau)(x-\frac{v_{0} \tau}{2}) \\
 + \frac{\epsilon \tau}{4 [\sigma_{x, \tau_{1}}\sigma_{x, \tau_{0}}]^{2}} \left[(x-x_{0})^{2} + 2v_{0} x_{0} \tau +a_{\pm} \tau^{2} \bigg(x+x_{0}+ \frac{a_{\pm}}{4} \tau^{2} \bigg)\right],
 \end{multline}
 
 where we have used, as usual, a sub-index in $a$ to indicate the sign used in the definition of $q_{2}$, and the non-dimensional standard deviation $\sigma_{x, \tau_{1}}$ is given by 
 
-\begin{equation}
+\begin{equation}\label{sigma_x_t1}
 \sigma_{x, \tau_{1}} = \sqrt{[\sigma_{x, \tau_{0}}]^{2} + \left[\frac{\epsilon \tau}{\sigma_{x, \tau_{0}}} \right]^{2}},
 \end{equation}
 
@@ -574,7 +574,7 @@ where $\sigma_{x, \tau_{0}}$ is the initial standard deviation of the wave-packe
 For the second interval, the initial conditions will have changed such that the phase will be given by
 
 \begin{multline}\label{quantum_phase_ignored_terms_simplified_t2}
-\varphi_{\pm, \tau_{2}}(x) = -(2\tau) \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\mp}}^{2} (2\tau)^{2}\bigg) + ((\rho_{0} - q_{2_{\pm}} \tau)-q_{2_{\mp}} (2\tau))(x-\frac{(v_{0}+a_{\pm}\tau) (2\tau)}{2})\\ 
+\varphi_{\pm, \tau_{2}}(x) = -(2\tau) \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\mp}}^{2} (2\tau)^{2}\bigg) + \bigg[\frac{\sigma_{x, \tau_{1}}}{\sigma_{x, \tau_{2}}}\bigg]^{2}((\rho_{0} - q_{2_{\pm}} \tau)-q_{2_{\mp}} (2\tau))(x-\frac{(v_{0}+a_{\pm}\tau) (2\tau)}{2})\\ 
 +\frac{\epsilon (2\tau)}{4 [\sigma_{x, \tau_{2}}\sigma_{x, \tau_{1}}]^{2}} \bigg[\bigg(x-(x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2})\bigg)^{2}
 + 2(v_{0} + a_{\pm} \tau) (x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2}) (2\tau) \\ 
 +a_{\mp} (2\tau)^{2} \bigg(x+(x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2})+ \frac{a_{\mp}}{4} (2\tau)^{2} \bigg)\bigg],
@@ -582,14 +582,14 @@ For the second interval, the initial conditions will have changed such that the 
 
 where the new standard deviation $\sigma_{x, \tau_{2}}$ will be given in terms of the new initial standard deviation $\sigma_{x, \tau_{1}}$ as follows
 
-\begin{equation}
+\begin{equation}\label{sigma_x_t2}
 \sigma_{x, \tau_{2}} = \sqrt{[\sigma_{x, \tau_{1}}]^{2} + \left[\frac{\epsilon (2\tau)}{\sigma_{x, \tau_{1}}} \right]^{2}}
 \end{equation}
 
 Similarly, for the last interval we will have
 
 \begin{multline}\label{quantum_phase_ignored_terms_simplified_t3}
-\varphi_{\pm, \tau_{3}}(x) = -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + ((\rho_{0} - q_{2_{\pm}} \tau-2q_{2_{\mp}}\tau)-q_{2_{\pm}} \tau)(x-\frac{(v_{0}+a_{\pm}\tau + 2a_{\mp}\tau) \tau}{2}) \\
+\varphi_{\pm, \tau_{3}}(x) = -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + \bigg[\frac{\sigma_{x, \tau_{2}}}{\sigma_{x, \tau_{3}}}\bigg]^{2}((\rho_{0} - q_{2_{\pm}} \tau-2q_{2_{\mp}}\tau)-q_{2_{\pm}} \tau)(x-\frac{(v_{0}+a_{\pm}\tau + 2a_{\mp}\tau) \tau}{2}) \\
 + \frac{\epsilon \tau}{4 [\sigma_{x, \tau_{3}}\sigma_{x, \tau_{3}}]^{2}} \bigg[\bigg(x-\Big((x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2}) + (v_{0}+a_{\pm}\tau)(2\tau) + \frac{a_{\mp}(2\tau)^{2}}{2}\Big)\bigg)^{2}\\
 + 2\bigg(v_{0} + a_{\pm} \tau + 2a_{\mp} \tau\bigg)\bigg((x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2}) + (v_{0}+a_{\pm}\tau)(2\tau) + \frac{a_{\mp}(2\tau)^{2}}{2}\bigg) \tau\\
 +a_{\pm} \tau^{2} \bigg(x+\Big((x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2}) + (v_{0}+a_{\pm}\tau)(2\tau) + \frac{a_{\mp}(2\tau)^{2}}{2}\Big)+ \frac{a_{\pm}}{4} \tau^{2} \bigg)\bigg],
@@ -597,47 +597,104 @@ Similarly, for the last interval we will have
 
 where the new standard deviation $\sigma_{x, \tau_{3}}$ will be given by 
 
-\begin{equation}
+\begin{equation}\label{sigma_x_t3}
 \sigma_{x, \tau_{3}} = \sqrt{[\sigma_{x, \tau_{2}}]^{2} + \left[\frac{\epsilon \tau}{\sigma_{x, \tau_{2}}} \right]^{2}}.
 \end{equation}
 
-Before proceeding to the final computation, we will write the inverse of $\sigma_{x}(\tau)$ as follows
+Before proceeding with the computation of the correction for the gravimetry signal, we will give an interpretation of the approximation used in the last section. In order to do so, we need to write the square inverse of $\sigma_{x}(\tau)$ as follows
 
 \begin{equation}\label{sigma_x_beta}
-\frac{1}{\sigma_{x}(\tau)} = \frac{\left[1 + \beta^{2}\right]^{-1/2}}{\sigma_{x}(0)},
+[\sigma_{x}(\tau)]^{-2} = [\sigma_{x}(0)]^{-2}\left[1 + \beta^{2}\right]^{-1},
 \end{equation}
 
 where we have defined the parameter $\beta$ as follows
 
-\begin{equation}
+\begin{equation}\label{beta_parameter}
 \beta \equiv \frac{\epsilon \tau}{[\sigma_{x}(0)]^{2}}.
 \end{equation}
 
-By using a Maclaurin expansion for Eq.\ref{sigma_x_beta} in terms of $\beta$, we can see that the approximation used in the last section (Eq.\ref{sigma_zero_approx}) was just the zeroth-order expansion of $1/\sigma_{x}(\tau)$. In order to get a correction, we will use the first-order expansion of Eq.\ref{sigma_x_beta}, i.e.,
+By using a Maclaurin expansion for Eq.\ref{sigma_x_beta} in terms of $\beta$, we can see that the approximation used in the last section (Eq.\ref{sigma_zero_approx}) was just the zeroth-order expansion of $1/\sigma_{x}(\tau)$ in powers of $\beta$, i.e.,
 
 \begin{equation}
-\frac{1}{\sigma_{x}(\tau)} \approx \frac{\left[1 - \frac{1}{2}\beta^{2}\right]}{\sigma_{x}(0)},
+\sigma_{x}(\tau) \approx \sigma_{x}(0),
 \end{equation}
 
-Therefore, at first order we can write
+or more precisely, the result in Eq.\ref{quantum_gravimetry_signal} was obtained by using the zeroth-order approximation during the three intervals, i.e.
+
+\begin{equation}
+\sigma_{x, \tau_{0}} \approx \sigma_{x, \tau_{1}} \approx \sigma_{x, \tau_{2}} \approx \sigma_{x, \tau_{3}} 
+\end{equation}
+
+Thereby, the approximation in the last section was a zeroth-zeroth-zeroth order approximation.
+\vfill
+
+Now, we return to the computation of correction of the gravimetry signal. At the beginning of the experiment, the initial width of the wave packet is given by $\sigma_{x, \tau_{0}}$. The next correction to the zeroth-order approximation is to consider the final width (Eq.\ref{sigma_x_t1}) to be given at first-order by
 
 \begin{equation}\label{sigma_x_t1_first_order}
-[\sigma_{x, \tau_{1}}]^{-1} = [\sigma_{x, \tau_{0}}]^{-1} \left[1 - \frac{1}{2}\bigg(\frac{\epsilon \tau}{[\sigma_{x, \tau_{0}}]^{2}}\bigg)^{2}\right],
+[\sigma_{x, \tau_{1}}]^{-2} \approx [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \beta^{2}\right],
 \end{equation}
 
-\begin{equation}\label{sigma_x_t2_first_order}
-[\sigma_{x, \tau_{2}}]^{-1} = [\sigma_{x, \tau_{1}}]^{-1} \left[1 - \frac{1}{2}\bigg(\frac{\epsilon \tau}{[\sigma_{x, \tau_{1}}]^{2}}\bigg)^{2}\right],
-\end{equation}
-
-\begin{equation}\label{sigma_x_t3_first_order}
-[\sigma_{x, \tau_{3}}]^{-1} = [\sigma_{x, \tau_{2}}]^{-1} \left[1 - \frac{1}{2}\bigg(\frac{\epsilon \tau}{[\sigma_{x, \tau_{2}}]^{2}}\bigg)^{2}\right].
-\end{equation}
-
-Finally, by using Eqs.(\ref{quantum_phase_ignored_terms_simplified_t1}, \ref{quantum_phase_ignored_terms_simplified_t2}, \ref{quantum_phase_ignored_terms_simplified_t3}) alongside Eqs.(\ref{sigma_x_t1_first_order}, \ref{sigma_x_t2_first_order}, \ref{sigma_x_t3_first_order}) we get the first order correction to the gravimetry signal
+After the end of the first interval, the width of the wave packet has increased up to $\sigma_{x, \tau_{1}}$ as shown in the above equation. Now, we consider that this new width has become large enough, so now it is possible to use the zeroth-order approximation instead of the first order correction, i.e.,
 
 \begin{equation}
-    \Delta \Phi \neq 0
+\sigma_{x, \tau_{1}} \gg \epsilon \tau,
 \end{equation}
+
+so we can write Eq.\ref{sigma_x_t2} at first order as
+
+\begin{equation}\label{sigma_x_t2_first_order}
+\sigma_{x, \tau_{2}} \approx \sigma_{x, \tau_{1}},
+\end{equation}
+
+and we can re-write Eq.\ref{quantum_phase_ignored_terms_simplified_t2} using the zeroth-order approximation as follows
+
+\begin{equation}\label{quantum_phase_t2_first_order}
+\varphi_{\pm, \tau_{2}}(x) \approx -(2\tau) \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\mp}}^{2} (2\tau)^{2}\bigg) + ((\rho_{0} - q_{2_{\pm}} \tau)-q_{2_{\mp}} (2\tau))(x-\frac{(v_{0}+a_{\pm}\tau) (2\tau)}{2})
+\end{equation}
+
+Since we decided to use the zeroth-order approximation for the second interval, the width at the end of the second interval will be equal to the initial width, i.e., with this approximation there was no expansion of the wave packet. Therefore, the initial width $\sigma_{x, \tau_{2}}$ for the third interval will be equal to $\sigma_{x, \tau_{1}}$. Furthermore, since $\sigma_{x, \tau_{1}}$ was large enough so the use of the zeroth-order approximation for the second interval was valid, that approximation is still valid for the third interval, i.e.,
+
+\begin{equation}
+\sigma_{x, \tau_{2}} \gg \epsilon \tau,
+\end{equation}
+
+and we can write Eq.\ref{sigma_x_t3} at first order as
+
+\begin{equation}\label{sigma_x_t2_first_order}
+\sigma_{x, \tau_{3}} \approx \sigma_{x, \tau_{2}} \approx \sigma_{x, \tau_{1}},
+\end{equation}
+
+and we can approximate Eq.\ref{quantum_phase_ignored_terms_simplified_t3} as follows
+
+\begin{equation}\label{quantum_phase_t3_first_order}
+\varphi_{\pm, \tau_{3}}(x) \approx -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + ((\rho_{0} - q_{2_{\pm}} \tau-2q_{2_{\mp}}\tau)-q_{2_{\pm}} \tau)(x-\frac{(v_{0}+a_{\pm}\tau + 2a_{\mp}\tau) \tau}{2}),
+\end{equation}
+
+Finally, by using Eqs.\ref{quantum_phase_ignored_terms_simplified_t1}, \ref{sigma_x_t1_first_order}, \ref{quantum_phase_t2_first_order}, \ref{quantum_phase_t3_first_order} we can get the total phase difference gained during the experiment in the first-zeroth-zeroth order approximation, i.e.,
+
+\begin{multline}\label{gravimetry_signal_first_zero_zero_approx}
+\Delta \Phi = \tau ^3 \bigg(\frac{4 \text{} \eta  g \mu }{3 \text{$\Delta $W}^3 \hbar} + \frac{4 \text{} g^2 M}{3 \text{$\Delta $W}^3 \hbar}+\frac{4 \text{} \eta ^2 \mu ^2}{3 \text{$\Delta $W}^3 \hbar M}-\frac{2 g^2 M^2}{\eta ^2 \mu ^2}+\frac{4 g M}{\eta  \mu } \\
++\frac{\hbar^2 \kappa z}{8 \text{$\Delta $W}^2 \text{$\Delta $Z(0)}^4 M^2}-\frac{\eta  \hbar \mu  \text{$z_{0}$}}{4 \text{$\Delta $W}^3 \text{$\Delta $Z(0)}^4 M^2}-2\bigg)-\frac{\eta  \hbar \mu  \text{$p_{0}$} \tau ^4}{4 \text{$\Delta $W}^4 \text{$\Delta $Z(0)}^4 M^3} \\
++\tau ^5 \left(\frac{g \eta  \hbar \mu }{8 \text{$\Delta $W}^5 \text{$\Delta $Z(0)}^4 M^2}+\frac{\hbar^4 \kappa z}{32 \text{$\Delta $W}^4 \text{$\Delta $Z(0)}^8 M^4}+\frac{\eta  \hbar^3 \mu  \text{$z_{0}$}}{16 \text{$\Delta $W}^5 \text{$\Delta $Z(0)}^8 M^4}\right)-\frac{g \eta  \hbar^3 \mu  \tau ^7}{32 \text{$\Delta $W}^7 \text{$\Delta $Z(0)}^8 M^4}
+\end{multline}
+
+We can compare this result with exact result that we would have obtained by using Eqs.\ref{quantum_phase_ignored_terms_simplified_t1}, \ref{quantum_phase_ignored_terms_simplified_t2}, \ref{quantum_phase_ignored_terms_simplified_t3} and Eqs.\ref{sigma_x_t1}, \ref{sigma_x_t2}, and \ref{sigma_x_t3}, i.e., without using any approximation. The result is shown in Fig.\ref{phase_graph_first_order}, as can be seen, the discrepancy between the exact result and the first-zeroth-zeroth order approximation only is appreciable for very long times. Therefore, Eq.\ref{gravimetry_signal_first_zero_zero_approx} is a good approximation for the gravimetry signal and has the advantage that it is easier to manipulate than the exact result which we cannot write here due to the enormous amount of terms it has.
+
+\textcolor{blue}{Conclusions...}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{fase-aprox-vs-exact.png}
+\caption{Comparison of the gravimetry signal obtained by using the first-zeroth-zeroth order approximation (Eq.\ref{gravimetry_signal_first_zero_zero_approx}) and the exact result. The period used to produce this graph was $T=100s$. This period is much larger than a typical experimental value and was chosen to highlight that the discrepancy between the approximation and the exact result is only visible for such large times. Besides, we used $g=9.8m/s^{2}$, $\mu=9.27*10^{-24} J/T$ (the Bohr magneton), $\eta=0.05 T/m$. Additionally, we consider $\ce{^{87}_{}Rb}$ atoms, so we have (\cite{Bunge1993}\cite{KAUSHALSK1970}), $M=1.45*10^{-25}kg$, $\Delta W=2\pi*6.835*10^{9}s^{-1}$ ($\hbar \Delta W $ is the field-free ground state hyperfine energy splitting). Also, we use the approximations in Eqs.\ref{kappa_approx} and \ref{gamma_1_approx}. In addition, we take $p_{0}=M*(1 m/s)$, $z_{0}=0$, $\Delta Z(0)=10^{-6}m$, and take $z$ to be the final position of the center of the wave packet at the end of the experiment. The center of the wave packet was evaluated by using Eq.\ref{xi_eq_motion} ($x=\kappa z$).}
+\label{phase_graph_first_order}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{grav-signal1vs0order.png}
+\caption{Comparison of the gravimetry signal obtained by using the first-zeroth-zeroth order approximation (Eq.\ref{gravimetry_signal_first_zero_zero_approx}) and the zeroth-zeroth-zeroth order approximation (Eq.\ref{quantum_gravimetry_signal})). Notice that we have plot the natural logarithm because the order of magnitude between both results is immense. The parameter values used to get this figure are the same as those used in Fig.\ref{phase_graph_first_order} except for $T$. In this case $T=100ms$.}
+\label{grav_signal_1vs_0_order}
+\end{figure}
 
 \paragraph{Calculation of the Signal for Gravimetry in Momentum Space}
 The result of the last section was obtained by considering a coherent state wave packet in position space (Eq. \ref{wave_packet}). However, the same result can be obtained by considering the state and its evolution in the momentum space \cite{Castanos2014}

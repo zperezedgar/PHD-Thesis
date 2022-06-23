@@ -640,13 +640,13 @@ Now, we return to the computation of correction of the gravimetry signal. At the
 Likewise, for the second interval, the final width (Eq.  \ref{sigma_x_t2}) will be given at first-order by
 
 \begin{equation}\label{sigma_x_t2_first_order}
-[\sigma_{x, \tau_{1}}]^{-2} \approx [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \bigg(\frac{\epsilon (\tau+2\tau)}{[\sigma_{x}(0)]^{2}}\bigg)^{2}\right] = [\sigma_{x, \tau_{0}}]^{-2}\left[1 - 9\beta^{2}\right],
+[\sigma_{x, \tau_{2}}]^{-2} \approx [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \bigg(\frac{\epsilon (\tau+2\tau)}{[\sigma_{x}(0)]^{2}}\bigg)^{2}\right] = [\sigma_{x, \tau_{0}}]^{-2}\left[1 - 9\beta^{2}\right],
 \end{equation}
 
 In the same way, the width at the end of the third interval (Eq. \ref{sigma_x_t3}) will be given at first-order by 
 
 \begin{equation}\label{sigma_x_t3_first_order}
-[\sigma_{x, \tau_{1}}]^{-2} \approx [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \bigg(\frac{\epsilon (\tau+2\tau+\tau)}{[\sigma_{x}(0)]^{2}}\bigg)^{2}\right] = [\sigma_{x, \tau_{0}}]^{-2}\left[1 - 16\beta^{2}\right].
+[\sigma_{x, \tau_{3}}]^{-2} \approx [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \bigg(\frac{\epsilon (\tau+2\tau+\tau)}{[\sigma_{x}(0)]^{2}}\bigg)^{2}\right] = [\sigma_{x, \tau_{0}}]^{-2}\left[1 - 16\beta^{2}\right].
 \end{equation}
 
 Finally, by using Eqs. \ref{quantum_phase_ignored_terms_simplified_t1}, \ref{quantum_phase_ignored_terms_simplified_t2}, and \ref{quantum_phase_ignored_terms_simplified_t3} alongside the first-order approximations for the width of the wave packet (Eqs. \ref{sigma_x_t1_first_order}, \ref{sigma_x_t2_first_order}, and \ref{sigma_x_t3_first_order}), we can get the total phase difference accumulated by the wave packet in the first-order approximation
@@ -663,7 +663,7 @@ Finally, by using Eqs. \ref{quantum_phase_ignored_terms_simplified_t1}, \ref{qua
 \end{multline}
 \end{comment}
 
-\begin{multline}\label{gravimetry_signal_first_order_approx}
+\begin{multline}
 \Delta \Phi = \frac{\tau }{4 \left(1 -10 \beta ^2 + 9 \beta ^4\right)} 
 \Bigg[ 8 \tau ^2 \epsilon \text{} \left( \text{$(q_{2_{+}})$}^2- \text{$(q_{2_{-}})$}^2\right) \\
 + \beta ^2 (\text{$q_{2_{-}}$}-\text{$q_{2_{+}}$}) \bigg(2 \left(5 x+3 x_0\right) +4 \rho _0 \tau  \epsilon + 77\tau ^2 \epsilon  \text{} (\text{$q_{2_{-}}$}+\text{$q_{2_{+}}$})\bigg) 
@@ -672,25 +672,55 @@ Finally, by using Eqs. \ref{quantum_phase_ignored_terms_simplified_t1}, \ref{qua
 
 This result can be re-written using the definitions \ref{non_dimensional_definitions}-\ref{gamma_1} alongside the approximations \ref{kappa_approx}-\ref{gamma_1_approx} and keeping only quadratic terms in $\beta$ in the denominator as
 
-\begin{equation}\label{gravimetry_signal_first_order_approx_dimensional}
+\begin{equation}
 \Delta \Phi = \frac{1}{\left(1 -10 \beta ^2 + 9 \beta ^4\right)} \frac{\mu \eta}{\hbar}
 \Bigg[ 4 g t^3
 - \beta ^2 \bigg(\frac{77 g t^3}{2} + \frac{p_{0}t^2}{M}  + (3z_{0}+5z)t \bigg) \Bigg],
 \end{equation}
 
 where $\beta$ was defined in Eq. \ref{beta_parameter}.
+These previous results can be cast into a more illuminating form by expanding the denominator in the first term  and keeping only quadratic terms in $\beta$ as follows
+
+\begin{equation}\label{gravimetry_signal_first_order_approx}
+\Delta \Phi ^{(1)} = 
+ 2 \tau ^3 \epsilon \text{} \left( \text{$(q_{2_{+}})$}^2- \text{$(q_{2_{-}})$}^2\right)
+- \beta ^2 \bigg[ \frac{\tau }{4} (\text{$q_{2_{+}}$}-\text{$q_{2_{-}}$}) \left(2 \left(5 x+3 x_0\right) +4 \rho _0 \tau  \epsilon - 3\tau ^2 \epsilon  \text{} (\text{$q_{2_{+}}$}+\text{$q_{2_{-}}$}) \right) \bigg],
+\end{equation}
+
+\begin{equation}\label{gravimetry_signal_first_order_approx_dimensional}
+\Delta \Phi ^{(1)} =  \frac{\mu \eta}{\hbar}
+\Bigg[ 4 g t^3
+- \beta ^2 \bigg(-\frac{3 g t^3}{2} + \frac{p_{0}t^2}{M}  + (3z_{0}+5z)t \bigg) \Bigg],
+\end{equation}
+
+where we have used a super-index to indicate that these results correspond to the first-order correction.
 The comparison between the zeroth-order approximation and the first-order correction can be seen in Fig. \ref{phase_graph_first_order}.
 
 The correction given by the first-order approximation goes like $\beta ^2$. Therefore, the error made by considering the first-order approximation will be set by $\beta ^2$ which for the case of typical experimental values (see description of Fig. \ref{phase_graph_first_order}), has a value of $\beta ^2 \approx 1.3 \times 10^{-5}$.
-Something interesting about this result is that for times of the order of magnitude about the milliseconds, the phase value obtained by using the first-order approximation is approximately half the value we obtain by using the zeroth-order approximation (see description of Fig. \ref{phase_graph_first_order}). Nonetheless, the order of magnitude is the same.
-
 
 \begin{figure}
-\centering
-\includegraphics[width=0.9\textwidth]{phase1ordervs2order.png}
-\caption{Comparison of the gravimetry signal obtained by using the zeroth-order approximation given by Eq. \ref{quantum_gravimetry_signal} versus the first-order correction given by Eq. \ref{gravimetry_signal_first_order_approx_dimensional}. The period used to produce this graph was $T=100ms$. Besides, we used $g=9.8m/s^{2}$, $\mu=9.27\times10^{-24} J/T$ (the Bohr magneton), $\eta=0.05 T/m$. Additionally, we consider $\ce{^{87}_{}Rb}$ atoms, so we have (\cite{Bunge1993}\cite{KAUSHALSK1970}) $M=1.45\times10^{-25}kg$, $\Delta W=2\pi\times6.835\times10^{9}s^{-1}$ ($\hbar \Delta W $ is the field-free ground state hyperfine energy splitting). Also, we use the approximations in Eqs. \ref{kappa_approx} and \ref{gamma_1_approx}. In addition, we take $p_{0}=0$, $z_{0}=0$, $\Delta Z(0)=100\times10^{-6}m$, and take $z$ to be the final position of the center of the wave packet at the end of the experiment. The center of the wave packet was evaluated by using the Eq. \ref{xi_eq_motion}, where $x=\kappa z$. In this case, $(\sigma_{x, \tau_{0}})^{2} \approx 4.1 \times 10^{-10}$ and $\epsilon \tau \approx 1.5 \times 10^{-11} t$. Thus, for $t=100ms$, we have $\beta \approx 3.6 \times 10^{-3}$ and the expansion used in the Eqs. \ref{sigma_x_t1_first_order}-\ref{sigma_x_t3_first_order} is justified. Moreover, the gap between both approximations will be proportional to $\beta ^2 \approx 1.3 \times 10^{-5}$. Finally, it can be noticed that in this regime of time the phase obtained by using the first-order correction is approximately half the phase we obtained using the zeroth-order approximation.}
-\label{phase_graph_first_order}
+     \centering
+     \begin{subfigure}[b]{0.9\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{fase0order.png}
+         \caption{Gravimetry signal in the zeroth-order approximation ($\Delta \Phi ^{(0)}$).}
+         \label{fig:gravimetry_signal_zeroth_order}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.9\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{phase0orderminus1order.png}
+         \caption{Phase difference between the zeroth-order approximation ($\Delta \Phi ^{(0)}$) and the first-order approximation ($\Delta \Phi ^{(1)}$).}
+         \label{fig:gravimetry_signal_first_minus_zeroth_order}
+     \end{subfigure}
+     \hfill
+     \caption{Comparison of the gravimetry signal obtained by using the zeroth-order approximation ($\Delta \Phi ^{(0)}$) given by Eq. \ref{quantum_gravimetry_signal} versus the first-order correction ($\Delta \Phi ^{(1)}$) given by Eq. \ref{gravimetry_signal_first_order_approx_dimensional}. The period used to produce these graphs was $T=100ms$. Besides, we used $g=9.8m/s^{2}$, $\mu=9.27\times10^{-24} J/T$ (the Bohr magneton), $\eta=0.05 T/m$. Additionally, we consider $\ce{^{87}_{}Rb}$ atoms, so we have (\cite{Bunge1993}\cite{KAUSHALSK1970}) $M=1.45\times10^{-25}kg$, $\Delta W=2\pi\times6.835\times10^{9}s^{-1}$ ($\hbar \Delta W $ is the field-free ground state hyperfine energy splitting). Also, we use the approximations in Eqs. \ref{kappa_approx} and \ref{gamma_1_approx}. In addition, we take $p_{0}=0$, $z_{0}=0$, $\Delta Z(0)=100\times10^{-6}m$, and take $z$ to be the final position of the center of the wave packet at the end of the experiment. The center of the wave packet was evaluated by using the Eq. \ref{xi_eq_motion}, where $x=\kappa z$. In this case, $(\sigma_{x, \tau_{0}})^{2} \approx 4.1 \times 10^{-10}$ and $\epsilon \tau \approx 1.5 \times 10^{-11} t$. Thus, for $t=100ms$, we have $\beta \approx 3.6 \times 10^{-3}$ and the expansion used in the Eqs. \ref{sigma_x_t1_first_order}-\ref{sigma_x_t3_first_order} is justified. Moreover, the gap between both approximations will be proportional to $\beta ^2 \approx 1.3 \times 10^{-5}$.}
+     \label{phase_graph_first_order}
 \end{figure}
+
+
+
+
 
 \paragraph{Calculation of the Signal for Gravimetry in Momentum Space}
 The result of the last section was obtained by considering a coherent state wave packet in position space (Eq. \ref{wave_packet}). However, the same result can be obtained by considering the state and its evolution in the momentum space \cite{Castanos2014}

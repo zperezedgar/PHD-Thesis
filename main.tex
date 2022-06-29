@@ -772,7 +772,7 @@ The above equation describes the state at the end of the last interval. From thi
 Thereby, the total phase difference between both states when the last $\frac{\pi}{2}$-pulse is applied will be given by
 
 \begin{equation}
-\Delta \Phi = \widehat{\varphi}_{+}(k) - \widehat{\varphi}_{-}(k) = 2\left[(q_{2_{+}})^{2} - (q_{2_{-}})^{2} \right]\epsilon \tau^{3} 
+\Delta \Phi = \widehat{\varphi}_{+}(k) - \widehat{\varphi}_{-}(k) = 2\left[(q_{2_{+}})^{2} - (q_{2_{-}})^{2} \right]\epsilon \tau^{3} .
 \end{equation}
 
 Thus, by using Eqs. \ref{epsilon}-\ref{q1_q2} and the approximations in Eqs. \ref{kappa_approx} and \ref{gamma_1_approx}, we finally get the total phase difference
@@ -788,33 +788,116 @@ In this section we review the time evolution of a free gaussian wave packet. The
 
 We begin by considering a superposition of plane waves with different amplitudes, i.e.,
 
-\begin{equation}\label{free_wave_packet_momentum_space}
-    \Psi (x, t) =  \int_{- \infty}^{\infty} dk A(k) e^{i (kx-\omega t)}
+\begin{equation}\label{free_wave_packet_momentum_space_integral}
+    \Psi (z, t) =  \int_{- \infty}^{\infty} dk A(k) e^{i (kz-\omega t)} ,
 \end{equation}
 
 where $k$ is the wave number and the amplitude $A(k)$ is of the gaussian form
 
-\begin{equation}
-    A(k) = C e^{-\alpha(k-k_{0})^{2}/2}
+\begin{equation}\label{gaussian_amplitude_free_wave_packet}
+    A(k) = C e^{-\alpha(k-k_{0})^{2}/2} ,
 \end{equation}
 
-where $k_{0}$ is the center of the distribution and $C$ is a scale factor that we can use to adjust the amplitude of the wave packet. In order to compute the integral in Eq. \ref{free_wave_packet_momentum_space}, we need to establish the dependence between $\omega$ and $k$, i.e., the dispersion relation. We will consider the dispersion relation to be sharply peaked about $k=k_{0}$ and use a Taylor expansion about this point to second order, i.e.,
+where $k_{0}$ is the center of the distribution and $C$ is a scale factor that we can use to adjust the amplitude of the wave packet. In order to compute the integral in Eq. \ref{free_wave_packet_momentum_space_integral}, we need to establish the dependence between $\omega$ and $k$, i.e., the dispersion relation. We will consider the dispersion relation to be sharply peaked about $k=k_{0}$ and use a Taylor expansion about this point to second order, i.e.,
 
-\begin{equation}
-    \omega(k) = \omega(k_{0}) + (k-k_{0})\upsilon_{g} + \frac{1}{2}(k-k_{0})^{2} \beta
+\begin{equation}\label{dispersion_relation_free_wave_packet}
+    \omega(k) = \omega_{0} + (k-k_{0})\upsilon_{g} + \frac{1}{2}(k-k_{0})^{2} \beta ,
 \end{equation}
 
-where $\upsilon_{g}$ is the group velocity defined as
+where $\omega_{0}=\omega(k_{0})$, and $\upsilon_{g}$ is the group velocity defined as
 
 \begin{equation}
-    \upsilon_{g} \equiv \bigg(\frac{\partial \omega(k)}{\partial k}\bigg)_{k=k_{0}}
+    \upsilon_{g} \equiv \bigg(\frac{\partial \omega(k)}{\partial k}\bigg)_{k=k_{0}},
 \end{equation}
 
 and $\beta$ is given by
 
 \begin{equation}
-    \beta \equiv \bigg(\frac{\partial^2 \omega(k)}{\partial k^2}\bigg)_{k=k_{0}}
+    \beta \equiv \bigg(\frac{\partial^2 \omega(k)}{\partial k^2}\bigg)_{k=k_{0}}.
 \end{equation}
+
+Now, we can substitute the Eqs. \ref{gaussian_amplitude_free_wave_packet}-\ref{dispersion_relation_free_wave_packet} into the Eq. \ref{free_wave_packet_momentum_space_integral} and workout the integral. The final result is given by
+
+\begin{equation}
+    \Psi (z, t) = C \sqrt{\frac{2 \pi}{\alpha + 2 i \beta t}} \exp \left[{-\frac{(z - \upsilon_{g} t)^{2}}{2 \alpha + 4 i \beta t}} \right]  \exp[{i (k_{0}x-\omega_{0} t)}].
+\end{equation}
+
+We can cast the above equation into a more illuminating form by putting the complex factors in the denominators in the standard form $Z = [\Re(Z)+i\Im(Z)]$, and by using the de Moivre's theorem to compute the required squared root in the second term. Finally, we obtain the expansion of the free gaussian wave packet as follows
+
+\begin{multline}\label{free_wave_packet_position_space_centered_0} 
+    \Psi (z, t) = C \sqrt{2 \pi} (\alpha^{2} + 4\beta^{2}t^{2})^{-1/4} \exp \left[-\frac{1}{2} \frac{\alpha (z - \upsilon_{g} t)^{2}}{\alpha^{2} + 4\beta^{2}t^{2}}  \right] \\ \exp \left[i \bigg(k_{0}z - w_{0}t + \frac{\beta t}{\alpha^{2} + 4\beta^{2}t^{2}} - \frac{1}{2} \arctan\bigg[\frac{2 \beta t}{\alpha}\bigg]\bigg) \right],
+\end{multline}
+
+This equation represents a wave packet center at $z=0$ when $t=0$. A more general wave packet can be obtained if we consider the wave packet to be centered initially at $z=z_{0}$, i.e.,
+
+\begin{multline}\label{free_wave_packet_position_space_centered_z0} 
+    \Psi (z, t) = C \sqrt{2 \pi} (\alpha^{2} + 4\beta^{2}t^{2})^{-1/4} \exp \left[-\frac{1}{2} \frac{\alpha \big(z - (z_{0} + \upsilon_{g} t)\big)^{2}}{\alpha^{2} + 4\beta^{2}t^{2}}  \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{\beta t}{\alpha^{2} + 4\beta^{2}t^{2}} - \frac{1}{2} \arctan\bigg[\frac{2 \beta t}{\alpha}\bigg]\bigg) \right].
+\end{multline}
+
+Now, before proceeding with the comparison between this free wave packet and the wave packet of alkali-metal atoms, we will take advantage of the freedom to adjust the scale factor $C$ to modify the initial amplitude of the wave packet and get a convenient factor that will help us lately. For that reason, we will consider $C$ to be given by
+
+\begin{equation}
+C = \frac{(2 \pi)^{-3/4}}{(\alpha /2)^{-1/4}}
+\end{equation}
+
+Then, if we substitute this value and re-accommodate terms, we can write the equation describing the evolution of the free wave packet as
+
+\begin{multline}\label{free_wave_packet_position_space_centered_z0_final_form} 
+    \Psi (z, t) = \left[\frac{1}{2 \pi \big(\sigma_{z}(t)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(z - z_{0} + \upsilon_{g} t \big)^{2}}{\big(\sigma_{z}(t)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{4 \beta t}{\big(\sigma_{z}(0)\big)^{2}}\Bigg) \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{4 \beta t}{ [\sigma_{z}(t)\sigma_{z}(0)]^{2}} \bigg) \right],
+\end{multline}
+
+where we have defined the standard deviation of the wave packet as
+
+\begin{equation}
+\sigma_{z}(t) = \sqrt{\frac{\alpha^{2} + 4\beta^{2}t^{2}}{\alpha / 2}}.
+\end{equation}
+
+Thereby the initial width of the free wave packet is given by
+
+\begin{equation}
+\sigma_{z}(0) = \sqrt{2 \alpha},
+\end{equation}
+
+Hence, we can re-write the standard deviation as
+
+\begin{equation}\label{free_wave_packet_width} 
+\sigma_{z}(t) = \sqrt{[\sigma_{z}(0)]^{2} + \left[\frac{4 \beta t}{\sigma_{z}(0)} \right]^{2}},
+\end{equation}
+
+Now, we will re-write the wave packet of alkali atoms (Eq. \ref{wave_packet_non_dimensional_evolution}) but this time, in order to establish the connection with the free wave packet, we will ignore the terms that include $q_{2}$ since this parameter is related with the acceleration of the wave packet (see Eq. \ref{xi_defs_eq_motion}) and for that reason those terms does not have an analogue in the free wave packet. Therefore, the wave packet of alkali atoms (ignoring terms that include $q_{2}$) will be given by
+
+\begin{multline}\label{alkali_wave_packet_position_space_final_form} 
+    \phi (x, \tau) = \left[\frac{1}{2 \pi \big(\sigma_{x}(\tau)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(x - x_{0} + 2\rho_{0} \epsilon \tau \big)^{2}}{\big(\sigma_{x}(\tau)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\epsilon \tau}{\big(\sigma_{x}(0)\big)^{2}}\Bigg) \right] \\ \exp \Bigg[i \bigg(\left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}x - q_{1}\tau - \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2}  \Bigg( \rho_{0}^{2} - \frac{\big[(x-x_{0})^{2} + 4 \rho_{0} x_{0} \epsilon \tau \big]}{ 4[\sigma_{x}(\tau)\sigma_{x}(0)]^{2}}  \Bigg) \epsilon \tau \Bigg]
+\end{multline}
+
+where the standard deviation of the wave packet is given by
+
+\begin{equation}\label{alkali_wave_packet_width} 
+\sigma_{x}(\tau) = \sqrt{[\sigma_{x}(0)]^{2} + \left[\frac{\epsilon \tau}{\sigma_{x}(0)} \right]^{2}}.
+\end{equation}
+
+Thereby, we rewrite here the equations that we are going to use to establish the correspondence between terms
+
+2- Terminar... (dividir ecs en dos columnas)
+
+Therefore, by comparing the Eq. \ref{free_wave_packet_width} with the Eq. \ref{alkali_wave_packet_width}, and the first row of Eq. \ref{free_wave_packet_position_space_centered_z0_final_form} with the first row of Eq. \ref{alkali_wave_packet_position_space_final_form}, we can establish the following correspondence between the terms of the free wave packet and the terms of the wave packet of alkali atoms
+
+\begin{equation}
+\begin{aligned}
+& \sigma_{z}(t) \longrightarrow \sigma_{x}(\tau) \\ 
+& 4 \beta \longrightarrow \epsilon \\ 
+& \upsilon_{g} \longrightarrow 2 \rho_{0} \epsilon \\ 
+\end{aligned}
+\end{equation}
+
+
+On the other hand, by comparing the second row of Eq. \ref{free_wave_packet_position_space_centered_z0_final_form} and the second row of Eq. \ref{alkali_wave_packet_position_space_final_form}, we can see that there exist the following correspondence
+
+\begin{equation}
+\omega_{0} \longrightarrow q_{1},
+\end{equation}
+
+Meanwhile for the rest of terms, we can see that some of them are present in one wave packet bu they are not present in the other and vice-versa while other terms look similar in both wave packets but they differ in some way that is not possible to establish a direct connection between them. Incidentally, the terms of the second row in both Eqs. \ref{free_wave_packet_position_space_centered_z0_final_form} and \ref{alkali_wave_packet_position_space_final_form} are the terms that represent the phase while the terms in the first rows are those terms that does not contribute to the phase.
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}

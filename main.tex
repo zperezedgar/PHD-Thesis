@@ -876,9 +876,27 @@ where the standard deviation of the wave packet is given by
 \sigma_{x}(\tau) = \sqrt{[\sigma_{x}(0)]^{2} + \left[\frac{\epsilon \tau}{\sigma_{x}(0)} \right]^{2}}.
 \end{equation}
 
-\begin{comment}
-Thereby, we rewrite here the equations that we are going to use to establish the correspondence between terms
-\end{comment}
+Next, we rewrite here the definitions of the non-dimensional quantities that appear in the alkali wave packet
+
+\begin{center}
+\begin{tabular}{||c ||} 
+ \hline
+ non-dimensional definitions \\ [0.5ex] 
+ \hline\hline
+ $\sigma_{x}(0) = \kappa \Delta Z(0)$ \\ 
+ \hline
+ $\rho_{0} = p_{0} / \hbar \kappa$\\
+ \hline
+ $x = \kappa z$\\
+ \hline
+ $\tau = \Delta W t$\\
+ \hline
+ $q_{1} = 1/2$\\
+ \hline
+ $\epsilon = \frac{\hbar \kappa^{2}}{2 M \Delta W}$\\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
 
 Therefore, by comparing the Eq. \ref{free_wave_packet_width} with the Eq. \ref{alkali_wave_packet_width}, and the first row of Eq. \ref{free_wave_packet_position_space_centered_z0_final_form} with the first row of Eq. \ref{alkali_wave_packet_position_space_final_form}, we can establish the following correspondence between the terms of the free wave packet and the terms of the wave packet of alkali atoms
 
@@ -889,11 +907,11 @@ Therefore, by comparing the Eq. \ref{free_wave_packet_width} with the Eq. \ref{a
  \hline\hline
  $\sigma_{z}(t) = \sqrt{\frac{\alpha^{2} + 4\beta^{2}t^{2}}{\alpha / 2}}$ & $\sigma_{x}(\tau)$ \\ 
  \hline
- $\sigma_{z}(0) = \sqrt{2 \alpha}$ & $\sigma_{x}(0)$ \\
+ $\sigma_{z}(0) = \sqrt{2 \alpha}$ & $\sigma_{x}(0) = \kappa \Delta Z(0)$ \\
  \hline
- $4 \beta = 4 \Big(\frac{\partial^2 \omega(k)}{\partial k^2}\Big)_{k=k_{0}}$ & $\epsilon$ \\
+ $4 \beta = 4 \Big(\frac{\partial^2 \omega(k)}{\partial k^2}\Big)_{k=k_{0}} = 4 \frac{\hbar}{M}$ & $\epsilon \Delta W = \frac{\hbar}{2 M} \kappa^{2}$ \\
  \hline
- $\upsilon_{g} = \Big(\frac{\partial \omega(k)}{\partial k}\Big)_{k=k_{0}}$ & $2 \rho_{0} \epsilon$ \\ [1ex] 
+ $\upsilon_{g} = \Big(\frac{\partial \omega(k)}{\partial k}\Big)_{k=k_{0}} = \frac{\hbar k_{0}}{M}$ & $2 \rho_{0} \epsilon = \frac{p_{0}}{M} \frac{\kappa}{\Delta W} $ \\ [1ex] 
  \hline
 \end{tabular}
 \end{center}
@@ -907,7 +925,7 @@ On the other hand, by comparing the second row of Eq. \ref{free_wave_packet_posi
  \hline
  Free wave packet & Alkali wave packet \\ [0.5ex] 
  \hline\hline
- $\omega_{0}$ & $q_{1}$ \\ [1ex] 
+ $\omega_{0} = \omega(k_{0}) = \hbar k_{0}^{2} / 2M$ & $\Delta W q_{1} = \Delta W /2$ \\ [1ex] 
  \hline
 \end{tabular}
 \end{center}
@@ -919,14 +937,14 @@ Besides, we can see that the term $\rho_{0}$ seems to be related with the initia
  \hline
  Free wave packet & Alkali wave packet \\ [0.5ex] 
  \hline\hline
- $k_{0}z$ & $\left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}x$ \\ [1ex] 
+ $k_{0}z$ & $\left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}x = \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0} \kappa z =  \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \frac{p_{0}}{\hbar} z$ \\ [1ex] 
  \hline
 \end{tabular}
 \end{center}
 
 This is not surprising since we already knew that $\rho_{0}=p_{0}/\hbar \kappa$. Although the correspondence is not direct due to the presence of the expansion term in the alkali wave packet.
 
-Meanwhile for the rest of terms, we can see that some of them are present in one wave packet but they are not present in the other and vice-versa while other terms look similar in both wave packets but they differ in some way that is not possible to establish a direct connection between them. Incidentally, the terms of the second row in both Eqs. \ref{free_wave_packet_position_space_centered_z0_final_form} and \ref{alkali_wave_packet_position_space_final_form} are the terms that contribute the phase while the terms in the first rows are those terms that does not contribute to the phase.
+Meanwhile for the rest of terms, we can see that some of them are present in one wave packet but they are not present in the other and vice-versa while other terms look similar in both wave packets but they differ in some way that is not possible to establish a direct connection between them. Incidentally, the terms of the second row in both Eqs. \ref{free_wave_packet_position_space_centered_z0_final_form} and \ref{alkali_wave_packet_position_space_final_form} are the terms that contribute to the phase while the terms in the first rows are those terms that does not contribute to the phase.
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}

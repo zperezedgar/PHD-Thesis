@@ -32,6 +32,7 @@
 
 \begin{document}
 \maketitle
+\tableofcontents
 
 \begin{abstract}
 Your abstract.
@@ -42,7 +43,7 @@ Your abstract.
 \subsection{Condition for Atomic Interference within a Magnetic Gradient Field}
 \subsubsection{Semi-classical Picture}
 
-In this section, we review the condition needed to generate atomic interference in a gravimeter within a magnetic gradient. Let's consider an atom with total angular momentum number $F$. We will consider transitions between two stretch states with quantum magnetic number $m_{F}=\pm F$. Let's call the stretch state with $m_{F}=F$ as $\ket{1}$, and the stretch state with $m_{F}=-F$ as $\ket{2}$.
+In this section, we review the condition needed to generate atomic interference in a gravimeter within a magnetic gradient. Let's consider an atom with total angular momentum number $F$. We will consider transitions between two stretched states with quantum magnetic number $m_{F}=\pm F$. Let's call the stretched state with $m_{F}=F$ as $\ket{1}$, and the stretched state with $m_{F}=-F$ as $\ket{2}$.
 
 The atom is immersed inside a magnetic field of the following form
 
@@ -783,7 +784,7 @@ Thus, by using Eqs. \ref{epsilon}-\ref{q1_q2} and the approximations in Eqs. \re
 
 where were we have used $\tau\equiv \Delta W t$. We can notice that this result is independent of the momentum k and that it coincides with the result obtained in position space as expected.
 
-\subsubsection{A Revision to the Time Evolution of the Free Wave Packet}
+\subsection{A Revision to the Time Evolution of the Free Wave Packet}
 In this section we review the time evolution of a free gaussian wave packet. Then, we use this result to establish a correspondence with some terms of the wave packet of alkali-metal atoms subject to a constant gravitational field and interacting with a magnetic field given by Eq. \ref{wave_packet_non_dimensional_evolution}.
 
 We begin by considering a superposition of plane waves with different amplitudes, i.e.,
@@ -945,6 +946,63 @@ Besides, we can see that the term $\rho_{0}$ seems to be related with the initia
 This is not surprising since we already knew that $\rho_{0}=p_{0}/\hbar \kappa$. Although the correspondence is not direct due to the presence of the expansion term in the alkali wave packet.
 
 Meanwhile for the rest of terms, we can see that some of them are present in one wave packet but they are not present in the other and vice-versa while other terms look similar in both wave packets but they differ in some way that is not possible to establish a direct connection between them. Incidentally, the terms of the second row in both Eqs. \ref{free_wave_packet_position_space_centered_z0_final_form} and \ref{alkali_wave_packet_position_space_final_form} are the terms that contribute to the phase while the terms in the first rows are those terms that does not contribute to the phase.
+
+\subsection{Initial Atomic Width Preparation}
+In this section we will establish the theoretical framework to describe the initialization of the atom to be used during the interferometry procedure described in the last section. Specifically, we will review how to prepare the initial width of the atom.
+
+Firstly, we need to remember that the experiment will take place inside a magnetic gradient field in the z-axis of the following form
+
+\begin{equation*}
+B = \eta z,
+\end{equation*}
+
+where $\eta$ is a constant.
+
+We will consider transitions between two hyperfine states levels of the atom. We choose the ground state to be the state with a total magnetic number $m_{j}=0$ while the excited state will be that with a value $m_{j}=1$. The transitions between this two-level system is characterized by a frequency  $\omega_{21}$, i.e.,
+
+\begin{equation}
+  \omega_{21} = \frac{E_{e}-E_{g}}{\hbar}.
+\end{equation}
+
+Since the atom is placed inside this external magnetic field, its energy levels will be split according to the Zeeman effect, i.e.,
+
+\begin{equation}
+  \Delta E = \mu_{B} g_{j} m_{j} B,
+\end{equation}
+
+where $\mu_{B}$ is the Bohr magneton and $g_{j}$ is the Landé g-factor. Notice how the ground state will not have a change in energy due to the Zeeman effect because $m_{j}=0$ for that state. Moreover, due to the linear dependence of the magnetic field with the position, the Zeeman split will depend on the position as well, i.e.,
+
+\begin{equation}
+  \Delta E(z) = \mu_{B} g_{j} m_{j} \eta z,
+\end{equation}
+
+This change in the energy due to the Zeeman effect can be translated into a change in the corresponding frequency of the energy level through the Planck relation, i.e.,
+
+\begin{equation}
+  \Delta \omega(z) = \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} z.
+\end{equation}
+
+We suppose that the wave packet describing the atom is initially located at $z_{0}$ where the magnetic field is $B_{0}$, and induce Rabi transitions between our two states by applying a perturbation with a frequency tuned with the transition that interests us at $z_{0}$, i.e., 
+
+\begin{equation}
+  \omega_{21}^{\prime} = \omega_{21} + \Delta \omega(z_{0}) =  \omega_{21} + \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} z_{0},
+\end{equation}
+
+where $m_{j} = 1$ because only the excited state has a change in energy due to the Zeeman effect, however, we will continue writing only $m_{j}$ for clarity.
+
+Now, due to the uncertainty in the position of the atom, its wave function will have a width $\Delta Z$ in position space. Therefore, the probability of finding the atom in a position $z$, different from $z_{0}$, will not be zero, and in that case the frequency of the transition now will be given by
+
+\begin{equation}
+  \omega_{B} =  \omega_{21} + \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} z.
+\end{equation}
+
+Hence, the detuning of the Rabi oscillations due to the uncertainty in the position of the atom will be given by
+
+\begin{equation}
+  \delta (z) = \omega_{B} - \omega_{21}^{\prime} = \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} (z-z_{0})
+\end{equation}
+
+
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}

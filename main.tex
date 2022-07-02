@@ -823,7 +823,7 @@ Now, we can substitute the Eqs. \ref{gaussian_amplitude_free_wave_packet}-\ref{d
     \Psi (z, t) = C \sqrt{\frac{2 \pi}{\alpha + 2 i \beta t}} \exp \left[{-\frac{(z - \upsilon_{g} t)^{2}}{2 \alpha + 4 i \beta t}} \right]  \exp[{i (k_{0}x-\omega_{0} t)}].
 \end{equation}
 
-We can cast the above equation into a more illuminating form by putting the complex factors in the denominators in the standard form $Z = [\Re(Z)+i\Im(Z)]$, and by using the de Moivre's theorem to compute the required squared root in the second term. Finally, we obtain the expansion of the free gaussian wave packet as follows
+We can cast the above equation into a more illuminating form by putting the complex factors in the denominators in the standard form ($Z = [\Re(Z)+i\Im(Z)]$), and by using the de Moivre's theorem to compute the required squared root in the second term. Finally, we obtain the expansion of the free gaussian wave packet as follows
 
 \begin{multline}\label{free_wave_packet_position_space_centered_0} 
     \Psi (z, t) = C \sqrt{2 \pi} (\alpha^{2} + 4\beta^{2}t^{2})^{-1/4} \exp \left[-\frac{1}{2} \frac{\alpha (z - \upsilon_{g} t)^{2}}{\alpha^{2} + 4\beta^{2}t^{2}}  \right] \\ \exp \left[i \bigg(k_{0}z - w_{0}t + \frac{\beta t}{\alpha^{2} + 4\beta^{2}t^{2}} - \frac{1}{2} \arctan\bigg[\frac{2 \beta t}{\alpha}\bigg]\bigg) \right],
@@ -998,11 +998,53 @@ Now, due to the uncertainty in the position of the atom, its wave function will 
 
 Hence, the detuning of the Rabi oscillations due to the uncertainty in the position of the atom will be given by
 
-\begin{equation}
-  \delta (z) = \omega_{B} - \omega_{21}^{\prime} = \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} (z-z_{0})
+\begin{equation}\label{detunig_atom_width}
+  \delta (z) = \omega_{B} - \omega_{21}^{\prime} = \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} (z-z_{0}).
 \end{equation}
 
+If we consider the wave function of the atom to be symmetric around $z_{0}$, for example by considering a gaussian like wave packet, we can define the half width at half maximum and name this point as $z_{HWHM}$ (see Fig. )(PONER GRAFICA AQUI DEFINIENDO Z-HMHM). Then, the width of our atom will be given by
 
+\begin{equation}
+  \Delta Z =  z_{0} + z_{HWHM}.
+\end{equation}
+
+Now, if we evaluate the detuning at $z = z_{0} + z_{HWHM}$, we get
+
+\begin{equation}
+  \delta (\Delta Z) = \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} z_{HWHM}
+\end{equation}
+
+i.e.,
+
+\begin{equation}
+  z_{HWHM} = \delta (\Delta Z) \frac{\hbar}{\mu_{B} g_{j} m_{j} \eta}.
+\end{equation}
+
+Thereby, to determine the width of our atom's wave function, we just need to determine the detuning at $z = z_{0} + z_{HWHM}$. In order to do so, firstly, we recall that the probability of finding the atom in the excited state at time $t$ when it was initially in the ground state at $t=0$ is given by
+
+\begin{equation}
+  |c_{e}(t)|^{2} =\frac{\Omega^{2}}{\tilde{\Omega}^{2}} \sin^{2}\bigg[\frac{\tilde{\Omega} t}{2} \bigg], 
+\end{equation}
+
+where $\tilde{\Omega}$ is defined in terms of the Rabi flopping frequency $\Omega$ and the detuning $\delta$, i.e.,
+
+\begin{equation}
+  \tilde{\Omega} = \sqrt{\delta^{2} + \Omega^{2}}.
+\end{equation}
+
+(PONER GRAFICA AQUI $|c_{e}(t)|^{2}$ VS $\delta$)
+
+Now, a physical argument comes into play. We need to evaluate the detuning at $\Delta Z$. We will consider the detuning evaluated at $\Delta Z$ to be such that the probability of transition at this point will be zero. Furthermore, we will take the probability of transition starting from this point to be zero. In other words, we are making the assumption 
+
+\begin{equation}
+\sqrt{\big[ \delta (\Delta Z)\big]^{2} + \Omega^{2}} \bigg( \frac{t}{2} \bigg) = \pi,
+\end{equation}
+
+and also $|c_{e}(t)|^{2}=0$ for $|\delta (\Delta Z)| > |\delta (\Delta Z)|$.
+
+(PONER GRAFICA AQUI $|c_{e}(t)|^{2}$ VS $\delta$ cortada en el primer cero)
+
+This approximation makes sense because the detuning evaluated at positions farther away from the position that defines the width of the atom ($z_{HWHM}$) should be such that the probability of transition from that position tends to zero abruptly. In other words, we cannot induce transitions in the atom if the perturbation is applied at positions where the probability of finding the atom is zero.
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}

@@ -1002,25 +1002,38 @@ Hence, the detuning of the Rabi oscillations due to the uncertainty in the posit
   \delta (z) = \omega_{B} - \omega_{21}^{\prime} = \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} (z-z_{0}).
 \end{equation}
 
-If we consider the wave function of the atom to be symmetric around $z_{0}$, for example by considering a gaussian like wave packet, we can define the half width at half maximum and name this point as $z_{HWHM}$ (see Fig. )(PONER GRAFICA AQUI DEFINIENDO Z-HMHM). Then, the width of our atom will be given by
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{atom_wave_func_pos_space.png}
+\caption{Atomic wave function in position space. The wave packet is centered about $z_{0}$ and has a width equal to $2Z_{HWHM}$ where $Z_{HWHM}$ defines the half width at half maximum of the distribution function.}
+\label{atom_wave_func_pos_space}
+\end{figure}
+
+If we consider the wave function of the atom to be symmetric around $z_{0}$, for example by considering a gaussian like wave packet, we can define the half width at half maximum and name this point as $Z_{HWHM}$ (see Fig. \ref{atom_wave_func_pos_space}). Then, the width of our atom will be given by
 
 \begin{equation}
-  \Delta Z =  z_{0} + z_{HWHM}.
+  \Delta Z = 2|Z_{HWHM} - z_{0}|.
 \end{equation}
 
-Now, if we evaluate the detuning at $z = z_{0} + z_{HWHM}$, we get
+Without loss of generality, we can choose the coordinate system such that $z_{0}=0$. Thus, we can write
+
+\begin{equation}\label{width_zhwhm}
+  \Delta Z = 2Z_{HWHM}.
+\end{equation}
+
+Now, if we evaluate the detuning at $z = Z_{HWHM}$, we get
 
 \begin{equation}
-  \delta (\Delta Z) = \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} z_{HWHM}
+  \delta (Z_{HWHM}) = \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} Z_{HWHM}
 \end{equation}
 
 i.e.,
 
-\begin{equation}
-  z_{HWHM} = \delta (\Delta Z) \frac{\hbar}{\mu_{B} g_{j} m_{j} \eta}.
+\begin{equation}\label{position_at_zhwhm}
+  Z_{HWHM} = \delta (Z_{HWHM}) \frac{\hbar}{\mu_{B} g_{j} m_{j} \eta}.
 \end{equation}
 
-Thereby, to determine the width of our atom's wave function, we just need to determine the detuning at $z = z_{0} + z_{HWHM}$. In order to do so, firstly, we recall that the probability of finding the atom in the excited state at time $t$ when it was initially in the ground state at $t=0$ is given by
+Thereby, to determine the width of our atom's wave function, we just need to determine the detuning at $z = Z_{HWHM}$. In order to do so, firstly, we recall that the probability of finding the atom in the excited state at time $t$ when it was initially in the ground state at $t=0$ is given by
 
 \begin{equation}
   |c_{e}(t)|^{2} =\frac{\Omega^{2}}{\tilde{\Omega}^{2}} \sin^{2}\bigg[\frac{\tilde{\Omega} t}{2} \bigg], 
@@ -1032,19 +1045,61 @@ where $\tilde{\Omega}$ is defined in terms of the Rabi flopping frequency $\Omeg
   \tilde{\Omega} = \sqrt{\delta^{2} + \Omega^{2}}.
 \end{equation}
 
-(PONER GRAFICA AQUI $|c_{e}(t)|^{2}$ VS $\delta$)
+Now, a physical argument comes into play. We need to evaluate the detuning at $z_{HWHM}$. In order to do so, we will suppose that the detuning evaluated at $z_{HWHM}$ is such that the probability of transition at this position  is zero, i.e.,
 
-Now, a physical argument comes into play. We need to evaluate the detuning at $\Delta Z$. We will consider the detuning evaluated at $\Delta Z$ to be such that the probability of transition at this point will be zero. Furthermore, we will take the probability of transition starting from this point to be zero. In other words, we are making the assumption 
-
-\begin{equation}
-\sqrt{\big[ \delta (\Delta Z)\big]^{2} + \Omega^{2}} \bigg( \frac{t}{2} \bigg) = \pi,
+\begin{equation}\label{detuning_condition}
+\sqrt{\big[ \delta (z_{HWHM}) \big]^{2} + \Omega^{2}} \bigg( \frac{t}{2} \bigg) = \pi.
 \end{equation}
 
-and also $|c_{e}(t)|^{2}=0$ for $|\delta (\Delta Z)| > |\delta (\Delta Z)|$.
+Furthermore, we will take the probability of transition for positions $|z| \ge Z_{HWHM}$ to be zero. This approximation and the exact form of the transition probability versus the detuning can be seen in the Fig. \ref{ce2_VS_detuning}.
 
-(PONER GRAFICA AQUI $|c_{e}(t)|^{2}$ VS $\delta$ cortada en el primer cero)
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.9\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{ce2_VS_detuning_general.png}
+         \caption{Exact form of the probability distribution for the excited state as function of the detuning.}
+         \label{fig:ce2_VS_detuning_general}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.9\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{ce2_VS_detuning_cut.png}
+         \caption{Approximation used to compute the detuning at $z= z_{HWHM}$ (Eq. \ref{detuning_condition}) and therefore the initial width of the atomic wave function (Eqs. \ref{width_zhwhm} and  \ref{position_at_zhwhm}). In this approximation the probability of finding the atom in the excited state is zero for positions $|z| \ge Z_{HWHM}$.}
+         \label{fig:ce2_VS_detuning_cut}
+     \end{subfigure}
+     \hfill
+     \caption{Probability of transition of the atom from the ground state to the excited state versus the detuning ($\Omega t$ is maintained fixed and the distribution is centered around $z_{0}=0$).}
+     \label{ce2_VS_detuning}
+\end{figure}
 
-This approximation makes sense because the detuning evaluated at positions farther away from the position that defines the width of the atom ($z_{HWHM}$) should be such that the probability of transition from that position tends to zero abruptly. In other words, we cannot induce transitions in the atom if the perturbation is applied at positions where the probability of finding the atom is zero.
+This approximation makes sense because the detuning evaluated at positions farther away from the position that defines the width of the atom ($z=Z_{HWHM}$) should be such that the probability of transition is always zero. In other words, we cannot induce transitions in the atom if the perturbation is applied in a position where the probability of finding the atom is zero.
+
+We can use the Eq. \ref{detuning_condition} to determine the detuning at $z_{HWHM}$, i.e.,
+
+\begin{equation}\label{detuning_at_zhwm}
+\delta (z_{HWHM}) = \frac{\sqrt{4 \pi^{2} - \Omega^{2} t^{2}}}{t}.
+\end{equation}
+
+Thus, the width of the atom's wave function can be computed using Eqs. \ref{width_zhwhm}, \ref{position_at_zhwhm}, and \ref{detuning_at_zhwm}, i.e.,
+
+\begin{equation}
+\Delta Z = 2 \frac{\sqrt{4 \pi^{2} - \Omega^{2} t^{2}}}{t} \frac{\hbar}{\mu_{B} g_{j} m_{j} \eta}.
+\end{equation}
+
+Thereby, we can use $\Omega$ and $t$ to control the width of the atom's wave function. For experimental purposes, we would like to have $\Omega$ fixed. Therefore, we can use $t$ to prepare the initial width. Specifically, if we use a $\pi$-pulse, i.e., $t=\pi/\Omega$. Then, the initial width will be given by
+
+\begin{equation}
+\Delta Z = 2 \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{j} m_{j} \eta}.
+\end{equation}
+
+Finally, we remember that in the case of light pulses, the Rabi flopping frequency is given by
+
+\begin{equation}
+\Omega = \frac{- e E_{0} \bra{e} r \ket{g}}{\hbar},
+\end{equation}
+
+where $r$ is the position operator and $E_{0}$ is the electric field.
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}

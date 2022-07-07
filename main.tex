@@ -48,7 +48,7 @@ In this section, we review the condition needed to generate atomic interference 
 The atom is immersed inside a magnetic field of the following form
 
 \begin{equation}\label{magnetic_field}
-B = \eta z \hat{\textbf{z}}\
+\textbf{B} = \eta z \hat{\textbf{z}}\
 \end{equation}
 
 where z is the position and $\eta$ is a constant with units of $[Tesla/meter]$. The atom will feel a force given by the gradient of the magnetic energy caused by the coupling of the total magnetic moment of the atom $\mu$ and the magnetic field, i.e.,
@@ -953,33 +953,42 @@ In this section we will establish the theoretical framework to describe the init
 Firstly, we need to remember that the experiment will take place inside a magnetic gradient field in the z-axis of the following form
 
 \begin{equation*}
-B = \eta z,
+\textbf{B} = \eta z \hat{\textbf{z}},
 \end{equation*}
 
 where $\eta$ is a constant.
 
-We will consider transitions between two hyperfine states levels of the atom. We choose the ground state to be the state with a total magnetic number $m_{j}=0$ while the excited state will be that with a value $m_{j}=1$. The transitions between this two-level system is characterized by a frequency  $\omega_{21}$, i.e.,
+We will consider transitions between two hyperfine states levels of the atom. We choose the ground state to be the state with total angular momentum number $F=0$ and magnetic number $m_{F}=0$ while the excited state will be that with $F=1$ and $m_{F}=1$, i.e.,
+
+\begin{equation}\label{hyperfine_levels}
+\begin{aligned}
+\ket{g} = \ket{F=0, m_{F}=0} \\
+\ket{e} = \ket{F=1, m_{F}=1}
+\end{aligned}
+\end{equation}
+
+The transitions between this two-level system is characterized by a frequency  $\omega_{21}$, i.e.,
 
 \begin{equation}
   \omega_{21} = \frac{E_{e}-E_{g}}{\hbar}.
 \end{equation}
 
-Since the atom is placed inside this external magnetic field, its energy levels will be split according to the Zeeman effect, i.e.,
+Since the atom is placed inside this external magnetic field, its energy levels will be split according to the (linear) Zeeman effect, i.e.,
 
 \begin{equation}
-  \Delta E = \mu_{B} g_{j} m_{j} B,
+  \Delta E = \mu_{B} g_{F} m_{F} B,
 \end{equation}
 
-where $\mu_{B}$ is the Bohr magneton and $g_{j}$ is the Landé g-factor. Notice how the ground state will not have a change in energy due to the Zeeman effect because $m_{j}=0$ for that state. Moreover, due to the linear dependence of the magnetic field with the position, the Zeeman split will depend on the position as well, i.e.,
+where $\mu_{B}$ is the Bohr magneton and $g_{F}$ is the Landé g-factor. Notice how the ground state will not have a change in energy due to the Zeeman effect because $m_{F}=0$ for that state. Moreover, due to the linear dependence of the magnetic field with the position, the Zeeman split will depend on the position as well, i.e.,
 
 \begin{equation}
-  \Delta E(z) = \mu_{B} g_{j} m_{j} \eta z,
+  \Delta E(z) = \mu_{B} g_{F} m_{F} \eta z,
 \end{equation}
 
 This change in the energy due to the Zeeman effect can be translated into a change in the corresponding frequency of the energy level through the Planck relation, i.e.,
 
 \begin{equation}
-  \Delta \omega(z) = \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} z.
+  \Delta \omega(z) = \frac{\mu_{B} g_{F} m_{F} \eta}{\hbar} z.
 \end{equation}
 
 We suppose that the wave packet describing the atom is initially located at $z_{0}$ where the magnetic field is $B_{0}$, and induce Rabi transitions between our two states by applying a perturbation with a frequency tuned with the transition that interests us at $z_{0}$, i.e., 
@@ -988,18 +997,18 @@ We suppose that the wave packet describing the atom is initially located at $z_{
   \omega_{21}^{\prime} = \omega_{21} + \Delta \omega(z_{0}) =  \omega_{21} + \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} z_{0},
 \end{equation}
 
-where $m_{j} = 1$ because only the excited state has a change in energy due to the Zeeman effect, however, we will continue writing only $m_{j}$ for clarity.
+where $m_{F} = 1$ because only the excited state has a change in energy due to the Zeeman effect, however, we will continue writing only $m_{F}$ for clarity.
 
 Now, due to the uncertainty in the position of the atom, its wave function will have a width $\Delta Z$ in position space. Therefore, the probability of finding the atom in a position $z$, different from $z_{0}$, will not be zero, and in that case the frequency of the transition now will be given by
 
 \begin{equation}
-  \omega_{B} =  \omega_{21} + \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} z.
+  \omega_{B} =  \omega_{21} + \frac{\mu_{B} g_{F} m_{F} \eta}{\hbar} z.
 \end{equation}
 
 Hence, the detuning of the Rabi oscillations due to the uncertainty in the position of the atom will be given by
 
 \begin{equation}\label{detunig_atom_width}
-  \delta (z) = \omega_{B} - \omega_{21}^{\prime} = \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} (z-z_{0}).
+  \delta (z) = \omega_{B} - \omega_{21}^{\prime} = \frac{\mu_{B} g_{F} m_{F} \eta}{\hbar} (z-z_{0}).
 \end{equation}
 
 \begin{figure}
@@ -1009,28 +1018,29 @@ Hence, the detuning of the Rabi oscillations due to the uncertainty in the posit
 \label{atom_wave_func_pos_space}
 \end{figure}
 
+\textcolor{blue}{escribir forma matematica de la gaussiana propuesta en la fig 4. como funcion z (espacio de posicion)}
 If we consider the wave function of the atom to be symmetric around $z_{0}$, for example by considering a gaussian like wave packet, we can define the half width at half maximum and name this point as $Z_{HWHM}$ (see Fig. \ref{atom_wave_func_pos_space}). Then, the width of our atom will be given by
 
 \begin{equation}
   \Delta Z = 2|Z_{HWHM} - z_{0}|.
 \end{equation}
 
-Without loss of generality, we can choose the coordinate system such that $z_{0}=0$. Thus, we can write
+We will choose to use a coordinate system such that $z_{0}=0$. Thus, we can write
 
 \begin{equation}\label{width_zhwhm}
   \Delta Z = 2Z_{HWHM}.
 \end{equation}
 
-Now, if we evaluate the detuning at $z = Z_{HWHM}$, we get
+Now, if we evaluate the detuning at $z = 2Z_{HWHM}$, we get
 
 \begin{equation}
-  \delta (Z_{HWHM}) = \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} Z_{HWHM}
+  \delta (2Z_{HWHM}) = 2\frac{\mu_{B} g_{F} m_{F} \eta}{\hbar} Z_{HWHM}
 \end{equation}
 
 i.e.,
 
 \begin{equation}\label{position_at_zhwhm}
-  Z_{HWHM} = \delta (Z_{HWHM}) \frac{\hbar}{\mu_{B} g_{j} m_{j} \eta}.
+  2Z_{HWHM} = \delta (2Z_{HWHM}) \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta}.
 \end{equation}
 
 Thereby, to determine the width of our atom's wave function, we just need to determine the detuning at $z = Z_{HWHM}$. In order to do so, firstly, we recall that the probability of finding the atom in the excited state at time $t$ when it was initially in the ground state at $t=0$ is given by
@@ -1048,10 +1058,10 @@ where $\tilde{\Omega}$ is defined in terms of the Rabi flopping frequency $\Omeg
 Now, a physical argument comes into play. We need to evaluate the detuning at $z_{HWHM}$. In order to do so, we will suppose that the detuning evaluated at $z_{HWHM}$ is such that the probability of transition at this position  is zero, i.e.,
 
 \begin{equation}\label{detuning_condition}
-\sqrt{\big[ \delta (z_{HWHM}) \big]^{2} + \Omega^{2}} \bigg( \frac{t}{2} \bigg) = \pi.
+\sqrt{\big[ \delta (2z_{HWHM}) \big]^{2} + \Omega^{2}} \bigg( \frac{t}{2} \bigg) = \pi.
 \end{equation}
 
-Furthermore, we will take the probability of transition for positions $|z| \ge Z_{HWHM}$ to be zero. This approximation and the exact form of the transition probability versus the detuning can be seen in the Fig. \ref{ce2_VS_detuning}.
+Furthermore, we will take the probability of transition for positions $|z| \ge 2 Z_{HWHM}$ to be zero. This approximation and the exact form of the transition probability versus the detuning can be seen in the Fig. \ref{ce2_VS_detuning}. \textcolor{blue}{(Proponer gaussiana en lugar de fig 5.b, escribirla en terminos de la desintonia usando eq. 123 para escribir la gaussiana en terminos del detuning (usar la gaussiana propuesta en fig 4). Sobreponer ambas graficas en una sola, eje y es probabilidad y el eje x es desintonia)}
 
 \begin{figure}
      \centering
@@ -1065,7 +1075,7 @@ Furthermore, we will take the probability of transition for positions $|z| \ge Z
      \begin{subfigure}[b]{0.9\textwidth}
          \centering
          \includegraphics[width=\textwidth]{ce2_VS_detuning_cut.png}
-         \caption{Approximation used to compute the detuning at $z= z_{HWHM}$ (Eq. \ref{detuning_condition}) and therefore the initial width of the atomic wave function (Eqs. \ref{width_zhwhm} and  \ref{position_at_zhwhm}). In this approximation the probability of finding the atom in the excited state is zero for positions $|z| \ge Z_{HWHM}$.}
+         \caption{Approximation used to compute the detuning at $z= 2z_{HWHM}$ (Eq. \ref{detuning_condition}) and therefore the initial width of the atomic wave function (Eqs. \ref{width_zhwhm} and  \ref{position_at_zhwhm}). In this approximation the probability of finding the atom in the excited state is zero for positions $|z| \ge 2Z_{HWHM}$.}
          \label{fig:ce2_VS_detuning_cut}
      \end{subfigure}
      \hfill
@@ -1073,33 +1083,37 @@ Furthermore, we will take the probability of transition for positions $|z| \ge Z
      \label{ce2_VS_detuning}
 \end{figure}
 
-This approximation makes sense because the detuning evaluated at positions farther away from the position that defines the width of the atom ($z=Z_{HWHM}$) should be such that the probability of transition is always zero. In other words, we cannot induce transitions in the atom if the perturbation is applied in a position where the probability of finding the atom is zero.
+This approximation makes sense because the detuning evaluated at positions farther away from the position that defines the width of the atom ($z=2Z_{HWHM}$) should be such that the probability of transition is always zero. In other words, we cannot induce transitions in the atom if the perturbation is applied in a position where the probability of finding the atom is zero.
 
-We can use the Eq. \ref{detuning_condition} to determine the detuning at $z_{HWHM}$, i.e.,
+We can use the Eq. \ref{detuning_condition} to determine the detuning at $z=2Z_{HWHM}$, i.e.,
 
 \begin{equation}\label{detuning_at_zhwm}
-\delta (z_{HWHM}) = \frac{\sqrt{4 \pi^{2} - \Omega^{2} t^{2}}}{t}.
+\delta (2z_{HWHM}) = \frac{\sqrt{4 \pi^{2} - \Omega^{2} t^{2}}}{t}.
 \end{equation}
 
 Thus, the width of the atom's wave function can be computed using Eqs. \ref{width_zhwhm}, \ref{position_at_zhwhm}, and \ref{detuning_at_zhwm}, i.e.,
 
 \begin{equation}
-\Delta Z = 2 \frac{\sqrt{4 \pi^{2} - \Omega^{2} t^{2}}}{t} \frac{\hbar}{\mu_{B} g_{j} m_{j} \eta}.
+\Delta Z = \frac{\sqrt{4 \pi^{2} - \Omega^{2} t^{2}}}{t} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta}.
 \end{equation}
 
 Thereby, we can use $\Omega$ and $t$ to control the width of the atom's wave function. For experimental purposes, we would like to have $\Omega$ fixed. Therefore, we can use $t$ to prepare the initial width. Specifically, if we use a $\pi$-pulse, i.e., $t=\pi/\Omega$. Then, the initial width will be given by
 
 \begin{equation}
-\Delta Z = 2 \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{j} m_{j} \eta}.
+\Delta Z = \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta}.
 \end{equation}
 
-Finally, we remember that in the case of light pulses, the Rabi flopping frequency is given by
+Finally, we remember that in the case of light pulses, the electric field dominates and the Rabi flopping frequency is usually taken to be
 
 \begin{equation}
-\Omega = \frac{- e E_{0} \bra{e} r \ket{g}}{\hbar},
+\Omega = \frac{- e \textbf{E} \cdot \bra{e} \textbf{r} \ket{g}}{\hbar},
 \end{equation}
 
-where $r$ is the position operator and $E_{0}$ is the electric field.
+where $\textbf{r}$ is the position operator, $\textbf{E}$ is the electric field, and $e$ is the electron charge. Nonetheless, in the case of the hyperfine levels that we are considering (Eq. \ref{hyperfine_levels}), the matrix elements of the position operator vanish  \cite{Steck2010}. Therefore, the Rabi flopping frequency will depend solely on the magnetic field, i.e.,
+
+\begin{equation}
+\Omega = \frac{- e \textbf{B} \cdot \bra{e} \textbf{r} \ket{g}}{\hbar},
+\end{equation}
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}

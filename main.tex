@@ -247,7 +247,7 @@ Therefore, by using Eqs.(\ref{a1}-\ref{a2} , and \ref{phi1t1}-\ref{delphi3}), th
 
 where in the last equation we have used the definition of $a_m$ (Eq. \ref{am}). 
 
-The Eq. \ref{gravimetry_signal} is the signal for gravimetry, which is proportional to $T^3$ and also proportional to the magnetic field via the constant $\eta$, these are the parameters we can adjust within a gravimetric experiment in order to increase the precision of the measurement. In Fig.\ref{phase_graph}, we can see the strong of the gravimetry signal for typical values of the constants in Eq. \ref{gravimetry_signal}. (\textcolor{red}{¿Ahora sí cuadran el cálculo teórico y el numérico del programa?})
+The Eq. \ref{gravimetry_signal} is the signal for gravimetry, which is proportional to $T^3$ and also proportional to the magnetic field via the constant $\eta$, these are the parameters we can adjust within a gravimetric experiment in order to increase the precision of the measurement. In Fig.\ref{phase_graph}, we can see the strong of the gravimetry signal for typical values of the constants in Eq. \ref{gravimetry_signal}. 
 (\textcolor{blue}{Comparar este resultado con el resultado de gravimetria clasica en el que la señal va como T**2 (T al cuadrado)})
 
 \begin{figure}
@@ -281,9 +281,9 @@ where we have defined the inverse of the characteristic length of the system as
 \kappa \equiv (g_{s}\frac{\mu_{B}}{\hbar} + g_{n}\frac{\mu_{n}}{\hbar}) \frac{\eta}{\Delta W} > 0
 \end{equation}
 
-(\textcolor{red}{luego discutimos el significado de kapa, epsilon y otros símbolos de aquí.}) where $g_{s}$ is the electron spin $g$ factor, $g_{n}$ is the nuclear $g$ factor, $\mu_{B}$ is the Bohr magneton, $\mu_{n}$ is the nuclear magneton, $\hbar \Delta W$ is the field-free ground-state hyperfine splitting energy, and $\eta$ is the proportionality constant of the magnetic field (Eq. \ref{magnetic_field}).
+where $g_{s}$ is the electron spin $g$ factor, $g_{n}$ is the nuclear $g$ factor, $\mu_{B}$ is the Bohr magneton, $\mu_{n}$ is the nuclear magneton, $\hbar \Delta W$ is the field-free ground-state hyperfine splitting energy, and $\eta$ is the proportionality constant of the magnetic field (Eq. \ref{magnetic_field}).
 
-The time-evolution of the non-dimensional wave packet (Eq. \ref{wave_packet_non_dimensional}) is given by (see \cite{Castanos2014} for additional details)
+The time-evolution of the non-dimensional wave packet (Eq. \ref{wave_packet_non_dimensional}) is given by\footnote{The wave packet in the Eq. \ref{wave_packet_non_dimensional_evolution} is already normalized in position for all times.} (see \cite{Castanos2014} for additional details)
 
 \begin{equation}\label{wave_packet_non_dimensional_evolution}
 \phi(x,\tau) = 
@@ -419,7 +419,7 @@ Therefore, using the approximation in Eq. \ref{sigma_zero_approx} (and discardin
 \varphi_{\pm}(x, \tau) \approx -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + (\rho_{0} - q_{2_{\pm}} \tau)(x-\rho_{0} \epsilon \tau)
 \end{equation}
 
-(\textcolor{red}{Luego me dices si te dió la misma correspondencia de términos que yo decía. Y más adelante tratamos de identificar los restantes comparándolo con la expansión de un paquete en espacio libre. O lo analizamos en el espacio de momentos.}) where we have used a sub-index to indicate whether we are considering $q_{2}$ with the plus or minus sign in front of the constant $\gamma_{1}$. 
+where we have used a sub-index to indicate whether we are considering $q_{2}$ with the plus or minus sign in front of the constant $\gamma_{1}$. 
 
 Before diving deep into the computation of the phase difference, let's analyze the above equation. The second term is the product of two differences. The first term is 
 
@@ -762,7 +762,7 @@ exp\left[-2i q_{1} \tau + i \frac{\epsilon}{3q_{2_{\mp}}} (k+q_{2_{\pm}}\tau)^{3
 exp\left[-i q_{1} \tau + i \frac{\epsilon}{3q_{2_{\pm}}} k^{3} - i \frac{\epsilon}{3q_{2_{\pm}}} (k + q_{2_{\pm}} \tau)^{3} \right].
 \end{multline}
 
-The above equation describes the state at the end of the last interval. From this equation, we can identify the total phase gained by each of the two states of the superposition after the sequence of $\pi$-pulses is applied, i.e.,
+This equation describes each of the two states of the superposition at the end of the last interval and can be used to compute the total phase difference between them. Note that the first term on the right side of this equation can be interpreted as a wave packet that has not evolved in time and in consequence, it does not contribute to the  phase difference as can be easily proved using an initial wave packet as in Eq. \ref{wave_packet} and using the Fourier transform to write it in momentum space. For this reason, the phase gained for each state will be given by
 
 \begin{multline}\label{phase_momentum_space}
 \widehat{\varphi}_{\pm}(k) = -4q_{1}\tau \\
@@ -782,7 +782,7 @@ Thus, by using Eqs. \ref{epsilon}-\ref{q1_q2} and the approximations in Eqs. \re
 \Delta \Phi = 4 \frac{\mu \eta }{\hbar} g \bigg(\frac{\tau}{\Delta W}\bigg)^{3} = 4 \frac{\mu \eta }{\hbar} g t^{3},
 \end{equation}
 
-where were we have used $\tau\equiv \Delta W t$. We can notice that this result is independent of the momentum k and that it coincides with the result obtained in position space as expected.
+where we have used $\tau\equiv \Delta W t$. We can notice that this result is independent of the momentum k and that it coincides with the result obtained in position space as expected.
 
 \subsection{A Revision to the Time Evolution of the Free Wave Packet}
 In this section we review the time evolution of a free gaussian wave packet. Then, we use this result to establish a correspondence with some terms of the wave packet of alkali-metal atoms subject to a constant gravitational field and interacting with a magnetic field given by Eq. \ref{wave_packet_non_dimensional_evolution}.
@@ -799,7 +799,7 @@ where $k$ is the wave number and the amplitude $A(k)$ is of the gaussian form
     A(k) = C e^{-\alpha(k-k_{0})^{2}/2} ,
 \end{equation}
 
-where $k_{0}$ is the center of the distribution and $C$ is a scale factor that we can use to adjust the amplitude of the wave packet. In order to compute the integral in Eq. \ref{free_wave_packet_momentum_space_integral}, we need to establish the dependence between $\omega$ and $k$, i.e., the dispersion relation. We will consider the dispersion relation to be sharply peaked about $k=k_{0}$ and use a Taylor expansion about this point to second order, i.e.,
+where $k_{0}$ is the center of the distribution, $C$ is a scale factor that we can use to adjust the amplitude of the wave packet and $\alpha$ is a parameter that defines the initial width of the wave packet as we will see in a moment. In order to compute the integral in the Eq. \ref{free_wave_packet_momentum_space_integral}, we need to establish the dependence between $\omega$ and $k$, i.e., the dispersion relation. We will consider the dispersion relation to be sharply peaked about $k=k_{0}$ and use a Taylor expansion about this point to second order, i.e.,
 
 \begin{equation}\label{dispersion_relation_free_wave_packet}
     \omega(k) = \omega_{0} + (k-k_{0})\upsilon_{g} + \frac{1}{2}(k-k_{0})^{2} \beta ,
@@ -826,49 +826,55 @@ Now, we can substitute the Eqs. \ref{gaussian_amplitude_free_wave_packet}-\ref{d
 We can cast the above equation into a more illuminating form by putting the complex factors in the denominators in the standard form ($Z = [\Re(Z)+i\Im(Z)]$), and by using the de Moivre's theorem to compute the required squared root in the second term. Finally, we obtain the expansion of the free gaussian wave packet as follows
 
 \begin{multline}\label{free_wave_packet_position_space_centered_0} 
-    \Psi (z, t) = C \sqrt{2 \pi} (\alpha^{2} + 4\beta^{2}t^{2})^{-1/4} \exp \left[-\frac{1}{2} \frac{\alpha (z - \upsilon_{g} t)^{2}}{\alpha^{2} + 4\beta^{2}t^{2}}  \right] \\ \exp \left[i \bigg(k_{0}z - w_{0}t + \frac{\beta t}{\alpha^{2} + 4\beta^{2}t^{2}} - \frac{1}{2} \arctan\bigg[\frac{2 \beta t}{\alpha}\bigg]\bigg) \right],
+    \Psi (z, t) = C \sqrt{2 \pi} (\alpha^{2} + 4\beta^{2}t^{2})^{-1/4} \exp \left[-\frac{1}{2} \frac{\alpha (z - \upsilon_{g} t)^{2}}{\alpha^{2} + 4\beta^{2}t^{2}}  \right] \\ \exp \left[i \bigg(k_{0}z - w_{0}t + \frac{\beta t (z - \upsilon_{g} t)^{2}}{\alpha^{2} + 4\beta^{2}t^{2}} - \frac{1}{2} \arctan\bigg[\frac{2 \beta t}{\alpha}\bigg]\bigg) \right],
 \end{multline}
 
 This equation represents a wave packet center at $z=0$ when $t=0$. A more general wave packet can be obtained if we consider the wave packet to be centered initially at $z=z_{0}$, i.e.,
 
 \begin{multline}\label{free_wave_packet_position_space_centered_z0} 
-    \Psi (z, t) = C \sqrt{2 \pi} (\alpha^{2} + 4\beta^{2}t^{2})^{-1/4} \exp \left[-\frac{1}{2} \frac{\alpha \big(z - (z_{0} + \upsilon_{g} t)\big)^{2}}{\alpha^{2} + 4\beta^{2}t^{2}}  \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{\beta t}{\alpha^{2} + 4\beta^{2}t^{2}} - \frac{1}{2} \arctan\bigg[\frac{2 \beta t}{\alpha}\bigg]\bigg) \right].
+    \Psi (z, t) = C \sqrt{2 \pi} (\alpha^{2} + 4\beta^{2}t^{2})^{-1/4} \exp \left[-\frac{1}{2} \frac{\alpha \big(z - z_{0} - \upsilon_{g} t \big)^{2}}{\alpha^{2} + 4\beta^{2}t^{2}}  \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{\beta t (z - z_{0} - \upsilon_{g} t)^{2}}{\alpha^{2} + 4\beta^{2}t^{2}} - \frac{1}{2} \arctan\bigg[\frac{2 \beta t }{\alpha}\bigg]\bigg) \right].
 \end{multline}
 
-Now, before proceeding with the comparison between this free wave packet and the wave packet of alkali-metal atoms, we will take advantage of the freedom to adjust the scale factor $C$ to modify the initial amplitude of the wave packet and get a convenient factor that will help us lately. For that reason, we will consider $C$ to be given by
+Now, we need to make sure that this wave packet is normalized in position for all times. For that reason, we will consider $C$ to be given by
 
 \begin{equation}
-C = \frac{(2 \pi)^{-3/4}}{(\alpha /2)^{-1/4}}
+C = \frac{(2 \pi)^{-3/4}}{(2 \alpha)^{-1/4}}
 \end{equation}
 
-Then, if we substitute this value and re-accommodate terms, we can write the equation describing the evolution of the free wave packet as
+Then, if we substitute this value and re-accommodate terms, we can write the equation describing the evolution of the normalized free wave packet as
 
-\begin{multline}\label{free_wave_packet_position_space_centered_z0_final_form} 
-    \Psi (z, t) = \left[\frac{1}{2 \pi \big(\sigma_{z}(t)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(z - z_{0} + \upsilon_{g} t \big)^{2}}{\big(\sigma_{z}(t)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{4 \beta t}{\big(\sigma_{z}(0)\big)^{2}}\Bigg) \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{4 \beta t}{ [\sigma_{z}(t)\sigma_{z}(0)]^{2}} \bigg) \right],
+\begin{multline}\label{free_wave_packet_position_space_centered_z0_pre_final_form} 
+    \Psi (z, t) = \left[\frac{1}{2 \pi \big(\sigma_{z}(t)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(z - z_{0} - \upsilon_{g} t \big)^{2}}{\big(\sigma_{z}(t)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\beta t }{\big(\sigma_{z}(0)\big)^{2}}\Bigg) \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{ \beta t (z - z_{0} - \upsilon_{g} t)^{2}}{ 4[\sigma_{z}(t)\sigma_{z}(0)]^{2}} \bigg) \right],
 \end{multline}
 
 where we have defined the standard deviation of the wave packet as
 
 \begin{equation}
-\sigma_{z}(t) = \sqrt{\frac{\alpha^{2} + 4\beta^{2}t^{2}}{\alpha / 2}}.
+\sigma_{z}(t) = \sqrt{\frac{\alpha^{2} + 4\beta^{2}t^{2}}{2 \alpha}}.
 \end{equation}
 
 Thereby the initial width of the free wave packet is given by
 
 \begin{equation}
-\sigma_{z}(0) = \sqrt{2 \alpha},
+\sigma_{z}(0) = \sqrt{\alpha / 2},
 \end{equation}
 
 Hence, we can re-write the standard deviation as
 
 \begin{equation}\label{free_wave_packet_width} 
-\sigma_{z}(t) = \sqrt{[\sigma_{z}(0)]^{2} + \left[\frac{4 \beta t}{\sigma_{z}(0)} \right]^{2}},
+\sigma_{z}(t) = \sqrt{[\sigma_{z}(0)]^{2} + \left[\frac{\beta t}{\sigma_{z}(0)} \right]^{2}}.
 \end{equation}
+
+Finally, we can expand the last term in the Eq. \ref{free_wave_packet_position_space_centered_z0_pre_final_form} to get
+
+\begin{multline}\label{free_wave_packet_position_space_centered_z0_final_form} 
+    \Psi (z, t) = \left[\frac{1}{2 \pi \big(\sigma_{z}(t)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(z - z_{0} - \upsilon_{g} t \big)^{2}}{\big(\sigma_{z}(t)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\beta t }{\big(\sigma_{z}(0)\big)^{2}}\Bigg) \right] \\ \exp \left[i \Bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{ \big[(z - z_{0} )^{2} + 2 z_{0} v_{g} t \big]}{ 4[\sigma_{z}(t)\sigma_{z}(0)]^{2}}\beta t + \frac{\beta v_{g} t (v_{g} t - 2z)}{4[\sigma_{z}(t)\sigma_{z}(0)]^{2}} \Bigg) \right].
+\end{multline}
 
 Now, we will re-write the wave packet of alkali atoms (Eq. \ref{wave_packet_non_dimensional_evolution}) but this time, in order to establish the connection with the free wave packet, we will ignore the terms that include $q_{2}$ since this parameter is related with the acceleration of the wave packet (see Eq. \ref{xi_defs_eq_motion}) and for that reason those terms does not have an analogue in the free wave packet. Therefore, the wave packet of alkali atoms (ignoring terms that include $q_{2}$) will be given by
 
 \begin{multline}\label{alkali_wave_packet_position_space_final_form} 
-    \phi (x, \tau) = \left[\frac{1}{2 \pi \big(\sigma_{x}(\tau)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(x - x_{0} + 2\rho_{0} \epsilon \tau \big)^{2}}{\big(\sigma_{x}(\tau)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\epsilon \tau}{\big(\sigma_{x}(0)\big)^{2}}\Bigg) \right] \\ \exp \Bigg[i \bigg(\left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}x - q_{1}\tau - \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2}  \Bigg( \rho_{0}^{2} - \frac{\big[(x-x_{0})^{2} + 4 \rho_{0} x_{0} \epsilon \tau \big]}{ 4[\sigma_{x}(\tau)\sigma_{x}(0)]^{2}}  \Bigg) \epsilon \tau \Bigg]
+    \phi (x, \tau) = \left[\frac{1}{2 \pi \big(\sigma_{x}(\tau)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(x - x_{0} - 2\rho_{0} \epsilon \tau \big)^{2}}{\big(\sigma_{x}(\tau)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\epsilon \tau}{\big(\sigma_{x}(0)\big)^{2}}\Bigg) \right] \\ \exp \Bigg[i \bigg(\left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}x - q_{1}\tau + \frac{\big[(x-x_{0})^{2} + 4 x_{0} \rho_{0} \epsilon \tau \big]}{ 4[\sigma_{x}(\tau)\sigma_{x}(0)]^{2}} \epsilon \tau + \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}^{2} \epsilon \Bigg],
 \end{multline}
 
 where the standard deviation of the wave packet is given by
@@ -906,11 +912,11 @@ Therefore, by comparing the Eq. \ref{free_wave_packet_width} with the Eq. \ref{a
  \hline
  Free wave packet & Alkali wave packet \\ [0.5ex] 
  \hline\hline
- $\sigma_{z}(t) = \sqrt{\frac{\alpha^{2} + 4\beta^{2}t^{2}}{\alpha / 2}}$ & $\sigma_{x}(\tau)$ \\ 
+ $\sigma_{z}(t) = \sqrt{\frac{\alpha^{2} + 4\beta^{2}t^{2}}{2 \alpha}} = \sqrt{[\sigma_{z}(0)]^{2} + \left[\frac{\beta t}{\sigma_{z}(0)} \right]^{2}}$ & $\sigma_{x}(\tau) = \sqrt{[\sigma_{x}(0)]^{2} + \left[\frac{\epsilon \tau}{\sigma_{x}(0)} \right]^{2}}$ \\ 
  \hline
- $\sigma_{z}(0) = \sqrt{2 \alpha}$ & $\sigma_{x}(0) = \kappa \Delta Z(0)$ \\
+ $\sigma_{z}(0) = \sqrt{\alpha / 2}$ & $\sigma_{x}(0) = \kappa \Delta Z(0)$ \\
  \hline
- $4 \beta = 4 \Big(\frac{\partial^2 \omega(k)}{\partial k^2}\Big)_{k=k_{0}} = 4 \frac{\hbar}{M}$ & $\epsilon \Delta W = \frac{\hbar}{2 M} \kappa^{2}$ \\
+ $\beta = \Big(\frac{\partial^2 \omega(k)}{\partial k^2}\Big)_{k=k_{0}} = \frac{\hbar}{M}$ & $\epsilon \Delta W = \frac{\hbar}{2 M} \kappa^{2}$ \\
  \hline
  $\upsilon_{g} = \Big(\frac{\partial \omega(k)}{\partial k}\Big)_{k=k_{0}} = \frac{\hbar k_{0}}{M}$ & $2 \rho_{0} \epsilon = \frac{p_{0}}{M} \frac{\kappa}{\Delta W} $ \\ [1ex] 
  \hline
@@ -1018,11 +1024,36 @@ Hence, the detuning of the Rabi oscillations due to the uncertainty in the posit
 \label{atom_wave_func_pos_space}
 \end{figure}
 
-\textcolor{blue}{escribir forma matematica de la gaussiana propuesta en la fig 4. como funcion z (espacio de posicion)}
-If we consider the wave function of the atom to be symmetric around $z_{0}$, for example by considering a gaussian like wave packet, we can define the half width at half maximum and name this point as $Z_{HWHM}$ (see Fig. \ref{atom_wave_func_pos_space}). Then, the width of our atom will be given by
+Next, we consider the wave function of the atom in position space to be a gaussian like wave packet, initially centered at $z_{0}$. We already worked out the evolution of such wave packet in the last section. We re-write here the time evolution of the free wave packet
+
+\begin{multline}\label{atom_wave_function_position_space}
+    \Psi (z, t) = \left[\frac{1}{2 \pi \big(\sigma_{z}(t)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(z - z_{0} - \upsilon_{g} t \big)^{2}}{\big(\sigma_{z}(t)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\beta t }{\big(\sigma_{z}(0)\big)^{2}}\Bigg) \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{ \beta t (z - z_{0} - \upsilon_{g} t)^{2}}{ 4[\sigma_{z}(t)\sigma_{z}(0)]^{2}} \bigg) \right].
+\end{multline}
+
+Therefore, the initial wave packet will be given by
+
+\begin{equation}\label{initial_atom_wave_function_position_space}
+    \Psi (z, 0) = \left[\frac{1}{2 \pi \big(\sigma_{z}(0)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4}\bigg(\frac{z-z_{0}}{\sigma_{z}(0)}\bigg)^{2} \right] \exp \left[i \bigg(k_{0}(z-z_{0})\bigg) \right],
+\end{equation}
+
+where $\sigma_{z}(0)$ is the initial standard deviation of the distribution defined in the Eq. \ref{free_wave_packet_width}.
+
+The complex modulus of this wave packet is a distribution for the probability of finding the atom in position space, i.e.,
+
+\begin{equation}\label{initial_atom_wave_function_position_space_probability_distribution}
+    |\Psi (z, 0)|^{2} = \frac{1}{\sigma_{z}(0) \sqrt{2 \pi}} \exp \left[-\frac{1}{2}\bigg(\frac{z-z_{0}}{\sigma_{z}(0)}\bigg)^{2} \right].
+\end{equation}
+
+We can define the half width at half maximum of this distribution and name the value of the independent variable $z$ at this point as $Z_{HWHM}$. In the Fig. \ref{atom_wave_func_pos_space}, we can see the initial atomic wave function in position space (Eq. \ref{initial_atom_wave_function_position_space}). Notice that we have defined the width of the atomic wave function as follows.
 
 \begin{equation}
   \Delta Z = 2|Z_{HWHM} - z_{0}|.
+\end{equation}
+
+It can be easily shown that the full with at half maximum for the normal distribution is given by
+
+\begin{equation}
+Z_{FWHM} = 2\sqrt{2ln2} \sigma_{z}(0) = 2 Z_{HWHM}
 \end{equation}
 
 We will choose to use a coordinate system such that $z_{0}=0$. Thus, we can write
@@ -1061,7 +1092,7 @@ Now, a physical argument comes into play. We need to evaluate the detuning at $z
 \sqrt{\big[ \delta (2z_{HWHM}) \big]^{2} + \Omega^{2}} \bigg( \frac{t}{2} \bigg) = \pi.
 \end{equation}
 
-Furthermore, we will take the probability of transition for positions $|z| \ge 2 Z_{HWHM}$ to be zero. This approximation and the exact form of the transition probability versus the detuning can be seen in the Fig. \ref{ce2_VS_detuning}. \textcolor{blue}{(Proponer gaussiana en lugar de fig 5.b, escribirla en terminos de la desintonia usando eq. 123 para escribir la gaussiana en terminos del detuning (usar la gaussiana propuesta en fig 4). Sobreponer ambas graficas en una sola, eje y es probabilidad y el eje x es desintonia)}
+Furthermore, we will take the probability of transition for positions $|z| \ge 2 Z_{HWHM}$ to be zero. This approximation and the exact form of the transition probability versus the detuning can be seen in the Fig. \ref{ce2_VS_detuning}. \textcolor{blue}{(Proponer gaussiana en lugar de fig 5.b, escribirla en terminos de la desintonia usando eq. 124 para escribir la gaussiana en terminos del detuning (usar la gaussiana propuesta en fig 4). Sobreponer ambas graficas en una sola, eje y es probabilidad y el eje x es desintonia)}
 
 \begin{figure}
      \centering
@@ -1105,14 +1136,14 @@ Thereby, we can use $\Omega$ and $t$ to control the width of the atom's wave fun
 
 Finally, we remember that in the case of light pulses, the electric field dominates and the Rabi flopping frequency is usually taken to be
 
-\begin{equation}
+\begin{equation*}
 \Omega = \frac{- e \textbf{E} \cdot \bra{e} \textbf{r} \ket{g}}{\hbar},
-\end{equation}
+\end{equation*}
 
 where $\textbf{r}$ is the position operator, $\textbf{E}$ is the electric field, and $e$ is the electron charge. Nonetheless, in the case of the hyperfine levels that we are considering (Eq. \ref{hyperfine_levels}), the matrix elements of the position operator vanish  \cite{Steck2010}. Therefore, the Rabi flopping frequency will depend solely on the magnetic field, i.e.,
 
 \begin{equation}
-\Omega = \frac{- e \textbf{B} \cdot \bra{e} \textbf{r} \ket{g}}{\hbar},
+\Omega = \frac{- \textbf{B} \cdot \bra{e} \boldsymbol{\mu} \ket{g}}{\hbar},
 \end{equation}
 
 \bibliographystyle{plain}

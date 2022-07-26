@@ -27,7 +27,7 @@
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Gravimetry within a magnetic gradient field}
+\title{Gravimetry using microwaves inside an inhomogeneous magnetic field}
 \author{Edgar Zuniga}
 
 \begin{document}
@@ -40,7 +40,7 @@ Your abstract.
 
 \section{Theoretical Framework}
 
-\subsection{Condition for Atomic Interference within a Magnetic Gradient Field}
+\subsection{Condition for Atomic Interference Inside an Inhomogeneous Magnetic Field}
 \subsubsection{Semi-classical Picture}
 
 In this section, we review the condition needed to generate atomic interference in a gravimeter within a magnetic gradient. Let's consider an atom with total angular momentum number $F$. We will consider transitions between two stretched states with quantum magnetic number $m_{F}=\pm F$. Let's call the stretched state with $m_{F}=F$ as $\ket{1}$, and the stretched state with $m_{F}=-F$ as $\ket{2}$.
@@ -57,19 +57,19 @@ where z is the position and $\eta$ is a constant with units of $[Tesla/meter]$. 
 F = - \nabla (\pm \mu \eta z ) = \mp \mu \eta \
 \end{equation}
 
-Therefore, the atom will feel an acceleration due to the magnetic field proportional to its total magnetic moment. The total magnetic moment of the atom depends on its internal state, hence, the acceleration will depend on the hyperfine level under consideration. Let $a_m$ be the acceleration due to the magnetic gradient for the hyperfine state $\ket{1}$ and $-a_m$ the acceleration for the hyperfine state $\ket{2}$. Thus, the effective accelerations for state $\ket{1}$ and state $\ket{2}$ are respectively
+Therefore, the atom will feel an acceleration due to the magnetic field proportional to its total magnetic moment. The total magnetic moment of the atom depends on its internal state, hence, the acceleration will depend on the hyperfine level under consideration. Let $a_B$ be the acceleration due to the magnetic gradient for the hyperfine state $\ket{1}$ and $-a_B$ the acceleration for the hyperfine state $\ket{2}$. Thus, the effective accelerations for state $\ket{1}$ and state $\ket{2}$ are respectively
 
 \begin{equation}\label{a1}
-a_{1} = -g + a_m
+a_{1} = -g + a_B
 \end{equation}
 \begin{equation}\label{a2}
-a_{2} = -g - a_m
+a_{2} = -g - a_B
 \end{equation}
 
-where g is the acceleration due to gravity (taken to be positive), and $a_m$ is given by
+where g is the acceleration due to gravity (taken to be positive), and $a_B$ is given by
 
 \begin{equation}\label{am}
-a_m = \mu \eta / m
+a_B = \mu \eta / m
 \end{equation}
 
 where $m$ is the mass of the atom under consideration.
@@ -245,10 +245,17 @@ Therefore, by using Eqs.(\ref{a1}-\ref{a2} , and \ref{phi1t1}-\ref{delphi3}), th
 \Delta \Phi = 8 \frac{\mu \eta}{\hbar} g T^3
 \end{equation}
 
-where in the last equation we have used the definition of $a_m$ (Eq. \ref{am}). 
+where in the last equation we have used the definition of $a_B$ (Eq. \ref{am}). 
 
 The Eq. \ref{gravimetry_signal} is the signal for gravimetry, which is proportional to $T^3$ and also proportional to the magnetic field via the constant $\eta$, these are the parameters we can adjust within a gravimetric experiment in order to increase the precision of the measurement. In Fig.\ref{phase_graph}, we can see the strong of the gravimetry signal for typical values of the constants in Eq. \ref{gravimetry_signal}. 
-(\textcolor{blue}{Comparar este resultado con el resultado de gravimetria clasica en el que la señal va como T**2 (T al cuadrado)})
+
+Finally, we can compare this result with the signal measured in traditional gravimetry that uses stimulated Raman transitions to induce state transitions and changes in momentum \cite{Peters_2001}
+
+\begin{equation}\label{traditional_gravimetry_signal}
+\Delta \Phi = k_{eff} g T^2 ,
+\end{equation}
+
+where $\hbar k_{eff}$ is the effective momentum gained by the atom after the Raman transition has finished.
 
 \begin{figure}
 \centering

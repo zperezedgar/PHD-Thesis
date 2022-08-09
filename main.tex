@@ -51,7 +51,7 @@ The atom is immersed inside a magnetic field of the following form
 \textbf{B} = \eta z \hat{\textbf{z}}\
 \end{equation}
 
-where z is the position and $\eta$ is a constant with units of Tesla per meter. The atom will feel a force given by the gradient of the magnetic energy caused by the coupling of the total magnetic moment of the atom $\mu$ and the magnetic field, i.e.,
+where z is the position and $\eta$ is a constant with units of Tesla per meter. The atom will feel a force given by the gradient of the magnetic energy caused by the coupling of the total magnetic moment of the atom $\mu$ and the magnetic field\footnote{It is important to comment out that in the rest frame of the atom, we would see that there is a magnetic field that changes with time. Therefore, according to Faraday´s law, this changing magnetic field would induce an electric field that would couple with the atom's electric dipole moment giving rise to an electric energy term that would need to be considered. Fortunately, we can choose to work with atomic states such that the matrix elements of the position operator vanish.}, i.e.,
 
 \begin{equation}\label{magnetic_force}
 \textbf{F} = - \nabla (\pm \mu \eta z ) = \mp \mu \eta \hat{\textbf{z}}\
@@ -174,7 +174,13 @@ The phase accumulated for each path is given by
 \Phi = \int_{t_{0}}^{t} \omega(\ce{^{}_{}t{'}_{}})d\ce{^{}_{}t{'}_{}}
 \end{equation}
 
-where the angular frequency is given by the Planck relation $\omega = E / \hbar$, and the energy is given by the sum of the magnetic energy (Eq. \ref{magnetic_force}) and the energy due to the gravity field, i.e.,
+where the angular frequency is proportional to the energy according to the Planck relation 
+
+\begin{equation}\label{planck_relation}
+E \propto \hbar \omega, 
+\end{equation}
+
+and the energy is given by the sum of the magnetic energy (Eq. \ref{magnetic_force}) and the energy due to the gravity field, i.e.,
 
 \begin{equation}\label{classic_energy}
 E = \pm \mu B + mgz = (\pm \mu \eta + mg)z = C_{\pm} z
@@ -188,20 +194,26 @@ C_{\pm} \equiv \pm \mu \eta + mg = m a_{\pm}
 
 with units of force and with $a_{\pm}$ defined as in the Eqs. \ref{a1} and \ref{a2}. Notice that we have defined the constant $g$ to be positive and we are using a coordinate system with the z-axis pointing upwards such that the atom is initially located at $z=0$, where the initial gravitational potential energy is zero, and as it falls down, the position coordinate becomes negative so the gravitational potential energy becomes negative.
 
-Thus, accumulated phase will be given by
+Before proceeding with the computation of the phase, we need to establish the proportionality constant in Eq. \ref{planck_relation}. We will provide a justification lately, when analyzing the expansion of a free wave packet, that the correct proportionality constant is actually $1/2$, thereupon, the energy of the atomic wave packet will be given by
+
+\begin{equation}\label{planck_relation_with_proportionality_constant}
+E = \frac{1}{2} \hbar \omega, 
+\end{equation}
+
+Therefore, the accumulated phase will be given by
 
 \begin{equation}\label{semi_classical_phase}
-\Phi = \frac{C_{\pm}}{\hbar} \int_{t_{0}}^{t} z(\ce{^{}_{}t{'}_{}})d\ce{^{}_{}t{'}_{}}
+\Phi = \frac{C_{\pm}}{2\hbar} \int_{t_{0}}^{t} z(\ce{^{}_{}t{'}_{}})d\ce{^{}_{}t{'}_{}}
 \end{equation}
 
 Each state's path is composed by three intervals $T_{1}=T$, $T_{2}=2T$, and $T_{3}=T$ (see Eq. \ref{pulses}). Thereby, for the first interval, the phase accumulated by each state will be respectively
 
 \begin{equation}\label{phi1t1}
-\Phi_{1, T_{1}} = \frac{C_{-}}{\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{+} \frac{t^{2}}{2})dt
+\Phi_{1, T_{1}} = \frac{C_{-}}{2\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{+} \frac{t^{2}}{2})dt
 \end{equation}
 
 \begin{equation}
-\Phi_{2, T_{1}} = \frac{C_{+}}{\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{-} \frac{t^{2}}{2})dt
+\Phi_{2, T_{1}} = \frac{C_{+}}{2\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{-} \frac{t^{2}}{2})dt
 \end{equation}
 
 where $z_{0}$ and $v_{0}$ are respectively the initial position and velocity,
@@ -214,11 +226,11 @@ and the accelerations $a_{+}$ and $a_{-}$ are given by Eqs. \ref{a1} and \ref{a2
 Likewise, the phase accumulated during the second interval for each state is
 
 \begin{equation}
-\Phi_{1, T_{2}} = \frac{C_{+}}{\hbar} \int_{0}^{2T} [(z_{0}+v_{0}T+a_{+} \frac{T^{2}}{2}) + (v_{0}+a_{+}T)t + a_{-} \frac{t^{2}}{2}]dt
+\Phi_{1, T_{2}} = \frac{C_{+}}{2\hbar} \int_{0}^{2T} [(z_{0}+v_{0}T+a_{+} \frac{T^{2}}{2}) + (v_{0}+a_{+}T)t + a_{-} \frac{t^{2}}{2}]dt
 \end{equation}
 
 \begin{equation}
-\Phi_{2, T_{2}} = \frac{C_{-}}{\hbar} \int_{0}^{2T} [(z_{0}+v_{0}T+a_{-} \frac{T^{2}}{2}) + (v_{0}+a_{-}T)t + a_{+} \frac{t^{2}}{2}]dt
+\Phi_{2, T_{2}} = \frac{C_{-}}{2\hbar} \int_{0}^{2T} [(z_{0}+v_{0}T+a_{-} \frac{T^{2}}{2}) + (v_{0}+a_{-}T)t + a_{+} \frac{t^{2}}{2}]dt
 \end{equation}
 
 The corresponding phase difference for this interval is
@@ -230,11 +242,11 @@ The corresponding phase difference for this interval is
 Finally, for the last interval, the phase accumulated by each state is
 
 \begin{equation}
-\Phi_{1, T_{3}} = \frac{C_{-}}{\hbar} \int_{0}^{T} [((z_{0}+v_{0}T+a_{+} \frac{T^{2}}{2}) + (v_{0}+a_{+}T)(2T) + a_{-} \frac{(2T)^{2}}{2}) + (v_{0}+a_{+}T + a_{-}(2T))t + a_{+} \frac{t^{2}}{2}]dt
+\Phi_{1, T_{3}} = \frac{C_{-}}{2\hbar} \int_{0}^{T} [((z_{0}+v_{0}T+a_{+} \frac{T^{2}}{2}) + (v_{0}+a_{+}T)(2T) + a_{-} \frac{(2T)^{2}}{2}) + (v_{0}+a_{+}T + a_{-}(2T))t + a_{+} \frac{t^{2}}{2}]dt
 \end{equation}
 
 \begin{equation}
-\Phi_{2, T_{3}} = \frac{C_{+}}{\hbar} \int_{0}^{T} [((z_{0}+v_{0}T+a_{-} \frac{T^{2}}{2}) + (v_{0}+a_{-}T)(2T) + a_{+} \frac{(2T)^{2}}{2}) + (v_{0}+a_{-}T + a_{+}(2T))t + a_{-} \frac{t^{2}}{2}]dt
+\Phi_{2, T_{3}} = \frac{C_{+}}{2\hbar} \int_{0}^{T} [((z_{0}+v_{0}T+a_{-} \frac{T^{2}}{2}) + (v_{0}+a_{-}T)(2T) + a_{+} \frac{(2T)^{2}}{2}) + (v_{0}+a_{-}T + a_{+}(2T))t + a_{-} \frac{t^{2}}{2}]dt
 \end{equation}
 
 The phase difference accumulated during the last interval is
@@ -246,11 +258,11 @@ The phase difference accumulated during the last interval is
 Therefore, by using Eqs.(\ref{a1}-\ref{a2} , and \ref{phi1t1}-\ref{delphi3}), the total phase difference accumulated during the three intervals is
 
 \begin{equation}
-\Delta \Phi = \Delta \Phi_{T_{1}} + \Delta \Phi_{T_{2}} + \Delta \Phi_{T_{3}} = 8 \frac{mga_{m}T^3}{\hbar}
+\Delta \Phi = \Delta \Phi_{T_{1}} + \Delta \Phi_{T_{2}} + \Delta \Phi_{T_{3}} = 4 \frac{mga_{m}T^3}{\hbar}
 \end{equation}
 
 \begin{equation}\label{gravimetry_signal}
-\Delta \Phi = 8 \frac{\mu \eta}{\hbar} g T^3
+\Delta \Phi = 4 \frac{\mu \eta}{\hbar} g T^3
 \end{equation}
 
 where in the last equation we have used the definition of $a_B$ (Eq. \ref{am}). 
@@ -538,7 +550,7 @@ Finally, by using Eqs.(\ref{approx_quantum_phase_1}-\ref{pre_total_quantum_phase
 \Delta \Phi = 4 \frac{\mu \eta }{\hbar} g \bigg(\frac{\tau}{\Delta W}\bigg)^{3} = 4 \frac{\mu \eta }{\hbar} g t^{3},
 \end{equation}
 
-were we have used the definition of the non-dimensional time ($\tau\equiv \Delta W t$). Thus, we see that in the quantum picture, the total phase difference is half the phase difference obtained in the semi-classical computation Eq. \ref{gravimetry_signal}. In addition, it can be seen that the total phase difference does not depend on the position $x_{d}$ as expected.
+were we have used the definition of the non-dimensional time ($\tau\equiv \Delta W t$). Thus, we see that in the quantum picture, the total phase difference is the same as the phase difference obtained in the semi-classical computation Eq. \ref{gravimetry_signal}. In addition, it can be seen that the total phase difference does not depend on the position $x_{d}$ as expected.
 
 \paragraph{First-Order Correction to the Gravimetry Signal}
 In this section, we will analyze the contribution of the rest of the terms in Eq. \ref{quantum_phase}, which we re-write here
@@ -952,7 +964,15 @@ On the other hand, by comparing the second row of Eq. \ref{free_wave_packet_posi
 \end{tabular}
 \end{center}
 
-Besides, we can see that the term $\rho_{0}$ seems to be related with the initial momentum $k_{0}$, i.e.
+Therefore, since $\Delta W q_{1}$ can be interpreted as the angular frequency of the alkali wave packet, where $\Delta W$ has units of $s^-1$, the energy related to this angular frequency is given by
+
+\begin{equation}
+    E = \hbar \frac{\Delta W}{2} 
+\end{equation}
+
+Thereby, we see that the correct proportionality factor in Eq. \ref{planck_relation} was in fact $1/2$ just as we stated in Eq. \ref{planck_relation_with_proportionality_constant}.
+
+Finally, we can see that the term $\rho_{0}$ seems to be related with the initial momentum $k_{0}$, i.e.
 
 \begin{center}
 \begin{tabular}{||c | c||} 

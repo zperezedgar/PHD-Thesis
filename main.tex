@@ -51,28 +51,28 @@ The atom is immersed inside a magnetic field of the following form
 \textbf{B} = \eta z \hat{\textbf{z}}\
 \end{equation}
 
-where z is the position and $\eta$ is a constant with units of $[Tesla/meter]$. The atom will feel a force given by the gradient of the magnetic energy caused by the coupling of the total magnetic moment of the atom $\mu$ and the magnetic field, i.e.,
+where z is the position and $\eta$ is a constant with units of Tesla per meter. The atom will feel a force given by the gradient of the magnetic energy caused by the coupling of the total magnetic moment of the atom $\mu$ and the magnetic field, i.e.,
 
 \begin{equation}\label{magnetic_force}
-F = - \nabla (\pm \mu \eta z ) = \mp \mu \eta \
+\textbf{F} = - \nabla (\pm \mu \eta z ) = \mp \mu \eta \hat{\textbf{z}}\
 \end{equation}
 
 Therefore, the atom will feel an acceleration due to the magnetic field proportional to its total magnetic moment. The total magnetic moment of the atom depends on its internal state, hence, the acceleration will depend on the hyperfine level under consideration. Let $a_B$ be the acceleration due to the magnetic gradient for the hyperfine state $\ket{1}$ and $-a_B$ the acceleration for the hyperfine state $\ket{2}$. Thus, the effective accelerations for state $\ket{1}$ and state $\ket{2}$ are respectively
 
 \begin{equation}\label{a1}
-a_{1} = -g + a_B
+a_{+} = g + a_B
 \end{equation}
 \begin{equation}\label{a2}
-a_{2} = -g - a_B
+a_{-} = g - a_B
 \end{equation}
 
-where g is the acceleration due to gravity (taken to be positive), and $a_B$ is given by
+where g is the local acceleration due to gravity (taken to be positive), and $a_B$ is given by
 
 \begin{equation}\label{am}
 a_B = \mu \eta / m
 \end{equation}
 
-where $m$ is the mass of the atom under consideration.
+where $m$ is the mass of the atom under consideration. Note that the subscript $+$ indicates that we are considering the state $\ket{1}$ while the subscript $-$ indicates that we are considering the state $\ket{2}$.
 
 In order to produce interference between these two states, we have to apply a $\frac{\pi}{2}$-pulse followed by a sequence of $\pi$-pulses and finally another $\frac{\pi}{2}$-pulse. The question that arises is, how many $\pi$-pulses do we need to apply in order to produce interference? To answer this question, we can picture a semi-classical approach where the interference condition is that the final position and the final velocity must coincide for both states.
 
@@ -82,10 +82,10 @@ Let's study the classic sequence of pulses used to perform gravimetry and let's 
 Let $z_0$ and $v_0$ be the initial position and velocity respectively. The final velocity for each state is given respectively by the classical equation
 
 \begin{equation}\label{v1_sequence_classic}
-v_{1} = v_{0} + a_{1} T_{1} + a_{2} T_{2}
+v_{1} = v_{0} + a_{+} T_{1} + a_{-} T_{2}
 \end{equation}
 \begin{equation}\label{v2_sequence_classic}
-v_{2} = v_{0} + a_{2} T_{1} + a_{1} T_{2}
+v_{2} = v_{0} + a_{-} T_{1} + a_{+} T_{2}
 \end{equation}
 
 where $T_{1}$ is the time elapsed between the first $\frac{\pi}{2}$-pulse and the $\pi$-pulse, and $T_{2}$ is the time elapsed between the $\pi$-pulse and the second $\frac{\pi}{2}$ pulse.
@@ -93,32 +93,32 @@ where $T_{1}$ is the time elapsed between the first $\frac{\pi}{2}$-pulse and th
 On the other hand, the final position for each state is given by the classical equation of motion
 
 \begin{equation}\label{z1_sequence_classic}
-z_{1} = (z_{0} + v_{0} T_{1} + \frac{a_{1} T^{2}_{1}}{2}) + (v_{0}+a_{1}T_{1})T_{2} + \frac{a_{2} T^{2}_{2}}{2}
+z_{1} = (z_{0} + v_{0} T_{1} + \frac{a_{+} T^{2}_{1}}{2}) + (v_{0}+a_{+}T_{1})T_{2} + \frac{a_{-} T^{2}_{2}}{2}
 \end{equation}
 \begin{equation}\label{z2_sequence_classic}
-z_{2} = (z_{0} + v_{0} T_{1} + \frac{a_{2} T^{2}_{1}}{2}) + (v_{0}+a_{2}T_{1})T_{2} + \frac{a_{1} T^{2}_{2}}{2}
+z_{2} = (z_{0} + v_{0} T_{1} + \frac{a_{-} T^{2}_{1}}{2}) + (v_{0}+a_{-}T_{1})T_{2} + \frac{a_{+} T^{2}_{2}}{2}
 \end{equation}
 
-By using Eqs. \ref{v1_sequence_classic}-\ref{v2_sequence_classic}, and by demanding that the final velocities must be equal, we get that in order to produce interference, the acceleration $a_{1}$ must equal $a_{2}$ or alternatively, $T_{1}$ must equal $T_{2}$. Since, by assumption, $a_{1}$ and $a_{2}$ cannot be the same, then, the only acceptable condition is $T_{1}=T_{2}$. By accepting this condition on the duration of the pulses, and by using Eqs. \ref{z1_sequence_classic}-\ref{z2_sequence_classic} to demand that the final positions must be the same, we recover the unacceptable condition $a_{1}=a_{2}$. Therefore, we cannot produce interference in the presence of a magnetic force by applying just one $\pi$-pulse between the $\frac{\pi}{2}$ pulses.
+By using Eqs. \ref{v1_sequence_classic}-\ref{v2_sequence_classic}, and by demanding that the final velocities must be equal, we get that in order to produce interference, the acceleration $a_{+}$ must equal $a_{-}$ or alternatively, $T_{1}$ must equal $T_{2}$. Since, by assumption, $a_{+}$ and $a_{-}$ cannot be the same, then, the only acceptable condition is $T_{1}=T_{2}$. By accepting this condition on the duration of the pulses, and by using Eqs. \ref{z1_sequence_classic}-\ref{z2_sequence_classic} to demand that the final positions must be the same, we recover the unacceptable condition $a_{+}=a_{-}$. Therefore, we cannot produce interference in the presence of a magnetic force by applying just one $\pi$-pulse between the $\frac{\pi}{2}$ pulses.
 
 \paragraph{Sequence of pulses $\frac{\pi}{2} - \pi - \pi - \frac{\pi}{2}$}
 
 Let's study the sequence of pulses with an extra $\pi$-pulse before the last $\frac{\pi}{2}$-pulse. In this case, the equations for the final velocities are
 
 \begin{equation}\label{final_v1}
-v_{1} = v_{0} + a_{1} T_{1} + a_{2} T_{2} + a_{1} T_{3}
+v_{1} = v_{0} + a_{+} T_{1} + a_{-} T_{2} + a_{+} T_{3}
 \end{equation}
 \begin{equation}\label{final_v2}
-v_{2} = v_{0} + a_{2} T_{1} + a_{1} T_{2} + a_{2} T_{3}
+v_{2} = v_{0} + a_{-} T_{1} + a_{+} T_{2} + a_{-} T_{3}
 \end{equation}
 
 Where $T_{3}$ is the time elapsed between the second $\pi$-pulse and the second $\frac{\pi}{2}$-pulse. Likewise, the equations for the final positions are
 
 \begin{equation}\label{final_z1}
-z_{1} = [(z_{0} + v_{0} T_{1} + \frac{a_{1} T^{2}_{1}}{2}) + (v_{0} + a_{1}T_{1})T_{2} + \frac{a_{2} T^{2}_{2}}{2}] + (v_{0}+a_{1}T_{1} + a_{2}T_{2})T_{3} + \frac{a_{1} T^{2}_{3}}{2}
+z_{1} = [(z_{0} + v_{0} T_{1} + \frac{a_{+} T^{2}_{1}}{2}) + (v_{0} + a_{+}T_{1})T_{2} + \frac{a_{-} T^{2}_{2}}{2}] + (v_{0}+a_{+}T_{1} + a_{-}T_{2})T_{3} + \frac{a_{+} T^{2}_{3}}{2}
 \end{equation}
 \begin{equation}\label{final_z2}
-z_{2} = [(z_{0} + v_{0} T_{1} + \frac{a_{2} T^{2}_{1}}{2}) + (v_{0} + a_{2}T_{1})T_{2} + \frac{a_{1} T^{2}_{2}}{2}] + (v_{0}+a_{2}T_{1} + a_{1}T_{2})T_{3} + \frac{a_{2} T^{2}_{3}}{2}
+z_{2} = [(z_{0} + v_{0} T_{1} + \frac{a_{-} T^{2}_{1}}{2}) + (v_{0} + a_{-}T_{1})T_{2} + \frac{a_{+} T^{2}_{2}}{2}] + (v_{0}+a_{-}T_{1} + a_{+}T_{2})T_{3} + \frac{a_{-} T^{2}_{3}}{2}
 \end{equation}
 
 By using Eqs. (\ref{final_v1} and \ref{final_v2}) we get an equation that relates the periods between pulses as
@@ -136,7 +136,7 @@ T_{1} = T_{3}
 \end{aligned}
 \end{equation}
 
-These equations hold independently of the values for $a_{1}$ and $a_{2}$, as can be shown by substituting them into Eqs. (\ref{final_v1} and \ref{final_v2}). Therefore, the condition to get interference in the presence of a magnetic force is to apply a 
+These equations hold independently of the values for $a_{+}$ and $a_{-}$, as can be shown by substituting them into Eqs. (\ref{final_v1} and \ref{final_v2}). Therefore, the condition to get interference in the presence of a magnetic force is to apply a 
 $\frac{\pi}{2}$-pulse followed by a $\pi$-pulse after a time $T$ has elapsed, then apply another $\pi$-pulse after a time $2T$ has elapsed, and finally, apply a $\frac{\pi}{2}$-pulse after a time $T$ elapsed, i.e., the sequence of pulses is
 
 \begin{equation}\label{pulses}
@@ -176,11 +176,19 @@ The phase accumulated for each path is given by
 
 where the angular frequency is given by the Planck relation $\omega = E / \hbar$, and the energy is given by the sum of the magnetic energy (Eq. \ref{magnetic_force}) and the energy due to the gravity field, i.e.,
 
-\begin{equation}
+\begin{equation}\label{classic_energy}
 E = \pm \mu B + mgz = (\pm \mu \eta + mg)z = C_{\pm} z
 \end{equation}
 
-where we have defined the constant $C_{\pm} \equiv \pm \mu \eta + mg$, with units of $[Joule/meter]$. Thus, accumulated phase will be given by
+where we have defined the constant
+
+\begin{equation}\label{c_definition}
+C_{\pm} \equiv \pm \mu \eta + mg = m a_{\pm}
+\end{equation}
+
+with units of force and with $a_{\pm}$ defined as in the Eqs. \ref{a1} and \ref{a2}. Notice that we have defined the constant $g$ to be positive and we are using a coordinate system with the z-axis pointing upwards such that the atom is initially located at $z=0$, where the initial gravitational potential energy is zero, and as it falls down, the position coordinate becomes negative so the gravitational potential energy becomes negative.
+
+Thus, accumulated phase will be given by
 
 \begin{equation}\label{semi_classical_phase}
 \Phi = \frac{C_{\pm}}{\hbar} \int_{t_{0}}^{t} z(\ce{^{}_{}t{'}_{}})d\ce{^{}_{}t{'}_{}}
@@ -189,15 +197,15 @@ where we have defined the constant $C_{\pm} \equiv \pm \mu \eta + mg$, with unit
 Each state's path is composed by three intervals $T_{1}=T$, $T_{2}=2T$, and $T_{3}=T$ (see Eq. \ref{pulses}). Thereby, for the first interval, the phase accumulated by each state will be respectively
 
 \begin{equation}\label{phi1t1}
-\Phi_{1, T_{1}} = \frac{C_{-}}{\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{1} \frac{t^{2}}{2})dt
+\Phi_{1, T_{1}} = \frac{C_{-}}{\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{+} \frac{t^{2}}{2})dt
 \end{equation}
 
 \begin{equation}
-\Phi_{2, T_{1}} = \frac{C_{+}}{\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{2} \frac{t^{2}}{2})dt
+\Phi_{2, T_{1}} = \frac{C_{+}}{\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{-} \frac{t^{2}}{2})dt
 \end{equation}
 
 where $z_{0}$ and $v_{0}$ are respectively the initial position and velocity,
-and the accelerations $a_{1}$ and $a_{2}$ are given by Eqs. \ref{a1} and \ref{a2}. The phase difference accumulated during the first interval is
+and the accelerations $a_{+}$ and $a_{-}$ are given by Eqs. \ref{a1} and \ref{a2}. The phase difference accumulated during the first interval is
 
 \begin{equation}
 \Delta \Phi_{T_{1}} = \Phi_{1, T_{1}} - \Phi_{2, T_{1}}
@@ -206,11 +214,11 @@ and the accelerations $a_{1}$ and $a_{2}$ are given by Eqs. \ref{a1} and \ref{a2
 Likewise, the phase accumulated during the second interval for each state is
 
 \begin{equation}
-\Phi_{1, T_{2}} = \frac{C_{+}}{\hbar} \int_{0}^{2T} [(z_{0}+v_{0}T+a_{1} \frac{T^{2}}{2}) + (v_{0}+a_{1}T)t + a_{2} \frac{t^{2}}{2}]dt
+\Phi_{1, T_{2}} = \frac{C_{+}}{\hbar} \int_{0}^{2T} [(z_{0}+v_{0}T+a_{+} \frac{T^{2}}{2}) + (v_{0}+a_{+}T)t + a_{-} \frac{t^{2}}{2}]dt
 \end{equation}
 
 \begin{equation}
-\Phi_{2, T_{2}} = \frac{C_{-}}{\hbar} \int_{0}^{2T} [(z_{0}+v_{0}T+a_{2} \frac{T^{2}}{2}) + (v_{0}+a_{2}T)t + a_{1} \frac{t^{2}}{2}]dt
+\Phi_{2, T_{2}} = \frac{C_{-}}{\hbar} \int_{0}^{2T} [(z_{0}+v_{0}T+a_{-} \frac{T^{2}}{2}) + (v_{0}+a_{-}T)t + a_{+} \frac{t^{2}}{2}]dt
 \end{equation}
 
 The corresponding phase difference for this interval is
@@ -222,11 +230,11 @@ The corresponding phase difference for this interval is
 Finally, for the last interval, the phase accumulated by each state is
 
 \begin{equation}
-\Phi_{1, T_{3}} = \frac{C_{-}}{\hbar} \int_{0}^{T} [((z_{0}+v_{0}T+a_{1} \frac{T^{2}}{2}) + (v_{0}+a_{1}T)(2T) + a_{2} \frac{(2T)^{2}}{2}) + (v_{0}+a_{1}T + a_{2}(2T))t + a_{1} \frac{t^{2}}{2}]dt
+\Phi_{1, T_{3}} = \frac{C_{-}}{\hbar} \int_{0}^{T} [((z_{0}+v_{0}T+a_{+} \frac{T^{2}}{2}) + (v_{0}+a_{+}T)(2T) + a_{-} \frac{(2T)^{2}}{2}) + (v_{0}+a_{+}T + a_{-}(2T))t + a_{+} \frac{t^{2}}{2}]dt
 \end{equation}
 
 \begin{equation}
-\Phi_{2, T_{3}} = \frac{C_{+}}{\hbar} \int_{0}^{T} [((z_{0}+v_{0}T+a_{2} \frac{T^{2}}{2}) + (v_{0}+a_{2}T)(2T) + a_{1} \frac{(2T)^{2}}{2}) + (v_{0}+a_{2}T + a_{1}(2T))t + a_{2} \frac{t^{2}}{2}]dt
+\Phi_{2, T_{3}} = \frac{C_{+}}{\hbar} \int_{0}^{T} [((z_{0}+v_{0}T+a_{-} \frac{T^{2}}{2}) + (v_{0}+a_{-}T)(2T) + a_{+} \frac{(2T)^{2}}{2}) + (v_{0}+a_{-}T + a_{+}(2T))t + a_{-} \frac{t^{2}}{2}]dt
 \end{equation}
 
 The phase difference accumulated during the last interval is
@@ -331,8 +339,8 @@ where $g_{0}$ is the acceleration of gravity, and
 \end{equation}
 
 where $m_{e}$ and $m_{p}$ are the electron mass and the proton mass respectively, and $I$ is the nuclear spin (assumed to be $I\ \ge 1/2$).
+We will see lately when comparing with the time evolution of the free wave packet that $\Delta W q_{1}$ corresponds to the angular frequency and therefore, it is related with the energy of the wave packet.
 
-\textcolor{blue}{Agregar discusión de relación entre q1, q2 con a1,a2 y c+- del calculo clasico}
 
 Additionally, we have defined the following non-dimensional quantity
 
@@ -376,7 +384,7 @@ Therefore, the non-dimensional velocity of the center of the wave packet will be
 \frac{d\xi}{d\tau} = \xi^{\prime}(\tau) =  2 \rho_{0} \epsilon - 2 q_{2}\epsilon \tau = v_{0} + a \tau
 \end{equation}
 
-For that reason, Eqs. \ref{xi} and \ref{xi_derivative} are the equations of motion of the center of the (non-dimensional) wave packet. Additionally, we notice that the information about the acceleration of the wave-packet is contained in the parameter $q_{2}$.
+For that reason, Eqs. \ref{xi} and \ref{xi_derivative} are the equations of motion of the center of the (non-dimensional) wave packet. Additionally, we notice that the information about the acceleration of the wave-packet is contained in the parameter $q_{2}$. This parameter is obviously related to the accelerations defined in Eqs. \ref{a1} and \ref{a2} and by consequence with the constant $C_{\pm}$ defined in Eq. \ref{c_definition}.
 
 \paragraph{Calculation of the Signal for Gravimetry in Position Space}
 

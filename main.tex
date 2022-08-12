@@ -51,7 +51,7 @@ The atom is immersed inside a magnetic field of the following form
 \textbf{B} = \eta z \hat{\textbf{z}}\
 \end{equation}
 
-where z is the position and $\eta$ is a constant with units of Tesla per meter. The atom will feel a force given by the gradient of the magnetic energy caused by the coupling of the total magnetic moment of the atom $\mu$ and the magnetic field\footnote{It is important to comment out that in the rest frame of the atom, we would see that there is a magnetic field that changes with time. Therefore, according to Faraday´s law, this changing magnetic field would induce an electric field that would couple with the atom's electric dipole moment giving rise to an electric energy term that would need to be considered. Fortunately, we can choose to work with atomic states such that the matrix elements of the position operator vanish.}, i.e.,
+where z is the position and $\eta$ is a constant with units of Tesla per meter. The atom will feel a force given by the gradient of the magnetic energy caused by the coupling of the total magnetic moment of the atom $\mu$ and the magnetic field\footnote{It is important to comment out that in the rest frame of the atom, we would see that there is a magnetic field that changes with time. Therefore, according to Faraday´s law, this changing magnetic field would induce an electric field that would couple with the atom's electric dipole moment giving rise to an electric energy term that would try to hold back the atom from falling down and would need to be considered. Fortunately, we can choose to work with atomic states such that the matrix elements of the position operator vanish at first order.}, i.e.,
 
 \begin{equation}\label{magnetic_force}
 \textbf{F} = - \nabla (\pm \mu \eta z ) = \mp \mu \eta \hat{\textbf{z}}\
@@ -174,10 +174,10 @@ The phase accumulated for each path is given by
 \Phi = \int_{t_{0}}^{t} \omega(\ce{^{}_{}t{'}_{}})d\ce{^{}_{}t{'}_{}}
 \end{equation}
 
-where the angular frequency is proportional to the energy according to the Planck relation 
+where the angular frequency is proportional to the energy according to the Planck relation\footnote{The reader may be wondering why this semi-classical relation holds instead of a relation with a different proportionality factor of the form $E = \alpha \hbar \omega$ where $\alpha$ is a constant. The reason is that this relation comes from the time dependent solution of the Schrodinger equation when the Hamiltonian is independent of time, i.e., $e^{-i E t/\hbar}$, so it is legal to use it here.}
 
 \begin{equation}\label{planck_relation}
-E \propto \hbar \omega, 
+E = \hbar \omega, 
 \end{equation}
 
 and the energy is given by the sum of the magnetic energy (Eq. \ref{magnetic_force}) and the energy due to the gravity field, i.e.,
@@ -194,26 +194,20 @@ C_{\pm} \equiv \pm \mu \eta + mg = m a_{\pm}
 
 with units of force and with $a_{\pm}$ defined as in the Eqs. \ref{a1} and \ref{a2}. Notice that we have defined the constant $g$ to be positive and we are using a coordinate system with the z-axis pointing upwards such that the atom is initially located at $z=0$, where the initial gravitational potential energy is zero, and as it falls down, the position coordinate becomes negative so the gravitational potential energy becomes negative.
 
-Before proceeding with the computation of the phase, we need to establish the proportionality constant in Eq. \ref{planck_relation}. We will provide a justification lately, when analyzing the expansion of a free wave packet, that the correct proportionality constant is actually $1/2$, thereupon, the energy of the atomic wave packet will be given by
-
-\begin{equation}\label{planck_relation_with_proportionality_constant}
-E = \frac{1}{2} \hbar \omega, 
-\end{equation}
-
-Therefore, the accumulated phase will be given by
+Now, we can proceed to compute the accumulated phase given by
 
 \begin{equation}\label{semi_classical_phase}
-\Phi = \frac{C_{\pm}}{2\hbar} \int_{t_{0}}^{t} z(\ce{^{}_{}t{'}_{}})d\ce{^{}_{}t{'}_{}}
+\Phi = \frac{C_{\pm}}{\hbar} \int_{t_{0}}^{t} z(\ce{^{}_{}t{'}_{}})d\ce{^{}_{}t{'}_{}}
 \end{equation}
 
 Each state's path is composed by three intervals $T_{1}=T$, $T_{2}=2T$, and $T_{3}=T$ (see Eq. \ref{pulses}). Thereby, for the first interval, the phase accumulated by each state will be respectively
 
 \begin{equation}\label{phi1t1}
-\Phi_{1, T_{1}} = \frac{C_{-}}{2\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{+} \frac{t^{2}}{2})dt
+\Phi_{1, T_{1}} = \frac{C_{-}}{\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{+} \frac{t^{2}}{2})dt
 \end{equation}
 
 \begin{equation}
-\Phi_{2, T_{1}} = \frac{C_{+}}{2\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{-} \frac{t^{2}}{2})dt
+\Phi_{2, T_{1}} = \frac{C_{+}}{\hbar} \int_{0}^{T} (z_{0}+v_{0}t+a_{-} \frac{t^{2}}{2})dt
 \end{equation}
 
 where $z_{0}$ and $v_{0}$ are respectively the initial position and velocity,
@@ -226,11 +220,11 @@ and the accelerations $a_{+}$ and $a_{-}$ are given by Eqs. \ref{a1} and \ref{a2
 Likewise, the phase accumulated during the second interval for each state is
 
 \begin{equation}
-\Phi_{1, T_{2}} = \frac{C_{+}}{2\hbar} \int_{0}^{2T} [(z_{0}+v_{0}T+a_{+} \frac{T^{2}}{2}) + (v_{0}+a_{+}T)t + a_{-} \frac{t^{2}}{2}]dt
+\Phi_{1, T_{2}} = \frac{C_{+}}{\hbar} \int_{0}^{2T} [(z_{0}+v_{0}T+a_{+} \frac{T^{2}}{2}) + (v_{0}+a_{+}T)t + a_{-} \frac{t^{2}}{2}]dt
 \end{equation}
 
 \begin{equation}
-\Phi_{2, T_{2}} = \frac{C_{-}}{2\hbar} \int_{0}^{2T} [(z_{0}+v_{0}T+a_{-} \frac{T^{2}}{2}) + (v_{0}+a_{-}T)t + a_{+} \frac{t^{2}}{2}]dt
+\Phi_{2, T_{2}} = \frac{C_{-}}{\hbar} \int_{0}^{2T} [(z_{0}+v_{0}T+a_{-} \frac{T^{2}}{2}) + (v_{0}+a_{-}T)t + a_{+} \frac{t^{2}}{2}]dt
 \end{equation}
 
 The corresponding phase difference for this interval is
@@ -242,11 +236,11 @@ The corresponding phase difference for this interval is
 Finally, for the last interval, the phase accumulated by each state is
 
 \begin{equation}
-\Phi_{1, T_{3}} = \frac{C_{-}}{2\hbar} \int_{0}^{T} [((z_{0}+v_{0}T+a_{+} \frac{T^{2}}{2}) + (v_{0}+a_{+}T)(2T) + a_{-} \frac{(2T)^{2}}{2}) + (v_{0}+a_{+}T + a_{-}(2T))t + a_{+} \frac{t^{2}}{2}]dt
+\Phi_{1, T_{3}} = \frac{C_{-}}{\hbar} \int_{0}^{T} [((z_{0}+v_{0}T+a_{+} \frac{T^{2}}{2}) + (v_{0}+a_{+}T)(2T) + a_{-} \frac{(2T)^{2}}{2}) + (v_{0}+a_{+}T + a_{-}(2T))t + a_{+} \frac{t^{2}}{2}]dt
 \end{equation}
 
 \begin{equation}
-\Phi_{2, T_{3}} = \frac{C_{+}}{2\hbar} \int_{0}^{T} [((z_{0}+v_{0}T+a_{-} \frac{T^{2}}{2}) + (v_{0}+a_{-}T)(2T) + a_{+} \frac{(2T)^{2}}{2}) + (v_{0}+a_{-}T + a_{+}(2T))t + a_{-} \frac{t^{2}}{2}]dt
+\Phi_{2, T_{3}} = \frac{C_{+}}{\hbar} \int_{0}^{T} [((z_{0}+v_{0}T+a_{-} \frac{T^{2}}{2}) + (v_{0}+a_{-}T)(2T) + a_{+} \frac{(2T)^{2}}{2}) + (v_{0}+a_{-}T + a_{+}(2T))t + a_{-} \frac{t^{2}}{2}]dt
 \end{equation}
 
 The phase difference accumulated during the last interval is
@@ -258,11 +252,11 @@ The phase difference accumulated during the last interval is
 Therefore, by using Eqs.(\ref{a1}-\ref{a2} , and \ref{phi1t1}-\ref{delphi3}), the total phase difference accumulated during the three intervals is
 
 \begin{equation}
-\Delta \Phi = \Delta \Phi_{T_{1}} + \Delta \Phi_{T_{2}} + \Delta \Phi_{T_{3}} = 4 \frac{mga_{m}T^3}{\hbar}
+\Delta \Phi = \Delta \Phi_{T_{1}} + \Delta \Phi_{T_{2}} + \Delta \Phi_{T_{3}} = 8 \frac{mga_{m}T^3}{\hbar}
 \end{equation}
 
 \begin{equation}\label{gravimetry_signal}
-\Delta \Phi = 4 \frac{\mu \eta}{\hbar} g T^3
+\Delta \Phi = 8 \frac{\mu \eta}{\hbar} g T^3
 \end{equation}
 
 where in the last equation we have used the definition of $a_B$ (Eq. \ref{am}). 
@@ -847,7 +841,7 @@ and $\beta$ is given by
 Now, we can substitute the Eqs. \ref{gaussian_amplitude_free_wave_packet}-\ref{dispersion_relation_free_wave_packet} into the Eq. \ref{free_wave_packet_momentum_space_integral} and workout the integral. The final result is given by
 
 \begin{equation}
-    \Psi (z, t) = C \sqrt{\frac{2 \pi}{\alpha + 2 i \beta t}} \exp \left[{-\frac{(z - \upsilon_{g} t)^{2}}{2 \alpha + 4 i \beta t}} \right]  \exp[{i (k_{0}x-\omega_{0} t)}].
+    \Psi (z, t) = C \sqrt{\frac{2 \pi}{\alpha + 2 i \beta t}} \exp \left[{-\frac{(z - \upsilon_{g} t)^{2}}{2 \alpha + 4 i \beta t}} \right]  \exp[{i (k_{0}z-\omega_{0} t)}].
 \end{equation}
 
 We can cast the above equation into a more illuminating form by putting the complex factors in the denominators in the standard form ($Z = [\Re(Z)+i\Im(Z)]$), and by using the de Moivre's theorem to compute the required squared root in the second term. Finally, we obtain the expansion of the free gaussian wave packet as follows
@@ -963,14 +957,6 @@ On the other hand, by comparing the second row of Eq. \ref{free_wave_packet_posi
  \hline
 \end{tabular}
 \end{center}
-
-Therefore, since $\Delta W q_{1}$ can be interpreted as the angular frequency of the alkali wave packet, where $\Delta W$ has units of $s^-1$, the energy related to this angular frequency is given by
-
-\begin{equation}
-    E = \hbar \frac{\Delta W}{2} 
-\end{equation}
-
-Thereby, we see that the correct proportionality factor in Eq. \ref{planck_relation} was in fact $1/2$ just as we stated in Eq. \ref{planck_relation_with_proportionality_constant}.
 
 Finally, we can see that the term $\rho_{0}$ seems to be related with the initial momentum $k_{0}$, i.e.
 
@@ -1091,7 +1077,7 @@ It can be easily shown that the full with at half maximum for the normal distrib
 Z_{FWHM} = 2\sqrt{2ln2} \sigma_{z}(0) = 2 Z_{HWHM}
 \end{equation}
 
-We will choose to use a coordinate system such that $z_{0}=0$. Thus, we can write
+For now, we will suppose that the atom is placed in the origin of our coordinate system, i.e., $z_{0}=0$. In the next section, when analyzing the case of an atomic cloud we will see what happens if the atomic wave function has an offset from the origin. Thus, we can write
 
 \begin{equation}\label{width_zhwhm}
   \Delta Z = 2Z_{HWHM} = Z_{FWHM}.
@@ -1149,7 +1135,7 @@ where $\sigma_{\delta}(0)$ is the standard deviation of the distribution.
 Therefore,
 
 \begin{equation}\label{rabi_oscillations_approx}
-  |c_{e}(t)|^{2} \equiv f(\delta) = \frac{1}{f (0)} \frac{1}{\sigma_{\delta}(0) \sqrt{2 \pi}} \exp \left[-\frac{1}{2}\bigg(\frac{\delta-\delta_{0}}{\sigma_{\delta}(0)}\bigg)^{2} \right],
+  |c_{e}(t)|^{2} \equiv f(\delta) = \frac{1}{f (0)} \frac{1}{\sigma_{\delta}(0) \sqrt{2 \pi}} \exp \left[-\frac{1}{2}\bigg(\frac{\delta}{\sigma_{\delta}(0)}\bigg)^{2} \right],
 \end{equation}
 
 where we have normalized the distribution such that the probability of transition when $\delta = 0$ equals $1$ for all times, i.e., $f(0)=1$. Finally, we choose the standard deviation to be equal to the detuning evaluated at  $z=2Z_{HWHM}$, i.e.,
@@ -1185,7 +1171,7 @@ Thereby, we can use $\Omega$ and $t$ to control the width of the atom's wave fun
 \Delta Z = \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta}.
 \end{equation}
 
-Finally, we remember that in the case of light pulses, the electric field dominates and the Rabi flopping frequency is usually taken to be
+Finally, since the electric field is several order of magnitude larger than the magnetic field, it dominates, and the Rabi flopping frequency is usually taken to be
 
 \begin{equation*}
 \Omega = \frac{- e \textbf{E} \cdot \bra{e} \textbf{r} \ket{g}}{\hbar},
@@ -1197,8 +1183,13 @@ where $\textbf{r}$ is the position operator, $\textbf{E}$ is the electric field,
 \Omega = \frac{- \textbf{B} \cdot \bra{e} \boldsymbol{\mu} \ket{g}}{\hbar},
 \end{equation}
 
-\subsection{Initial Atomic Cloud Preparation}
-In the last section, we showed how to estimate the initial atomic width of the alkali atoms to be used during the interferometry process. In this section, we will use those results to show how we can prepare an atomic cloud sample of alkali atoms with a definite width and estimate within which time range our estimation is a good approximation.
+\subsection{Initial Atomic Cloud Preparation and Initial Width Selection}
+In the last section, we showed how to prepare the initial width for a single Alkali atom. In this section, we will generalize that result to consider atoms whose wave function is initially shifted from the origin.
+
+If we choose the origin of our coordinate system to be the position where the detuning is zero, then, in the case of a cloud of Alkali atoms, we can expect that many atoms in the sample will have a slight offset from the origin.
+
+\subsection{Initial Width Selection}
+In the last sections, we showed how to estimate the initial atomic width of the alkali atoms to be used during the interferometry process. Then, we saw what happens when the atom is shifted from the origin. In this section, we will study the constraints that choosing a particular initial atomic width will impose in the time that we can let the atomic wave packet expand without affecting the Rabi transitions due to the detuning.
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}

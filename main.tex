@@ -974,7 +974,7 @@ This is not surprising since we already knew that $\rho_{0}=p_{0}/\hbar \kappa$.
 
 Meanwhile for the rest of terms, we can see that some of them are present in one wave packet but they are not present in the other and vice-versa while other terms look similar in both wave packets but they differ in some way that is not possible to establish a direct connection between them. Incidentally, the terms of the second row in both Eqs. \ref{free_wave_packet_position_space_centered_z0_final_form} and \ref{alkali_wave_packet_position_space_final_form} are the terms that contribute to the phase while the terms in the first rows are those terms that does not contribute to the phase.
 
-\subsection{Initial Atomic Width Preparation}
+\subsection{Initial Atomic Width Selection}
 In this section we will establish the theoretical framework to describe the initialization of the atom to be used during the interferometry procedure described in the last section. Specifically, we will review how to prepare the initial width of the atom.
 
 Firstly, we need to remember that the experiment will take place inside a magnetic gradient field in the z-axis of the following form
@@ -1067,23 +1067,19 @@ The complex modulus of this wave packet is a distribution for the probability of
 
 We can define the half width at half maximum of this distribution and name the value of the independent variable $z$ at this point as $Z_{HWHM}$. In the Fig. \ref{atom_wave_func_pos_space}, we can see the initial atomic probability distribution in position space (Eq. \ref{initial_atom_wave_function_position_space_probability_distribution}). Notice that we have defined the width of the atomic wave function as follows.
 
-\begin{equation}
-  \Delta Z = 2|Z_{HWHM} - z_{0}|.
+\begin{equation}\label{width_atomic_wave_function}
+  \Delta Z = |2Z_{HWHM} - z_{0}| = (2Z_{HWHM} - z_{0}),
 \end{equation}
 
-It can be easily shown that the full with at half maximum for the normal distribution is given by
+where we have used the fact that $Z_{HWHM}$ will always be greater than $z_{0}$. This is because we will consider, in a moment, that for atoms with their center at $z_{0} > Z_{HWHM}$ the probability of transition is zero.
+
+On the other hand, it can be easily shown that the full with at half maximum for the normal distribution is given by
 
 \begin{equation}\label{FWHM_normal_distribution}
 Z_{FWHM} = 2\sqrt{2ln2} \sigma_{z}(0) = 2 Z_{HWHM}
 \end{equation}
 
-For now, we will suppose that the atom is placed in the origin of our coordinate system, i.e., $z_{0}=0$. In the next section, when analyzing the case of an atomic cloud we will see what happens if the atomic wave function has an offset from the origin. Thus, we can write
-
-\begin{equation}\label{width_zhwhm}
-  \Delta Z = 2Z_{HWHM} = Z_{FWHM}.
-\end{equation}
-
-Now, if we evaluate the detuning at $z = 2Z_{HWHM}$, we get
+Now, we will take $z_{0}$, the point were the detuning is zero, to be the origin of coordinates. Therefore, if we evaluate the detuning at $z = 2Z_{HWHM}$, we get
 
 \begin{equation}
   \delta (2Z_{HWHM}) = 2\frac{\mu_{B} g_{F} m_{F} \eta}{\hbar} Z_{HWHM}
@@ -1159,7 +1155,13 @@ Returning to our original problem, we can use the Eq. \ref{detuning_condition} t
 \delta (2z_{HWHM}) = \frac{\sqrt{4 \pi^{2} - \Omega^{2} t^{2}}}{t}.
 \end{equation}
 
-Thus, the width of the atom's wave function can be computed using Eqs. \ref{width_zhwhm}, \ref{position_at_zhwhm}, and \ref{detuning_at_zhwm}, i.e.,
+For now, we will suppose that the atom is placed at $z_{0}$ (the origin of coordinates). In the next section, when analyzing the case of an atomic cloud we will see what happens if the atomic wave function has an offset from the origin. Thus, we can re-write Eq. \ref{width_atomic_wave_function} as follows
+
+\begin{equation}\label{width_zhwhm}
+  \Delta Z = 2Z_{HWHM} = Z_{FWHM}.
+\end{equation}
+
+Thus, the width of the atom's wave function can be computed using Eqs.  \ref{position_at_zhwhm}, \ref{detuning_at_zhwm}, and \ref{width_zhwhm} i.e.,
 
 \begin{equation}
 \Delta Z = \frac{\sqrt{4 \pi^{2} - \Omega^{2} t^{2}}}{t} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta}.
@@ -1167,11 +1169,11 @@ Thus, the width of the atom's wave function can be computed using Eqs. \ref{widt
 
 Thereby, we can use $\Omega$ and $t$ to control the width of the atom's wave function. For experimental purposes, we would like to have $\Omega$ fixed. Therefore, we can use $t$ to prepare the initial width. Specifically, if we use a $\pi$-pulse, i.e., $t=\pi/\Omega$. Then, the initial width will be given by
 
-\begin{equation}
+\begin{equation}\label{initial_width}
 \Delta Z = \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta}.
 \end{equation}
 
-Finally, since the electric field is several order of magnitude larger than the magnetic field, it dominates, and the Rabi flopping frequency is usually taken to be
+Finally, notice that the electric field is several order of magnitude larger than the magnetic field, thereby it dominates, and the Rabi flopping frequency is usually taken to be
 
 \begin{equation*}
 \Omega = \frac{- e \textbf{E} \cdot \bra{e} \textbf{r} \ket{g}}{\hbar},
@@ -1183,13 +1185,73 @@ where $\textbf{r}$ is the position operator, $\textbf{E}$ is the electric field,
 \Omega = \frac{- \textbf{B} \cdot \bra{e} \boldsymbol{\mu} \ket{g}}{\hbar},
 \end{equation}
 
-\subsection{Initial Atomic Cloud Preparation and Initial Width Selection}
+\subsection{Initial Cloud Width Selection}
 In the last section, we showed how to prepare the initial width for a single Alkali atom. In this section, we will generalize that result to consider atoms whose wave function is initially shifted from the origin.
 
-If we choose the origin of our coordinate system to be the position where the detuning is zero, then, in the case of a cloud of Alkali atoms, we can expect that many atoms in the sample will have a slight offset from the origin.
+If we choose the origin of our coordinate system to be the position where the detuning is zero, then, in the case of a cloud of non-interacting Alkali atoms, we can expect that many atoms in the sample will have a slight offset from the origin. In that case, the width of the atomic wave function will be given by Eq. \ref{width_atomic_wave_function}, i.e.,
 
-\subsection{Initial Width Selection}
-In the last sections, we showed how to estimate the initial atomic width of the alkali atoms to be used during the interferometry process. Then, we saw what happens when the atom is shifted from the origin. In this section, we will study the constraints that choosing a particular initial atomic width will impose in the time that we can let the atomic wave packet expand without affecting the Rabi transitions due to the detuning.
+\begin{equation}
+  \Delta Z = (2Z_{HWHM} - z_{off}),
+\end{equation}
+
+where we have used a sub-index to indicate that the atom has an offset from the origin of the coordinate system which is centered at $z_{0}$, the point where the detuning is zero. Therefore, using Eq. \ref{initial_width}, we can compute the atomic width that will be selected when the initial atomic distribution has an offset from the point where the detuning is zero, i.e.,
+
+\begin{equation}
+\Delta Z_{off} = \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta} - z_{off},
+\end{equation}
+
+The above equation represents the width that is selected when the atomic wave function has an offset from the origin. This width is related to the width selected when the atom is placed in the origin by the relation
+
+\begin{equation}\label{width_selection_range}
+    \Delta Z \ge \Delta Z_{off}  \ge 0
+\end{equation}
+
+This means that as the atom's offset from the origin increases, the selected width will decrease until it reaches a width of zero just at the point where the probability of transition goes to zero as can be seen in Figure (???????). Thereupon, if the offset surpasses the point where the probability of transition is zero, then the atom will not have been initialized and we can get rid of it. In the end, we will finish with a sample of Alkali atoms whose individual atomic widths have been selected to lay in the range given by Eq. \ref{width_selection_range}, and the total width of this new cloud will be $\Delta Z$ as shown in the Figure (?????). In other words, we have forced the cloud of Alkali atoms to have a width given by the maximum atomic width that can be selected, i.e.,
+
+\begin{equation}
+    \Delta Z_{cloud} = \Delta Z
+\end{equation}
+
+\subsection{Choosing the Work Atomic Width}
+In the last sections, we showed how to select the initial atomic width of the alkali atoms to be used during the interferometry process. Then, we saw what happens when the atom is shifted from the origin. In this section, we will study the constraints that choosing a particular initial atomic width will impose in the time that we can let the atomic wave packet expand without affecting the Rabi transitions due to the detuning.
+
+Suppose that we have successfully initialized our Alkali atom with a initial width $\Delta Z_{0}$ given by Eq. \ref{initial_width}, i.e.,
+
+\begin{equation}
+\Delta Z_{0} = \sqrt{3} \Omega_{0} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta},
+\end{equation}
+
+where we have used a sub-index to indicate that the Rabi frequency $\Omega_{0}$ corresponds to the frequency used to select the initial width. Following, we let our atom evolve a time $T$. During that time, the wave function of the Alkali atom will expand according to Eq. \ref{alkali_wave_packet_width}, which we rewrite here in terms of dimensional quantities(?????)
+
+\begin{equation}
+\sigma_{x}(\tau) = \sqrt{[\sigma_{x}(0)]^{2} + \left[\frac{\epsilon \tau}{\sigma_{x}(0)} \right]^{2}}.
+\end{equation}
+
+Now, in order to follow the sequence of pulses needed to achieve atomic interference, we need to apply a $\pi$-Pulse to the atom. However, as we saw in the last sections, applying a pulse to drive transitions in an Alkali atom inside an inhomogeneous magnetic field gives as result a selection in the atomic width. According to Eq. \ref{initial_width}, if we use a Rabi frequency $\Omega'$ to drive the transitions, the atom will experience the transition if and only if its width is less or equal than the width selected by $\Omega'$, i.e.,
+
+\begin{equation}
+    \Delta Z' = \sqrt{3} \Omega' \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta},
+\end{equation}
+
+Therefore, in order to induce the Rabi transition, the following condition must be satisfied
+
+\begin{equation}\label{condition_transition_width}
+    \Delta Z' > \Delta Z_{0}.
+\end{equation}
+
+This means, that in order to increase the probability of success when inducing the transition, we have to make sure that $\Delta Z_{0}$ is much less than $\Delta Z'$, i.e.,
+
+\begin{equation}
+    \Delta Z' \gg \Delta Z_{0}.
+\end{equation}
+
+In the extreme case that $\Delta Z_{0} \ge \Delta Z'$, the probability of success in the transition will be zero, see Fig. (??????). Since the values of $\Delta Z_{0}$ and $\Delta Z'$ depend on the Rabi frequencies $\Omega_{0}$ and $\Omega'$, we can rewrite the condition in Eq. \ref{condition_transition_width} as
+
+\begin{equation}
+    algo \equiv \frac{\Omega_{0}}{\Omega'} < 1.
+\end{equation}
+
+Or using t
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}

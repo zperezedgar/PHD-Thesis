@@ -1196,21 +1196,40 @@ If we choose the origin of our coordinate system to be the position where the de
 
 where we have used a sub-index to indicate that the atom has an offset from the origin of the coordinate system which is centered at $z_{0}$, the point where the detuning is zero. Therefore, using Eq. \ref{initial_width}, we can compute the atomic width that will be selected when the initial atomic distribution has an offset from the point where the detuning is zero, i.e.,
 
-\begin{equation}
+\begin{equation}\label{initial_width_offset}
 \Delta Z_{off} = \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta} - z_{off},
 \end{equation}
 
 The above equation represents the width that is selected when the atomic wave function has an offset from the origin. This width is related to the width selected when the atom is placed in the origin by the relation
 
 \begin{equation}\label{width_selection_range}
-    \Delta Z \ge \Delta Z_{off}  \ge 0
+    \Delta Z \ge \Delta Z_{off} > 0
 \end{equation}
 
-This means that as the atom's offset from the origin increases, the selected width will decrease until it reaches a width of zero just at the point where the probability of transition goes to zero as can be seen in Figure (???????). Thereupon, if the offset surpasses the point where the probability of transition is zero, then the atom will not have been initialized and we can get rid of it. In the end, we will finish with a sample of Alkali atoms whose individual atomic widths have been selected to lay in the range given by Eq. \ref{width_selection_range}, and the total width of this new cloud will be $\Delta Z$ as shown in the Figure (?????). In other words, we have forced the cloud of Alkali atoms to have a width given by the maximum atomic width that can be selected, i.e.,
+This means that as the atom's offset from the origin increases, the selected width will decrease until it reaches a width of zero just at the point where the probability of transition goes to zero as can be seen in Fig. \ref{width_selection_before}. Thereupon, if the offset surpasses the point where the probability of transition is zero, then the atom will not have been initialized and we can get rid of it. In the end, we will finish with a sample of Alkali atoms whose individual atomic widths have been selected to lay in the range given by Eq. \ref{width_selection_range}, and the total width of this new cloud will be $\Delta Z$ as shown in the Fig. \ref{width_selection_after}. In other words, we have forced the cloud of Alkali atoms to have a width given by the maximum atomic width that can be selected, i.e.,
 
-\begin{equation}
+\begin{equation}\label{cloud_width}
     \Delta Z_{cloud} = \Delta Z
 \end{equation}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{1\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{width_selection_a.png}
+        \caption{Atomic wave functions before the width selection process.}
+        \label{width_selection_before}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{1\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{width_selection_b.png}
+        \caption{Atomic wave functions after the width selection process.}
+        \label{width_selection_after}
+    \end{subfigure}
+    \caption{Atomic wave functions in a sample of non-interacting Alkali atoms before and after the width selection process. The scale used in both graphs is different for illustration purposes. The selection range is set by the Rabi frequency (Eq. \ref{initial_width}). If the wave function is initially centered at the point where the detuning is zero, the selected width will be equal to the selection range. On the other hand, if the wave function has an offset from the point where the detuning is zero, the selected wave function's width will decrease by the same amount (Eq. \ref{initial_width_offset}). The width can be reduced until it reaches a width of zero at the point where the probability of transition is, by assumption, zero, i.e., $2Z_{HWHM}$. The atoms whose distribution function is located beyond that point will never transition so we can get rid of them using another laser. After the selection process has been done, the atomic cloud will have a width equal to the selection range (Eq. \ref{cloud_width}).}
+    \label{width_selection_graphs}
+\end{figure}
 
 \subsection{Choosing the Work Atomic Width}
 In the last sections, we showed how to select the initial atomic width of the alkali atoms to be used during the interferometry process. Then, we saw what happens when the atom is shifted from the origin. In this section, we will study the constraints that choosing a particular initial atomic width will impose in the time that we can let the atomic wave packet expand without affecting the Rabi transitions due to the detuning.

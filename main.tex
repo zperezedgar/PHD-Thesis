@@ -1231,46 +1231,111 @@ This means that as the atom's offset from the origin increases, the selected wid
     \label{width_selection_graphs}
 \end{figure}
 
-\subsection{Choosing the Work Atomic Width}
+\subsection{Choosing the Initial Atomic Width}
 In the last sections, we showed how to select the initial atomic width of the alkali atoms to be used during the interferometry process. Then, we saw what happens when the atom is shifted from the origin. In this section, we will study the constraints that choosing a particular initial atomic width will impose in the time that we can let the atomic wave packet expand without affecting the Rabi transitions due to the detuning.
 
 Suppose that we have successfully initialized our Alkali atom with a initial width $\Delta Z_{0}$ given by Eq. \ref{initial_width}, i.e.,
 
-\begin{equation}
+\begin{equation}\label{initial_width_in_terms_of_rabi}
 \Delta Z_{0} = \sqrt{3} \Omega_{0} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta},
 \end{equation}
 
-where we have used a sub-index to indicate that the Rabi frequency $\Omega_{0}$ corresponds to the frequency used to select the initial width. Following, we let our atom evolve a time $T$. During that time, the wave function of the Alkali atom will expand according to Eq. \ref{alkali_wave_packet_width}, which we rewrite here in terms of dimensional quantities(?????)
+where we have used a sub-index to indicate that the Rabi frequency $\Omega_{0}$ corresponds to the frequency used to select the initial width. Following, we let our atom evolve during a lapse of time $t$. After that time, the wave function of the Alkali atom will expand according to Eq. \ref{alkali_wave_packet_width}, which we rewrite here in terms of dimensional quantities
 
-\begin{equation}
-\sigma_{x}(\tau) = \sqrt{[\sigma_{x}(0)]^{2} + \left[\frac{\epsilon \tau}{\sigma_{x}(0)} \right]^{2}}.
+\begin{equation}\label{final_width_dimensional}
+\Delta Z (t) = \kappa \sqrt{[\Delta Z_{0}]^{2} + \left[\frac{\xi t}{\Delta Z_{0}} \right]^{2}},
 \end{equation}
 
-Now, in order to follow the sequence of pulses needed to achieve atomic interference, we need to apply a $\pi$-Pulse to the atom. However, as we saw in the last sections, applying a pulse to drive transitions in an Alkali atom inside an inhomogeneous magnetic field gives as result a selection in the atomic width. According to Eq. \ref{initial_width}, if we use a Rabi frequency $\Omega'$ to drive the transitions, the atom will experience the transition if and only if its width is less or equal than the width selected by $\Omega'$, i.e.,
+where we have defined the following constant
+
+\begin{equation}
+    \xi \equiv \frac{\hbar}{2M}.
+\end{equation}
+
+Now, in order to follow the sequence of pulses needed to achieve atomic interference, we need to apply a $\pi$-Pulse to the atom. However, as we saw in the last sections, applying a pulse to drive transitions in an Alkali atom that is moving through an inhomogeneous magnetic field, gives as result a selection in the atomic width. According to Eq. \ref{initial_width}, if we use a Rabi frequency $\Omega'$ to drive the transitions, the atom will experience the transition if and only if its width is less or equal than the width selected by $\Omega'$, i.e.,
 
 \begin{equation}
     \Delta Z' = \sqrt{3} \Omega' \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta},
 \end{equation}
 
-Therefore, in order to induce the Rabi transition, the following condition must be satisfied
+Therefore, in order to induce the Rabi transition with a high probability of success, the following conditions must be satisfied
 
-\begin{equation}\label{condition_transition_width}
-    \Delta Z' > \Delta Z_{0}.
+\begin{equation}\label{condition_transition_width1}
+    \Delta Z' > \Delta Z(t) \ge \Delta Z_{0},
 \end{equation}
 
-This means, that in order to increase the probability of success when inducing the transition, we have to make sure that $\Delta Z_{0}$ is much less than $\Delta Z'$, i.e.,
+and 
+
+\begin{equation}\label{condition_transition_width2}
+    \Delta Z(t) \approx \Delta Z_{0}.
+\end{equation}
+
+The above conditions mean, that in order to have a high the probability of success when inducing the transition, we have to make sure that $\Delta Z(t)$ is still much less than $\Delta Z'$, i.e.,  $\Delta Z(t)$ should not have increased considerably from $\Delta Z_{0}$ (see FIGURE ??????????). In the extreme case that $\Delta Z(t) \ge \Delta Z'$, the probability of success in the transition will be so small that we will consider it to be zero, see Fig. \ref{width_selection_graphs}. 
+
+Let us notice that the value of $\Delta Z_{0}$ that minimizes the expansion of the wave packet (Eq. \ref{final_width_dimensional}) is given by
 
 \begin{equation}
-    \Delta Z' \gg \Delta Z_{0}.
+    (\Delta Z_{0})_{min} = \sqrt{\frac{\hbar}{2M} t}.
 \end{equation}
 
-In the extreme case that $\Delta Z_{0} \ge \Delta Z'$, the probability of success in the transition will be zero, see Fig. (??????). Since the values of $\Delta Z_{0}$ and $\Delta Z'$ depend on the Rabi frequencies $\Omega_{0}$ and $\Omega'$, we can rewrite the condition in Eq. \ref{condition_transition_width} as
+By substituting this value into Eq. \ref{final_width_dimensional}, we get that the final width of the packet will be given by
+
+\begin{equation}\label{final_width_minimum}
+    (\Delta Z(t))_{min}  = \kappa \sqrt{\frac{\hbar}{M} t}.
+\end{equation}
+
+In other words, given an initial width $\Delta Z_{0}$, the expansion of the wave packet will be minimum if we let it expand for a maximum time of
 
 \begin{equation}
-    algo \equiv \frac{\Omega_{0}}{\Omega'} < 1.
+    t_{min}  = \frac{2M}{\hbar} {\Delta Z_{0}}^{2}.
 \end{equation}
 
-Or using t
+The above equation can be proved by equating Eqs. \ref{final_width_dimensional} and \ref{final_width_minimum} and solving for $t$. If we let the wave packet expand during this time, the final width will be given by
+
+\begin{equation}\label{width_evaluated_t_min}
+    \Delta Z(t_{min}) = \kappa \sqrt{2}\Delta Z_{0}.
+\end{equation}
+
+Then, the rate of change between the initial width and the final width will given by
+
+\begin{equation}
+    \frac{\Delta Z_{0}}{\Delta Z(t_{min})} = \frac{1}{\kappa \sqrt{2}}.
+\end{equation}
+
+By using the approximation for $\kappa$ in Eq. \ref{kappa_approx} alongside the corresponding values for the $\ce{^{87}_{}Rb}$ atom, we get that 
+
+\begin{equation}
+    \frac{\Delta Z_{0}}{\Delta Z(t_{min})} \approx 3.45
+\end{equation}
+
+Therefore, using this time value, the condition given in Eq. \ref{condition_transition_width2} is satisfied as expected.
+Finally, notice that if we substitute Eq. \ref{initial_width_in_terms_of_rabi} into Eq. \ref{width_evaluated_t_min}, we get
+
+\begin{equation}\label{width_evaluated_t_min_rabi}
+    \Delta Z(t_{min}) = \kappa \sqrt{6} \Omega_{0} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta} \equiv \sqrt{3} \Omega_{2} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta} \approx \frac{\sqrt{6} \Omega_{0}}{m_{F} \Delta W},
+\end{equation}
+
+where we have used defined a new Rabi frequency $\Omega_{2}$ as
+
+\begin{equation}
+    \Omega_{2} = \sqrt{2} \kappa \Omega_{0},
+\end{equation}
+
+and we have used the approximation for $\kappa$ in Eq. \ref{kappa_approx}. The Rabi frequency $\Omega_{2}$ can be imagined, using Eq. \ref{initial_width}, as the frequency associated to the final wave packet, after it has been expanded. 
+
+Let us now, re-write the condition in Eq. \ref{condition_transition_width2} in terms of the Rabi frequencies $\Omega'$ and $\Omega_{2}$
+
+\begin{equation}
+    \Omega' > \Omega_{2} \ge \Omega_{0}
+\end{equation}
+    
+Or in terms of the duration of the corresponding pulses
+
+\begin{equation}
+    t' < t_{2} < t_{0}
+\end{equation}
+
+Therefore, when designing the experiment, we have to be careful that the above constraints hold any time we apply a pulse to induce Rabi transitions and let the wave packet expand.
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}

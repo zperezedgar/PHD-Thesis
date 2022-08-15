@@ -1181,7 +1181,7 @@ Finally, notice that the electric field is several order of magnitude larger tha
 
 where $\textbf{r}$ is the position operator, $\textbf{E}$ is the electric field, and $e$ is the electron charge. Nonetheless, in the case of the hyperfine levels that we are considering (Eq. \ref{hyperfine_levels}), the matrix elements of the position operator vanish  \cite{Steck2010}. Therefore, the Rabi flopping frequency will depend solely on the magnetic field, i.e.,
 
-\begin{equation}
+\begin{equation}\label{rabi_frequency_magnetic_field}
 \Omega = \frac{- \textbf{B} \cdot \bra{e} \boldsymbol{\mu} \ket{g}}{\hbar},
 \end{equation}
 
@@ -1272,21 +1272,22 @@ and
 
 The above conditions mean, that in order to have a high the probability of success when inducing the transition, we have to make sure that $\Delta Z(t)$ is still much less than $\Delta Z'$, i.e.,  $\Delta Z(t)$ should not have increased considerably from $\Delta Z_{0}$ (see FIGURE ??????????). In the extreme case that $\Delta Z(t) \ge \Delta Z'$, the probability of success in the transition will be so small that we will consider it to be zero, see Fig. \ref{width_selection_graphs}. 
 
-Let us notice that the value of $\Delta Z_{0}$ that minimizes the expansion of the wave packet (Eq. \ref{final_width_dimensional}) is given by
+\subsubsection{Minimization of the Expansion of the Wave Packet}
+Let us notice that the value of $\Delta Z_{0}$ that minimizes the expansion of the wave packet (Eq. \ref{final_width_dimensional}) is given by\footnote{We have discarded the solution with no physical meaning.}
 
-\begin{equation}
-    (\Delta Z_{0})_{min} = \sqrt{\frac{\hbar}{2M} t}.
+\begin{equation}\label{initial_width_minimizes_final_width}
+    (\Delta Z_{0})_{min} = \sqrt{\frac{\hbar t }{2M}}.
 \end{equation}
 
 By substituting this value into Eq. \ref{final_width_dimensional}, we get that the final width of the packet will be given by
 
 \begin{equation}\label{final_width_minimum}
-    (\Delta Z(t))_{min}  = \kappa \sqrt{\frac{\hbar}{M} t}.
+    (\Delta Z(t))_{min}  = \kappa \sqrt{\frac{\hbar t}{M}}.
 \end{equation}
 
-In other words, given an initial width $\Delta Z_{0}$, the expansion of the wave packet will be minimum if we let it expand for a maximum time of
+In other words, given an initial width $\Delta Z_{0}$, the expansion of the wave packet will be minimum if we let it expand for a time of
 
-\begin{equation}
+\begin{equation}\label{time_minimizes_final_width}
     t_{min}  = \frac{2M}{\hbar} {\Delta Z_{0}}^{2}.
 \end{equation}
 
@@ -1309,20 +1310,29 @@ By using the approximation for $\kappa$ in Eq. \ref{kappa_approx} alongside the 
 \end{equation}
 
 Therefore, using this time value, the condition given in Eq. \ref{condition_transition_width2} is satisfied as expected.
+
 Finally, notice that if we substitute Eq. \ref{initial_width_in_terms_of_rabi} into Eq. \ref{width_evaluated_t_min}, we get
 
 \begin{equation}\label{width_evaluated_t_min_rabi}
-    \Delta Z(t_{min}) = \kappa \sqrt{6} \Omega_{0} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta} \equiv \sqrt{3} \Omega_{2} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta} \approx \frac{\sqrt{6} \Omega_{0}}{m_{F} \Delta W},
+    \Delta Z(t_{min}) = \kappa \sqrt{6} \Omega_{0} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta} \approx \frac{\sqrt{6} \Omega_{0}}{m_{F} \Delta W},
 \end{equation}
 
-where we have used defined a new Rabi frequency $\Omega_{2}$ as
+where we have used the approximation for $\kappa$ in Eq. \ref{kappa_approx}. 
+
+\subsubsection{Working Frequency}
+Once the wave packet has been expanded starting from $\Delta Z_{0}$, according to Eq. \ref{initial_width}, the final width will have a Rabi frequency $\Omega_{2}$ associated with it.  For example, if we set the initial width of the wave packet and let it expand for a time equal to the time that minimizes the final width (Eq. \ref{width_evaluated_t_min_rabi}), we can define a new Rabi frequency $\Omega_{2}$ given by
+
+\begin{equation}\label{rabi_freqs_relation}
+    \Omega_{2} \equiv \sqrt{2} \kappa \Omega_{0},
+\end{equation}
+
+and write the final width in terms of this new Rabi frequency, i.e.,
 
 \begin{equation}
-    \Omega_{2} = \sqrt{2} \kappa \Omega_{0},
+    \Delta Z(t_{min}) = \sqrt{3} \Omega_{2} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta}
 \end{equation}
 
-and we have used the approximation for $\kappa$ in Eq. \ref{kappa_approx}. The Rabi frequency $\Omega_{2}$ can be imagined, using Eq. \ref{initial_width}, as the frequency associated to the final wave packet, after it has been expanded. 
-
+Therefore, we can define a new Rabi frequency, in terms of the initial Rabi frequency (corresponding to the initial width), every time that the wave packet experiences an expansion.
 Let us now, re-write the condition in Eq. \ref{condition_transition_width2} in terms of the Rabi frequencies $\Omega'$ and $\Omega_{2}$
 
 \begin{equation}
@@ -1335,7 +1345,56 @@ Or in terms of the duration of the corresponding pulses
     t' < t_{2} < t_{0}
 \end{equation}
 
-Therefore, when designing the experiment, we have to be careful that the above constraints hold any time we apply a pulse to induce Rabi transitions and let the wave packet expand.
+Therefore, when designing the experiment, we have to make sure that the above constraints hold at any time that we apply a pulse to induce Rabi transitions and let the wave packet expand. Typically, the frequency $\Omega'$ will be set as the maximum frequency that could be obtained in the laboratory (see. Eq. \ref{rabi_frequency_magnetic_field}).
+
+\subsubsection{Maximization of the Time to Reach a Given Width}
+In the last section, we computed the initial width needed to minimize the final width of the wave packet when the expansion time $t$ is fixed (Eq. \ref{initial_width_minimizes_final_width}) and also we fixed the initial width to obtain the time that we can let the wave packet expand in order to minimize final width (Eq. \ref{time_minimizes_final_width}). However, as we mentioned earlier, the maximum Rabi frequency that we can obtain in the laboratory will usually set the final width that we can use to drive the transitions. Therefore, it makes sense to set the final width as a constant in Eq. \ref{final_width_dimensional} and find out the initial width that maximizes the time needed to reach the final width. Thereby, we re-write Eq. \ref{final_width_dimensional} as follows
+
+\begin{equation}\label{expansion_wave_packet_time_solution}
+    t = \frac{\Delta Z_{0}}{\xi} \sqrt{\bigg(\frac{\Delta Z_{max}}{\kappa}\bigg)^2 - (\Delta Z_{0})^2},
+\end{equation}
+
+where $\Delta Z_{max}$ is the maximum width that we want the wave packet to expand. The initial width that maximizes this expression is given by\footnote{We have discarded the solution with no physical meaning.}
+
+\begin{equation}
+    (\Delta Z_{0})_{max} = \frac{1}{\sqrt{2}} \frac{\Delta Z_{max}}{\kappa}
+\end{equation}
+
+If we substitute back this value into Eq. \ref{expansion_wave_packet_time_solution} we get the time that we can let the wave packet expand
+
+\begin{equation}
+    t_{max} = \frac{M}{\hbar} \bigg(\frac{\Delta Z_{max}}{\kappa}\bigg)^2
+\end{equation}
+
+Finally, notice that if we set the initial width as fixed and try to compute the final width that maximizes Eq. \ref{expansion_wave_packet_time_solution}, the solution will be trivially an infinite final width so that case is not an interesting insight. 
+
+
+
+
+
+
+
+\begin{comment}
+Now, let us use Eq. \ref{rabi_freqs_relation} to obtain the Rabi frequencies corresponding to the sequence of pulses (?????). After the preparation of the atom, the Rabi frequency corresponding the atom's width (not to the microwaves driving the transition) will be 
+
+\begin{equation}
+    \Omega_{2} = \sqrt{2} \kappa \Omega_{0}.
+\end{equation}
+
+We let the wave packet expand, and apply the first $pi$-pulse. The Rabi frequency after the expansion will be
+
+\begin{equation}
+    \Omega_{3} = \sqrt{2} \kappa \Omega_{2}.
+\end{equation}
+
+Again, we let the wave packet expand, and apply the last $pi$-pulse. The Rabi frequency after the expansion will be
+
+\begin{equation}
+    \Omega_{3} = \sqrt{2} \kappa \Omega_{3}.
+\end{equation}
+
+Finally, we let the wave packet expand, and
+\end{comment}
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}

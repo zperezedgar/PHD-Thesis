@@ -1185,52 +1185,6 @@ where $\textbf{r}$ is the position operator, $\textbf{E}$ is the electric field,
 \Omega = \frac{- \textbf{B} \cdot \bra{e} \boldsymbol{\mu} \ket{g}}{\hbar},
 \end{equation}
 
-\subsection{Initial Cloud Width Selection}
-In the last section, we showed how to prepare the initial width for a single Alkali atom. In this section, we will generalize that result to consider atoms whose wave function is initially shifted from the origin.
-
-If we choose the origin of our coordinate system to be the position where the detuning is zero, then, in the case of a cloud of non-interacting Alkali atoms, we can expect that many atoms in the sample will have a slight offset from the origin. In that case, the width of the atomic wave function will be given by Eq. \ref{width_atomic_wave_function}, i.e.,
-
-\begin{equation}
-  \Delta Z = (2Z_{HWHM} - z_{off}),
-\end{equation}
-
-where we have used a sub-index to indicate that the atom has an offset from the origin of the coordinate system which is centered at $z_{0}$, the point where the detuning is zero. Therefore, using Eq. \ref{initial_width}, we can compute the atomic width that will be selected when the initial atomic distribution has an offset from the point where the detuning is zero, i.e.,
-
-\begin{equation}\label{initial_width_offset}
-\Delta Z_{off} = \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta} - z_{off},
-\end{equation}
-
-The above equation represents the width that is selected when the atomic wave function has an offset from the origin. This width is related to the width selected when the atom is placed in the origin by the relation
-
-\begin{equation}\label{width_selection_range}
-    \Delta Z \ge \Delta Z_{off} > 0
-\end{equation}
-
-This means that as the atom's offset from the origin increases, the selected width will decrease until it reaches a width of zero just at the point where the probability of transition goes to zero as can be seen in Fig. \ref{width_selection_before}. Thereupon, if the offset surpasses the point where the probability of transition is zero, then the atom will not have been initialized and we can get rid of it. In the end, we will finish with a sample of Alkali atoms whose individual atomic widths have been selected to lay in the range given by Eq. \ref{width_selection_range}, and the total width of this new cloud will be $\Delta Z$ as shown in the Fig. \ref{width_selection_after}. In other words, we have forced the cloud of Alkali atoms to have a width given by the maximum atomic width that can be selected, i.e.,
-
-\begin{equation}\label{cloud_width}
-    \Delta Z_{cloud} = \Delta Z
-\end{equation}
-
-\begin{figure}
-    \centering
-    \begin{subfigure}{1\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{width_selection_a.png}
-        \caption{Atomic wave functions before the width selection process.}
-        \label{width_selection_before}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{1\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{width_selection_b.png}
-        \caption{Atomic wave functions after the width selection process.}
-        \label{width_selection_after}
-    \end{subfigure}
-    \caption{Atomic wave functions in a sample of non-interacting Alkali atoms before and after the width selection process. The scale used in both graphs is different for illustration purposes. The selection range is set by the Rabi frequency (Eq. \ref{initial_width}). If the wave function is initially centered at the point where the detuning is zero, the selected width will be equal to the selection range. On the other hand, if the wave function has an offset from the point where the detuning is zero, the selected wave function's width will decrease by the same amount (Eq. \ref{initial_width_offset}). The width can be reduced until it reaches a width of zero at the point where the probability of transition is, by assumption, zero, i.e., $2Z_{HWHM}$. The atoms whose distribution function is located beyond that point will never transition so we can get rid of them using another laser. After the selection process has been done, the atomic cloud will have a width equal to the selection range (Eq. \ref{cloud_width}).}
-    \label{width_selection_graphs}
-\end{figure}
-
 \subsection{Choosing the Initial Atomic Width}
 In the last sections, we showed how to select the initial atomic width of the alkali atoms to be used during the interferometry process. Then, we saw what happens when the atom is shifted from the origin. In this section, we will study the constraints that choosing a particular initial atomic width will impose in the time that we can let the atomic wave packet expand without affecting the Rabi transitions due to the detuning.
 
@@ -1243,7 +1197,7 @@ Suppose that we have successfully initialized our Alkali atom with a initial wid
 where we have used a sub-index to indicate that the Rabi frequency $\Omega_{0}$ corresponds to the frequency used to select the initial width. Following, we let our atom evolve during a lapse of time $t$. After that time, the wave function of the Alkali atom will expand according to Eq. \ref{alkali_wave_packet_width}, which we rewrite here in terms of dimensional quantities
 
 \begin{equation}\label{final_width_dimensional}
-\Delta Z (t) = \kappa \sqrt{[\Delta Z_{0}]^{2} + \left[\frac{\xi t}{\Delta Z_{0}} \right]^{2}},
+\Delta Z (t) = \sqrt{[\Delta Z_{0}]^{2} + \left[\frac{\xi t}{\Delta Z_{0}} \right]^{2}},
 \end{equation}
 
 where we have defined the following constant
@@ -1289,60 +1243,36 @@ Let us notice that the value of $\Delta Z_{0}$ that minimizes the expansion of t
 By substituting this value into Eq. \ref{final_width_dimensional}, we get that the final width of the packet will be given by
 
 \begin{equation}\label{final_width_minimum}
-    (\Delta Z(t))_{min}  = \kappa \sqrt{\frac{\hbar t}{M}}.
+    (\Delta Z(t))_{min}  = \sqrt{\frac{\hbar t}{M}}.
 \end{equation}
 
-In other words, given an initial width $\Delta Z_{0}$, the expansion of the wave packet will be minimum if we let it expand for a time of
+Therefore, the expanded wave packet will have a width $4$ times larger than the initial width, i.e.,
 
-\begin{equation}\label{time_minimizes_final_width}
-    t^{\ast}  = \frac{2M}{\hbar} {\Delta Z_{0}}^{2}.
+\begin{equation}\label{ration_optimial_initial_width_vs_final_width}
+    \frac{(\Delta Z_{0})^{\ast}}{(\Delta Z(t))_{min}} = \frac{1}{4}.
 \end{equation}
 
-The above equation can be proved by equating Eqs. \ref{final_width_dimensional} and \ref{final_width_minimum} and solving for $t$. If we let the wave packet expand during this time, the final width will be given by
+Notice that using this optimal initial width, the condition given in Eq. \ref{condition_transition_width2} is satisfied as expected. 
 
-\begin{equation}\label{width_evaluated_t_min}
-   (\Delta Z(t))_{min} = \Delta Z(t^{\ast}) = \kappa \sqrt{2}\Delta Z_{0}.
-\end{equation}
-
-Then, the rate of change between the initial width and the final width will given by
-
-\begin{equation}
-    \frac{\Delta Z_{0}}{\Delta Z(t^{\ast})} = \frac{1}{\kappa \sqrt{2}}.
-\end{equation}
-
-By using the approximation for $\kappa$ in Eq. \ref{kappa_approx} alongside the corresponding values for the $\ce{^{87}_{}Rb}$ atom, we get that 
-
-\begin{equation}
-    \frac{\Delta Z_{0}}{\Delta Z(t^{\ast})} \approx 3.45
-\end{equation}
-
-Therefore, using this time value, the condition given in Eq. \ref{condition_transition_width2} is satisfied as expected.
-
-Finally, notice that if we substitute Eq. \ref{initial_width_in_terms_of_rabi} into Eq. \ref{width_evaluated_t_min}, we get
-
-\begin{equation}\label{width_evaluated_t_min_rabi}
-    \Delta Z(t^{\ast}) = \kappa \sqrt{6} \Omega_{0} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta} \approx \frac{\sqrt{6} \Omega_{0}}{m_{F} \Delta W},
-\end{equation}
-
-where we have used the approximation for $\kappa$ in Eq. \ref{kappa_approx}. 
+On the other hand, if we fix the initial width and try to optimize Eq. \ref{final_width_dimensional}, we will find that the optimal solution is trivially $t=0$ which is not of interest.
 
 \subsubsection{Maximization of the Time to Reach a Given Width}
-In the last section, we computed the initial width needed to minimize the final width of the wave packet when the expansion time $t$ is fixed (Eq. \ref{initial_width_minimizes_final_width}) and also we fixed the initial width to obtain the time that we can let the wave packet expand in order to minimize final width (Eq. \ref{time_minimizes_final_width}). However, as we mentioned earlier, the maximum Rabi frequency that we can obtain in the laboratory will usually set the final width that we can use to drive the transitions. Therefore, it makes sense to set the final width as a constant in Eq. \ref{final_width_dimensional} and find out the initial width that maximizes the time needed to reach the final width. Thereby, we re-write Eq. \ref{final_width_dimensional} as follows
+In the last section, we computed the initial width needed to minimize the final width of the wave packet when the expansion time $t$ is fixed (Eq. \ref{initial_width_minimizes_final_width}). However, as we mentioned earlier, the maximum Rabi frequency that we can obtain in the laboratory will usually set the final width that we can use to drive the transitions. Therefore, it makes sense to set the final width as a constant in Eq. \ref{final_width_dimensional} and find out the initial width that maximizes the time needed to reach the final width. Thereby, we re-write Eq. \ref{final_width_dimensional} as follows
 
 \begin{equation}\label{expansion_wave_packet_time_solution}
-    t = \frac{\Delta Z_{0}}{\xi} \sqrt{\bigg(\frac{\Delta Z_{f}}{\kappa}\bigg)^2 - (\Delta Z_{0})^2},
+    t = \frac{\Delta Z_{0}}{\xi} \sqrt{(\Delta Z_{f})^2 - (\Delta Z_{0})^2},
 \end{equation}
 
 where $\Delta Z_{f}$ is the final width of the wave packet. The initial width that maximizes this expression is given by\footnote{We have discarded the solution with no physical meaning.}
 
-\begin{equation}
-    (\Delta Z_{0})^{\ast} = \frac{1}{\sqrt{2}} \frac{\Delta Z_{f}}{\kappa}
+\begin{equation}\label{ratio_optimial_initial_width_vs_final_width_time_max}
+    (\Delta Z_{0})^{\ast} = \frac{\Delta Z_{f}}{\sqrt{2}}.
 \end{equation}
 
-If we substitute back this value into Eq. \ref{expansion_wave_packet_time_solution} we get the time that we can let the wave packet expand
+We can see that this value also satisfies Eq. \ref{condition_transition_width2} as expected. If we substitute back this value into Eq. \ref{expansion_wave_packet_time_solution}, we get the time that we can let the wave packet expand
 
 \begin{equation}
-    t_{max} = \frac{M}{\hbar} \bigg(\frac{\Delta Z_{f}}{\kappa}\bigg)^2
+    t_{max} = \frac{M}{\hbar} (\Delta Z_{f})^2.
 \end{equation}
 
 Finally, notice that if we set the initial width as fixed and try to compute the final width that maximizes Eq. \ref{expansion_wave_packet_time_solution}, the solution will be trivially an infinite final width so that case is not an interesting insight. 
@@ -1355,45 +1285,56 @@ We present here the results obtained in the last sections about the optimal expa
  \hline
  \multicolumn{1}{||p{2cm}|}{\centering Dependent \\ Variable \\} & \multicolumn{1}{|p{2cm}|}{\centering Fixed \\ Value \\} & \multicolumn{1}{|p{2cm}|}{\centering Independent \\ Variable \\} & \multicolumn{1}{|p{3cm}|}{\centering Optimal \\ Value \\} & \multicolumn{1}{|p{3cm}||}{\centering Optimized \\ Dependent Variable \\} \\ [0.5ex] 
  \hline\hline
- $\Delta Z(t)$ & $t$ & $\Delta Z_{0}$ & $(\Delta Z_{0})^{\ast} = \sqrt{\frac{\hbar t }{2M}}$ & $(\Delta Z(t))_{min} = \kappa \sqrt{\frac{\hbar t }{M}}$ \\ 
+ $\Delta Z(t)$ & $t$ & $\Delta Z_{0}$ & $(\Delta Z_{0})^{\ast} = \sqrt{\frac{\hbar t }{2M}}$ & $(\Delta Z(t))_{min} = \kappa \sqrt{\frac{\hbar t }{M}}$ \\
  \hline
- $\Delta Z(t)$ & $\Delta Z_{0}$ & $t$ & $t^{\ast} = \frac{2M}{\hbar} (\Delta Z_{0})^{2}$ & $(\Delta Z(t))_{min} = \kappa \sqrt{2} \Delta Z_{0}$ \\
+ $\Delta Z(t)$ & $\Delta Z_{0}$ & $t$ & $t^{\ast} = 0$ & $(\Delta Z(t))_{min} = 0$ \\
  \hline
- $t$ & $\Delta Z_{f}$ & $\Delta Z_{0}$ & $(\Delta Z_{0})^{\ast} = \frac{1}{\sqrt{2}} \frac{\Delta Z_{f}}{\kappa}$ & $t_{max} = \frac{M}{\hbar} \bigg(\frac{\Delta Z_{f}}{\kappa}\bigg)^{2}$ \\
+ $t$ & $\Delta Z_{f}$ & $\Delta Z_{0}$ & $(\Delta Z_{0})^{\ast} = \frac{\Delta Z_{f}}{\sqrt{2}}$ & $t_{max} = \frac{M}{\hbar} (\Delta Z_{f})^{2}$ \\
  \hline
  $t$ & $\Delta Z_{0}$ & $\Delta Z_{f}$ & $(\Delta Z_{f})^{\ast} \longrightarrow \infty$ & $t_{max} \longrightarrow \infty$ \\ [1ex] 
  \hline
 \end{tabular}
 \end{center}
 
+Lastly, we show in Fig. (????????? (las dos graficas x=t, y=dz) the optimization of the wave packet for the two non-trivial cases.
+
 \subsubsection{Working Frequency}
-Once the wave packet has been expanded starting from $\Delta Z_{0}$, according to Eq. \ref{initial_width}, the final width will have a Rabi frequency $\Omega_{2}$ associated with it.  For example, if we set the initial width of the wave packet and let it expand for a time equal to the time that minimizes the final width (Eq. \ref{width_evaluated_t_min_rabi}), we can define a new Rabi frequency $\Omega_{2}$ given by
+Once the wave packet has been expanded starting from $\Delta Z_{0}$, according to Eq. \ref{initial_width}, the final width will have a Rabi frequency $\Omega_{2}$ associated with it. This new Rabi frequency can be written in terms of the Rabi frequency corresponding to the initial width. For example, if we substitute Eq. \ref{initial_width_in_terms_of_rabi} into Eq. \ref{ration_optimial_initial_width_vs_final_width}, we get
 
-\begin{equation}\label{rabi_freqs_relation}
-    \Omega_{2} \equiv \sqrt{2} \kappa \Omega_{0},
+\begin{equation}\label{width_evaluated_optimal_min_rabi}
+    (\Delta Z(t))_{min} = 4 \sqrt{3} \Omega_{0}^* \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta} = \sqrt{3} \Omega_{f} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta}
 \end{equation}
 
-and write the final width in terms of this new Rabi frequency, i.e.,
+where $\Omega_{0}^*$ is the Rabi frequency corresponding to the optimal initial width $(\Delta Z_{0})^{\ast}$ and we have defined the Rabi frequency corresponding to the final width as
 
-\begin{equation}
-    \Delta Z(t^{\ast}) = \sqrt{3} \Omega_{2} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta}
+\begin{equation}\label{rabi_freqs_relation1}
+    \Omega_{f} \equiv 4 \Omega_{0},
 \end{equation}
 
-Therefore, we can define a new Rabi frequency, in terms of the initial Rabi frequency (corresponding to the initial width), every time that the wave packet experiences an expansion.
+This equation is analogue to Eq. \ref{ration_optimial_initial_width_vs_final_width}.
+Thereby, in the same way, if we define the Rabi frequency associated with the final width for Eq. \ref{ratio_optimial_initial_width_vs_final_width_time_max}, we get
+
+\begin{equation}\label{rabi_freqs_relation2}
+    \Omega_{f} \equiv \sqrt{2} \Omega_{0}.
+\end{equation}
+
+Thus, we can characterize the expansion of the wave packet by using solely the relation between the initial and final Rabi frequency corresponding to the initial and final width of the wave packet.
+
 Let us now, re-write the condition in Eq. \ref{condition_transition_width2} in terms of the Rabi frequencies $\Omega'$ and $\Omega_{2}$
 
 \begin{equation}
-    \Omega' > \Omega_{2} \ge \Omega_{0}
+    \Omega' > \Omega_{2} \ge \Omega_{0}.
 \end{equation}
     
 Or in terms of the duration of the corresponding pulses
 
 \begin{equation}
-    t' < t_{2} < t_{0}
+    t' < t_{2} < t_{0}.
 \end{equation}
 
 Therefore, when designing the experiment, we have to make sure that the above constraints hold at any time that we apply a pulse to induce Rabi transitions and let the wave packet expand. 
 
+\subsubsection{Determination of the Precision}
 Typically, the frequency $\Omega'$ will be set as the maximum frequency that could be obtained in the laboratory. According to Eq. \ref{rabi_frequency_magnetic_field}, the Rabi frequency will be directly proportional to the magnitude of the magnetic field of the microwaves used to drive the transition. This magnetic field can be measured by using a power meter to measure the power of the radiation according to
 
 \begin{equation}
@@ -1402,28 +1343,51 @@ Typically, the frequency $\Omega'$ will be set as the maximum frequency that cou
 
 where
 
+\subsection{Initial Cloud Width Selection}
+In the last section, we showed how to prepare the initial width for a single Alkali atom. In this section, we will generalize that result to consider atoms whose wave function is initially shifted from the origin.
 
-\begin{comment}
-Now, let us use Eq. \ref{rabi_freqs_relation} to obtain the Rabi frequencies corresponding to the sequence of pulses (?????). After the preparation of the atom, the Rabi frequency corresponding the atom's width (not to the microwaves driving the transition) will be 
-
-\begin{equation}
-    \Omega_{2} = \sqrt{2} \kappa \Omega_{0}.
-\end{equation}
-
-We let the wave packet expand, and apply the first $pi$-pulse. The Rabi frequency after the expansion will be
+If we choose the origin of our coordinate system to be the position where the detuning is zero, then, in the case of a cloud of non-interacting Alkali atoms, we can expect that many atoms in the sample will have a slight offset from the origin. In that case, the width of the atomic wave function will be given by Eq. \ref{width_atomic_wave_function}, i.e.,
 
 \begin{equation}
-    \Omega_{3} = \sqrt{2} \kappa \Omega_{2}.
+  \Delta Z = (2Z_{HWHM} - z_{off}),
 \end{equation}
 
-Again, we let the wave packet expand, and apply the last $pi$-pulse. The Rabi frequency after the expansion will be
+where we have used a sub-index to indicate that the atom has an offset from the origin of the coordinate system which is centered at $z_{0}$, the point where the detuning is zero. Therefore, using Eq. \ref{initial_width}, we can compute the atomic width that will be selected when the initial atomic distribution has an offset from the point where the detuning is zero, i.e.,
 
-\begin{equation}
-    \Omega_{3} = \sqrt{2} \kappa \Omega_{3}.
+\begin{equation}\label{initial_width_offset}
+\Delta Z_{off} = \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta} - z_{off},
 \end{equation}
 
-Finally, we let the wave packet expand, and
-\end{comment}
+The above equation represents the width that is selected when the atomic wave function has an offset from the origin. This width is related to the width selected when the atom is placed in the origin by the relation
+
+\begin{equation}\label{width_selection_range}
+    \Delta Z \ge \Delta Z_{off} > 0
+\end{equation}
+
+This means that as the atom's offset from the origin increases, the selected width will decrease until it reaches a width of zero just at the point where the probability of transition goes to zero as can be seen in Fig. \ref{width_selection_before}. Thereupon, if the offset surpasses the point where the probability of transition is zero, then the atom will not have been initialized and we can get rid of it. In the end, we will finish with a sample of Alkali atoms whose individual atomic widths have been selected to lay in the range given by Eq. \ref{width_selection_range}, and the total width of this new cloud will be $\Delta Z$ as shown in the Fig. \ref{width_selection_after}. In other words, we have forced the cloud of Alkali atoms to have a width given by the maximum atomic width that can be selected, i.e.,
+
+\begin{equation}\label{cloud_width}
+    \Delta Z_{cloud} = \Delta Z
+\end{equation}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{1\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{width_selection_a.png}
+        \caption{Atomic wave functions before the width selection process. En realidad no conocemos la forma y ancho inicial de la funcion de onda pero podemos intuir que tiene forma gaussiana. el ancho de los atomos atrapados puede depender de la temperatura? y ser menor que el ancho seleccionado?}
+        \label{width_selection_before}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{1\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{width_selection_b.png}
+        \caption{Atomic wave functions after the width selection process. la funcion de onda final siempre es la magenta (que en realidad es la funcion sinc2 y es el estado compatible con nuestra medicion). en realidad, estamos proyectando el estado al realizar la medicion y debido a la incertidumbre, la funcion final es la suma pesada de todos los posibles estados}
+        \label{width_selection_after}
+    \end{subfigure}
+    \caption{Atomic wave functions in a sample of non-interacting Alkali atoms before and after the width selection process. The scale used in both graphs is different for illustration purposes. The selection range is set by the Rabi frequency (Eq. \ref{initial_width}). If the wave function is initially centered at the point where the detuning is zero, the selected width will be equal to the selection range. On the other hand, if the wave function has an offset from the point where the detuning is zero, the selected wave function's width will decrease by the same amount (Eq. \ref{initial_width_offset}). The width can be reduced until it reaches a width of zero at the point where the probability of transition is, by assumption, zero, i.e., $2Z_{HWHM}$. The atoms whose distribution function is located beyond that point will never transition so we can get rid of them using a push beam. After the selection process has been done, the atomic cloud will have a width equal to the selection range (Eq. \ref{cloud_width}).}
+    \label{width_selection_graphs}
+\end{figure}
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}

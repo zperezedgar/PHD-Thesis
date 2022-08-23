@@ -51,10 +51,10 @@ The atom is immersed inside a magnetic field of the following form
 \textbf{B} = \eta z \hat{\textbf{z}}\
 \end{equation}
 
-where z is the position and $\eta$ is a constant with units of Tesla per meter. The atom will feel a force given by the gradient of the magnetic energy caused by the coupling of the total magnetic moment of the atom $\mu$ and the magnetic field\footnote{It is important to comment out that in the rest frame of the atom, we would see that there is a magnetic field that changes with time. Therefore, according to Faraday´s law, this changing magnetic field would induce an electric field that would couple with the atom's electric dipole moment giving rise to an electric energy term that would try to hold back the atom from falling down and would need to be considered. Fortunately, we can choose to work with atomic states such that the matrix elements of the position operator vanish at first order.}, i.e.,
+where z is the position and $\eta$ is a constant with units of Tesla per meter. The atom will feel a force given by the gradient of the magnetic energy caused by the coupling of the total magnetic moment of the atom $\mu_{z}$ along the z-direction and the magnetic field\footnote{It is important to comment out that in the rest frame of the atom, we would see that there is a magnetic field that changes with time. Therefore, according to Faraday´s law, this changing magnetic field would induce an electric field that would couple with the atom's electric dipole moment giving rise to an electric energy term that would try to hold back the atom from falling down and would need to be considered. Fortunately, we can choose to work with atomic states such that the matrix elements of the position operator vanish at first order.}, i.e.,
 
 \begin{equation}\label{magnetic_force}
-\textbf{F} = - \nabla (\pm \mu \eta z ) = \mp \mu \eta \hat{\textbf{z}}\
+\textbf{F} = - \nabla (\pm \mu_{z} \eta z ) = \mp \mu_{z} \eta \hat{\textbf{z}}\
 \end{equation}
 
 Therefore, the atom will feel an acceleration due to the magnetic field proportional to its total magnetic moment. The total magnetic moment of the atom depends on its internal state, hence, the acceleration will depend on the hyperfine level under consideration. Let $a_B$ be the acceleration due to the magnetic gradient for the hyperfine state $\ket{1}$ and $-a_B$ the acceleration for the hyperfine state $\ket{2}$. Thus, the effective accelerations for state $\ket{1}$ and state $\ket{2}$ are respectively
@@ -69,7 +69,7 @@ a_{-} = g - a_B
 where g is the local acceleration due to gravity (taken to be positive), and $a_B$ is given by
 
 \begin{equation}\label{am}
-a_B = \mu \eta / m
+a_B = \mu_{z} \eta / m
 \end{equation}
 
 where $m$ is the mass of the atom under consideration. Note that the subscript $+$ indicates that we are considering the state $\ket{1}$ while the subscript $-$ indicates that we are considering the state $\ket{2}$.
@@ -121,13 +121,13 @@ z_{1} = [(z_{0} + v_{0} T_{1} + \frac{a_{+} T^{2}_{1}}{2}) + (v_{0} + a_{+}T_{1}
 z_{2} = [(z_{0} + v_{0} T_{1} + \frac{a_{-} T^{2}_{1}}{2}) + (v_{0} + a_{-}T_{1})T_{2} + \frac{a_{+} T^{2}_{2}}{2}] + (v_{0}+a_{-}T_{1} + a_{+}T_{2})T_{3} + \frac{a_{-} T^{2}_{3}}{2}
 \end{equation}
 
-By using Eqs. (\ref{final_v1} and \ref{final_v2}) we get an equation that relates the periods between pulses as
+By using Eqs. \ref{final_v1} and \ref{final_v2}, we get an equation that relates the periods between pulses as
 
 \begin{equation}\label{times_relation}
 T_{a} = 1 + T_{b}
 \end{equation}
 
-where we have defined $T_{a} \equiv \frac{T_{2}}{T_{1}}$ and $T_{b} \equiv \frac{T_{3}}{T_{1}}$. Now, by using Eqs. (\ref{final_z1} and \ref{final_z2}), and Eq. (\ref{times_relation}) we get the condition for the times elapsed between each pulse
+where we have defined $T_{a} \equiv \frac{T_{2}}{T_{1}}$ and $T_{b} \equiv \frac{T_{3}}{T_{1}}$. Now, by using Eqs. \ref{final_z1}, \ref{final_z2}, and \ref{times_relation}, we get the condition for the times elapsed between each pulse
 
 \begin{equation}
 \begin{aligned}
@@ -136,7 +136,7 @@ T_{1} = T_{3}
 \end{aligned}
 \end{equation}
 
-These equations hold independently of the values for $a_{+}$ and $a_{-}$, as can be shown by substituting them into Eqs. (\ref{final_v1} and \ref{final_v2}). Therefore, the condition to get interference in the presence of a magnetic force is to apply a 
+These equations hold independently of the values for $a_{+}$ and $a_{-}$, as can be shown by substituting them into Eqs. \ref{final_v1} and \ref{final_v2}. Therefore, the condition to get interference in the presence of a magnetic force is to apply a 
 $\frac{\pi}{2}$-pulse followed by a $\pi$-pulse after a time $T$ has elapsed, then apply another $\pi$-pulse after a time $2T$ has elapsed, and finally, apply a $\frac{\pi}{2}$-pulse after a time $T$ elapsed, i.e., the sequence of pulses is
 
 \begin{equation}\label{pulses}
@@ -160,7 +160,7 @@ After the first $\frac{\pi}{2}$-pulse is applied, a superposition of states is c
         \caption{Position-time graph.}
         \label{position_graph}
     \end{subfigure}
-    \caption{Velocity and position vs. time graphs for each state after the superposition of hyperfine levels is created and just before they are made interfere. In these graphs $g=9.8m/s^2$, the mass $m$ is taken to be $87*1.6*10^{-27} Kg$ (approximately the mass of $\ce{^{87}_{}Rb}$), $\mu$ is taken to be the Bohr magneton with value $9.27*10^{-24} J/T$, $\eta$ has a value of $0.05 T/m$, and $T=100ms$. 
+    \caption{Velocity and position vs. time graphs for each state after the superposition of hyperfine levels is created and just before they are made interfere. In these graphs $g=9.8m/s^2$, the mass $m$ is taken to be $87*1.6*10^{-27} Kg$ (approximately the mass of $\ce{^{87}_{}Rb}$), $\mu_{z}$ is taken to be the Bohr magneton with value $9.27*10^{-24} J/T$, $\eta$ has a value of $0.05 T/m$, and $T=100ms$. 
     The hyperfine state $\ket{1}$ has a quantum magnetic number of $m_{F}=F$ whereas the state $\ket{2}$ has a value of $m_{F}=-F$.}
     \label{velocity_position_graphs}
 \end{figure}
@@ -183,13 +183,13 @@ E = \hbar \omega,
 and the energy is given by the sum of the magnetic energy (Eq. \ref{magnetic_force}) and the energy due to the gravity field, i.e.,
 
 \begin{equation}\label{classic_energy}
-E = \pm \mu B + mgz = (\pm \mu \eta + mg)z = C_{\pm} z
+E = \pm \mu_{z} B_{z} + mgz = (\pm \mu_{z} \eta + mg)z = C_{\pm} z
 \end{equation}
 
 where we have defined the constant
 
 \begin{equation}\label{c_definition}
-C_{\pm} \equiv \pm \mu \eta + mg = m a_{\pm}
+C_{\pm} \equiv \pm \mu_{z} \eta + mg = m a_{\pm}
 \end{equation}
 
 with units of force and with $a_{\pm}$ defined as in the Eqs. \ref{a1} and \ref{a2}. Notice that we have defined the constant $g$ to be positive and we are using a coordinate system with the z-axis pointing upwards such that the atom is initially located at $z=0$, where the initial gravitational potential energy is zero, and as it falls down, the position coordinate becomes negative so the gravitational potential energy becomes negative.
@@ -256,7 +256,7 @@ Therefore, by using Eqs.(\ref{a1}-\ref{a2} , and \ref{phi1t1}-\ref{delphi3}), th
 \end{equation}
 
 \begin{equation}\label{gravimetry_signal}
-\Delta \Phi = 8 \frac{\mu \eta}{\hbar} g T^3
+\Delta \Phi = 8 \frac{\mu_{z} \eta}{\hbar} g T^3
 \end{equation}
 
 where in the last equation we have used the definition of $a_B$ (Eq. \ref{am}). 
@@ -511,10 +511,10 @@ Now, before substituting numerical values, we will make additional approximation
 where $m_{e}$ and $m_{p}$ are the electron and proton mass respectively. However, the proton mass is several orders of magnitude larger than the electron mass, therefore, we can use the following approximation
 
 \begin{equation}\label{kappa_approx}
-\kappa \approx g_{s}\frac{\mu }{\hbar} \frac{\eta}{\Delta W}
+\kappa \approx g_{s}\frac{\mu_{z}}{\hbar} \frac{\eta}{\Delta W}
 \end{equation}
 
-where we have used the approximation $\mu_{B} \approx \mu$, where $\mu$ is the total magnetic moment of the atom. Additionally, by considering the alkali atoms to be $\ce{^{87}_{}Rb}$ atoms. We have the following values for this atom \cite{KAUSHALSK1970,Bunge1993}
+where we have used the approximation $\mu_{B} \approx \mu_{z}$, where $\mu_{z}$ is the total magnetic moment of the atom along the z-direction. Additionally, by considering the alkali atoms to be $\ce{^{87}_{}Rb}$ atoms. We have the following values for this atom \cite{KAUSHALSK1970,Bunge1993} 
 
 \begin{equation}
 g_{s} \approx 2.002 \mathrm{,}\quad g_{n} \frac{m_{e}}{m_{p}} \approx 2.002 \mathrm{,}\quad I = \frac{3}{2}
@@ -529,19 +529,19 @@ thereby, we can approximate $\gamma_{1}$ defined in Eq. \ref{gamma_1} as
 Finally, by using Eqs.(\ref{approx_quantum_phase_1}-\ref{pre_total_quantum_phase}), the definitions Eqs.(\ref{non_dimensional_definitions}-\ref{gamma_1}) alongside the approximations in Eqs. \ref{kappa_approx}, \ref{gamma_1_approx}, we obtain
 
 \begin{equation}
-\Delta \Phi_{\tau_{1}}(x_{d}) = -x_{d}\tau + \frac{\eta \mu \tau^{2} p_{0}}{M \hbar \Delta W^{2}} - \frac{2 \eta \mu \tau^{3} g}{3 \hbar \Delta W^{3}}
+\Delta \Phi_{\tau_{1}}(x_{d}) = -x_{d}\tau + \frac{\eta \mu_{z} \tau^{2} p_{0}}{M \hbar \Delta W^{2}} - \frac{2 \eta \mu_{z} \tau^{3} g}{3 \hbar \Delta W^{3}}
 \end{equation}
 
 \begin{equation}
-\Delta \Phi_{\tau_{2}}(x_{d}) = x_{d}\tau + \frac{4 \eta \mu \tau^{3} g}{3 \hbar \Delta W^{3}}
+\Delta \Phi_{\tau_{2}}(x_{d}) = x_{d}\tau + \frac{4 \eta \mu_{z} \tau^{3} g}{3 \hbar \Delta W^{3}}
 \end{equation}
 
 \begin{equation}
-\Delta \Phi_{\tau_{3}}(x_{d}) = -\frac{\eta \mu \tau^{2} p_{0}}{M \hbar \Delta W^{2}} + \frac{10 \eta \mu \tau^{3} g}{3 \hbar \Delta W^{3}}
+\Delta \Phi_{\tau_{3}}(x_{d}) = -\frac{\eta \mu_{z} \tau^{2} p_{0}}{M \hbar \Delta W^{2}} + \frac{10 \eta \mu_{z} \tau^{3} g}{3 \hbar \Delta W^{3}}
 \end{equation}
 
 \begin{equation}\label{quantum_gravimetry_signal}
-\Delta \Phi = 4 \frac{\mu \eta }{\hbar} g \bigg(\frac{\tau}{\Delta W}\bigg)^{3} = 4 \frac{\mu \eta }{\hbar} g t^{3},
+\Delta \Phi = 4 \frac{\mu_{z} \eta }{\hbar} g \bigg(\frac{\tau}{\Delta W}\bigg)^{3} = 4 \frac{\mu_{z} \eta }{\hbar} g t^{3},
 \end{equation}
 
 were we have used the definition of the non-dimensional time ($\tau\equiv \Delta W t$). Thus, we see that in the quantum picture, the total phase difference is the same as the phase difference obtained in the semi-classical computation Eq. \ref{gravimetry_signal}. In addition, it can be seen that the total phase difference does not depend on the position $x_{d}$ as expected.
@@ -695,7 +695,7 @@ Finally, by using Eqs. \ref{quantum_phase_ignored_terms_simplified_t1}, \ref{qua
 This result can be re-written using the definitions \ref{non_dimensional_definitions}-\ref{gamma_1} alongside the approximations \ref{kappa_approx}-\ref{gamma_1_approx} and keeping only quadratic terms in $\beta$ in the denominator as
 
 \begin{equation}
-\Delta \Phi = \frac{1}{\left(1 -10 \beta ^2 + 9 \beta ^4\right)} \frac{\mu \eta}{\hbar}
+\Delta \Phi = \frac{1}{\left(1 -10 \beta ^2 + 9 \beta ^4\right)} \frac{\mu_{z} \eta}{\hbar}
 \Bigg[ 4 g t^3
 - \beta ^2 \bigg(\frac{77 g t^3}{2} + \frac{p_{0}t^2}{M}  + (3z_{0}+5z)t \bigg) \Bigg],
 \end{equation}
@@ -710,7 +710,7 @@ These previous results can be cast into a more illuminating form by expanding th
 \end{equation}
 
 \begin{equation}\label{gravimetry_signal_first_order_approx_dimensional}
-\Delta \Phi ^{(1)} =  \frac{\mu \eta}{\hbar}
+\Delta \Phi ^{(1)} =  \frac{\mu_{z} \eta}{\hbar}
 \Bigg[ 4 g t^3
 - \beta ^2 \bigg(-\frac{3 g t^3}{2} + \frac{p_{0}t^2}{M}  + (3z_{0}+5z)t \bigg) \Bigg],
 \end{equation}
@@ -736,7 +736,7 @@ The correction given by the first-order approximation goes like $\beta ^2$. Ther
          \label{fig:gravimetry_signal_first_minus_zeroth_order}
      \end{subfigure}
      \hfill
-     \caption{Comparison of the gravimetry signal obtained by using the zeroth-order approximation ($\Delta \Phi ^{(0)}$) given by Eq. \ref{quantum_gravimetry_signal} versus the first-order correction ($\Delta \Phi ^{(1)}$) given by Eq. \ref{gravimetry_signal_first_order_approx_dimensional}. The period used to produce these graphs was $T=50ms$. Besides, we used $g=9.8m/s^{2}$, $\mu=9.27\times10^{-24} J/T$ (the Bohr magneton), $\eta=0.05 T/m$. Additionally, we consider $\ce{^{87}_{}Rb}$ atoms, so we have (\cite{Bunge1993}\cite{KAUSHALSK1970}) $M=1.45\times10^{-25}kg$, $\Delta W=2\pi\times6.835\times10^{9}s^{-1}$ ($\hbar \Delta W $ is the field-free ground state hyperfine energy splitting). Also, we use the approximations in Eqs. \ref{kappa_approx} and \ref{gamma_1_approx}. In addition, we take $p_{0}=0$, $z_{0}=0$, $\Delta Z(0)=1000\times10^{-6}m$, and take $z$ to be the final position of the center of the wave packet at the end of the experiment. The center of the wave packet was evaluated by using the Eq. \ref{xi_eq_motion}, where $x=\kappa z$. In this case, $(\sigma_{x, \tau_{0}})^{2} \approx 4.1 \times 10^{-8}$ and $\epsilon \tau \approx 1.5 \times 10^{-11} t$. Thus, for $t=50ms$, we have $\beta \approx 1.8 \times 10^{-5}$ and the expansion used in the Eqs. \ref{sigma_x_t1_first_order}-\ref{sigma_x_t3_first_order} is justified. Moreover, the gap between both approximations will be proportional to $\beta ^2 \approx 3.3 \times 10^{-10}$.}
+     \caption{Comparison of the gravimetry signal obtained by using the zeroth-order approximation ($\Delta \Phi ^{(0)}$) given by Eq. \ref{quantum_gravimetry_signal} versus the first-order correction ($\Delta \Phi ^{(1)}$) given by Eq. \ref{gravimetry_signal_first_order_approx_dimensional}. The period used to produce these graphs was $T=50ms$. Besides, we used $g=9.8m/s^{2}$, $\mu_{z}=9.27\times10^{-24} J/T$ (the Bohr magneton), $\eta=0.05 T/m$. Additionally, we consider $\ce{^{87}_{}Rb}$ atoms, so we have (\cite{Bunge1993}\cite{KAUSHALSK1970}) $M=1.45\times10^{-25}kg$, $\Delta W=2\pi\times6.835\times10^{9}s^{-1}$ ($\hbar \Delta W $ is the field-free ground state hyperfine energy splitting). Also, we use the approximations in Eqs. \ref{kappa_approx} and \ref{gamma_1_approx}. In addition, we take $p_{0}=0$, $z_{0}=0$, $\Delta Z(0)=1000\times10^{-6}m$, and take $z$ to be the final position of the center of the wave packet at the end of the experiment. The center of the wave packet was evaluated by using the Eq. \ref{xi_eq_motion}, where $x=\kappa z$. In this case, $(\sigma_{x, \tau_{0}})^{2} \approx 4.1 \times 10^{-8}$ and $\epsilon \tau \approx 1.5 \times 10^{-11} t$. Thus, for $t=50ms$, we have $\beta \approx 1.8 \times 10^{-5}$ and the expansion used in the Eqs. \ref{sigma_x_t1_first_order}-\ref{sigma_x_t3_first_order} is justified. Moreover, the gap between both approximations will be proportional to $\beta ^2 \approx 3.3 \times 10^{-10}$.}
      \label{phase_graph_first_order}
 \end{figure}
 
@@ -800,7 +800,7 @@ Thereby, the total phase difference between both states when the last $\frac{\pi
 Thus, by using Eqs. \ref{epsilon}-\ref{q1_q2} and the approximations in Eqs. \ref{kappa_approx} and \ref{gamma_1_approx}, we finally get the total phase difference
 
 \begin{equation}\label{quantum_gravimetry_signal_momentum_space}
-\Delta \Phi = 4 \frac{\mu \eta }{\hbar} g \bigg(\frac{\tau}{\Delta W}\bigg)^{3} = 4 \frac{\mu \eta }{\hbar} g t^{3},
+\Delta \Phi = 4 \frac{\mu_{z} \eta }{\hbar} g \bigg(\frac{\tau}{\Delta W}\bigg)^{3} = 4 \frac{\mu_{z} \eta }{\hbar} g t^{3},
 \end{equation}
 
 where we have used $\tau\equiv \Delta W t$. We can notice that this result is independent of the momentum k and that it coincides with the result obtained in position space as expected.
@@ -1271,7 +1271,7 @@ where $\Delta Z_{f}$ is the final width of the wave packet. The initial width th
 
 We can see that this value also satisfies Eq. \ref{condition_transition_width2} as expected. If we substitute back this value into Eq. \ref{expansion_wave_packet_time_solution}, we get the time that we can let the wave packet expand
 
-\begin{equation}
+\begin{equation}\label{t_maximized_given_initial_width}
     t_{max} = \frac{M}{\hbar} (\Delta Z_{f})^2.
 \end{equation}
 
@@ -1357,10 +1357,122 @@ Therefore, when designing the experiment, we have to make sure that the above co
 Typically, the frequency $\Omega'$ will be set as the maximum frequency that could be obtained in the laboratory. According to Eq. \ref{rabi_frequency_magnetic_field}, the Rabi frequency will be directly proportional to the magnitude of the magnetic field of the microwaves used to drive the transition. This magnetic field can be measured by using a power meter to measure the power of the radiation according to
 
 \begin{equation}
-    P = I A
+    P = I \int dA,
 \end{equation}
 
-where
+where $dA$ is the differential element of area perpendicular to the direction and $I$ is the intensity of the electromagnetic wave. The power meter measures the intensity of the electric field $E$ and is given by
+
+\begin{equation}
+    I = \frac{1}{2} c \epsilon_{0} |E|^{2},
+\end{equation}
+
+where $\epsilon_{0}$ is the permittivity of free space and $c$ is the speed of light in vacuum. Therefore, the power of the microwaves can be written as
+
+\begin{equation}
+    P = \frac{1}{2} c \epsilon_{0} |E|^{2} A,
+\end{equation}
+
+where we have evaluated the area of the power meter. This equation can be re-written in terms of the magnetic field using the following relation
+
+\begin{equation}
+    E = c B = \frac{B}{\sqrt{\mu_{0} \epsilon_{0}}},
+\end{equation}
+
+where $\mu_{0}$ is the vacuum permeability. Thus the power is given by
+
+\begin{equation}
+    P = \frac{c |B|^{2}}{2 \mu_{0}} A.
+\end{equation}
+
+Now, we can solve for the magnetic field in terms of the power measured, i.e.,
+
+\begin{equation}
+    |B| = \sqrt{\frac{2 \mu_{0} P}{c A}}.
+\end{equation}
+
+We can calculate the Rabi frequency produced by this magnetic field using Eq. \ref{rabi_frequency_magnetic_field}
+
+\begin{equation*}
+\Omega = \frac{- \textbf{B} \cdot \bra{e} \boldsymbol{\mu} \ket{g}}{\hbar},
+\end{equation*}
+
+where $\boldsymbol{\mu}$ is the total magnetic moment of the atom given by the spin, orbital, and nuclear contributions, i.e.,
+
+\begin{equation}
+     \boldsymbol{\mu} = \frac{\mu_{B}}{\hbar}(g_{S}\boldsymbol{S} + g_{L}\boldsymbol{L} + g_{I}\boldsymbol{I}).
+\end{equation}
+
+We will take the magnetic field to be along the z-axis (the atomic quantization axis). Thus, we can write the Rabi frequency as
+
+\begin{equation}
+\Omega' = - \sqrt{\frac{2 \mu_{0} P}{c A}} \frac{\bra{e} \mu_{z} \ket{g}}{\hbar},
+\end{equation}
+
+where 
+
+\begin{equation}
+     \mu_{z} = \mu_{B}(g_{S}S_{z}+ g_{L}L_{z}+ g_{I}I_{z}).
+\end{equation}
+
+We can compute the selection range given by this Rabi frequency using Eq. \ref{initial_width}, i.e.,
+
+\begin{equation*}
+\Delta Z' = \sqrt{3} \Omega' \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta},
+\end{equation*}
+
+so we can write
+
+\begin{equation}\label{maximum_selection_range}
+\Delta Z' = - \sqrt{\frac{6 \mu_{0} P}{c A}} \frac{\bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F} m_{F} \eta}.
+\end{equation}
+
+The above equation gives the maximum selection range set by the power of the microwaves used to drive the transitions. We will decide to work always within this range. Our work range will be proportional to the maximum selection range set by the power of the microwaves according to
+
+\begin{equation}
+    \Delta Z_{f} = \gamma \Delta Z' \mathrm{,} \quad \gamma \leq 1,
+\end{equation}
+
+where the smaller the value of $\alpha$, the better the chances to drive the expected transitions. Now, we can use Eq. \ref{ratio_optimial_initial_width_vs_final_width_time_max} to compute the initial width that will maximize the time to reach this final width, i.e.,
+
+\begin{equation}
+    (\Delta Z_{0})^{\ast} = \frac{\gamma \Delta Z'}{\sqrt{2}}.
+\end{equation}
+
+If we select this initial width, the time needed to reach $\Delta Z_{f}$ will be given by Eq. \ref{t_maximized_given_initial_width}, i.e.,
+
+\begin{equation}
+    t_{max} = \frac{M}{\hbar} (\gamma \Delta Z')^2.
+\end{equation}
+
+If we substitute Eq. \ref{maximum_selection_range} into the last equation we get
+
+\begin{equation}\label{total_experiment_time}
+    t_{max} = \frac{6 M \mu_{0} P}{\hbar c A} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F} m_{F} \eta}\bigg)^{2}.
+\end{equation}
+
+This equation represents the maximum time that we can let the wave packet expand in terms of the power of the microwaves and the proportionality factor $\alpha$. Next, we can use Eq. \ref{quantum_gravimetry_signal_momentum_space} to compute the gravimetry signal that we could obtain by performing an atomic interference experiment with a total duration equal to $t_{max}$, i.e., 
+
+\begin{equation}
+    \Delta \Phi = 4 \frac{\mu_{z} \eta }{\hbar} g T^{3},
+\end{equation}
+
+where (see Eq. \ref{pulses} and Fig. \ref{phase_graph})
+
+\begin{equation}\label{t_max_vs_T}
+    4 T = t_{max}.
+\end{equation}
+
+Thereby, using Eqs. \ref{total_experiment_time}-\ref{t_max_vs_T}, we obtain
+
+\begin{equation}
+    \Delta \Phi = b g \gamma^6 P^3, 
+\end{equation}
+
+where we have defined the parameter
+
+\begin{equation}
+    b \equiv \frac{27}{2} \frac{ \mu_{z}}{ \hbar^{4} \eta^{5}} \bigg(\frac{M \mu_{0}}{c A} \bigg)^{3} \bigg(\frac{\bra{e} \mu_{z} \ket{g}}{\mu_{B}g_{F}m_{F}} \bigg)^{6}
+\end{equation}
 
 \subsection{Initial Cloud Width Selection}
 In the last section, we showed how to prepare the initial width for a single Alkali atom. In this section, we will generalize that result to consider atoms whose wave function is initially shifted from the origin.

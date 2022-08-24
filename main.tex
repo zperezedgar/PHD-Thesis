@@ -43,7 +43,7 @@ Your abstract.
 \subsection{Condition for Atomic Interference Inside an Inhomogeneous Magnetic Field}
 \subsubsection{Semi-classical Picture}
 
-In this section, we review the condition needed to generate atomic interference in a gravimeter within a magnetic gradient. Let's consider an atom with total angular momentum number $F$. We will consider transitions between two stretched states with quantum magnetic number $m_{F}=\pm F$. Let's call the stretched state with $m_{F}=F$ as $\ket{1}$, and the stretched state with $m_{F}=-F$ as $\ket{2}$.
+In this section, we review the condition needed to generate atomic interference in a gravimeter within a magnetic gradient. Let's consider an atom with total angular momentum number $F$. We will consider transitions between two hyperfine levels with different magnetic quantum number $m_{F}$.\footnote{For instance, we can choose to work with the stretched states with quantum magnetic number $m_{F}=\pm F$.} Let's denote the ground state of our system as $\ket{1}$, and the excited state as $\ket{2}$.
 
 The atom is immersed inside a magnetic field of the following form
 
@@ -985,16 +985,26 @@ Firstly, we need to remember that the experiment will take place inside a magnet
 
 where $\eta$ is a constant.
 
-We will consider transitions between two hyperfine states levels of the atom. We choose the ground state to be the state with total angular momentum number $F=0$ and magnetic number $m_{F}=0$ while the excited state will be that with $F=1$ and $m_{F}=1$, i.e.,
+We will consider transitions between two hyperfine states levels of the atom with different magnetic quantum number.\footnote{For example, we can choose the ground state to be the state with total angular momentum number $F=0$ and magnetic number $m_{F}=0$ while the excited state could be that with $F=1$ and $m_{F}=1$, i.e.,
 
-\begin{equation}\label{hyperfine_levels}
+\begin{equation}
 \begin{aligned}
 \ket{g} = \ket{F=0, m_{F}=0} \\
 \ket{e} = \ket{F=1, m_{F}=1}
 \end{aligned}
 \end{equation}
 
-The transitions between this two-level system is characterized by a frequency  $\omega_{21}$, i.e.,
+The reader can imagine that we are working with these states. Nonetheless, the calculation is general and can be used with the above states or any other pair of states constituting a hyperfine two level system, e.g., stretch states with $m_{F}=\pm F$.}
+
+\begin{equation}\label{hyperfine_levels}
+\begin{aligned}
+\ket{g} = \ket{F_{g}, m_{F, g}} \\
+\ket{e} = \ket{F_{e}, m_{F, e}}
+\end{aligned}
+\end{equation}
+
+where $m_{F, e}$($m_{F, g}$) is the magnetic quantum number of the excited(ground) state, and $F_{g}$($F_{e}$) is the total angular momentum of the excited(ground) state.
+The transitions in this two-level system are characterized by a frequency  $\omega_{21}$, i.e.,
 
 \begin{equation}
   \omega_{21} = \frac{E_{e}-E_{g}}{\hbar}.
@@ -1006,36 +1016,42 @@ Since the atom is placed inside this external magnetic field, its energy levels 
   \Delta E = \mu_{B} g_{F} m_{F} B,
 \end{equation}
 
-where $\mu_{B}$ is the Bohr magneton and $g_{F}$ is the Landé g-factor. Notice how the ground state will not have a change in energy due to the Zeeman effect because $m_{F}=0$ for that state. Moreover, due to the linear dependence of the magnetic field with the position, the Zeeman split will depend on the position as well, i.e.,
+where $\mu_{B}$ is the Bohr magneton and $g_{F}$ is the Landé g-factor. Moreover, due to the linear dependence of the magnetic field with the position, the Zeeman split will depend on the position as well, i.e.,
 
 \begin{equation}
   \Delta E(z) = \mu_{B} g_{F} m_{F} \eta z,
 \end{equation}
 
-This change in the energy due to the Zeeman effect can be translated into a change in the corresponding frequency of the energy level through the Planck relation, i.e.,
+This change in the energy due to the Zeeman effect can be translated into a change in the corresponding frequency of the energy level with magnetic number $m_{F}$ through the Planck relation, i.e.,
 
 \begin{equation}
-  \Delta \omega(z) = \frac{\mu_{B} g_{F} m_{F} \eta}{\hbar} z.
+  \Delta \omega(z, m_{F}) = \frac{\mu_{B} g_{F} m_{F} \eta}{\hbar} z.
 \end{equation}
 
-We suppose that the wave packet describing the atom is initially located at $z_{0}$ where the magnetic field is $B_{0}$, and induce Rabi transitions between our two states by applying a perturbation with a frequency tuned with the transition that interests us at $z_{0}$, i.e., 
+We suppose that the wave packet describing the atom is initially located at $z_{0}$ where the magnetic field is $B_{0}$, and induce Rabi transitions between our two states by applying a perturbation with a frequency tuned with the transition that interests us. Then, both levels will suffer a shift, so the new transition frequency will be given by 
 
 \begin{equation}
-  \omega_{21}^{\prime} = \omega_{21} + \Delta \omega(z_{0}) =  \omega_{21} + \frac{\mu_{B} g_{j} m_{j} \eta}{\hbar} z_{0},
+  \omega_{21}^{\prime} = \omega_{21} + \Delta \omega(z_{0}, m_{F, e}) -  \Delta \omega(z_{0}, m_{F, g}) =  \omega_{21} + \frac{\mu_{B} g_{F} m_{F_{eff}} \eta}{\hbar} z_{0},
 \end{equation}
 
-where $m_{F} = 1$ because only the excited state has a change in energy due to the Zeeman effect, however, we will continue writing only $m_{F}$ for clarity.
+where we have defined an effective quantum magnetic number given by
+
+\begin{equation}
+    m_{F_{eff}} \equiv m_{F, e} - m_{F, g}
+\end{equation}
+
+Notice that if we choose a level with $m_{F}=0$ as the ground state, then, this state will not have a change in energy due to the Zeeman effect, and we will simply have $m_{F_{eff}} = m_{F, e}$.
 
 Now, due to the uncertainty in the position of the atom, its wave function will have a width $\Delta Z$ in position space. Therefore, the probability of finding the atom in a position $z$, different from $z_{0}$, will not be zero, and in that case the frequency of the transition now will be given by
 
 \begin{equation}
-  \omega_{B} =  \omega_{21} + \frac{\mu_{B} g_{F} m_{F} \eta}{\hbar} z.
+  \omega_{B} =  \omega_{21} + \frac{\mu_{B} g_{F} m_{F_{eff}} \eta}{\hbar} z.
 \end{equation}
 
 Hence, the detuning of the Rabi oscillations due to the uncertainty in the position of the atom will be given by
 
 \begin{equation}\label{detunig_atom_width}
-  \delta (z) = \omega_{B} - \omega_{21}^{\prime} = \frac{\mu_{B} g_{F} m_{F} \eta}{\hbar} (z-z_{0}).
+  \delta (z) = \omega_{B} - \omega_{21}^{\prime} = \frac{\mu_{B} g_{F} m_{F_{eff}} \eta}{\hbar} (z-z_{0}).
 \end{equation}
 
 \begin{figure}
@@ -1082,13 +1098,13 @@ Z_{FWHM} = 2\sqrt{2ln2} \sigma_{z}(0) = 2 Z_{HWHM}
 Now, we will take $z_{0}$, the point were the detuning is zero, to be the origin of coordinates. Therefore, if we evaluate the detuning at $z = 2Z_{HWHM}$, we get
 
 \begin{equation}
-  \delta (2Z_{HWHM}) = 2\frac{\mu_{B} g_{F} m_{F} \eta}{\hbar} Z_{HWHM}
+  \delta (2Z_{HWHM}) = 2\frac{\mu_{B} g_{F} m_{F_{eff}} \eta}{\hbar} Z_{HWHM}
 \end{equation}
 
 i.e.,
 
 \begin{equation}\label{position_at_zhwhm}
-  2Z_{HWHM} = \delta (2Z_{HWHM}) \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta}.
+  2Z_{HWHM} = \delta (2Z_{HWHM}) \frac{\hbar}{\mu_{B} g_{F} m_{F_{eff}} \eta}.
 \end{equation}
 
 Thereby, to determine the width of our atom's wave function, we just need to determine the detuning at $z = Z_{HWHM}$. In order to do so, firstly, we recall that the probability of finding the atom in the excited state at time $t$ when it was initially in the ground state at $t=0$ is given by
@@ -1164,13 +1180,13 @@ For now, we will suppose that the atom is placed at $z_{0}$ (the origin of coord
 Thus, the width of the atom's wave function can be computed using Eqs.  \ref{position_at_zhwhm}, \ref{detuning_at_zhwm}, and \ref{width_zhwhm} i.e.,
 
 \begin{equation}
-\Delta Z = \frac{\sqrt{4 \pi^{2} - \Omega^{2} t^{2}}}{t} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta}.
+\Delta Z = \frac{\sqrt{4 \pi^{2} - \Omega^{2} t^{2}}}{t} \frac{\hbar}{\mu_{B} g_{F} m_{F_{eff}} \eta}.
 \end{equation}
 
 Thereby, we can use $\Omega$ and $t$ to control the width of the atom's wave function. For experimental purposes, we would like to have $\Omega$ fixed. Therefore, we can use $t$ to prepare the initial width. Specifically, if we use a $\pi$-pulse, i.e., $t=\pi/\Omega$. Then, the initial width will be given by
 
 \begin{equation}\label{initial_width}
-\Delta Z = \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta}.
+\Delta Z = \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{F} m_{F_{eff}} \eta}.
 \end{equation}
 
 Finally, notice that the electric field is several order of magnitude larger than the magnetic field, thereby it dominates, and the Rabi flopping frequency is usually taken to be
@@ -1191,7 +1207,7 @@ In the last sections, we showed how to select the initial atomic width of the al
 Suppose that we have successfully initialized our Alkali atom with a initial width $\Delta Z_{0}$ given by Eq. \ref{initial_width}, i.e.,
 
 \begin{equation}\label{initial_width_in_terms_of_rabi}
-\Delta Z_{0} = \sqrt{3} \Omega_{0} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta},
+\Delta Z_{0} = \sqrt{3} \Omega_{0} \frac{\hbar}{\mu_{B} g_{F} m_{F_{eff}} \eta},
 \end{equation}
 
 where we have used a sub-index to indicate that the Rabi frequency $\Omega_{0}$ corresponds to the frequency used to select the initial width. Following, we let our atom evolve during a lapse of time $t$. After that time, the wave function of the Alkali atom will expand according to Eq. \ref{alkali_wave_packet_width}, which we rewrite here in terms of dimensional quantities
@@ -1209,7 +1225,7 @@ where we have defined the following constant
 Now, in order to follow the sequence of pulses needed to achieve atomic interference, we need to apply a $\pi$-Pulse to the atom. However, as we saw in the last sections, applying a pulse to drive transitions in an Alkali atom that is moving through an inhomogeneous magnetic field, gives as result a selection in the atomic width. According to Eq. \ref{initial_width}, if we use a Rabi frequency $\Omega'$ to drive the transitions, the atom will experience the transition if and only if its width is less or equal than the width selected by $\Omega'$, i.e.,
 
 \begin{equation}\label{maximum_width_rabi_frequency}
-    \Delta Z' = \sqrt{3} \Omega' \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta},
+    \Delta Z' = \sqrt{3} \Omega' \frac{\hbar}{\mu_{B} g_{F} m_{F_{eff}} \eta},
 \end{equation}
 
 Therefore, in order to induce the Rabi transition with a high probability of success, the following conditions must be satisfied
@@ -1224,7 +1240,7 @@ and
     \Delta Z(t) \approx \Delta Z_{0}.
 \end{equation}
 
-The above conditions mean, that in order to have a high the probability of success when inducing the transition, we have to make sure that $\Delta Z(t)$ is still much less than $\Delta Z'$, i.e.,  $\Delta Z(t)$ should not have increased considerably from $\Delta Z_{0}$ (see Fig. \ref{selection_range_figure}). In the extreme case that $\Delta Z(t) \ge \Delta Z'$, the probability of success in the transition will be so small that we will consider it to be zero, see Fig. \ref{width_selection_graphs}. 
+The above conditions mean, that in order to have a high the probability of success when inducing the transition, we have to make sure that $\Delta Z(t)$ is still much less than $\Delta Z'$, i.e.,  $\Delta Z(t)$ should not have increased considerably from $\Delta Z_{0}$ (see Fig. \ref{selection_range_figure}). In the extreme case that $\Delta Z(t) \ge \Delta Z'$, the probability of success in the transition will be so small that we will consider it to be zero.
 
 \begin{figure}
     \centering
@@ -1321,7 +1337,7 @@ Lastly, we show in Fig. \ref{optimization_expansion_width} the optimization of t
 Once the wave packet has been expanded starting from $\Delta Z_{0}$, according to Eq. \ref{initial_width}, the final width will have a Rabi frequency $\Omega_{2}$ associated with it. This new Rabi frequency can be written in terms of the Rabi frequency corresponding to the initial width. For example, if we substitute Eq. \ref{initial_width_in_terms_of_rabi} into Eq. \ref{ration_optimial_initial_width_vs_final_width}, we get
 
 \begin{equation}\label{width_evaluated_optimal_min_rabi}
-    (\Delta Z(t))_{min} = 4 \sqrt{3} \Omega_{0}^* \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta} = \sqrt{3} \Omega_{f} \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta}
+    (\Delta Z(t))_{min} = 4 \sqrt{3} \Omega_{0}^* \frac{\hbar}{\mu_{B} g_{F} m_{F_{eff}} \eta} = \sqrt{3} \Omega_{f} \frac{\hbar}{\mu_{B} g_{F} m_{F_{eff}} \eta}
 \end{equation}
 
 where $\Omega_{0}^*$ is the Rabi frequency corresponding to the optimal initial width $(\Delta Z_{0})^{\ast}$ and we have defined the Rabi frequency corresponding to the final width as
@@ -1417,13 +1433,13 @@ where
 We can compute the selection range given by this Rabi frequency using Eq. \ref{initial_width}, i.e.,
 
 \begin{equation*}
-\Delta Z' = \sqrt{3} \Omega' \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta},
+\Delta Z' = \sqrt{3} \Omega' \frac{\hbar}{\mu_{B} g_{F} m_{F_{eff}} \eta},
 \end{equation*}
 
 so we can write
 
 \begin{equation}\label{maximum_selection_range}
-\Delta Z' = - \sqrt{\frac{6 \mu_{0} P}{c A}} \frac{\bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F} m_{F} \eta}.
+\Delta Z' = - \sqrt{\frac{6 \mu_{0} P}{c A}} \frac{\bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F} m_{F_{eff}} \eta}.
 \end{equation}
 
 The above equation gives the maximum selection range set by the power of the microwaves used to drive the transitions. We will decide to work always within this range. Our work range will be proportional to the maximum selection range set by the power of the microwaves according to
@@ -1432,7 +1448,7 @@ The above equation gives the maximum selection range set by the power of the mic
     \Delta Z_{f} = \gamma \Delta Z' \mathrm{,} \quad \gamma \leq 1,
 \end{equation}
 
-where the smaller the value of $\alpha$, the better the chances to drive the expected transitions. Now, we can use Eq. \ref{ratio_optimial_initial_width_vs_final_width_time_max} to compute the initial width that will maximize the time to reach this final width, i.e.,
+where the smaller the value of $\gamma$, the better the chances to drive the expected transitions. Now, we can use Eq. \ref{ratio_optimial_initial_width_vs_final_width_time_max} to compute the initial width that will maximize the time to reach this final width, i.e.,
 
 \begin{equation}
     (\Delta Z_{0})^{\ast} = \frac{\gamma \Delta Z'}{\sqrt{2}}.
@@ -1447,34 +1463,48 @@ If we select this initial width, the time needed to reach $\Delta Z_{f}$ will be
 If we substitute Eq. \ref{maximum_selection_range} into the last equation we get
 
 \begin{equation}\label{total_experiment_time}
-    t_{max} = \frac{6 M \mu_{0} P}{\hbar c A} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F} m_{F} \eta}\bigg)^{2}.
+    t_{max} = \frac{6 M \mu_{0} P}{\hbar c A} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F} m_{F_{eff}} \eta}\bigg)^{2}.
 \end{equation}
 
 This equation represents the maximum time that we can let the wave packet expand in terms of the power of the microwaves and the proportionality factor $\alpha$. Next, we can use Eq. \ref{quantum_gravimetry_signal_momentum_space} to compute the gravimetry signal that we could obtain by performing an atomic interference experiment with a total duration equal to $t_{max}$, i.e., 
 
-\begin{equation}
+\begin{equation}\label{gravimetry_signal_T}
     \Delta \Phi = 4 \frac{\mu_{z} \eta }{\hbar} g T^{3},
 \end{equation}
 
-where (see Eq. \ref{pulses} and Fig. \ref{phase_graph})
-
-\begin{equation}\label{t_max_vs_T}
-    4 T = t_{max}.
-\end{equation}
-
-Thereby, using Eqs. \ref{total_experiment_time}-\ref{t_max_vs_T}, we obtain
+where $T$ controls the time of free evolution between the pulses according to Eq. \ref{pulses} (see Fig. \ref{phase_graph}). The total duration of the experiment $t_{max}$ is given by
 
 \begin{equation}
-    \Delta \Phi = b g \gamma^6 P^3, 
+    4 T + 2\tau_{\pi/2} + 2\tau_{\pi} = t_{max},
+\end{equation}
+
+where $\tau_{\pi/2}$ is the length of a $\frac{\pi}{2}$-pulse, and $\tau_{\pi}$ is the length of a $\pi$-pulse. However, the typical Rabi frequencies used for atomic interferometry are of order $\Omega \approx 10^5 s^{-1}$, which corresponds for a $\pi$-pulse to a time length of $\tau_{\pi} = \frac{\pi}{\Omega} \approx 30 \mu s$. Thus, we can consider the Rabi frequencies to have an infinitesimal duration and use the approximation
+
+\begin{equation}\label{t_max_vs_T}
+    4T \approx t_{max}.
+\end{equation}
+
+Thereby, using Eqs. \ref{total_experiment_time}, \ref{gravimetry_signal_T}, and \ref{t_max_vs_T}, we obtain
+
+\begin{equation}\label{gravimetry_signal_irradiance}
+    \Delta \Phi = b g I^3, 
 \end{equation}
 
 where we have defined the parameter
 
 \begin{equation}
-    b \equiv \frac{27}{2} \frac{ \mu_{z}}{ \hbar^{4} \eta^{5}} \bigg(\frac{M \mu_{0}}{c A} \bigg)^{3} \bigg(\frac{\bra{e} \mu_{z} \ket{g}}{\mu_{B}g_{F}m_{F}} \bigg)^{6}
+    b \equiv \frac{1}{2} \frac{ \mu_{z}}{ \hbar^{4} \eta^{5}} \bigg(\frac{3M \mu_{0}}{c} \bigg)^{3} \bigg(\frac{\bra{e} \mu_{z} \ket{g}}{\mu_{B}g_{F} m_{F_{eff}}} \bigg)^{6} \gamma^6,
 \end{equation}
 
-\subsection{Initial Cloud Width Selection}
+and we have written the result in terms of the irradiance of the microwaves\footnote{The irradiance is a more convenient quantity because not all the power of the microwaves will be seen by the atom due to its finite dimensions.}, i.e.,
+
+\begin{equation}
+    I = \frac{P}{A}.
+\end{equation}
+
+
+\subsubsection{Initial Cloud Width Selection}
+\begin{comment}
 In the last section, we showed how to prepare the initial width for a single Alkali atom. In this section, we will generalize that result to consider atoms whose wave function is initially shifted from the origin.
 
 If we choose the origin of our coordinate system to be the position where the detuning is zero, then, in the case of a cloud of non-interacting Alkali atoms, we can expect that many atoms in the sample will have a slight offset from the origin. In that case, the width of the atomic wave function will be given by Eq. \ref{width_atomic_wave_function}, i.e.,
@@ -1519,6 +1549,105 @@ This means that as the atom's offset from the origin increases, the selected wid
     \caption{Atomic wave functions in a sample of non-interacting Alkali atoms before and after the width selection process. The scale used in both graphs is different for illustration purposes. The selection range is set by the Rabi frequency (Eq. \ref{initial_width}). If the wave function is initially centered at the point where the detuning is zero, the selected width will be equal to the selection range. On the other hand, if the wave function has an offset from the point where the detuning is zero, the selected wave function's width will decrease by the same amount (Eq. \ref{initial_width_offset}). The width can be reduced until it reaches a width of zero at the point where the probability of transition is, by assumption, zero, i.e., $2Z_{HWHM}$. The atoms whose distribution function is located beyond that point will never transition so we can get rid of them using a push beam. After the selection process has been done, the atomic cloud will have a width equal to the selection range (Eq. \ref{cloud_width}).}
     \label{width_selection_graphs}
 \end{figure}
+
+\end{comment}
+
+\subsection{Interferometer Fringes}
+\subsubsection{Sensitivity}
+After the sequence of pulses has been applied not all the atoms in the cloud will have seen the same sequence of pulses. This is mainly because of the detuning introduced by the displacement in the position of the atoms due to the Zeeman effect. Therefore, after the sequence is applied, the normalized population of atoms in the upper state will be given by
+
+\begin{equation}\label{fringes_equation}
+    P = \frac{1}{2}(1+C\cos{\Delta \Phi}),
+\end{equation}
+
+where $C$ is the fringe contrast and $\Delta \Phi$ is given by Eq. \ref{gravimetry_signal_irradiance}. We define the signal-to-noise-ratio (SNR) as the ratio between the contrast of the fringes and the uncertainty on the slope of the fringe, i.e,
+
+\begin{equation}
+    SNR = \frac{C/2}{\sigma_{p}}, 
+\end{equation}
+
+where the uncertainty on the slope of the fringe can be calculated using Eq. \ref{fringes_equation}, i.e,
+
+\begin{equation}
+    \sigma_{p} = \frac{C}{2} |\sin{\Delta \Phi}| \sigma_{_{\Delta \Phi}}.
+\end{equation}
+
+Therefore, the SNR will be given by
+
+\begin{equation}
+    SNR = \frac{1}{|\sin{\Delta \Phi}|  \sigma_{_{\Delta \Phi}}}.
+\end{equation}
+
+At mid fringe we have $\Delta \Phi = \frac{\pi}{2}$, so the SNR will be given by
+
+\begin{equation}\label{SNR_mid_fringe}
+    SNR = \frac{1}{\sigma_{_{\Delta \Phi}}},
+\end{equation}
+
+where the uncertainty in the phase difference can be computed using Eq. \ref{gravimetry_signal_irradiance}, i.e.,
+
+\begin{equation}
+    \sigma_{_{\Delta \Phi}} = b \sigma_{g} I^3.
+\end{equation}
+
+Thus, using Eqs. \ref{gravimetry_signal_irradiance} and \ref{SNR_mid_fringe}, we get
+
+\begin{equation}
+    \frac{\Delta \Phi}{\sigma_{_{\Delta \Phi}}} = b g I^3 SNR.
+\end{equation}
+
+Finally, we notice that
+
+\begin{equation}
+    \frac{\Delta \Phi}{\sigma_{_{\Delta \Phi}}} = \frac{g}{\sigma_{g}}.
+\end{equation}
+
+Thereby, using the last two equations we get the sensitivity of the measurement
+
+\begin{equation}
+    \frac{\sigma_{g}}{g} = \frac{1}{b g I^3 SNR}
+\end{equation}
+
+\subsubsection{Phase Shift Chirp}
+In order to determine $g$, we introduce a phase chirp $\alpha$ that will be used as a ramp parameter to map the population of atoms in the upper state for different phase shift values. 
+
+\begin{equation}
+    \Delta \Phi = (b g  - 2\pi \alpha) I^3.
+\end{equation}
+
+This phase chirp will help to fit a curve to the interferometry signal from which its statistical uncertainty could be determined. Moreover, it will help to determine the point with zero phase shift corresponding to the case when we stay on the central fringe of the interferometer, i.e.,
+
+\begin{equation}
+    b g  - 2\pi \alpha_{0} = 0
+\end{equation}
+
+From which we can derive
+
+\begin{equation}
+    g = \frac{2\pi \alpha_{0}}{b}
+\end{equation}
+
+\subsubsection{Systematic Error}
+The systematic error will introduce a change in the phase shift. In that case, the condition to stay in the central fringe will be
+
+\begin{equation}
+    b g I^3 - 2\pi \alpha_{0} I^3 + \Delta \Phi_{sys}= 0,
+\end{equation}
+
+so the measurement will be given by
+
+\begin{equation}\label{g_value_with_sys_error}
+    g = \frac{2\pi \alpha_{0}}{b} - \frac{\Delta \Phi_{sys}}{b I^3}
+\end{equation}
+
+\subsubsection{Statistical Error}
+The uncertainty for each $g$ measurement can be obtained using Eq. \ref{g_value_with_sys_error}, i.e.,
+
+\begin{equation}
+    \sigma_{g} = \frac{2\pi \sigma_{\alpha_{0}}}{b},
+\end{equation}
+
+where $\sigma_{\alpha_{0}}$ is the uncertainty of $\alpha_{0}$.
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}

@@ -977,7 +977,7 @@ Meanwhile for the rest of terms, we can see that some of them are present in one
 
 \subsection{Initial Atomic Width Selection}
 We demonstrated in Eq. \ref{quantum_gravimetry_signal_momentum_space}, that it is possible to measure $g$ from the phase difference at the port of the proposed interferometer. In an ideal case, we could apply the Rabi pulses using the correct Rabi frequencies to drive the desired transitions. However, in reality, the detuning will not be zero. Furthermore, it will depend on the position of the atom, as we will show in a moment. Thus, we need to establish the conditions within which our result is valid and the gravimetry signal does not depend on the initial position of the atom.
-In order to do so, first, we will establish the theoretical framework to describe the initialization of the atom to be used during the interferometry procedure. Specifically, we will review how to prepare the initial width of the atom. Then, in the next sections, we will use this result to establish the conditions that allow our technique to be independent of the initial position of the atom.
+In order to do so, first, we will establish the theoretical framework to describe the initialization of the atom to be used during the interferometry procedure. Specifically, we will review how to prepare the initial width of the atom. Then, in the next sections, we will use this result to establish the conditions that allow our technique to be independent of the initial position of the atom  by choosing the best possible initial width.
 
 Firstly, we need to remember that the experiment will take place inside a magnetic gradient field in the z-axis of the following form
 
@@ -1191,6 +1191,12 @@ Thereby, we can use $\Omega$ and $t$ to control the width of the atom's wave fun
 \Delta Z = \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{F} m_{F_{eff}} \eta}.
 \end{equation}
 
+On the other hand, in the case of a $\frac{\pi}{2}$-pulse, we would have
+
+\begin{equation}\label{initial_width_pi/2}
+\Delta Z = \frac{\sqrt{15}}{2} \Omega \frac{\hbar}{\mu_{B} g_{F} m_{F_{eff}} \eta}.
+\end{equation}
+
 Finally, notice that the electric field is several order of magnitude larger than the magnetic field, thereby it dominates, and the Rabi flopping frequency is usually taken to be
 
 \begin{equation*}
@@ -1274,7 +1280,7 @@ where we have defined the following constant
     \xi \equiv \frac{\hbar}{2M}.
 \end{equation}
 
-Now, to achieve atomic interference, we need to apply a sequence of pulses to the atom. However, as we saw in the last sections, applying a pulse to drive transitions in an Alkali atom that is moving through an inhomogeneous magnetic field, gives as result a selection in the atomic width. According to Eq. \ref{initial_width}, if we use a Rabi frequency $\Omega'$ to drive the transitions\footnote{Eq. \ref{initial_width} was obtained by considering a $\pi$-pulse. Nonetheless, the sequence of pulses includes $\frac{\pi}{2}$-pulses at the end and beginning of the experiment. We will continue using Eq. \ref{initial_width} during all the calculations.}, the atom will experience the transition if and only if its width is less or equal than the width selected by $\Omega'$, i.e.,
+Now, to achieve atomic interference, we need to apply a sequence of pulses to the atom. However, as we saw in the last sections, applying a pulse to drive transitions in an Alkali atom that is moving through an inhomogeneous magnetic field, gives as result a selection in the atomic width. According to Eq. \ref{initial_width}, if we use a Rabi frequency $\Omega'$ to drive the transitions\footnote{Eq. \ref{initial_width} was obtained by considering a $\pi$-pulse. Nonetheless, the sequence of pulses includes $\frac{\pi}{2}$-pulses at the end and beginning of the experiment. We will continue using Eq. \ref{initial_width} during all the calculations without loss of generality since in any case the order of magnitude is the same and we will always stay far from the limit of the selection range $\Delta Z'$.}, the atom will experience the transition if and only if its width is less or equal than the width selected by $\Omega'$, i.e.,
 
 \begin{equation}\label{maximum_width_rabi_frequency}
     \Delta Z' = \sqrt{3} \Omega' \frac{\hbar}{\mu_{B} g_{F} m_{F_{eff}} \eta},

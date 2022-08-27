@@ -512,10 +512,10 @@ Now, before substituting numerical values, we will make additional approximation
 where $m_{e}$ and $m_{p}$ are the electron and proton mass respectively. However, the proton mass is several orders of magnitude larger than the electron mass, therefore, we can use the following approximation
 
 \begin{equation}\label{kappa_approx}
-\kappa \approx g_{s}\frac{\mu_{z}}{\hbar} \frac{\eta}{\Delta W}
+\kappa \approx g_{s}\frac{\mu_{B}}{\hbar} \frac{\eta}{\Delta W}
 \end{equation}
 
-where we have used the approximation $\mu_{B} \approx \mu_{z}$, where $\mu_{z}$ is the total magnetic moment of the atom along the z-direction. Additionally, by considering the alkali atoms to be $\ce{^{87}_{}Rb}$ atoms. We have the following values for this atom \cite{KAUSHALSK1970,Bunge1993} 
+Additionally, by considering the alkali atoms to be $\ce{^{87}_{}Rb}$ atoms. We have the following values for this atom \cite{KAUSHALSK1970,Bunge1993} 
 
 \begin{equation}
 g_{s} \approx 2.002 \mathrm{,}\quad g_{n} \frac{m_{e}}{m_{p}} \approx 2.002 \mathrm{,}\quad I = \frac{3}{2}
@@ -530,19 +530,19 @@ thereby, we can approximate $\gamma_{1}$ defined in Eq. \ref{gamma_1} as
 Finally, by using Eqs.(\ref{approx_quantum_phase_1}-\ref{pre_total_quantum_phase}), the definitions Eqs.(\ref{non_dimensional_definitions}-\ref{gamma_1}) alongside the approximations in Eqs. \ref{kappa_approx}, \ref{gamma_1_approx}, we obtain
 
 \begin{equation}
-\Delta \Phi_{\tau_{1}}(x_{d}) = -x_{d}\tau + \frac{\eta \mu_{z} \tau^{2} p_{0}}{M \hbar \Delta W^{2}} - \frac{2 \eta \mu_{z} \tau^{3} g}{3 \hbar \Delta W^{3}}
+\Delta \Phi_{\tau_{1}}(x_{d}) = -x_{d}\tau + \frac{\eta \mu_{B} \tau^{2} p_{0}}{M \hbar \Delta W^{2}} - \frac{2 \eta \mu_{B} \tau^{3} g}{3 \hbar \Delta W^{3}}
 \end{equation}
 
 \begin{equation}
-\Delta \Phi_{\tau_{2}}(x_{d}) = x_{d}\tau + \frac{4 \eta \mu_{z} \tau^{3} g}{3 \hbar \Delta W^{3}}
+\Delta \Phi_{\tau_{2}}(x_{d}) = x_{d}\tau + \frac{4 \eta \mu_{B} \tau^{3} g}{3 \hbar \Delta W^{3}}
 \end{equation}
 
 \begin{equation}
-\Delta \Phi_{\tau_{3}}(x_{d}) = -\frac{\eta \mu_{z} \tau^{2} p_{0}}{M \hbar \Delta W^{2}} + \frac{10 \eta \mu_{z} \tau^{3} g}{3 \hbar \Delta W^{3}}
+\Delta \Phi_{\tau_{3}}(x_{d}) = -\frac{\eta \mu_{B} \tau^{2} p_{0}}{M \hbar \Delta W^{2}} + \frac{10 \eta \mu_{B} \tau^{3} g}{3 \hbar \Delta W^{3}}
 \end{equation}
 
 \begin{equation}\label{quantum_gravimetry_signal}
-\Delta \Phi = 4 \frac{\mu_{z} \eta }{\hbar} g \bigg(\frac{\tau}{\Delta W}\bigg)^{3} = 4 \frac{\mu_{z} \eta }{\hbar} g t^{3},
+\Delta \Phi = 4 \frac{\mu_{B} \eta }{\hbar} g \bigg(\frac{\tau}{\Delta W}\bigg)^{3} = 4 \frac{\mu_{B} \eta }{\hbar} g t^{3},
 \end{equation}
 
 were we have used the definition of the non-dimensional time ($\tau\equiv \Delta W t$). Thus, we see that in the quantum picture, the total phase difference is the same as the phase difference obtained in the semi-classical computation Eq. \ref{gravimetry_signal}. In addition, it can be seen that the total phase difference does not depend on the position $x_{d}$ as expected.
@@ -616,7 +616,7 @@ Similarly, for the last interval we will have
 
 \begin{multline}\label{quantum_phase_ignored_terms_simplified_t3}
 \varphi_{\pm, \tau_{3}}(x) = -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + \bigg[\frac{\sigma_{x, \tau_{2}}}{\sigma_{x, \tau_{3}}}\bigg]^{2}((\rho_{0} - q_{2_{\pm}} \tau-2q_{2_{\mp}}\tau)-q_{2_{\pm}} \tau)(x-\frac{(v_{0}+a_{\pm}\tau + 2a_{\mp}\tau) \tau}{2}) \\
-+ \frac{\epsilon \tau}{4 [\sigma_{x, \tau_{3}}\sigma_{x, \tau_{3}}]^{2}} \bigg[\bigg(x-\Big((x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2}) + (v_{0}+a_{\pm}\tau)(2\tau) + \frac{a_{\mp}(2\tau)^{2}}{2}\Big)\bigg)^{2}\\
++ \frac{\epsilon \tau}{4 [\sigma_{x, \tau_{3}}\sigma_{x, \tau_{2}}]^{2}} \bigg[\bigg(x-\Big((x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2}) + (v_{0}+a_{\pm}\tau)(2\tau) + \frac{a_{\mp}(2\tau)^{2}}{2}\Big)\bigg)^{2}\\
 + 2\bigg(v_{0} + a_{\pm} \tau + 2a_{\mp} \tau\bigg)\bigg((x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2}) + (v_{0}+a_{\pm}\tau)(2\tau) + \frac{a_{\mp}(2\tau)^{2}}{2}\bigg) \tau\\
 +a_{\pm} \tau^{2} \bigg(x+\Big((x_{0}+v_{0} \tau + \frac{a_{\pm}\tau^{2}}{2}) + (v_{0}+a_{\pm}\tau)(2\tau) + \frac{a_{\mp}(2\tau)^{2}}{2}\Big)+ \frac{a_{\pm}}{4} \tau^{2} \bigg)\bigg],
 \end{multline}
@@ -657,19 +657,19 @@ Thereby, the approximation in the last section (Eq. \ref{quantum_gravimetry_sign
 Now, we return to the computation of correction of the gravimetry signal. At the beginning of the experiment, the initial width of the wave packet is given by $\sigma_{x, \tau_{0}}$. The next correction to the zeroth-order approximation is obtained using the first-order expansion of $\beta$. Thus we can consider the final width (Eq. \ref{sigma_x_t1}) to be given at first-order by
 
 \begin{equation}\label{sigma_x_t1_first_order}
-[\sigma_{x, \tau_{1}}]^{-2} \approx [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \bigg(\frac{\epsilon \tau}{[\sigma_{x}(0)]^{2}}\bigg)^{2}\right] = [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \beta^{2}\right],
+[\sigma_{x, \tau_{1}}]^{-2} \approx [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \bigg(\frac{\epsilon \tau}{[\sigma_{x, \tau_{0}}]^{2}}\bigg)^{2}\right] = [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \beta^{2}\right],
 \end{equation}
 
 Likewise, for the second interval, the final width (Eq.  \ref{sigma_x_t2}) will be given at first-order by
 
 \begin{equation}\label{sigma_x_t2_first_order}
-[\sigma_{x, \tau_{2}}]^{-2} \approx [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \bigg(\frac{\epsilon (\tau+2\tau)}{[\sigma_{x}(0)]^{2}}\bigg)^{2}\right] = [\sigma_{x, \tau_{0}}]^{-2}\left[1 - 9\beta^{2}\right],
+[\sigma_{x, \tau_{2}}]^{-2} \approx [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \bigg(\frac{\epsilon (\tau+2\tau)}{[\sigma_{x, \tau_{0}}]^{2}}\bigg)^{2}\right] = [\sigma_{x, \tau_{0}}]^{-2}\left[1 - 9\beta^{2}\right],
 \end{equation}
 
 In the same way, the width at the end of the third interval (Eq. \ref{sigma_x_t3}) will be given at first-order by 
 
 \begin{equation}\label{sigma_x_t3_first_order}
-[\sigma_{x, \tau_{3}}]^{-2} \approx [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \bigg(\frac{\epsilon (\tau+2\tau+\tau)}{[\sigma_{x}(0)]^{2}}\bigg)^{2}\right] = [\sigma_{x, \tau_{0}}]^{-2}\left[1 - 16\beta^{2}\right].
+[\sigma_{x, \tau_{3}}]^{-2} \approx [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \bigg(\frac{\epsilon (\tau+2\tau+\tau)}{[\sigma_{x, \tau_{0}}]^{2}}\bigg)^{2}\right] = [\sigma_{x, \tau_{0}}]^{-2}\left[1 - 16\beta^{2}\right].
 \end{equation}
 
 Finally, by using Eqs. \ref{quantum_phase_ignored_terms_simplified_t1}, \ref{quantum_phase_ignored_terms_simplified_t2}, and \ref{quantum_phase_ignored_terms_simplified_t3} alongside the first-order approximations for the width of the wave packet (Eqs. \ref{sigma_x_t1_first_order}, \ref{sigma_x_t2_first_order}, and \ref{sigma_x_t3_first_order}), we can get the total phase difference accumulated by the wave packet in the first-order approximation
@@ -696,7 +696,7 @@ Finally, by using Eqs. \ref{quantum_phase_ignored_terms_simplified_t1}, \ref{qua
 This result can be re-written using the definitions \ref{non_dimensional_definitions}-\ref{gamma_1} alongside the approximations \ref{kappa_approx}-\ref{gamma_1_approx} and keeping only quadratic terms in $\beta$ in the denominator as
 
 \begin{equation}
-\Delta \Phi = \frac{1}{\left(1 -10 \beta ^2 + 9 \beta ^4\right)} \frac{\mu_{z} \eta}{\hbar}
+\Delta \Phi = \frac{1}{\left(1 -10 \beta ^2 + 9 \beta ^4\right)} \frac{\mu_{B} \eta}{\hbar}
 \Bigg[ 4 g t^3
 - \beta ^2 \bigg(\frac{77 g t^3}{2} + \frac{p_{0}t^2}{M}  + (3z_{0}+5z)t \bigg) \Bigg],
 \end{equation}
@@ -711,7 +711,7 @@ These previous results can be cast into a more illuminating form by expanding th
 \end{equation}
 
 \begin{equation}\label{gravimetry_signal_first_order_approx_dimensional}
-\Delta \Phi ^{(1)} =  \frac{\mu_{z} \eta}{\hbar}
+\Delta \Phi ^{(1)} =  \frac{\mu_{B} \eta}{\hbar}
 \Bigg[ 4 g t^3
 - \beta ^2 \bigg(-\frac{3 g t^3}{2} + \frac{p_{0}t^2}{M}  + (3z_{0}+5z)t \bigg) \Bigg],
 \end{equation}
@@ -737,7 +737,7 @@ The correction given by the first-order approximation goes like $\beta ^2$. Ther
          \label{fig:gravimetry_signal_first_minus_zeroth_order}
      \end{subfigure}
      \hfill
-     \caption{Comparison of the gravimetry signal obtained by using the zeroth-order approximation ($\Delta \Phi ^{(0)}$) given by Eq. \ref{quantum_gravimetry_signal} versus the first-order correction ($\Delta \Phi ^{(1)}$) given by Eq. \ref{gravimetry_signal_first_order_approx_dimensional}. The period used to produce these graphs was $T=50ms$. Besides, we used $g=9.8m/s^{2}$, $\mu_{z}=9.27\times10^{-24} J/T$ (the Bohr magneton), $\eta=0.05 T/m$. Additionally, we consider $\ce{^{87}_{}Rb}$ atoms, so we have (\cite{Bunge1993}\cite{KAUSHALSK1970}) $M=1.45\times10^{-25}kg$, $\Delta W=2\pi\times6.835\times10^{9}s^{-1}$ ($\hbar \Delta W $ is the field-free ground state hyperfine energy splitting). Also, we use the approximations in Eqs. \ref{kappa_approx} and \ref{gamma_1_approx}. In addition, we take $p_{0}=0$, $z_{0}=0$, $\Delta Z(0)=1000\times10^{-6}m$, and take $z$ to be the final position of the center of the wave packet at the end of the experiment. The center of the wave packet was evaluated by using the Eq. \ref{xi_eq_motion}, where $x=\kappa z$. In this case, $(\sigma_{x, \tau_{0}})^{2} \approx 4.1 \times 10^{-8}$ and $\epsilon \tau \approx 1.5 \times 10^{-11} t$. Thus, for $t=50ms$, we have $\beta \approx 1.8 \times 10^{-5}$ and the expansion used in the Eqs. \ref{sigma_x_t1_first_order}-\ref{sigma_x_t3_first_order} is justified. Moreover, the gap between both approximations will be proportional to $\beta ^2 \approx 3.3 \times 10^{-10}$.}
+     \caption{Comparison of the gravimetry signal obtained by using the zeroth-order approximation ($\Delta \Phi ^{(0)}$) given by Eq. \ref{quantum_gravimetry_signal} versus the first-order correction ($\Delta \Phi ^{(1)}$) given by Eq. \ref{gravimetry_signal_first_order_approx_dimensional}. The period used to produce these graphs was $T=50ms$. Besides, we used $g=9.8m/s^{2}$, $\mu_{B}=9.27\times10^{-24} J/T$ (the Bohr magneton), $\eta=0.05 T/m$. Additionally, we consider $\ce{^{87}_{}Rb}$ atoms, so we have (\cite{Bunge1993}\cite{KAUSHALSK1970}) $M=1.45\times10^{-25}kg$, $\Delta W=2\pi\times6.835\times10^{9}s^{-1}$ ($\hbar \Delta W $ is the field-free ground state hyperfine energy splitting). Also, we use the approximations in Eqs. \ref{kappa_approx} and \ref{gamma_1_approx}. In addition, we take $p_{0}=0$, $z_{0}=0$, $\Delta Z(0)=1000\times10^{-6}m$, and take $z$ to be the final position of the center of the wave packet at the end of the experiment. The center of the wave packet was evaluated by using the Eq. \ref{xi_eq_motion}, where $x=\kappa z$. In this case, $(\sigma_{x, \tau_{0}})^{2} \approx 4.1 \times 10^{-8}$ and $\epsilon \tau \approx 1.5 \times 10^{-11} t$. Thus, for $t=50ms$, we have $\beta \approx 1.8 \times 10^{-5}$ and the expansion used in the Eqs. \ref{sigma_x_t1_first_order}-\ref{sigma_x_t3_first_order} is justified. Moreover, the gap between both approximations will be proportional to $\beta ^2 \approx 3.3 \times 10^{-10}$.}
      \label{phase_graph_first_order}
 \end{figure}
 
@@ -801,10 +801,10 @@ Thereby, the total phase difference between both states when the last $\frac{\pi
 Thus, by using Eqs. \ref{epsilon}-\ref{q1_q2} and the approximations in Eqs. \ref{kappa_approx} and \ref{gamma_1_approx}, we finally get the total phase difference
 
 \begin{equation}\label{quantum_gravimetry_signal_momentum_space}
-\Delta \Phi = 4 \frac{\mu_{z} \eta }{\hbar} g \bigg(\frac{\tau}{\Delta W}\bigg)^{3} = 4 \frac{\mu_{z} \eta }{\hbar} g t^{3},
+\Delta \Phi = 4 \frac{\mu_{B} \eta }{\hbar} g \bigg(\frac{\tau}{\Delta W}\bigg)^{3} = 4 \frac{\mu_{B} \eta }{\hbar} g t^{3},
 \end{equation}
 
-where we have used $\tau\equiv \Delta W t$. We can notice that this result is independent of the momentum k and that it coincides with the result obtained in position space as expected.
+where we have used $\tau\equiv \Delta W t$. We can notice that this result is independent of the momentum $k$ and that it coincides with the result obtained in position space as expected.
 
 \subsection{A Revision to the Time Evolution of the Free Wave Packet}
 In this section we review the time evolution of a free gaussian wave packet. Then, we use this result to establish a correspondence with some terms of the wave packet of alkali-metal atoms subject to a constant gravitational field and interacting with a magnetic field given by Eq. \ref{wave_packet_non_dimensional_evolution}.
@@ -936,11 +936,11 @@ Therefore, by comparing the Eq. \ref{free_wave_packet_width} with the Eq. \ref{a
  \hline\hline
  $\sigma_{z}(t) = \sqrt{\frac{\alpha^{2} + 4\beta^{2}t^{2}}{2 \alpha}} = \sqrt{[\sigma_{z}(0)]^{2} + \left[\frac{\beta t}{\sigma_{z}(0)} \right]^{2}}$ & $\sigma_{x}(\tau) = \sqrt{[\sigma_{x}(0)]^{2} + \left[\frac{\epsilon \tau}{\sigma_{x}(0)} \right]^{2}}$ \\ 
  \hline
- $\sigma_{z}(0) = \sqrt{\alpha / 2}$ & $\sigma_{x}(0) = \kappa \Delta Z(0)$ \\
+ $\sigma_{z}(0) = \sqrt{\alpha / 2}$ & $\sigma_{x}(0) (\frac{1}{\kappa}) = \Delta Z(0)$ \\
  \hline
- $\beta = \Big(\frac{\partial^2 \omega(k)}{\partial k^2}\Big)_{k=k_{0}} = \frac{\hbar}{M}$ & $\epsilon \Delta W = \frac{\hbar}{2 M} \kappa^{2}$ \\
+ $\beta = \Big(\frac{\partial^2 \omega(k)}{\partial k^2}\Big)_{k=k_{0}} = \frac{\hbar}{M}$ & $\epsilon (\frac{2\Delta W}{\kappa^{2}}) = \frac{\hbar}{M}$ \\
  \hline
- $\upsilon_{g} = \Big(\frac{\partial \omega(k)}{\partial k}\Big)_{k=k_{0}} = \frac{\hbar k_{0}}{M}$ & $2 \rho_{0} \epsilon = \frac{p_{0}}{M} \frac{\kappa}{\Delta W} $ \\ [1ex] 
+ $\upsilon_{g} = \Big(\frac{\partial \omega(k)}{\partial k}\Big)_{k=k_{0}} = \frac{\hbar k_{0}}{M}$ & $2 \rho_{0} \epsilon (\frac{\Delta W}{\kappa}) = \frac{p_{0}}{M} = \frac{\hbar k_{0}}{M}$ \\ [1ex] 
  \hline
 \end{tabular}
 \end{center}
@@ -976,7 +976,8 @@ This is not surprising since we already knew that $\rho_{0}=p_{0}/\hbar \kappa$.
 Meanwhile for the rest of terms, we can see that some of them are present in one wave packet but they are not present in the other and vice-versa while other terms look similar in both wave packets but they differ in some way that is not possible to establish a direct connection between them. Incidentally, the terms of the second row in both Eqs. \ref{free_wave_packet_position_space_centered_z0_final_form} and \ref{alkali_wave_packet_position_space_final_form} are the terms that contribute to the phase while the terms in the first rows are those terms that does not contribute to the phase.
 
 \subsection{Initial Atomic Width Selection}
-In this section we will establish the theoretical framework to describe the initialization of the atom to be used during the interferometry procedure described in the last section. Specifically, we will review how to prepare the initial width of the atom.
+We demonstrated in Eq. \ref{quantum_gravimetry_signal_momentum_space}, that it is possible to measure $g$ from the phase difference at the port of the proposed interferometer. In an ideal case, we could apply the Rabi pulses using the correct Rabi frequencies to drive the desired transitions. However, in reality, the detuning will not be zero. Furthermore, it will depend on the position of the atom, as we will show in a moment. Thus, we need to establish the conditions within which our result is valid and the gravimetry signal does not depend on the initial position of the atom.
+In order to do so, first, we will establish the theoretical framework to describe the initialization of the atom to be used during the interferometry procedure. Specifically, we will review how to prepare the initial width of the atom. Then, in the next sections, we will use this result to establish the conditions that allow our technique to be independent of the initial position of the atom.
 
 Firstly, we need to remember that the experiment will take place inside a magnetic gradient field in the z-axis of the following form
 
@@ -1252,7 +1253,8 @@ This means that as the atom's offset from the origin increases, the selected wid
 \end{comment}
 
 \subsection{Optimization of the Wave Packet Expansion}
-In the last sections, we showed how to select the initial atomic width of the alkali atoms to be used during the interferometry process. Then, we saw what happens when the atom is shifted from the origin. In this section, we will study the constraints that choosing a particular initial atomic width will impose in the time that we can let the atomic wave packet expand without affecting the Rabi transitions due to the detuning.
+\subsubsection{Condition to Have a Gravimetry Signal Independent on the Initial Position of the Atom}
+In the last sections, we showed how to select the initial atomic width of the alkali atoms to be used during the interferometry process. Then, we saw what happens when the atom is shifted from the origin. In this section, we will study the constraints that choosing a particular initial atomic width will impose in the time that we can let the atomic wave packet expand without affecting the Rabi transitions due to the detuning, i.e., we will establish the conditions that allow our method to be independent of the initial position of the atom.
 
 Suppose that we have successfully initialized our Alkali atom with a initial width $\Delta Z_{0}$ given by Eq. \ref{initial_width}, i.e.,
 
@@ -1272,7 +1274,7 @@ where we have defined the following constant
     \xi \equiv \frac{\hbar}{2M}.
 \end{equation}
 
-Now, in order to follow the sequence of pulses needed to achieve atomic interference, we need to apply a $\pi$-Pulse to the atom. However, as we saw in the last sections, applying a pulse to drive transitions in an Alkali atom that is moving through an inhomogeneous magnetic field, gives as result a selection in the atomic width. According to Eq. \ref{initial_width}, if we use a Rabi frequency $\Omega'$ to drive the transitions, the atom will experience the transition if and only if its width is less or equal than the width selected by $\Omega'$, i.e.,
+Now, to achieve atomic interference, we need to apply a sequence of pulses to the atom. However, as we saw in the last sections, applying a pulse to drive transitions in an Alkali atom that is moving through an inhomogeneous magnetic field, gives as result a selection in the atomic width. According to Eq. \ref{initial_width}, if we use a Rabi frequency $\Omega'$ to drive the transitions\footnote{Eq. \ref{initial_width} was obtained by considering a $\pi$-pulse. Nonetheless, the sequence of pulses includes $\frac{\pi}{2}$-pulses at the end and beginning of the experiment. We will continue using Eq. \ref{initial_width} during all the calculations.}, the atom will experience the transition if and only if its width is less or equal than the width selected by $\Omega'$, i.e.,
 
 \begin{equation}\label{maximum_width_rabi_frequency}
     \Delta Z' = \sqrt{3} \Omega' \frac{\hbar}{\mu_{B} g_{F} m_{F_{eff}} \eta},
@@ -1290,9 +1292,9 @@ and
     \Delta Z(t) \approx \Delta Z_{0}.
 \end{equation}
 
-The above conditions mean, that in order to have a high the probability of success when inducing the transition, we have to make sure that $\Delta Z(t)$ is still much less than $\Delta Z'$, i.e.,  $\Delta Z(t)$ should not have increased considerably from $\Delta Z_{0}$ (see Fig. \ref{selection_range_figure}). In the extreme case that $\Delta Z(t) \ge \Delta Z'$, the probability of success in the transition will be so small that we will consider it to be zero.
+The above conditions mean, that in order to have a high the probability of success when inducing the transition, we have to make sure that $\Delta Z(t)$ is still much less than $\Delta Z'$, i.e.,  $\Delta Z(t)$ should not have increased considerably from $\Delta Z_{0}$ (see Fig. \ref{selection_range_figure}). In the extreme case that $\Delta Z(t) \ge \Delta Z'$, the probability of success in the transition will be so small that we will consider it to be zero. In other words, if we stay during all the experiment within the region set by $\Delta Z'$, then, our method will not depend on the initial position of the atom, so we can neglect the error introduced by the detuning at least at first order.
 
-Notice, re-write the above conditions in terms of the corresponding Rabi frequencies $\Omega'$ and $\Omega_{2}$, i.e.,
+Notice, that we can re-write the above conditions in terms of the corresponding Rabi frequencies $\Omega'$ and $\Omega_{2}$, i.e.,
 
 \begin{equation}
     \Omega' > \Omega_{2} \ge \Omega_{0},
@@ -1576,7 +1578,7 @@ Thus, using Eqs. \ref{gravimetry_signal_irradiance} and \ref{SNR_mid_fringe}, we
     \frac{\Delta \Phi}{\sigma_{_{\Delta \Phi}}} = b g I^3 SNR.
 \end{equation}
 
-Finally, we notice that
+Finally, we notice that since there exists a linear relation between $g$ and $\Delta \phi$ (Eq. \ref{gravimetry_signal_irradiance}), there also exists a linear relation between the uncertainty $\sigma_{g}$ and the uncertainty $\sigma_{_{\Delta \Phi}}$, i.e.,
 
 \begin{equation}
     \frac{\Delta \Phi}{\sigma_{_{\Delta \Phi}}} = \frac{g}{\sigma_{g}}.

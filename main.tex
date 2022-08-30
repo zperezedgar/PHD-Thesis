@@ -897,7 +897,7 @@ Finally, we can expand the last term in the Eq. \ref{free_wave_packet_position_s
 Now, we will re-write the wave packet of alkali atoms (Eq. \ref{wave_packet_non_dimensional_evolution}) but this time, in order to establish the connection with the free wave packet, we will ignore the terms that include $q_{2}$ since this parameter is related with the acceleration of the wave packet (see Eq. \ref{xi_defs_eq_motion}) and for that reason those terms does not have an analogue in the free wave packet. Therefore, the wave packet of alkali atoms (ignoring terms that include $q_{2}$) will be given by
 
 \begin{multline}\label{alkali_wave_packet_position_space_final_form} 
-    \phi (x, \tau) = \left[\frac{1}{2 \pi \big(\sigma_{x}(\tau)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(x - x_{0} - 2\rho_{0} \epsilon \tau \big)^{2}}{\big(\sigma_{x}(\tau)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\epsilon \tau}{\big(\sigma_{x}(0)\big)^{2}}\Bigg) \right] \\ \exp \Bigg[i \bigg(\left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}x - q_{1}\tau + \frac{\big[(x-x_{0})^{2} + 4 x_{0} \rho_{0} \epsilon \tau \big]}{ 4[\sigma_{x}(\tau)\sigma_{x}(0)]^{2}} \epsilon \tau + \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}^{2} \epsilon \tau \Bigg],
+    \phi (x, \tau) = \left[\frac{1}{2 \pi \big(\sigma_{x}(\tau)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(x - x_{0} - 2\rho_{0} \epsilon \tau \big)^{2}}{\big(\sigma_{x}(\tau)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\epsilon \tau}{\big(\sigma_{x}(0)\big)^{2}}\Bigg) \right] \\ \exp \Bigg[i \bigg(\left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}x - q_{1}\tau + \frac{\big[(x-x_{0})^{2} + 4 x_{0} \rho_{0} \epsilon \tau \big]}{ 4[\sigma_{x}(\tau)\sigma_{x}(0)]^{2}} \epsilon \tau - \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}^{2} \epsilon \tau \Bigg],
 \end{multline}
 
 where the standard deviation of the wave packet is given by
@@ -1278,7 +1278,20 @@ Suppose that we have successfully initialized our Alkali atom with a initial wid
 \Delta Z_{0} = \sqrt{3} \Omega_{0} \frac{\hbar}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta},
 \end{equation}
 
-where we have used a sub-index to indicate that the Rabi frequency $\Omega_{0}$ corresponds to the frequency used to select the initial width. Following, we let our atom evolve during a lapse of time $t$. After that time, the wave function of the Alkali atom will expand according to Eq. \ref{alkali_wave_packet_width}, which we rewrite here in terms of dimensional quantities
+where we have used a sub-index to indicate that the Rabi frequency $\Omega_{0}$ corresponds to the frequency used to select the initial width. 
+Once we have initialized the width of our atom, we can proceed applying the first $\frac{\pi}{2}$-pulse. However, as we saw in the last sections, applying a pulse to drive transitions in an Alkali atom that is moving through an inhomogeneous magnetic field, gives as result a selection in the atomic width. According to Eq. \ref{initial_width}, if we use a Rabi frequency $\Omega'$ to drive the transitions\footnote{Eq. \ref{initial_width} was obtained by considering a $\pi$-pulse. Nonetheless, the sequence of pulses includes $\frac{\pi}{2}$-pulses at the end and beginning of the experiment. We will continue using Eq. \ref{initial_width} during all the calculations without loss of generality since in any case the order of magnitude is the same and we will always stay far from the limit of the selection range $\Delta Z'$.}, the atom will experience the transition if and only if its width is less or equal than the width selected by $\Omega'$, i.e.,
+
+\begin{equation}\label{maximum_width_rabi_frequency}
+    \Delta Z' = \sqrt{3} \Omega' \frac{\hbar}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}.
+\end{equation}
+
+Furthermore, if we want to guarantee a high probability of success in the transitions, we have to make sure that the initial width is much less than the selection range, i.e.,
+
+\begin{equation}\label{condition_Dz'>>Dz0}
+    \Delta Z' >> \Delta Z_{0}.
+\end{equation}
+
+According to this condition, we could think that choosing a very small width could be a good idea. However, after applying the first pulse, the atom must experience a time evolution of free fall before we can apply the next pulse. During this period, the width of the atom will expand according to Eq. \ref{alkali_wave_packet_width}, which we rewrite here in terms of dimensional quantities
 
 \begin{equation}\label{final_width_dimensional}
 \Delta Z (t) = \sqrt{[\Delta Z_{0}]^{2} + \left[\frac{\xi t}{\Delta Z_{0}} \right]^{2}},
@@ -1290,36 +1303,38 @@ where we have defined the following constant
     \xi \equiv \frac{\hbar}{2M}.
 \end{equation}
 
-Now, to achieve atomic interference, we need to apply a sequence of pulses to the atom. However, as we saw in the last sections, applying a pulse to drive transitions in an Alkali atom that is moving through an inhomogeneous magnetic field, gives as result a selection in the atomic width. According to Eq. \ref{initial_width}, if we use a Rabi frequency $\Omega'$ to drive the transitions\footnote{Eq. \ref{initial_width} was obtained by considering a $\pi$-pulse. Nonetheless, the sequence of pulses includes $\frac{\pi}{2}$-pulses at the end and beginning of the experiment. We will continue using Eq. \ref{initial_width} during all the calculations without loss of generality since in any case the order of magnitude is the same and we will always stay far from the limit of the selection range $\Delta Z'$.}, the atom will experience the transition if and only if its width is less or equal than the width selected by $\Omega'$, i.e.,
-
-\begin{equation}\label{maximum_width_rabi_frequency}
-    \Delta Z' = \sqrt{3} \Omega' \frac{\hbar}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta},
-\end{equation}
-
-Therefore, in order to induce the Rabi transition with a high probability of success, the following conditions must be satisfied
+Thereby, if we chose a very small initial width, the final width will increase rapidly and the condition in Eq. \ref{condition_Dz'>>Dz0} will not hold for the rest of pulses. This means that we have to choose an appropriate initial width such that Eq. \ref{condition_Dz'>>Dz0} holds at any time. More specifically, immediately after all the sequence of pulses is applied, the final width of the atom $\Delta Z_{f}$ must be such that
 
 \begin{equation}\label{condition_transition_width1}
-    \Delta Z' > \Delta Z(t) \ge \Delta Z_{0},
+    \Delta Z' > \Delta Z_{f} \ge \Delta Z_{0},
 \end{equation}
 
-and 
+and, in order to guarantee transitions with a high probability of success, the condition in Eq. \ref{condition_Dz'>>Dz0} must hold alongside
 
 \begin{equation}\label{condition_transition_width2}
-    \Delta Z(t) \approx \Delta Z_{0}.
+    \Delta Z_{f} \approx \Delta Z_{0}.
 \end{equation}
 
-The above conditions mean, that in order to have a high the probability of success when inducing the transition, we have to make sure that $\Delta Z(t)$ is still much less than $\Delta Z'$, i.e.,  $\Delta Z(t)$ should not have increased considerably from $\Delta Z_{0}$ (see Fig. \ref{selection_range_figure}). In the extreme case that $\Delta Z(t) \ge \Delta Z'$, the probability of success in the transition will be so small that we will consider it to be zero. In other words, if we stay during all the experiment within the region set by $\Delta Z'$, then, our method will not depend on the initial position of the atom, so we can neglect the error introduced by the detuning at least at first order.
+The above conditions mean, that in order to have a high probability of success when inducing the transition, we have to make sure that $\Delta Z_{f}$ is still much less than $\Delta Z'$, i.e.,  $\Delta Z_{f}$ should not have increased considerably from $\Delta Z_{0}$. In the extreme case that $\Delta Z_{f} \ge \Delta Z'$, the probability of success in the transition will be so small that we will consider it to be zero. 
+In summary, if we stay during all the experiment in a narrow region within the region set by $\Delta Z'$ (see Fig. \ref{selection_range_figure}), then, our method will not depend on the initial position of the atom, so we can neglect the error introduced by the detuning at least at first order.
 
-Notice, that we can re-write the above conditions in terms of the corresponding Rabi frequencies $\Omega'$ and $\Omega_{2}$, i.e.,
+
+Notice, that we can re-write the above conditions in terms of the corresponding Rabi frequencies, i.e.,
 
 \begin{equation}
-    \Omega' > \Omega_{2} \ge \Omega_{0},
+    \Omega' > \Omega_{f} \ge \Omega_{0},
 \end{equation}
 
-and
+where we must have
 
 \begin{equation}
-    \Omega_{2} \approx \Omega_{0}.
+    \Omega' >> \Omega_{0},
+\end{equation}
+
+alongside
+
+\begin{equation}
+    \Omega_{f} \approx \Omega_{0}.
 \end{equation}
     
 When designing the experiment, we have to make sure that the above constraints hold at any time that we apply a pulse to induce Rabi transitions after we let the wave packet expand. Thereby, it is important to choose wisely the initial width of our wave packet so we can make sure that the transition between levels will occur always. In the next sections, we calculate the initial width that has to be chosen to get an optimal expansion of the wave packet.
@@ -1327,7 +1342,7 @@ When designing the experiment, we have to make sure that the above constraints h
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{working_area.png}
-     \caption{Selection range to induce Rabi transitions for an Alkali atom inside an inhomogeneous magnetic field. The atomic wave function is initialized with a width $\Delta Z_{0}$ (black curve). After a time $t$ the wave function expands to a new width $\Delta Z(t)$ (orange curve). If we try to induce Rabi transitions in this new wave packet, we have to make sure that the new width $\Delta Z(t)$ lies inside the selection range $\Delta Z'$ (see Eq. \ref{condition_transition_width1}). This selection range is defined by the dashed curve which represents the maximum expansion that the wave packet can reach before the probability of transition goes to zero. If the wave packet had the maximum permissible width $\Delta Z'$, the Rabi frequency needed to induce transitions would be $\Omega'$ (see Eq. \ref{maximum_width_rabi_frequency}). This frequency will be usually set by the maximum frequency that can be obtained experimentally (see Eq. \ref{rabi_frequency_magnetic_field}).}
+     \caption{Selection range to induce Rabi transitions for an Alkali atom inside an inhomogeneous magnetic field. The atomic wave function is initialized with a width $\Delta Z_{0}$ (black curve). After a time $t$ the wave function expands according to Eq. \ref{final_width_dimensional} until it reaches a width $\Delta Z_{f}$ at the end of the sequence of pulses (orange curve). If we want the atom to experience all the sequence of pulses with a high probability of success, we have to make sure that the final width $\Delta Z_{f}$ lies inside a narrow range inside the selection range $\Delta Z'$ (see Eq. \ref{condition_transition_width1}). This selection range is set by the dashed curve's width and represents the hypothetical width that is selected by using a frequency $\Omega'$ to drive the transitions (Eq. \ref{maximum_width_rabi_frequency}). This frequency will be usually set by the maximum frequency that can be obtained experimentally (see Eq. \ref{rabi_frequency_magnetic_field}). The probability of transition for positions outside the selection range is so small that we can consider it to be zero.}
      \label{selection_range_figure}
 \end{figure}
 

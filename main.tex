@@ -897,7 +897,7 @@ Finally, we can expand the last term in the Eq. \ref{free_wave_packet_position_s
 Now, we will re-write the wave packet of alkali atoms (Eq. \ref{wave_packet_non_dimensional_evolution}) but this time, in order to establish the connection with the free wave packet, we will ignore the terms that include $q_{2}$ since this parameter is related with the acceleration of the wave packet (see Eq. \ref{xi_defs_eq_motion}) and for that reason those terms does not have an analogue in the free wave packet. Therefore, the wave packet of alkali atoms (ignoring terms that include $q_{2}$) will be given by
 
 \begin{multline}\label{alkali_wave_packet_position_space_final_form} 
-    \phi (x, \tau) = \left[\frac{1}{2 \pi \big(\sigma_{x}(\tau)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(x - x_{0} - 2\rho_{0} \epsilon \tau \big)^{2}}{\big(\sigma_{x}(\tau)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\epsilon \tau}{\big(\sigma_{x}(0)\big)^{2}}\Bigg) \right] \\ \exp \Bigg[i \bigg(\left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}x - q_{1}\tau + \frac{\big[(x-x_{0})^{2} + 4 x_{0} \rho_{0} \epsilon \tau \big]}{ 4[\sigma_{x}(\tau)\sigma_{x}(0)]^{2}} \epsilon \tau + \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}^{2} \epsilon \Bigg],
+    \phi (x, \tau) = \left[\frac{1}{2 \pi \big(\sigma_{x}(\tau)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(x - x_{0} - 2\rho_{0} \epsilon \tau \big)^{2}}{\big(\sigma_{x}(\tau)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\epsilon \tau}{\big(\sigma_{x}(0)\big)^{2}}\Bigg) \right] \\ \exp \Bigg[i \bigg(\left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}x - q_{1}\tau + \frac{\big[(x-x_{0})^{2} + 4 x_{0} \rho_{0} \epsilon \tau \big]}{ 4[\sigma_{x}(\tau)\sigma_{x}(0)]^{2}} \epsilon \tau + \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}^{2} \epsilon \tau \Bigg],
 \end{multline}
 
 where the standard deviation of the wave packet is given by
@@ -1064,7 +1064,8 @@ Hence, the detuning of the Rabi oscillations due to the uncertainty in the posit
 \label{atom_wave_func_pos_space}
 \end{figure}
 
-Next, we consider the wave function of the atom in position space to be a gaussian like wave packet, initially centered at $z_{0}$. We already worked out the evolution of such wave packet in the last section. We re-write here the time evolution of the free wave packet
+It turns out that this detuning sets a constraint in the width that the atom's wave function can have. In order to see this,
+let's consider the wave function of the atom in position space to be a gaussian like wave packet, initially centered at $z_{0}$. We already worked out the evolution of such wave packet in the last section. We re-write here the time evolution of the free wave packet
 
 \begin{multline}\label{atom_wave_function_position_space}
     \Psi (z, t) = \left[\frac{1}{2 \pi \big(\sigma_{z}(t)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(z - z_{0} - \upsilon_{g} t \big)^{2}}{\big(\sigma_{z}(t)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\beta t }{\big(\sigma_{z}(0)\big)^{2}}\Bigg) \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{ \beta t (z - z_{0} - \upsilon_{g} t)^{2}}{ 4[\sigma_{z}(t)\sigma_{z}(0)]^{2}} \bigg) \right].
@@ -1116,7 +1117,7 @@ Thereby, to determine the width of our atom's wave function, we just need to det
   |c_{e}(t)|^{2} =\frac{\Omega^{2}}{\tilde{\Omega}^{2}} \sin^{2}\bigg[\frac{\tilde{\Omega} t}{2} \bigg],
 \end{equation}
 
-where $\tilde{\Omega}$ is defined in terms of the Rabi flopping frequency $\Omega$ and the detuning $\delta$, i.e.,
+where $\tilde{\Omega}$ is defined in terms of the Rabi flopping frequency $\Omega$ and the detuning $\delta$\footnote{Other references name $\tilde{\Omega}$ as the Rabi flopping frequency instead of $\Omega$. In any case, notice that $\tilde{\Omega}$ is the parameter that contains the information about the transition frequency while $\Omega$ only contains the information about the strength of the electromagnetic field.}, i.e.,
 
 \begin{equation}
   \tilde{\Omega} = \sqrt{\delta^{2} + \Omega^{2}}.
@@ -1201,14 +1202,22 @@ On the other hand, in the case of a $\frac{\pi}{2}$-pulse, we would have
 Finally, notice that the electric field is several order of magnitude larger than the magnetic field, thereby it dominates, and the Rabi flopping frequency is usually taken to be
 
 \begin{equation*}
-\Omega = \frac{- e \textbf{E} \cdot \bra{e} \textbf{r} \ket{g}}{\hbar},
+\Omega = \frac{- e E_{0} \bra{e} r \ket{g}}{\hbar},
 \end{equation*}
 
-where $\textbf{r}$ is the position operator, $\textbf{E}$ is the electric field, and $e$ is the electron charge. Nonetheless, in the case of the hyperfine levels that we are considering (Eq. \ref{hyperfine_levels}), the matrix elements of the position operator vanish  \cite{Steck2010}. Therefore, the Rabi flopping frequency will depend solely on the magnetic field, i.e.,
+where $r$ is the position operator in the direction of the polarization of the electric field, $E_{0}$ is amplitude the electric field, and $e$ is the electron charge. Nonetheless, we will be considering hyperfine levels (Eq. \ref{hyperfine_levels}) for which the matrix elements of the position operator will vanish  \cite{Steck2010}. Therefore, the Rabi flopping frequency will depend solely on the magnetic field, i.e.,
 
 \begin{equation}\label{rabi_frequency_magnetic_field}
-\Omega = \frac{- \textbf{B} \cdot \bra{e} \boldsymbol{\mu} \ket{g}}{\hbar},
+\Omega = \frac{- B_{0} \bra{e} \mu \ket{g}}{\hbar},
 \end{equation}
+
+where $\mu$ is the total magnetic moment operator in the direction of the polarization of the magnetic field, $B_{0}$ is the amplitude of the magnetic field $\textbf{B}$ which in the case of a monochromatic polarized microwave can be written in the generic form
+
+\begin{equation}
+    \textbf{B} =  B_{0} \cos(\omega t) \boldsymbol{\hat{e}},
+\end{equation}
+
+where we have ignored the spatial variation due to the dimensions of the atom. Thereby, the amplitude of the magnetic field will set the width of the atom. The more intense the magnetic field, the larger the width that will be selected and vice-versa.
 
 \subsection{Initial Cloud Width Selection}
 \begin{comment}
@@ -1447,10 +1456,10 @@ Now, we can solve for the magnetic field in terms of the power measured, i.e.,
 We can calculate the Rabi frequency produced by this magnetic field using Eq. \ref{rabi_frequency_magnetic_field}
 
 \begin{equation*}
-\Omega = \frac{- \textbf{B} \cdot \bra{e} \boldsymbol{\mu} \ket{g}}{\hbar},
+\Omega = \frac{- B \bra{e} \boldsymbol{\hat{e}} \cdot \boldsymbol{\mu} \ket{g}}{\hbar},
 \end{equation*}
 
-where $\boldsymbol{\mu}$ is the total magnetic moment of the atom given by the spin, orbital, and nuclear contributions, i.e.,
+where $\boldsymbol{\hat{e}}$ is the direction of polarization of the magnetic field and $\boldsymbol{\mu}$ is the total magnetic moment of the atom given by the spin, orbital, and nuclear contributions, i.e.,
 
 \begin{equation}
      \boldsymbol{\mu} = \frac{\mu_{B}}{\hbar}(g_{S}\boldsymbol{S} + g_{L}\boldsymbol{L} + g_{I}\boldsymbol{I}).
@@ -1573,25 +1582,26 @@ At mid fringe we have $\Delta \Phi = \frac{\pi}{2}$, so the SNR will be given by
     SNR = \frac{1}{\sigma_{_{\Delta \Phi}}},
 \end{equation}
 
-where the uncertainty in the phase difference can be computed using Eq. \ref{gravimetry_signal_irradiance}, i.e.,
+Now, we take the product of the Eqs. \ref{gravimetry_signal_irradiance} and \ref{SNR_mid_fringe} as follows
 
-\begin{equation}
-    \sigma_{_{\Delta \Phi}} = b \sigma_{g} I^3.
-\end{equation}
-
-Thus, using Eqs. \ref{gravimetry_signal_irradiance} and \ref{SNR_mid_fringe}, we get
-
-\begin{equation}
+\begin{equation}\label{sensitivity_in_phase}
     \frac{\Delta \Phi}{\sigma_{_{\Delta \Phi}}} = b g I^3 SNR.
 \end{equation}
 
-Finally, we notice that since there exists a linear relation between $g$ and $\Delta \phi$ (Eq. \ref{gravimetry_signal_irradiance}), there also exists a linear relation between the uncertainty $\sigma_{g}$ and the uncertainty $\sigma_{_{\Delta \Phi}}$, i.e.,
+This equation is the sensitivity in the measurement of the gravimetry signal but we would like to have the sensitivity in the measurement of $g$. Thus,
+we have to notice that since there exists a linear relation between $g$ and $\Delta \phi$ (Eq. \ref{gravimetry_signal_irradiance}), there also exists a linear relation between the uncertainty $\sigma_{g}$ and the uncertainty $\sigma_{_{\Delta \Phi}}$, i.e.,
+
+\begin{equation}
+    \sigma_{_{\Delta \Phi}} = b \sigma_{g} I^3,
+\end{equation}
+
+so we can write 
 
 \begin{equation}
     \frac{\Delta \Phi}{\sigma_{_{\Delta \Phi}}} = \frac{g}{\sigma_{g}}.
 \end{equation}
 
-Thereby, using the last two equations we get the sensitivity of the measurement
+Thus, if we substitute this equation back into Eq. \ref{sensitivity_in_phase}, we get the sensitivity in the measurement of $g$, i.e.,
 
 \begin{equation}\label{sensitivity_eq}
     \frac{\sigma_{g}}{g} = \frac{1}{b g I^3 SNR}.

@@ -182,7 +182,7 @@ where the angular frequency is proportional to the energy according to the Planc
 E = \hbar \omega, 
 \end{equation}
 
-and the energy is given by the sum of the magnetic energy (Eq. \ref{magnetic_force}) and the energy due to the gravity field, i.e.,
+and the energy is given by the sum of the magnetic energy\footnote{In a quantum computation, we would have had to use the expectation value of the angular momentum $<\mu_{z}>$ with respect to the levels of interest, i.e., the energy would have been computed as the expectation value of the corresponding Hamiltonian.} (Eq. \ref{magnetic_force}) and the energy due to the gravity field, i.e.,
 
 \begin{equation}\label{classic_energy}
 E = \pm \mu_{z} B_{z} + mgz = (\pm \mu_{z} \eta + mg)z = C_{\pm} z
@@ -546,7 +546,7 @@ Finally, by using Eqs.(\ref{approx_quantum_phase_1}-\ref{pre_total_quantum_phase
 \Delta \Phi = 4 \frac{\mu_{B} \eta }{\hbar} g \bigg(\frac{\tau}{\Delta W}\bigg)^{3} = 4 \frac{\mu_{B} \eta }{\hbar} g t^{3},
 \end{equation}
 
-were we have used the definition of the non-dimensional time ($\tau\equiv \Delta W t$). Thus, we see that in the quantum picture, the total phase difference is the same as the phase difference obtained in the semi-classical computation Eq. \ref{gravimetry_signal}. In addition, it can be seen that the total phase difference does not depend on the position $x_{d}$ as expected.
+were we have used the definition of the non-dimensional time ($\tau\equiv \Delta W t$). Thus, we see that in the quantum picture, the total phase difference is the same as the phase difference obtained in the semi-classical computation Eq. \ref{gravimetry_signal}, except for a factor of two, and the presence of the Bohr magneton $\mu_{B}$ instead of the expectation value of the magnetic moment $<\mu_{z}>$. In addition, it can be seen that the total phase difference does not depend on the position $x_{d}$ as expected.
 
 \paragraph{First-Order Correction to the Gravimetry Signal}
 In this section, we will analyze the contribution of the rest of the terms in Eq. \ref{quantum_phase}, which we re-write here
@@ -822,7 +822,7 @@ where $k$ is the wave number and the amplitude $A(k)$ is of the gaussian form
     A(k) = C e^{-\alpha(k-k_{0})^{2}/2} ,
 \end{equation}
 
-where $k_{0}$ is the center of the distribution, $C$ is a scale factor that we can use to adjust the amplitude of the wave packet and $\alpha$ is a parameter that defines the initial width of the wave packet as we will see in a moment. In order to compute the integral in the Eq. \ref{free_wave_packet_momentum_space_integral}, we need to establish the dependence between $\omega$ and $k$, i.e., the dispersion relation. We will consider the dispersion relation to be sharply peaked about $k=k_{0}$ and use a Taylor expansion about this point to second order, i.e.,
+where $k_{0}$ is the center of the distribution, $C$ is a scale factor that we can use to normalize the wave packet, and $\alpha$ is a parameter that defines the initial width of the wave packet as we will see in a moment. In order to compute the integral in the Eq. \ref{free_wave_packet_momentum_space_integral}, we need to establish the dependence between $\omega$ and $k$, i.e., the dispersion relation. We will consider the dispersion relation to be sharply peaked about $k=k_{0}$ and use a Taylor expansion about this point to second order, i.e.,
 
 \begin{equation}\label{dispersion_relation_free_wave_packet}
     \omega(k) = \omega_{0} + (k-k_{0})\upsilon_{g} + \frac{1}{2}(k-k_{0})^{2} \beta ,
@@ -840,59 +840,41 @@ and $\beta$ is given by
     \beta \equiv \bigg(\frac{\partial^2 \omega(k)}{\partial k^2}\bigg)_{k=k_{0}}.
 \end{equation}
 
-Now, we can substitute the Eqs. \ref{gaussian_amplitude_free_wave_packet}-\ref{dispersion_relation_free_wave_packet} into the Eq. \ref{free_wave_packet_momentum_space_integral} and workout the integral. The final result is given by
+Now, we can substitute the Eqs. \ref{gaussian_amplitude_free_wave_packet}-\ref{dispersion_relation_free_wave_packet} into the Eq. \ref{free_wave_packet_momentum_space_integral} and workout the integral. Then, the wave packet in position space, normalized and initially centered around $z_{0}$, is given by
 
 \begin{equation}
-    \Psi (z, t) = C \sqrt{\frac{2 \pi}{\alpha + 2 i \beta t}} \exp \left[{-\frac{(z - \upsilon_{g} t)^{2}}{2 \alpha + 4 i \beta t}} \right]  \exp[{i (k_{0}z-\omega_{0} t)}].
+    \Psi (z, t) = \bigg(\frac{\sqrt{\alpha}}{2 \pi ^{3/2}} \bigg)^{1/2} \sqrt{\frac{2 \pi}{\alpha + i \beta t}} \exp \left[{\frac{i}{2}\frac{(z - z_{0} - \upsilon_{g} t)^{2}}{\beta t - i \alpha}} \right]  \exp[{i (k_{0}(z-z_{0})-\omega_{0} t)}].
 \end{equation}
 
-We can cast the above equation into a more illuminating form by putting the complex factors in the denominators in the standard form ($Z = [\Re(Z)+i\Im(Z)]$), and by using the de Moivre's theorem to compute the required squared root in the second term. Finally, we obtain the expansion of the free gaussian wave packet as follows
+We can cast the above equation into a more illuminating form by putting the complex factors in the denominators in the standard form ($Z = [\Re(Z)+i\Im(Z)]$), and by using the de Moivre's theorem to compute the required squared root. In this way, we obtain the expansion of the free gaussian wave packet as follows
 
 \begin{multline}\label{free_wave_packet_position_space_centered_0} 
-    \Psi (z, t) = C \sqrt{2 \pi} (\alpha^{2} + 4\beta^{2}t^{2})^{-1/4} \exp \left[-\frac{1}{2} \frac{\alpha (z - \upsilon_{g} t)^{2}}{\alpha^{2} + 4\beta^{2}t^{2}}  \right] \\ \exp \left[i \bigg(k_{0}z - w_{0}t + \frac{\beta t (z - \upsilon_{g} t)^{2}}{\alpha^{2} + 4\beta^{2}t^{2}} - \frac{1}{2} \arctan\bigg[\frac{2 \beta t}{\alpha}\bigg]\bigg) \right],
+    \Psi (z, t) = (2\pi)^{-1/4} \bigg(\frac{\alpha^{2} + \beta^{2} t^{2}}{2\alpha}\bigg)^{-1/4} \exp \left[-\frac{1}{4} \frac{ (z - z_{0} - \upsilon_{g} t)^{2}}{(\alpha^{2} + \beta^{2}t^{2})/(2\alpha)}  \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{\beta t}{2}\frac{(z - z_{0} - \upsilon_{g} t)^{2}}{\alpha^{2} + \beta^{2}t^{2}} - \frac{1}{2} \arctan\bigg[\frac{\beta t}{\alpha}\bigg]\bigg) \right],
 \end{multline}
 
-This equation represents a wave packet center at $z=0$ when $t=0$. A more general wave packet can be obtained if we consider the wave packet to be centered initially at $z=z_{0}$, i.e.,
+If we re-accommodate terms, we can write the equation describing the evolution of the normalized free wave packet as
 
-\begin{multline}\label{free_wave_packet_position_space_centered_z0} 
-    \Psi (z, t) = C \sqrt{2 \pi} (\alpha^{2} + 4\beta^{2}t^{2})^{-1/4} \exp \left[-\frac{1}{2} \frac{\alpha \big(z - z_{0} - \upsilon_{g} t \big)^{2}}{\alpha^{2} + 4\beta^{2}t^{2}}  \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{\beta t (z - z_{0} - \upsilon_{g} t)^{2}}{\alpha^{2} + 4\beta^{2}t^{2}} - \frac{1}{2} \arctan\bigg[\frac{2 \beta t }{\alpha}\bigg]\bigg) \right].
-\end{multline}
-
-Now, we need to make sure that this wave packet is normalized in position for all times. For that reason, we will consider $C$ to be given by
-
-\begin{equation}
-C = \frac{(2 \pi)^{-3/4}}{(2 \alpha)^{-1/4}}
-\end{equation}
-
-Then, if we substitute this value and re-accommodate terms, we can write the equation describing the evolution of the normalized free wave packet as
-
-\begin{multline}\label{free_wave_packet_position_space_centered_z0_pre_final_form} 
-    \Psi (z, t) = \left[\frac{1}{2 \pi \big(\sigma_{z}(t)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(z - z_{0} - \upsilon_{g} t \big)^{2}}{\big(\sigma_{z}(t)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\beta t }{\big(\sigma_{z}(0)\big)^{2}}\Bigg) \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{ \beta t (z - z_{0} - \upsilon_{g} t)^{2}}{ 4[\sigma_{z}(t)\sigma_{z}(0)]^{2}} \bigg) \right],
+\begin{multline}\label{free_wave_packet_position_space_centered_z0_final_form}
+    \Psi (z, t) = \left[\frac{1}{2 \pi \big(\sigma_{z}(t)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(z - z_{0} - \upsilon_{g} t \big)^{2}}{\big(\sigma_{z}(t)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\beta t }{2\big(\sigma_{z}(0)\big)^{2}}\Bigg) \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{\big[(z - z_{0})^{2} + 2 z_{0} \upsilon_{g} t \big]}{ 4[\sigma_{z}(t)\sigma_{z}(0)]^{2}} \frac{\beta t}{2} + \frac{\upsilon_{g} t (\upsilon_{g} t - 2z)}{4[\sigma_{z}(t)\sigma_{z}(0)]^{2}} \frac{\beta t}{2} \bigg) \right],
 \end{multline}
 
 where we have defined the standard deviation of the wave packet as
 
 \begin{equation}
-\sigma_{z}(t) = \sqrt{\frac{\alpha^{2} + 4\beta^{2}t^{2}}{2 \alpha}}.
+\sigma_{z}(t) = \sqrt{\frac{\alpha^{2} + \beta^{2}t^{2}}{2 \alpha}}.
 \end{equation}
 
-Thereby the initial width of the free wave packet is given by
+Thereby, the initial standard deviation of the free wave packet is given by
 
 \begin{equation}
-\sigma_{z}(0) = \sqrt{\alpha / 2},
+\sigma_{z}(0) = \sqrt{\alpha / 2}.
 \end{equation}
 
 Hence, we can re-write the standard deviation as
 
 \begin{equation}\label{free_wave_packet_width} 
-\sigma_{z}(t) = \sqrt{[\sigma_{z}(0)]^{2} + \left[\frac{\beta t}{\sigma_{z}(0)} \right]^{2}}.
+\sigma_{z}(t) = \sqrt{[\sigma_{z}(0)]^{2} + \left[\frac{\beta t}{2 \sigma_{z}(0)} \right]^{2}}.
 \end{equation}
-
-Finally, we can expand the last term in the Eq. \ref{free_wave_packet_position_space_centered_z0_pre_final_form} to get
-
-\begin{multline}\label{free_wave_packet_position_space_centered_z0_final_form} 
-    \Psi (z, t) = \left[\frac{1}{2 \pi \big(\sigma_{z}(t)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(z - z_{0} - \upsilon_{g} t \big)^{2}}{\big(\sigma_{z}(t)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\beta t }{\big(\sigma_{z}(0)\big)^{2}}\Bigg) \right] \\ \exp \left[i \Bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{ \big[(z - z_{0} )^{2} + 2 z_{0} v_{g} t \big]}{ 4[\sigma_{z}(t)\sigma_{z}(0)]^{2}}\beta t + \frac{\beta v_{g} t (v_{g} t - 2z)}{4[\sigma_{z}(t)\sigma_{z}(0)]^{2}} \Bigg) \right].
-\end{multline}
 
 Now, we will re-write the wave packet of alkali atoms (Eq. \ref{wave_packet_non_dimensional_evolution}) but this time, in order to establish the connection with the free wave packet, we will ignore the terms that include $q_{2}$ since this parameter is related with the acceleration of the wave packet (see Eq. \ref{xi_defs_eq_motion}) and for that reason those terms does not have an analogue in the free wave packet. Therefore, the wave packet of alkali atoms (ignoring terms that include $q_{2}$) will be given by
 
@@ -935,11 +917,11 @@ Therefore, by comparing the Eq. \ref{free_wave_packet_width} with the Eq. \ref{a
  \hline
  Free wave packet & Alkali wave packet \\ [0.5ex] 
  \hline\hline
- $\sigma_{z}(t) = \sqrt{\frac{\alpha^{2} + 4\beta^{2}t^{2}}{2 \alpha}} = \sqrt{[\sigma_{z}(0)]^{2} + \left[\frac{\beta t}{\sigma_{z}(0)} \right]^{2}}$ & $\sigma_{x}(\tau) = \sqrt{[\sigma_{x}(0)]^{2} + \left[\frac{\epsilon \tau}{\sigma_{x}(0)} \right]^{2}}$ \\ 
+ $\sigma_{z}(t) = \sqrt{\frac{\alpha^{2} + \beta^{2}t^{2}}{2 \alpha}} = \sqrt{[\sigma_{z}(0)]^{2} + \left[\frac{\beta t}{2\sigma_{z}(0)} \right]^{2}}$ & $\sigma_{x}(\tau) = \sqrt{[\sigma_{x}(0)]^{2} + \left[\frac{\epsilon \tau}{\sigma_{x}(0)} \right]^{2}}$ \\ 
  \hline
  $\sigma_{z}(0) = \sqrt{\alpha / 2}$ & $\sigma_{x}(0) (\frac{1}{\kappa}) = \Delta Z(0)$ \\
  \hline
- $\beta = \Big(\frac{\partial^2 \omega(k)}{\partial k^2}\Big)_{k=k_{0}} = \frac{\hbar}{M}$ & $\epsilon (\frac{2\Delta W}{\kappa^{2}}) = \frac{\hbar}{M}$ \\
+ $\frac{\beta}{2} = \Big(\frac{\partial^2 \omega(k)}{\partial k^2}\Big)_{k=k_{0}} = \frac{\hbar}{2M}$ & $\epsilon (\frac{\Delta W}{\kappa^{2}}) = \frac{\hbar}{2 M}$ \\
  \hline
  $\upsilon_{g} = \Big(\frac{\partial \omega(k)}{\partial k}\Big)_{k=k_{0}} = \frac{\hbar k_{0}}{M}$ & $2 \rho_{0} \epsilon (\frac{\Delta W}{\kappa}) = \frac{p_{0}}{M} = \frac{\hbar k_{0}}{M}$ \\ [1ex] 
  \hline
@@ -1474,10 +1456,10 @@ We can calculate the Rabi frequency produced by this magnetic field using Eq. \r
 \Omega = \frac{- B \bra{e} \boldsymbol{\hat{e}} \cdot \boldsymbol{\mu} \ket{g}}{\hbar},
 \end{equation*}
 
-where $\boldsymbol{\hat{e}}$ is the direction of polarization of the magnetic field and $\boldsymbol{\mu}$ is the total magnetic moment of the atom given by the spin, orbital, and nuclear contributions, i.e.,
+where $\boldsymbol{\hat{e}}$ is the direction of polarization of the magnetic field and $\boldsymbol{\mu}$ is the total magnetic moment of the atom given by the spin, orbital, and nuclear contributions, i.e.,\footnote{In this convention the eigenvalues of the operators $\boldsymbol{S}$, $\boldsymbol{L}$, and $\boldsymbol{I}$ have units of angular momentum, i.e., $Joules*Seconds$, and the Bohr magneton is defined as $\frac{\hbar e}{2 m_{e}}$. Besides, the Landé $g$-Factors $g_{S}$ and $g_{L}$ are positive while $g_{I}$ has a negative value. Notice that $\boldsymbol{\mu}$ has to have units of $Amperes*(Meters)^2$.}
 
 \begin{equation}
-     \boldsymbol{\mu} = \frac{\mu_{B}}{\hbar}(g_{S}\boldsymbol{S} + g_{L}\boldsymbol{L} + g_{I}\boldsymbol{I}).
+     \boldsymbol{\mu} = \frac{\mu_{B}}{\hbar}(g_{S}\boldsymbol{S} + g_{L}\boldsymbol{L} - g_{I}\boldsymbol{I}).
 \end{equation}
 
 We will take the magnetic field to be along the z-axis (the atomic quantization axis). Thus, we can write the Rabi frequency as
@@ -1489,7 +1471,7 @@ We will take the magnetic field to be along the z-axis (the atomic quantization 
 where 
 
 \begin{equation}
-     \mu_{z} = \mu_{B}(g_{S}S_{z}+ g_{L}L_{z}+ g_{I}I_{z}).
+     \mu_{z} = \frac{\mu_{B}}{\hbar}(g_{S}S_{z} + g_{L}L_{z} - g_{I}I_{z}).
 \end{equation}
 
 \subsubsection{Gravimetry Signal Set by the Working Frequency}
@@ -1532,7 +1514,7 @@ If we substitute Eq. \ref{maximum_selection_range} into the last equation we get
 This equation represents the maximum time that we can let the wave packet expand in terms of the power of the microwaves and the proportionality factor $\alpha$. Next, we can use Eq. \ref{quantum_gravimetry_signal_momentum_space} to compute the gravimetry signal that we could obtain by performing an atomic interference experiment with a total duration equal to $t_{max}$, i.e., 
 
 \begin{equation}\label{gravimetry_signal_T}
-    \Delta \Phi = 4 \frac{\mu_{z} \eta }{\hbar} g T^{3},
+    \Delta \Phi = 4 \frac{\mu_{B} \eta }{\hbar} g T^{3},
 \end{equation}
 
 where $T$ controls the time of free evolution between the pulses according to Eq. \ref{pulses} (see Fig. \ref{phase_graph}). The total duration of the experiment $t_{max}$ is given by
@@ -1556,7 +1538,7 @@ Thereby, using Eqs. \ref{total_experiment_time}, \ref{gravimetry_signal_T}, and 
 where we have defined the parameter
 
 \begin{equation}
-    b \equiv \frac{1}{2} \frac{ \mu_{z}}{ \hbar^{4} \eta^{5}} \bigg(\frac{3M \mu_{0}}{c} \bigg)^{3} \bigg(\frac{\bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}}} \bigg)^{6} \gamma^6,
+    b \equiv \frac{1}{2} \frac{ \mu_{B}}{ \hbar^{4} \eta^{5}} \bigg(\frac{3M \mu_{0}}{c} \bigg)^{3} \bigg(\frac{\bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}}} \bigg)^{6} \gamma^6,
 \end{equation}
 
 and we have written the result in terms of the irradiance of the microwaves\footnote{The irradiance is a more convenient quantity because not all the power of the microwaves will be seen by the atom due to its finite dimensions.}, i.e.,

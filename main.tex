@@ -1101,7 +1101,7 @@ Thereby, to determine the width of our atom's wave function, we just need to det
 
 where $\tilde{\Omega}$ is defined in terms of the Rabi flopping frequency $\Omega$ and the detuning $\delta$\footnote{Other references name $\tilde{\Omega}$ as the Rabi flopping frequency instead of $\Omega$. In any case, notice that $\tilde{\Omega}$ is the parameter that contains the information about the transition frequency while $\Omega$ only contains the information about the strength of the electromagnetic field.}, i.e.,
 
-\begin{equation}
+\begin{equation}\label{omega_tilde_definition}
   \tilde{\Omega} = \sqrt{\delta^{2} + \Omega^{2}}.
 \end{equation}
 
@@ -1438,9 +1438,9 @@ where we have evaluated the area of the power meter. This equation can be re-wri
     E = c B = \frac{B}{\sqrt{\mu_{0} \epsilon_{0}}},
 \end{equation}
 
-where $\mu_{0}$ is the vacuum permeability. Thus the power is given by
+where $\mu_{0}$ is the vacuum permeability. Thus, the power is given by
 
-\begin{equation}
+\begin{equation}\label{power_in_terms_of_B}
     P = \frac{c |B|^{2}}{2 \mu_{0}} A.
 \end{equation}
 
@@ -1545,6 +1545,31 @@ and we have written the result in terms of the irradiance of the microwaves\foot
 
 \begin{equation}
     I = \frac{P}{A}.
+\end{equation}
+
+\subsubsection{Condition of Infinitesimal Rabi Pulses}
+We obtained the last result by considering infinitesimal Rabi pulses. However, in reality, the duration of the Rabi pulses is not infinitesimal. Therefore, the previous result will hold if and only if $t_{max}$ is much larger than the duration of the Rabi pulses, i.e., $t_{max} >> \tau_{Rabi}$. Let's use a $\pi$-pulse, where $\tau_{\pi} = \frac{\pi}{\Omega}$, to exemplify this point. Thus, using Eq. \ref{total_experiment_time}, the condition is the following\footnote{Remember that $\Omega$ was defined in Eq. \ref{omega_tilde_definition}. In this case, we consider the detuning to be zero so $\tilde{\Omega} = \Omega$}
+
+\begin{equation}
+    \frac{6 M \mu_{0} P}{\hbar c A} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} >> \frac{\pi}{\Omega}.
+\end{equation}
+
+We can use Eq. \ref{power_in_terms_of_B} to write this expression in terms of the magnetic field
+
+\begin{equation}
+   |B|^{2}\frac{3 M }{\hbar} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} >> \frac{\pi}{\Omega}.
+\end{equation}
+
+Then, we can use Eq. \ref{rabi_frequency_magnetic_field} to write this expression in terms of $\Omega$, i.e.,
+
+\begin{equation}
+   3 \Omega^{2} \hbar M \bigg(\frac{ \gamma}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} >> \frac{\pi}{\Omega}.
+\end{equation}
+
+Therefore, the condition of infinitesimal Rabi pulses has been translated into the following condition in $\Omega$
+
+\begin{equation}
+    \Omega  >> \Bigg[ \frac{\pi}{3 \hbar M} \bigg(\frac{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}{\gamma}\bigg)^{2} \Bigg]^{1/3}.
 \end{equation}
 
 \subsection{Interferometer Fringes}

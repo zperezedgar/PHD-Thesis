@@ -808,7 +808,7 @@ Thus, by using Eqs. \ref{epsilon}-\ref{q1_q2} and the approximations in Eqs. \re
 where we have used $\tau\equiv \Delta W t$. We can notice that this result is independent of the momentum $k$ and that it coincides with the result obtained in position space as expected.
 
 \subsection{A Revision to the Time Evolution of the Free Wave Packet}
-In this section we review the time evolution of a free gaussian wave packet. Then, we use this result to establish a correspondence with some terms of the wave packet of alkali-metal atoms subject to a constant gravitational field and interacting with a magnetic field given by Eq. \ref{wave_packet_non_dimensional_evolution}.
+In this section we review the time evolution of a free Gaussian wave packet. Then, we use this result to establish a correspondence with some terms of the wave packet of alkali-metal atoms subject to a constant gravitational field and interacting with a magnetic field given by Eq. \ref{wave_packet_non_dimensional_evolution}.
 
 We begin by considering a superposition of plane waves with different amplitudes, i.e.,
 
@@ -816,7 +816,7 @@ We begin by considering a superposition of plane waves with different amplitudes
     \Psi (z, t) =  \int_{- \infty}^{\infty} dk A(k) e^{i (kz-\omega t)} ,
 \end{equation}
 
-where $k$ is the wave number and the amplitude $A(k)$ is of the gaussian form
+where $k$ is the wave number and the amplitude $A(k)$ is of the Gaussian form
 
 \begin{equation}\label{gaussian_amplitude_free_wave_packet}
     A(k) = C e^{-\alpha(k-k_{0})^{2}/2} ,
@@ -846,7 +846,7 @@ Now, we can substitute the Eqs. \ref{gaussian_amplitude_free_wave_packet}-\ref{d
     \Psi (z, t) = \bigg(\frac{\sqrt{\alpha}}{2 \pi ^{3/2}} \bigg)^{1/2} \sqrt{\frac{2 \pi}{\alpha + i \beta t}} \exp \left[{\frac{i}{2}\frac{(z - z_{0} - \upsilon_{g} t)^{2}}{\beta t - i \alpha}} \right]  \exp[{i (k_{0}(z-z_{0})-\omega_{0} t)}].
 \end{equation}
 
-We can cast the above equation into a more illuminating form by putting the complex factors in the denominators in the standard form ($Z = [\Re(Z)+i\Im(Z)]$), and by using the de Moivre's theorem to compute the required squared root. In this way, we obtain the expansion of the free gaussian wave packet as follows
+We can cast the above equation into a more illuminating form by putting the complex factors in the denominators in the standard form ($Z = [\Re(Z)+i\Im(Z)]$), and by using the de Moivre's theorem to compute the required squared root. In this way, we obtain the expansion of the free Gaussian wave packet as follows
 
 \begin{multline}\label{free_wave_packet_position_space_centered_0} 
     \Psi (z, t) = (2\pi)^{-1/4} \bigg(\frac{\alpha^{2} + \beta^{2} t^{2}}{2\alpha}\bigg)^{-1/4} \exp \left[-\frac{1}{4} \frac{ (z - z_{0} - \upsilon_{g} t)^{2}}{(\alpha^{2} + \beta^{2}t^{2})/(2\alpha)}  \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{\beta t}{2}\frac{(z - z_{0} - \upsilon_{g} t)^{2}}{\alpha^{2} + \beta^{2}t^{2}} - \frac{1}{2} \arctan\bigg[\frac{\beta t}{\alpha}\bigg]\bigg) \right],
@@ -1047,7 +1047,7 @@ Hence, the detuning of the Rabi oscillations due to the uncertainty in the posit
 \end{figure}
 
 It turns out that this detuning sets a constraint in the width that the atom's wave function can have. In order to see this,
-let's consider the wave function of the atom in position space to be a gaussian like wave packet, initially centered at $z_{0}$. We already worked out the evolution of such wave packet in the last section. We re-write here the time evolution of the free wave packet
+let's consider the wave function of the atom in position space to be a Gaussian like wave packet, initially centered at $z_{0}$. We already worked out the evolution of such wave packet in the last section. We re-write here the time evolution of the free wave packet
 
 \begin{multline}\label{atom_wave_function_position_space}
     \Psi (z, t) = \left[\frac{1}{2 \pi \big(\sigma_{z}(t)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(z - z_{0} - \upsilon_{g} t \big)^{2}}{\big(\sigma_{z}(t)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\beta t }{\big(\sigma_{z}(0)\big)^{2}}\Bigg) \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{ \beta t (z - z_{0} - \upsilon_{g} t)^{2}}{ 4[\sigma_{z}(t)\sigma_{z}(0)]^{2}} \bigg) \right].
@@ -1123,7 +1123,7 @@ Furthermore, we will take the probability of transition for positions $|z| \ge 2
 
 The Eqs. \ref{detuning_condition} and \ref{position_condition} constitute the conditions of our approximation. This approximation makes sense because the detuning evaluated at positions farther away from the position that defines the width of the atom ($z=2Z_{HWHM}$) should be such that the probability of transition is always zero. In other words, we cannot induce transitions in the atom if the perturbation is applied in a position where the probability of finding the atom is zero.
 
-We can write down a function that approximately satisfies the conditions in the Eqs. \ref{detuning_condition} and \ref{position_condition}. We will use one more time the gaussian distribution, but this time the independent variable will be the detuning. We will define as before the full width at half maximum of this distribution
+We can write down a function that approximately satisfies the conditions in the Eqs. \ref{detuning_condition} and \ref{position_condition}. We will use one more time the Gaussian distribution, but this time the independent variable will be the detuning. We will define as before the full width at half maximum of this distribution
 
 \begin{equation}\label{FWHM_normal_distribution}
 \delta_{FWHM} = 2\sqrt{2ln2} \sigma_{\delta}(0)
@@ -1147,7 +1147,7 @@ This approximation and the exact form of the transition probability versus the d
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{ce2_VS_detuning_general.png}
-     \caption{Probability of transition for the atom due to Rabi oscillations from the ground state to the excited state versus the detuning ($\Omega t$ is maintained fixed). The exact solution corresponds to the Eq. \ref{rabi_oscillations_exact} while the gaussian approximation corresponds to the Eq. \ref{rabi_oscillations_approx}. This gaussian function approximately satisfies the conditions used to estimate the detuning at $z=2Z_{HWHM}$ (Eqs. \ref{detuning_condition} and \ref{position_condition}).}
+     \caption{Probability of transition for the atom due to Rabi oscillations from the ground state to the excited state versus the detuning ($\Omega t$ is maintained fixed). The exact solution corresponds to the Eq. \ref{rabi_oscillations_exact} while the Gaussian approximation corresponds to the Eq. \ref{rabi_oscillations_approx}. This Gaussian function approximately satisfies the conditions used to estimate the detuning at $z=2Z_{HWHM}$ (Eqs. \ref{detuning_condition} and \ref{position_condition}).}
      \label{ce2_VS_detuning}
 \end{figure}
 
@@ -1511,7 +1511,7 @@ If we substitute Eq. \ref{maximum_selection_range} into the last equation we get
     t_{max} = \frac{6 M \mu_{0} P}{\hbar c A} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2}.
 \end{equation}
 
-This equation represents the maximum time that we can let the wave packet expand in terms of the power of the microwaves and the proportionality factor $\alpha$. Next, we can use Eq. \ref{quantum_gravimetry_signal_momentum_space} to compute the gravimetry signal that we could obtain by performing an atomic interference experiment with a total duration equal to $t_{max}$, i.e., 
+This equation represents the maximum time that we can let the wave packet expand in terms of the power of the microwaves and the proportionality factor $\gamma$. Next, we can use Eq. \ref{quantum_gravimetry_signal_momentum_space} to compute the gravimetry signal that we could obtain by performing an atomic interference experiment with a total duration equal to $t_{max}$, i.e., 
 
 \begin{equation}\label{gravimetry_signal_T}
     \Delta \Phi = 4 \frac{\mu_{B} \eta }{\hbar} g T^{3},
@@ -1615,7 +1615,7 @@ A plot of the theoretical sensitivity versus the power of the microwaves obtaine
 \begin{figure}
     \centering
     \includesvg[width=1\textwidth]{precision_vs_power_plot.svg}
-    \caption{A plot of the theoretical sensitivity in the measurement of $g$ as a function of the power of the microwaves used to drive the transitions (Eq. \ref{sensitivity_eq}). The legends on the right represent the value of the parameter $\gamma$. The power is assumed to be measured in an area of $1cm^2$. The signal-to-noise-ratio is taken to be $SNR=20$. The magnetic field is considered to have a value of $\eta = 500 \frac{G}{m}$. We are considering a $\ce{^{87}_{}Rb}$ atom with mass $M=1.443*10^{-25}kg$ and supposing a transition in the $5^{2}S_{1/2}$ level between the hyperfine levels $\ket{F=1, m_{F}=1}$ and $\ket{F=2, m_{F}=1}$ with approximate Landé $g_{F}$-Factors $g_{F}=-1/2$ and $g_{F}=1/2$ respectively \cite{Steck2010}. We approximate $\mu_{z}$ and $\bra{e} \mu_{z} \ket{g}$ as being equal to the Bohr magneton with value $\mu_{B}=9.274*10^{-24}J/T$. Finally, we take $g=9.81 m/s^2$.}
+    \caption{A plot of the theoretical sensitivity in the measurement of $g$ as a function of the power of the microwaves used to drive the transitions (Eq. \ref{sensitivity_eq}). The legends on the right represent the value of the parameter $\gamma$. The power is assumed to be measured in an area of $100cm^2$. The signal-to-noise-ratio is taken to be $SNR=20$. The magnetic field is considered to have a value of $\eta = 500 \frac{G}{m}$. We are considering a $\ce{^{87}_{}Rb}$ atom with mass $M=1.443*10^{-25}kg$ and supposing a transition in the $5^{2}S_{1/2}$ level between the hyperfine levels $\ket{F=1, m_{F}=1}$ and $\ket{F=2, m_{F}=1}$ with approximate Landé $g_{F}$-Factors $g_{F}=-1/2$ and $g_{F}=1/2$ respectively \cite{Steck2010}. We approximate $\bra{e} \mu_{z} \ket{g}$ as being equal to the Bohr magneton with value $\mu_{B}=9.274*10^{-24}J/T$. Finally, we take $g=9.81 m/s^2$. With all these values, the parameter $b$ in Eq. \ref{sensitivity_eq} has a value of $719.046 \frac{s^{11}}{kg^{3}m}$.}
     \label{precision_vs_power_figure}
 \end{figure}
 

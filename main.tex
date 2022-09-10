@@ -1523,7 +1523,7 @@ where $T$ controls the time of free evolution between the pulses according to Eq
     4 T + 2\tau_{\pi/2} + 2\tau_{\pi} = t_{max},
 \end{equation}
 
-where $\tau_{\pi/2}$ is the length of a $\frac{\pi}{2}$-pulse, and $\tau_{\pi}$ is the length of a $\pi$-pulse. However, the typical Rabi frequencies used for atomic interferometry are of order $\Omega \approx 10^5 s^{-1}$, which corresponds for a $\pi$-pulse to a time length of $\tau_{\pi} = \frac{\pi}{\Omega} \approx 30 \mu s$. Thus, we can consider the Rabi frequencies to have an infinitesimal duration and use the approximation
+where $\tau_{\pi/2}$ is the length of a $\frac{\pi}{2}$-pulse, and $\tau_{\pi}$ is the length of a $\pi$-pulse. However, the typical Rabi frequencies used in traditional atomic interferometry with Raman pulses are of order $\Omega \approx 10^5 s^{-1}$, which corresponds for a $\pi$-pulse to a time length of $\tau_{\pi} = \frac{\pi}{\Omega} \approx 30 \mu s$ \cite{Menoret2018}. In our case, the microwaves provide less power, and therefore, a smaller value for $\Omega$. However, we still can consider the time length of the pulses to be much larger as we will show in the next section. Thus, we can consider the Rabi frequencies to have an infinitesimal duration and use the following approximation
 
 \begin{equation}\label{t_max_vs_T}
     4T \approx t_{max}.
@@ -1548,7 +1548,7 @@ and we have written the result in terms of the irradiance of the microwaves\foot
 \end{equation}
 
 \subsubsection{Condition of Infinitesimal Rabi Pulses}
-We obtained the last result by considering infinitesimal Rabi pulses. However, in reality, the duration of the Rabi pulses is not infinitesimal. Therefore, the previous result will hold if and only if $t_{max}$ is much larger than the duration of the Rabi pulses, i.e., $t_{max} >> \tau_{Rabi}$. Let's use a $\pi$-pulse, where $\tau_{\pi} = \frac{\pi}{\Omega}$, to exemplify this point. Thus, using Eq. \ref{total_experiment_time}, the condition is the following\footnote{Remember that $\Omega$ was defined in Eq. \ref{omega_tilde_definition}. In this case, we consider the detuning to be zero so $\tilde{\Omega} = \Omega$}
+We obtained the last result by considering infinitesimal Rabi pulses. However, in reality, the duration of the Rabi pulses is not infinitesimal. Therefore, the previous result will hold if and only if $t_{max}$ is much larger than the duration of the Rabi pulses, i.e., $t_{max} >> \tau_{Rabi}$. Let's use a $\pi$-pulse, where $\tau_{\pi} = \frac{\pi}{\Omega}$, to exemplify this point. Thus, using Eq. \ref{total_experiment_time}, the condition is the following\footnote{Remember that $\Omega$ was defined in Eq. \ref{omega_tilde_definition}. In this case, we are considering the detuning to be zero so $\tilde{\Omega} = \Omega$.}
 
 \begin{equation}
     \frac{6 M \mu_{0} P}{\hbar c A} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} >> \frac{\pi}{\Omega}.
@@ -1571,6 +1571,20 @@ Therefore, the condition of infinitesimal Rabi pulses has been translated into t
 \begin{equation}
     \Omega  >> \Bigg[ \frac{\pi}{3 \hbar M} \bigg(\frac{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}{\gamma}\bigg)^{2} \Bigg]^{1/3}.
 \end{equation}
+
+In the case of a $\ce{^{87}_{}Rb}$ atom, we can estimate the order of magnitude of the right side of this condition so we get
+
+\begin{equation}
+    \Omega  >> 10^{3} Hz.
+\end{equation}
+
+Let's compare this value with an estimation of the maximum value that we can obtain in the laboratory. According to the Eq. \ref{working_freq_set_by_microwaves_power},  we have\footnote{The approximations used to get these two estimations are the same that we used in Fig. \ref{precision_vs_power_figure}.}
+
+\begin{equation}
+    \Omega' \approx 10^{4} Hz  >> 10^{3} Hz.
+\end{equation}
+
+Therefore, the value $\Omega'$ is around one order of magnitude larger than the threshold set by the condition of infinitesimal Rabi pulses. This means that the approximation that we used in Eq. \ref{t_max_vs_T} was legal. Finally, it is interesting to note that the frequency that we can obtain using microwaves is around one order of magnitude less than the frequencies obtained by using lasers to produce Raman pulses in traditional gravimetry.
 
 \subsection{Interferometer Fringes}
 \subsubsection{Precision in the Measurement of g}

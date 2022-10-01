@@ -958,11 +958,14 @@ This is not surprising since we already knew that $\rho_{0}=p_{0}/\hbar \kappa$.
 
 Meanwhile for the rest of terms, we can see that some of them are present in one wave packet but they are not present in the other and vice-versa while other terms look similar in both wave packets but they differ in some way that is not possible to establish a direct connection between them. Incidentally, the terms of the second row in both Eqs. \ref{free_wave_packet_position_space_centered_z0_final_form} and \ref{alkali_wave_packet_position_space_final_form} are the terms that contribute to the phase while the terms in the first rows are those terms that does not contribute to the phase.
 
-\subsection{Initial Atomic Width Selection}
+\subsection{Selection of the Atomic Wave Function's Width in Position Space}
 We demonstrated in Eq. \ref{quantum_gravimetry_signal_momentum_space}, that it is possible to measure $g$ from the phase difference at the port of the proposed interferometer. In an ideal case, we could apply the Rabi pulses using the correct Rabi frequencies to drive the desired transitions. However, in reality, the detuning will not be zero. Furthermore, it will depend on the position of the atom, as we will show in a moment. Thus, we need to establish the conditions within which our result is valid and the gravimetry signal does not depend on the initial position of the atom.
-In order to do so, first, we will establish the theoretical framework to describe the initialization of the atom to be used during the interferometry procedure. Specifically, we will review how to prepare the initial width of the atom. Then, in the next sections, we will use this result to establish the conditions that allow our technique to be independent of the initial position of the atom  by choosing the best possible initial width.
+In order to do so, first, we will establish the theoretical framework to describe the initialization of the atom to be used during the interferometry procedure. Specifically, we will show that inducing Rabi transitions in the hyperfine levels of an atom placed inside an inhomogeneous magnetic field causes its position wave function to have an specific width when the initial width is larger than the selection range set by the power of the microwaves. Then, we will calculate the initial width of the atoms just before measurement process by considering a cloud of alkali atoms in thermal equilibrium. Finally, in the next sections, we will use these results to choose the best possible initial width.
 
-Firstly, we need to remember that the experiment will take place inside a magnetic gradient field in the z-axis of the following form
+\subsubsection{Measurement of the Atom's Position Using Microwaves}
+In this section, we will show that applying a microwave pulse to induce transitions in the hyperfine states of an alkali atom placed inside an inhomogeneous magnetic field causes a collapse in the width of its position wave function as long as the initial width was larger than the selection width set by the power of the microwaves used to drive the oscillations. 
+
+We start by remembering that the experiment takes place inside a magnetic gradient field on the z-axis of the following form
 
 \begin{equation*}
 \textbf{B} = \eta z \hat{\textbf{z}},
@@ -1046,14 +1049,13 @@ Hence, the detuning of the Rabi oscillations due to the uncertainty in the posit
 \label{atom_wave_func_pos_space}
 \end{figure}
 
-It turns out that this detuning sets a constraint in the width that the atom's wave function can have. In order to see this,
-let's consider the wave function of the atom in position space to be a Gaussian like wave packet, initially centered at $z_{0}$. We already worked out the evolution of such wave packet in the last section. We re-write here the time evolution of the free wave packet
+It turns out that this detuning sets a constraint in the width that the atom's wave function in position space can have after the stimulated transition has succesfully occurred. In order to see this, let's consider the wave function of the atom in position space to be a Gaussian like wave packet, initially centered at $z_{0}$. We already worked out the evolution of such wave packet in the last section. We re-write here the time evolution of the Gaussian free wave packet
 
 \begin{multline}\label{atom_wave_function_position_space}
     \Psi (z, t) = \left[\frac{1}{2 \pi \big(\sigma_{z}(t)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(z - z_{0} - \upsilon_{g} t \big)^{2}}{\big(\sigma_{z}(t)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\beta t }{\big(\sigma_{z}(0)\big)^{2}}\Bigg) \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{ \beta t (z - z_{0} - \upsilon_{g} t)^{2}}{ 4[\sigma_{z}(t)\sigma_{z}(0)]^{2}} \bigg) \right].
 \end{multline}
 
-Therefore, the initial wave packet will be given by
+The initial wave packet is given by
 
 \begin{equation}\label{initial_atom_wave_function_position_space}
     \Psi (z, 0) = \left[\frac{1}{2 \pi \big(\sigma_{z}(0)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4}\bigg(\frac{z-z_{0}}{\sigma_{z}(0)}\bigg)^{2} \right] \exp \left[i \bigg(k_{0}(z-z_{0})\bigg) \right],
@@ -1067,21 +1069,19 @@ The complex modulus of this wave packet is a distribution for the probability of
     |\Psi (z, 0)|^{2} = \frac{1}{\sigma_{z}(0) \sqrt{2 \pi}} \exp \left[-\frac{1}{2}\bigg(\frac{z-z_{0}}{\sigma_{z}(0)}\bigg)^{2} \right].
 \end{equation}
 
-We can define the half width at half maximum of this distribution and name the value of the independent variable $z$ at this point as $Z_{HWHM}$. In the Fig. \ref{atom_wave_func_pos_space}, we can see the initial atomic probability distribution in position space (Eq. \ref{initial_atom_wave_function_position_space_probability_distribution}). Notice that we have defined the width of the atomic wave function as follows.
+We can define the half width at half maximum of this distribution and name the value of the independent variable $z$ at this point as $Z_{HWHM}$. In the Fig. \ref{atom_wave_func_pos_space}, we can see the initial probability distribution in position space (Eq. \ref{initial_atom_wave_function_position_space_probability_distribution}). Notice that we have defined the width of the atomic wave function as follows.
 
 \begin{equation}\label{width_atomic_wave_function}
   \Delta Z = |2Z_{HWHM} - z_{0}| = (2Z_{HWHM} - z_{0}),
 \end{equation}
 
-where we have used the fact that $Z_{HWHM}$ will always be greater than $z_{0}$. This is because we will consider, in a moment, that for atoms with their center at $z_{0} > Z_{HWHM}$ the probability of transition is zero.
-
-On the other hand, it can be easily shown that the full with at half maximum for the normal distribution is given by
+where we have used the fact that $Z_{HWHM}$ will always be greater than $z_{0}$. Besides, it can be easily shown that the full with at half maximum for the Gaussian distribution is given by
 
 \begin{equation}\label{FWHM_normal_distribution}
-Z_{FWHM} = 2\sqrt{2ln2} \sigma_{z}(0) = 2 Z_{HWHM}
+Z_{FWHM} = 2\sqrt{2ln2} \sigma_{z}(0) = 2 Z_{HWHM}.
 \end{equation}
 
-Now, we will take $z_{0}$, the point were the detuning is zero, to be the origin of coordinates. Therefore, if we evaluate the detuning at $z = 2Z_{HWHM}$, we get
+Let's assume that the atom's wave function is centered at $z_{0}$\footnote{Later, we will establish the condition that allows our method to be independent of the initial position of the atom, so we do not have to worry about the case where the atom has an initial offset from the origin.}, the point were the detuning is zero, and take it as the origin of coordinates, i.e., $z_{0}=0$. Therefore, if we evaluate the detuning at $z = 2Z_{HWHM}$, we get
 
 \begin{equation}
   \delta (2Z_{HWHM}) = 2\frac{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}{\hbar} Z_{HWHM}
@@ -1123,7 +1123,55 @@ Furthermore, we will take the probability of transition for positions $|z| \ge 2
 
 The Eqs. \ref{detuning_condition} and \ref{position_condition} constitute the conditions of our approximation. This approximation makes sense because the detuning evaluated at positions farther away from the position that defines the width of the atom ($z=2Z_{HWHM}$) should be such that the probability of transition is always zero. In other words, we cannot induce transitions in the atom if the perturbation is applied in a position where the probability of finding the atom is zero.
 
-We can write down a function that approximately satisfies the conditions in the Eqs. \ref{detuning_condition} and \ref{position_condition}. We will use one more time the Gaussian distribution, but this time the independent variable will be the detuning. We will define as before the full width at half maximum of this distribution
+Thus, we can use the Eq. \ref{detuning_condition} to determine the detuning at $z=2Z_{HWHM}$, i.e.,
+
+\begin{equation}\label{detuning_at_zhwm}
+\delta (2z_{HWHM}) = \frac{\sqrt{4 \pi^{2} - \Omega^{2} t^{2}}}{t}.
+\end{equation}
+
+In this way, the width of the atom's wave function can be computed using Eqs. \ref{width_atomic_wave_function}, \ref{position_at_zhwhm}, and \ref{detuning_at_zhwm} i.e.,
+
+\begin{equation}\label{width_set_by_detuning}
+\Delta Z = \frac{\sqrt{4 \pi^{2} - \Omega^{2} t^{2}}}{t} \frac{\hbar}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}.
+\end{equation}
+
+Therefore, we can use $\Omega$ and $t$ to control the width of the atom's final wave function in position space. Notice that we have not said anything about the initial width of the atom's wave function. However, if the initial width of the atom's wave function was larger than the width set by this equation, then, the final width will be given by this expression as long as the atom is found to have experimented the transition. In other words, as a result of having applied a Rabi pulse with a detuning due to the uncertainty in the position of the atom, we have caused this uncertainty to collapse into a smaller value as long as the transition had happened. Certainly, we have performed a measurement of the atom's position that has caused the wave function to collapse and its width to have a definite value. On the other hand, if the initial width was smaller than the value given by Eq. \ref{width_set_by_detuning}, then, the application of the microwave in the atom would not cause any change in the width of the wave function\footnote{We can say that the resolution of our measurement was not enough to provoke a collapse of the wave function.}. 
+
+In the case of an atomic cloud, we can take advantage of this selector pulse to discard the atoms that did not end in the desired final state because its wave function was larger than $\Delta Z$, so we end up with a cloud of atoms with a definite uncertainty in position space.
+
+For experimental purposes, we would like to have $\Omega$ fixed. Therefore, the selected width will be fixed by $t$. For example, if we use a $\pi$-pulse, i.e., $t=\pi/\Omega$. Then, the initial width will be given by
+
+\begin{equation}\label{initial_width}
+\Delta Z = \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}.
+\end{equation}
+
+On the other hand, in the case of a $\frac{\pi}{2}$-pulse, we would have
+
+\begin{equation}\label{initial_width_pi/2}
+\Delta Z = \frac{\sqrt{15}}{2} \Omega \frac{\hbar}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}.
+\end{equation}
+
+We remember that the electric field is several order of magnitude larger than the magnetic field, thereby it dominates, and the Rabi flopping frequency is usually taken to be
+
+\begin{equation*}
+\Omega = \frac{- e E_{0} \bra{e} r \ket{g}}{\hbar},
+\end{equation*}
+
+where $r$ is the position operator in the direction of the polarization of the electric field, $E_{0}$ is amplitude the electric field, and $e$ is the electron charge. Nonetheless, we will be considering hyperfine levels (Eq. \ref{hyperfine_levels}) for which the matrix elements of the position operator will vanish  \cite{Steck2010}. Therefore, the Rabi flopping frequency will depend solely on the magnetic field, i.e.,
+
+\begin{equation}\label{rabi_frequency_magnetic_field}
+\Omega = \frac{- B_{0} \bra{e} \mu \ket{g}}{\hbar},
+\end{equation}
+
+where $\mu$ is the total magnetic moment operator in the direction of the polarization of the magnetic field, $B_{0}$ is the amplitude of the magnetic field $\textbf{B}$ which in the case of a monochromatic polarized microwave can be written in the generic form
+
+\begin{equation}
+    \textbf{B} =  B_{0} \cos(\omega t) \boldsymbol{\hat{e}},
+\end{equation}
+
+where we have ignored the spatial variation due to the dimensions of the atom. Thereby, the amplitude of the magnetic field will set the width of the position wave function. The more intense the magnetic field, the larger the width that will be selected and vice-versa.
+
+Finally, notice that since the initial wave function was Gaussian like, we can expect the final wave function to continue being a gaussian packet. To see this, we can write down a function that approximately satisfies the conditions in the Eqs. \ref{detuning_condition} and \ref{position_condition}. We will use one more time the Gaussian distribution, but this time the independent variable will be the detuning. We will define as before the full width at half maximum of this distribution
 
 \begin{equation}\label{FWHM_normal_distribution}
 \delta_{FWHM} = 2\sqrt{2ln2} \sigma_{\delta}(0)
@@ -1147,133 +1195,15 @@ This approximation and the exact form of the transition probability versus the d
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{ce2_VS_detuning_general.png}
-     \caption{Probability of transition for the atom due to Rabi oscillations from the ground state to the excited state versus the detuning ($\Omega t$ is maintained fixed). The exact solution corresponds to the Eq. \ref{rabi_oscillations_exact} while the Gaussian approximation corresponds to the Eq. \ref{rabi_oscillations_approx}. This Gaussian function approximately satisfies the conditions used to estimate the detuning at $z=2Z_{HWHM}$ (Eqs. \ref{detuning_condition} and \ref{position_condition}).}
+     \caption{Probability of transition for the atom due to Rabi oscillations from the ground state to the excited state versus the detuning ($\Omega t$ is maintained fixed). The exact solution corresponds to the Eq. \ref{rabi_oscillations_exact} while the Gaussian approximation corresponds to the Eq. \ref{rabi_oscillations_approx}. This Gaussian function approximately satisfies the conditions used to estimate the detuning at $z=2Z_{HWHM}$ (Eqs. \ref{detuning_condition} and \ref{position_condition}) and we can expect that the final state will have a wave function with this shape.}
      \label{ce2_VS_detuning}
 \end{figure}
 
-Returning to our original problem, we can use the Eq. \ref{detuning_condition} to determine the detuning at $z=2Z_{HWHM}$, i.e.,
+\subsection{Selection of the Initial Width by Performing a Measurement in Position Space}
+As we saw earlier, we can use a selector pulse to set the initial width of the atom's wave function in position space. This approach only works if the initial width of the wave packet is larger than the selection range set according to Eq. \ref{width_set_by_detuning}. Or seen from the perspective of Eqs. \ref{initial_width} and \ref{rabi_frequency_magnetic_field}, this approach corresponds to a low-power regime.
 
-\begin{equation}\label{detuning_at_zhwm}
-\delta (2z_{HWHM}) = \frac{\sqrt{4 \pi^{2} - \Omega^{2} t^{2}}}{t}.
-\end{equation}
-
-For now, we will suppose that the atom is placed at $z_{0}$ (the origin of coordinates). In the next section, when analyzing the case of an atomic cloud we will see what happens if the atomic wave function has an offset from the origin. Thus, we can re-write Eq. \ref{width_atomic_wave_function} as follows
-
-\begin{equation}\label{width_zhwhm}
-  \Delta Z = 2Z_{HWHM} = Z_{FWHM}.
-\end{equation}
-
-Thus, the width of the atom's wave function can be computed using Eqs.  \ref{position_at_zhwhm}, \ref{detuning_at_zhwm}, and \ref{width_zhwhm} i.e.,
-
-\begin{equation}
-\Delta Z = \frac{\sqrt{4 \pi^{2} - \Omega^{2} t^{2}}}{t} \frac{\hbar}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}.
-\end{equation}
-
-Thereby, we can use $\Omega$ and $t$ to control the width of the atom's wave function. For experimental purposes, we would like to have $\Omega$ fixed. Therefore, we can use $t$ to prepare the initial width. Specifically, if we use a $\pi$-pulse, i.e., $t=\pi/\Omega$. Then, the initial width will be given by
-
-\begin{equation}\label{initial_width}
-\Delta Z = \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}.
-\end{equation}
-
-On the other hand, in the case of a $\frac{\pi}{2}$-pulse, we would have
-
-\begin{equation}\label{initial_width_pi/2}
-\Delta Z = \frac{\sqrt{15}}{2} \Omega \frac{\hbar}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}.
-\end{equation}
-
-Finally, notice that the electric field is several order of magnitude larger than the magnetic field, thereby it dominates, and the Rabi flopping frequency is usually taken to be
-
-\begin{equation*}
-\Omega = \frac{- e E_{0} \bra{e} r \ket{g}}{\hbar},
-\end{equation*}
-
-where $r$ is the position operator in the direction of the polarization of the electric field, $E_{0}$ is amplitude the electric field, and $e$ is the electron charge. Nonetheless, we will be considering hyperfine levels (Eq. \ref{hyperfine_levels}) for which the matrix elements of the position operator will vanish  \cite{Steck2010}. Therefore, the Rabi flopping frequency will depend solely on the magnetic field, i.e.,
-
-\begin{equation}\label{rabi_frequency_magnetic_field}
-\Omega = \frac{- B_{0} \bra{e} \mu \ket{g}}{\hbar},
-\end{equation}
-
-where $\mu$ is the total magnetic moment operator in the direction of the polarization of the magnetic field, $B_{0}$ is the amplitude of the magnetic field $\textbf{B}$ which in the case of a monochromatic polarized microwave can be written in the generic form
-
-\begin{equation}
-    \textbf{B} =  B_{0} \cos(\omega t) \boldsymbol{\hat{e}},
-\end{equation}
-
-where we have ignored the spatial variation due to the dimensions of the atom. Thereby, the amplitude of the magnetic field will set the width of the atom. The more intense the magnetic field, the larger the width that will be selected and vice-versa.
-
-\subsection{Initial Cloud Width Selection}
-\begin{comment}
-In the last section, we showed how to prepare the initial width for a single Alkali atom. In this section, we will generalize that result to consider atoms whose wave function is initially shifted from the origin.
-
-If we choose the origin of our coordinate system to be the position where the detuning is zero, then, in the case of a cloud of non-interacting Alkali atoms, we can expect that many atoms in the sample will have a slight offset from the origin. In that case, the width of the atomic wave function will be given by Eq. \ref{width_atomic_wave_function}, i.e.,
-
-\begin{equation}
-  \Delta Z = (2Z_{HWHM} - z_{off}),
-\end{equation}
-
-where we have used a sub-index to indicate that the atom has an offset from the origin of the coordinate system which is centered at $z_{0}$, the point where the detuning is zero. Therefore, using Eq. \ref{initial_width}, we can compute the atomic width that will be selected when the initial atomic distribution has an offset from the point where the detuning is zero, i.e.,
-
-\begin{equation}\label{initial_width_offset}
-\Delta Z_{off} = \sqrt{3} \Omega \frac{\hbar}{\mu_{B} g_{F} m_{F} \eta} - z_{off},
-\end{equation}
-
-The above equation represents the width that is selected when the atomic wave function has an offset from the origin. This width is related to the width selected when the atom is placed in the origin by the relation
-
-\begin{equation}\label{width_selection_range}
-    \Delta Z \ge \Delta Z_{off} > 0
-\end{equation}
-
-This means that as the atom's offset from the origin increases, the selected width will decrease until it reaches a width of zero just at the point where the probability of transition goes to zero as can be seen in Fig. \ref{width_selection_before}. Thereupon, if the offset surpasses the point where the probability of transition is zero, then the atom will not have been initialized and we can get rid of it. In the end, we will finish with a sample of Alkali atoms whose individual atomic widths have been selected to lay in the range given by Eq. \ref{width_selection_range}, and the total width of this new cloud will be $\Delta Z$ as shown in the Fig. \ref{width_selection_after}. In other words, we have forced the cloud of Alkali atoms to have a width given by the maximum atomic width that can be selected, i.e.,
-
-\begin{equation}\label{cloud_width}
-    \Delta Z_{cloud} = \Delta Z
-\end{equation}
-
-\begin{figure}
-    \centering
-    \begin{subfigure}{1\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{width_selection_a.png}
-        \caption{Atomic wave functions before the width selection process. En realidad no conocemos la forma y ancho inicial de la funcion de onda pero podemos intuir que tiene forma gaussiana. el ancho de los atomos atrapados puede depender de la temperatura? y ser menor que el ancho seleccionado?}
-        \label{width_selection_before}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{1\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{width_selection_b.png}
-        \caption{Atomic wave functions after the width selection process. la funcion de onda final siempre es la magenta (que en realidad es la funcion sinc2 y es el estado compatible con nuestra medicion). en realidad, estamos proyectando el estado al realizar la medicion y debido a la incertidumbre, la funcion final es la suma pesada de todos los posibles estados}
-        \label{width_selection_after}
-    \end{subfigure}
-    \caption{Atomic wave functions in a sample of non-interacting Alkali atoms before and after the width selection process. The scale used in both graphs is different for illustration purposes. The selection range is set by the Rabi frequency (Eq. \ref{initial_width}). If the wave function is initially centered at the point where the detuning is zero, the selected width will be equal to the selection range. On the other hand, if the wave function has an offset from the point where the detuning is zero, the selected wave function's width will decrease by the same amount (Eq. \ref{initial_width_offset}). The width can be reduced until it reaches a width of zero at the point where the probability of transition is, by assumption, zero, i.e., $2Z_{HWHM}$. The atoms whose distribution function is located beyond that point will never transition so we can get rid of them using a push beam. After the selection process has been done, the atomic cloud will have a width equal to the selection range (Eq. \ref{cloud_width}).}
-    \label{width_selection_graphs}
-\end{figure}
-
-\end{comment}
-
-\subsection{Optimization of the Wave Packet Expansion}
-\subsubsection{Condition to Have a Gravimetry Signal Independent on the Initial Position of the Atom}
-In the last sections, we showed how to select the initial atomic width of the alkali atoms to be used during the interferometry process. Then, we saw what happens when the atom is shifted from the origin. In this section, we will study the constraints that choosing a particular initial atomic width will impose in the time that we can let the atomic wave packet expand without affecting the Rabi transitions due to the detuning, i.e., we will establish the conditions that allow our method to be independent of the initial position of the atom.
-
-Suppose that we have successfully initialized our Alkali atom with a initial width $\Delta Z_{0}$ given by Eq. \ref{initial_width}, i.e.,
-
-\begin{equation}\label{initial_width_in_terms_of_rabi}
-\Delta Z_{0} = \sqrt{3} \Omega_{0} \frac{\hbar}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta},
-\end{equation}
-
-where we have used a sub-index to indicate that the Rabi frequency $\Omega_{0}$ corresponds to the frequency used to select the initial width. 
-Once we have initialized the width of our atom, we can proceed applying the first $\frac{\pi}{2}$-pulse. However, as we saw in the last sections, applying a pulse to drive transitions in an Alkali atom that is moving through an inhomogeneous magnetic field, gives as result a selection in the atomic width. According to Eq. \ref{initial_width}, if we use a Rabi frequency $\Omega'$ to drive the transitions\footnote{Eq. \ref{initial_width} was obtained by considering a $\pi$-pulse. Nonetheless, the sequence of pulses includes $\frac{\pi}{2}$-pulses at the end and beginning of the experiment. We will continue using Eq. \ref{initial_width} during all the calculations without loss of generality since in any case the order of magnitude is the same and we will always stay far from the limit of the selection range $\Delta Z'$.}, the atom will experience the transition if and only if its width is less or equal than the width selected by $\Omega'$, i.e.,
-
-\begin{equation}\label{maximum_width_rabi_frequency}
-    \Delta Z' = \sqrt{3} \Omega' \frac{\hbar}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}.
-\end{equation}
-
-Furthermore, if we want to guarantee a high probability of success in the transitions, we have to make sure that the initial width is much less than the selection range, i.e.,
-
-\begin{equation}\label{condition_Dz'>>Dz0}
-    \Delta Z' >> \Delta Z_{0}.
-\end{equation}
-
-According to this condition, we could think that choosing a very small width could be a good idea. However, after applying the first pulse, the atom must experience a time evolution of free fall before we can apply the next pulse. During this period, the width of the atom will expand according to Eq. \ref{alkali_wave_packet_width}, which we rewrite here in terms of dimensional quantities
+\subsubsection{Optimization of the Alkali Wave Packet Expansion}
+In this approach to select the initial width of the atom, we release the alkali atoms from rest and they start to fall inside an inhomogeneous magnetic field. In this case, the expansion of the atom's wave function in position space is governed by Eq. \ref{alkali_wave_packet_width}. In spite that this equation was not obtained for the case of a superposition of states of the alkali atom, we will consider that it holds even in that case, so we can use it to describe the expansion of the wave packet during all the experiment. Having said that, notice that if the initial width is too small, the wave packet will expand quickly and the detuning will begin to be a problem. On the other hand, if the initial width is too large, we will not have too much time to perform the experiment. It seems that there should exist a sweet spot where the initial width is not too small or too big. We begin by rewriting the expansion of the wave packet in terms of dimensional quantities
 
 \begin{equation}\label{final_width_dimensional}
 \Delta Z (t) = \sqrt{[\Delta Z_{0}]^{2} + \left[\frac{\xi t}{\Delta Z_{0}} \right]^{2}},
@@ -1285,51 +1215,10 @@ where we have defined the following constant
     \xi \equiv \frac{\hbar}{2M}.
 \end{equation}
 
-Thereby, if we chose a very small initial width, the final width will increase rapidly and the condition in Eq. \ref{condition_Dz'>>Dz0} will not hold for the rest of pulses. This means that we have to choose an appropriate initial width such that Eq. \ref{condition_Dz'>>Dz0} holds at any time. More specifically, immediately after all the sequence of pulses is applied, the final width of the atom $\Delta Z_{f}$ must be such that
-
-\begin{equation}\label{condition_transition_width1}
-    \Delta Z' > \Delta Z_{f} \ge \Delta Z_{0},
-\end{equation}
-
-and, in order to guarantee transitions with a high probability of success, the condition in Eq. \ref{condition_Dz'>>Dz0} must hold alongside
-
-\begin{equation}\label{condition_transition_width2}
-    \Delta Z_{f} \approx \Delta Z_{0}.
-\end{equation}
-
-The above conditions mean, that in order to have a high probability of success when inducing the transition, we have to make sure that $\Delta Z_{f}$ is still much less than $\Delta Z'$, i.e.,  $\Delta Z_{f}$ should not have increased considerably from $\Delta Z_{0}$. In the extreme case that $\Delta Z_{f} \ge \Delta Z'$, the probability of success in the transition will be so small that we will consider it to be zero. 
-In summary, if we stay during all the experiment in a narrow region within the region set by $\Delta Z'$ (see Fig. \ref{selection_range_figure}), then, our method will not depend on the initial position of the atom, so we can neglect the error introduced by the detuning at least at first order.
-
-
-Notice, that we can re-write the above conditions in terms of the corresponding Rabi frequencies, i.e.,
-
-\begin{equation}
-    \Omega' > \Omega_{f} \ge \Omega_{0},
-\end{equation}
-
-where we must have
-
-\begin{equation}
-    \Omega' >> \Omega_{0},
-\end{equation}
-
-alongside
-
-\begin{equation}
-    \Omega_{f} \approx \Omega_{0}.
-\end{equation}
-    
-When designing the experiment, we have to make sure that the above constraints hold at any time that we apply a pulse to induce Rabi transitions after we let the wave packet expand. Thereby, it is important to choose wisely the initial width of our wave packet so we can make sure that the transition between levels will occur always. In the next sections, we calculate the initial width that has to be chosen to get an optimal expansion of the wave packet.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\textwidth]{working_area.png}
-     \caption{Selection range to induce Rabi transitions for an Alkali atom inside an inhomogeneous magnetic field. The atomic wave function is initialized with a width $\Delta Z_{0}$ (black curve). After a time $t$ the wave function expands according to Eq. \ref{final_width_dimensional} until it reaches a width $\Delta Z_{f}$ at the end of the sequence of pulses (orange curve). If we want the atom to experience all the sequence of pulses with a high probability of success, we have to make sure that the final width $\Delta Z_{f}$ lies inside a narrow range inside the selection range $\Delta Z'$ (see Eq. \ref{condition_transition_width1}). This selection range is set by the dashed curve's width and represents the hypothetical width that is selected by using a frequency $\Omega'$ to drive the transitions (Eq. \ref{maximum_width_rabi_frequency}). This frequency will be usually set by the maximum frequency that can be obtained experimentally (see Eq. \ref{rabi_frequency_magnetic_field}). The probability of transition for positions outside the selection range is so small that we can consider it to be zero.}
-     \label{selection_range_figure}
-\end{figure}
+We will try to optimize Eq. \ref{final_width_dimensional} so we can know which initial width has to be chosen to get an optimal expansion of the wave packet.
 
 \subsubsection{Minimization of the Expansion of the Wave Packet}
-Let us notice that the value of $\Delta Z_{0}$ that minimizes the expansion of the wave packet (Eq. \ref{final_width_dimensional}) is given by\footnote{We have discarded the solution with no physical meaning.}
+Let us notice that the value of $\Delta Z_{0}$ that minimizes the expansion of the wave packet (Eq. \ref{final_width_dimensional}) is given by\footnote{In the following results, we have discarded the solutions with no physical meaning.}
 
 \begin{equation}\label{initial_width_minimizes_final_width}
     (\Delta Z_{0})^{\ast} = \sqrt{\frac{\hbar t }{2M}}.
@@ -1347,8 +1236,6 @@ Therefore, the expanded wave packet will have a width $\sqrt{2}$ times larger th
     \frac{(\Delta Z_{0})^{\ast}}{(\Delta Z(t))_{min}} = \frac{1}{\sqrt{2}}.
 \end{equation}
 
-Notice that using this optimal initial width, the condition given in Eq. \ref{condition_transition_width2} is satisfied as expected. 
-
 On the other hand, if we fix the initial width and try to optimize Eq. \ref{final_width_dimensional}, we will find that the optimal solution is trivially $t=0$ which is not of interest.
 
 \subsubsection{Maximization of the Time to Reach a Given Width}
@@ -1358,13 +1245,13 @@ In the last section, we computed the initial width needed to minimize the final 
     t = \frac{\Delta Z_{0}}{\xi} \sqrt{(\Delta Z_{f})^2 - (\Delta Z_{0})^2},
 \end{equation}
 
-where $\Delta Z_{f}$ is the final width of the wave packet. The initial width that maximizes this expression is given by\footnote{We have discarded the solution with no physical meaning.}
+where $\Delta Z_{f}$ is the final width of the wave packet. The initial width that maximizes this expression is given by
 
 \begin{equation}\label{ratio_optimial_initial_width_vs_final_width_time_max}
     (\Delta Z_{0})^{\ast} = \frac{\Delta Z_{f}}{\sqrt{2}}.
 \end{equation}
 
-We can see that this value also satisfies Eq. \ref{condition_transition_width2} as expected. If we substitute back this value into Eq. \ref{expansion_wave_packet_time_solution}, we get the time that we can let the wave packet expand
+If we substitute back this value into Eq. \ref{expansion_wave_packet_time_solution}, we get the time that we can let the wave packet expand
 
 \begin{equation}\label{t_maximized_given_initial_width}
     t_{max} = \frac{M}{\hbar} (\Delta Z_{f})^2.
@@ -1412,8 +1299,37 @@ Lastly, we show in Fig. \ref{optimization_expansion_width} the optimization of t
     \label{optimization_expansion_width}
 \end{figure}
 
+\subsection{Selection of the Initial Width by Using the Expansion of the Atomic Cloud}
+In this approach, we do not use a selection pulse, instead, we let the atomic cloud expand until the atom's wave function has the desired initial width. Therefore, we will need to compute the expansion of the atomic wave function in position space. Once we have obtained the equation that establishes the expansion of the wave packet, we will consider, as before, that it holds even in the case of a superposition of states of the alkali atom, so we can use it to describe the expansion of the wave packet during all the experiment. Afterward, we will optimize this equation to obtain the maximum time that we have to perform the experiment under this approach. Then, we will show that this approach corresponds to a high-power regime since the initial width of the atom under typical experimental conditions will result to be much smaller than the selection range set by the power of the microwaves used to drive the transition. Finally, it is important to say that in this approach, the expansion of the wave packet will depend on the temperature of the atomic cloud and the frequency of the potential used to trap initially the atoms.
+
+\subsubsection{Initial Conditions of the Atomic Cloud}
+Initially, the atoms will be trapped in a ... harmonic osc potential.... We will consider that... thermal equilibriium, canonical ensemble... then release..starts to expand...
+
+\subsubsection{Computation of the Density Matrix}
+
+\subsubsection{The Density Matrix for the 1-D Free Particle}
+
+\subsubsection{The Density Matrix for the Harmonic Oscillator}
+
+\subsubsection{Time evolution of the Density Matrix}
+
+\subsubsection{Time Evolution for the Density Matrix of the Harmonic Oscillator Under a Free Particle Hamiltonian}
+
+\subsubsection{Time Evolution for the Density Matrix of the Harmonic Oscillator Under a Free Fall Hamiltonian}
+
+\subsubsection{Optimization of the Atomic Wave Packet Expansion}
+
+\subsubsection{Minimization of the Expansion of the Wave Packet}
+
+\subsubsection{Maximization of Time to Reach a Given Width}
+
+\subsubsection{Summary}
+
 \subsection{Choosing the Initial Atomic Width}
+In the last sections, we showed how we can select the initial atomic width of the alkali atoms to be used during the measurement process and how this packet expands in each case before the beginning of the experiment to measure $g$. In this section, we will study the constraints that choosing a particular initial atomic width will impose in the time that we can let the atomic wave packet expand without affecting the Rabi transitions due to the detuning, and thus, the gravimetry signal.
+
 \subsubsection{Working Frequency}
+As we showed in Eq. \ref{rabi_frequency_magnetic_field}, the intensity of the magnetic field used to drive the Rabi oscillations will set a selection range. This selection range defines the maximum uncertainty in position space that the wave function can have after a successful transition to the desired state has occurred. Furthermore, it also defines the range in position space within which the atom can successfully perform the desired transition. In order to guarantee that the transition happens with a high probability of success, the wave function's width has to lie inside this selection range. As the width of the wave function is reduced, the detuning decreases , and thus, the probability of success in the transition increases. For that reason, we would like to choose the smallest possible initial width, and the largest possible selection range. Let's suppose that the selection range $\Delta Z'$ is set by a frequency $\Omega'$ according to Eq. \ref{rabi_frequency_magnetic_field}.
 Typically, the frequency $\Omega'$ will be set as the maximum frequency that could be obtained in the laboratory. According to Eq. \ref{rabi_frequency_magnetic_field}, the Rabi frequency will be directly proportional to the magnitude of the magnetic field of the microwaves used to drive the transition. This magnetic field can be measured by using a power meter to measure the power of the radiation according to
 
 \begin{equation}
@@ -1474,7 +1390,7 @@ where
      \mu_{z} = \frac{\mu_{B}}{\hbar}(g_{S}S_{z} + g_{L}L_{z} - g_{I}I_{z}).
 \end{equation}
 
-\subsubsection{Gravimetry Signal Set by the Working Frequency}
+\subsubsection{Gravimetry Signal Set by the Working Frequency (The Low-Power Regime)}
 We can compute the selection range given by the Rabi frequency in Eq. \ref{working_freq_set_by_microwaves_power} using Eq. \ref{initial_width}, i.e.,
 
 \begin{equation*}
@@ -1547,47 +1463,10 @@ and we have written the result in terms of the irradiance of the microwaves\foot
     I = \frac{P}{A}.
 \end{equation}
 
-\subsubsection{Condition of Infinitesimal Rabi Pulses}
-We obtained the last result by considering infinitesimal Rabi pulses. However, in reality, the duration of the Rabi pulses is not infinitesimal. Therefore, the previous result will hold if and only if $t_{max}$ is much larger than the duration of the Rabi pulses, i.e., $t_{max} >> \tau_{Rabi}$. Let's use a $\pi$-pulse, where $\tau_{\pi} = \frac{\pi}{\Omega}$, to exemplify this point. Thus, using Eq. \ref{total_experiment_time}, the condition is the following\footnote{Remember that $\Omega$ was defined in Eq. \ref{omega_tilde_definition}. In this case, we are considering the detuning to be zero so $\tilde{\Omega} = \Omega$.}
-
-\begin{equation}
-    \frac{6 M \mu_{0} P}{\hbar c A} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} >> \frac{\pi}{\Omega}.
-\end{equation}
-
-We can use Eq. \ref{power_in_terms_of_B} to write this expression in terms of the magnetic field
-
-\begin{equation}
-   |B|^{2}\frac{3 M }{\hbar} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} >> \frac{\pi}{\Omega}.
-\end{equation}
-
-Then, we can use Eq. \ref{rabi_frequency_magnetic_field} to write this expression in terms of $\Omega$, i.e.,
-
-\begin{equation}
-   3 \Omega^{2} \hbar M \bigg(\frac{ \gamma}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} >> \frac{\pi}{\Omega}.
-\end{equation}
-
-Therefore, the condition of infinitesimal Rabi pulses has been translated into the following condition in $\Omega$
-
-\begin{equation}
-    \Omega  >> \Bigg[ \frac{\pi}{3 \hbar M} \bigg(\frac{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}{\gamma}\bigg)^{2} \Bigg]^{1/3}.
-\end{equation}
-
-In the case of a $\ce{^{87}_{}Rb}$ atom, we can estimate the order of magnitude of the right side of this condition so we get
-
-\begin{equation}
-    \Bigg[ \frac{\pi}{3 \hbar M} \bigg(\frac{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}{\gamma}\bigg)^{2} \Bigg]^{1/3} \approx 10^{3} Hz.
-\end{equation}
-
-Let's compare this value with an estimation of the maximum value that we can obtain in the laboratory. According to the Eq. \ref{working_freq_set_by_microwaves_power},  we have\footnote{The approximations used to get these two estimations are the same that we used in Fig. \ref{precision_vs_power_figure}.}
-
-\begin{equation}
-    \Omega' \approx 10^{4} Hz  >> 10^{3} Hz.
-\end{equation}
-
-Therefore, the value $\Omega'$ is around one order of magnitude larger than the threshold set by the condition of infinitesimal Rabi pulses. This means that the approximation that we used in Eq. \ref{t_max_vs_T} was legal. Finally, it is interesting to note that the frequency that we can obtain using microwaves is around one order of magnitude less than the frequencies obtained by using lasers to produce Raman pulses in traditional gravimetry.
+\subsubsection{Gravimetry Signal Set by the Atomic Trap (The High-Power Regime)}
 
 \subsection{Interferometer Fringes}
-\subsubsection{Precision in the Measurement of g}
+\subsubsection{Precision in the Measurement of g in the Low-Power Regime}
 After the sequence of pulses has been applied not all the atoms in the cloud will have seen the same sequence of pulses. This is mainly because of the detuning introduced by the displacement in the position of the atoms due to the Zeeman effect. Therefore, after the sequence is applied, the normalized population of atoms in the upper state will be given by
 
 \begin{equation}\label{fringes_equation}
@@ -1658,6 +1537,9 @@ A plot of the theoretical sensitivity versus the power of the microwaves obtaine
     \label{precision_vs_power_figure}
 \end{figure}
 
+\subsubsection{Precision in the Measurement of g in the High-Power Regime}
+
+
 \subsubsection{Phase Shift Chirp}
 In order to determine $g$, we introduce a phase chirp $\alpha$ that will be used as a ramp parameter to map the population of atoms in the upper state for different phase shift values. 
 
@@ -1698,6 +1580,85 @@ The uncertainty for each $g$ measurement can be obtained using Eq. \ref{g_value_
 \end{equation}
 
 where $\sigma_{\alpha_{0}}$ is the uncertainty of $\alpha_{0}$.
+
+\subsection{Conditions to Perform the Measurement}
+
+\subsubsection{Condition to Have a Gravimetry Signal Independent of the Initial Position of the Atom}
+Now, we establish the conditions that allow our method to be independent of the initial position of the atom.
+Suppose that we have successfully initialized our Alkali atom with a initial width $\Delta Z_{0}$. Once we have initialized the width of our atom, we can proceed applying the first $\frac{\pi}{2}$-pulse. However, as we saw in the last sections, the transitions will occur only if the atom's width is much less than the width $\Delta Z'$ set by the power of the microwaves used to drive the oscillations between the hyperfine states. Otherwise, the detuning will be considerably large such that the probability of transition will be almost null. According to Eq. \ref{initial_width}, if we use a Rabi frequency $\Omega'$ to drive the transitions\footnote{Eq. \ref{initial_width} was obtained by considering a $\pi$-pulse. Nonetheless, the sequence of pulses includes $\frac{\pi}{2}$-pulses at the end and beginning of the experiment. We will continue using Eq. \ref{initial_width} during all the calculations without loss of generality since in any case the order of magnitude is the same and we will always stay far from the limit of the selection range $\Delta Z'$.}, the atom will experience the transition if and only if its width is less or equal than the width selected by $\Omega'$, i.e.,
+
+\begin{equation}\label{maximum_width_rabi_frequency}
+    \Delta Z' = \sqrt{3} \Omega' \frac{\hbar}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}.
+\end{equation}
+
+Furthermore, if we want to guarantee a high probability of success in the transitions, we have to make sure that the initial width is much less than the selection range, i.e.,
+
+\begin{equation}\label{condition_Dz'>>Dz0}
+    \Delta Z' >> \Delta Z_{0}.
+\end{equation}
+
+According to this condition, we could think that choosing a very small width could be a good idea. However, after applying the first pulse, the atom must experience a time evolution of free fall before we can apply the next pulse. During this period, the width of the atom will expand according to Eq. \ref{final_width_dimensional}. Thereby, if we chose a very small initial width, the final width will increase rapidly and the condition in Eq. \ref{condition_Dz'>>Dz0} will not hold for the rest of pulses. This means that we have to choose an appropriate initial width such that Eq. \ref{condition_Dz'>>Dz0} holds at any time. More specifically, immediately after all the sequence of pulses is applied, the final width of the atom $\Delta Z_{f}$ must be such that
+
+\begin{equation}\label{condition_transition_width1}
+    \Delta Z' > \Delta Z_{f} \ge \Delta Z_{0},
+\end{equation}
+
+and, in order to guarantee transitions with a high probability of success, the condition in Eq. \ref{condition_Dz'>>Dz0} must hold alongside
+
+\begin{equation}\label{condition_transition_width2}
+    \Delta Z_{f} \approx \Delta Z_{0}.
+\end{equation}
+
+The above conditions mean, that in order to have a high probability of success when inducing the transition, we have to make sure that $\Delta Z_{f}$ is still much less than $\Delta Z'$, i.e.,  $\Delta Z_{f}$ should not have increased considerably from $\Delta Z_{0}$. In the extreme case that $\Delta Z_{f} \ge \Delta Z'$, the probability of success in the transition will be so small that we will consider it to be zero. 
+In summary, if we stay during all the experiment in a narrow region within the region set by $\Delta Z'$ (see Fig. \ref{selection_range_figure}), then, our method will not depend on the initial position of the atom, so we can neglect the error introduced by the detuning at least at first order.
+therefore, when designing the experiment, we have to make sure that the above constraints hold at any time that we apply a pulse to induce Rabi transitions after we let the wave packet expand. For that reason, it is important to choose wisely the initial width of our wave packet so we can make sure that the transition between levels will occur always. Finally, notice that both Eqs. \ref{ration_optimial_initial_width_vs_final_width} and 
+\ref{ratio_optimial_initial_width_vs_final_width_time_max} satisfied the condition in Eq. \ref{condition_transition_width2}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{working_area.png}
+     \caption{Selection range to induce Rabi transitions for an Alkali atom inside an inhomogeneous magnetic field. The atomic wave function is initialized with a width $\Delta Z_{0}$ (black curve). After a time $t$ the wave function expands according to Eq. \ref{final_width_dimensional} until it reaches a width $\Delta Z_{f}$ at the end of the sequence of pulses (orange curve). If we want the atom to experience all the sequence of pulses with a high probability of success, we have to make sure that the final width $\Delta Z_{f}$ lies inside a narrow range inside the selection range $\Delta Z'$ (see Eq. \ref{condition_transition_width1}). This selection range is set by the dashed curve's width and represents the hypothetical width that is selected by using a frequency $\Omega'$ to drive the transitions (Eq. \ref{maximum_width_rabi_frequency}). This frequency will be usually set by the maximum frequency that can be obtained experimentally (see Eq. \ref{rabi_frequency_magnetic_field}). The probability of transition for positions outside the selection range is so small that we can consider it to be zero.}
+     \label{selection_range_figure}
+\end{figure}
+
+\subsubsection{Condition of Infinitesimal Rabi Pulses}
+We obtained the result in Eq. \ref{gravimetry_signal_irradiance} by considering infinitesimal Rabi pulses. However, in reality, the duration of the Rabi pulses is not infinitesimal. Therefore, the previous result will hold if and only if $t_{max}$ is much larger than the duration of the Rabi pulses, i.e., $t_{max} >> \tau_{Rabi}$. Let's use a $\pi$-pulse, where $\tau_{\pi} = \frac{\pi}{\Omega}$, to exemplify this point. Thus, using Eq. \ref{total_experiment_time}, the condition is the following\footnote{Remember that $\Omega$ was defined in Eq. \ref{omega_tilde_definition}. In this case, we are considering the detuning to be zero so $\tilde{\Omega} = \Omega$.}
+
+\begin{equation}
+    \frac{6 M \mu_{0} P}{\hbar c A} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} >> \frac{\pi}{\Omega}.
+\end{equation}
+
+We can use Eq. \ref{power_in_terms_of_B} to write this expression in terms of the magnetic field
+
+\begin{equation}
+   |B|^{2}\frac{3 M }{\hbar} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} >> \frac{\pi}{\Omega}.
+\end{equation}
+
+Then, we can use Eq. \ref{rabi_frequency_magnetic_field} to write this expression in terms of $\Omega$, i.e.,
+
+\begin{equation}
+   3 \Omega^{2} \hbar M \bigg(\frac{ \gamma}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} >> \frac{\pi}{\Omega}.
+\end{equation}
+
+Therefore, the condition of infinitesimal Rabi pulses has been translated into the following condition in $\Omega$
+
+\begin{equation}
+    \Omega  >> \Bigg[ \frac{\pi}{3 \hbar M} \bigg(\frac{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}{\gamma}\bigg)^{2} \Bigg]^{1/3}.
+\end{equation}
+
+In the case of a $\ce{^{87}_{}Rb}$ atom, we can estimate the order of magnitude of the right side of this condition so we get
+
+\begin{equation}
+    \Bigg[ \frac{\pi}{3 \hbar M} \bigg(\frac{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}{\gamma}\bigg)^{2} \Bigg]^{1/3} \approx 10^{3} Hz.
+\end{equation}
+
+Let's compare this value with an estimation of the maximum value that we can obtain in the laboratory. According to the Eq. \ref{working_freq_set_by_microwaves_power},  we have\footnote{The approximations used to get these two estimations are the same that we used in Fig. \ref{precision_vs_power_figure}.}
+
+\begin{equation}
+    \Omega' \approx 10^{4} Hz  >> 10^{3} Hz.
+\end{equation}
+
+Therefore, the value $\Omega'$ is around one order of magnitude larger than the threshold set by the condition of infinitesimal Rabi pulses. This means that the approximation that we used in Eq. \ref{t_max_vs_T} was legal. Finally, it is interesting to note that the frequency that we can obtain using microwaves is around one order of magnitude less than the frequencies obtained by using lasers to produce Raman pulses in traditional gravimetry.
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}

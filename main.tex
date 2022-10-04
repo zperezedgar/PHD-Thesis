@@ -1300,24 +1300,88 @@ Lastly, we show in Fig. \ref{optimization_expansion_width} the optimization of t
 \end{figure}
 
 \subsection{Selection of the Initial Width by Using the Expansion of the Atomic Cloud}
-In this approach, we do not use a selection pulse, instead, we let the atomic cloud expand until the atom's wave function has the desired initial width. Therefore, we will need to compute the expansion of the atomic wave function in position space. Once we have obtained the equation that establishes the expansion of the wave packet, we will consider, as before, that it holds even in the case of a superposition of states of the alkali atom, so we can use it to describe the expansion of the wave packet during all the experiment. Afterward, we will optimize this equation to obtain the maximum time that we have to perform the experiment under this approach. Then, we will show that this approach corresponds to a high-power regime since the initial width of the atom under typical experimental conditions will result to be much smaller than the selection range set by the power of the microwaves used to drive the transition. Finally, it is important to say that in this approach, the expansion of the wave packet will depend on the temperature of the atomic cloud and the frequency of the potential used to trap initially the atoms.
+In this approach, we do not use a selection pulse, instead, we let the atomic cloud expand until the atom's wave function has the desired initial width. Therefore, we will need to compute the expansion of the atomic wave function in position space. Once we have obtained the equation that establishes the expansion of the wave packet, we will consider, as before, that it holds even in the case of a superposition of states of the alkali atom, so we can use it to describe the expansion of the wave packet during all the experiment. Afterward, we will optimize this equation to obtain the maximum time that we have to perform the experiment under this approach. Then, we will show that this approach corresponds to a high-power regime since the initial width of the atom under typical experimental conditions will result to be much smaller than the selection range set by the power of the microwaves used to drive the transition. Finally, it is important to say that in this approach, the expansion of the wave packet will depend on the temperature of the atomic cloud and the frequency of oscillation of the atoms in the initial trap.
 
 \subsubsection{Initial Conditions of the Atomic Cloud}
-Initially, the atoms will be trapped in a ... harmonic osc potential.... We will consider that... thermal equilibriium, canonical ensemble... then release..starts to expand...
+The first step before we can initiate the experiment to measure $g$ is to gather the atoms to be used. Therefore, the atoms have to be initially trapped and cooled. For this purpose, an optical dipole trap or a magneto-optical trap can be used. Independently of the type of trap used to cool the atoms, let's assume that the atoms inside this trap oscillate in the z-axis under a harmonic oscillator potential with frequency $\omega$. Furthermore, let's suppose that we keep the atoms trapped until they reach a thermal equilibrium\footnote{The conditions to get a thermal equilibrium will depend on the type of trap chosen.}. Afterward, we turn off the trap and let the cloud of atoms expand. Evidently, after we release the atoms from the trap, every atom will have a different wave function so we will have to rely on statistical methods to know the properties of the ensemble of atoms. For the next computations, we will suppose that the ensemble is kept at temperature $T$ even after we release them from the trap. This is justified because the potential is turned off instantaneously so we can expect that the thermal equilibrium stands for a short period of time since the atoms do not have enough time to reach the walls of the system to interchange kinetic energy. Besides, we suppose that we have a dilute gas where the atoms do not interact between them.
 
 \subsubsection{Computation of the Density Matrix}
+If we wish to compute statistic properties for our ensemble, we need to compute the density matrix. The density matrix for non degenerate states is defined as
+
+\begin{equation}
+    \rho = \sum_{n} w_{n} \ket{\phi_n} \bra{\phi_n},
+\end{equation}
+
+where the probability $w_{n}$ is normalized such that $\sum_{n} w_{n} = 1$. In the case where $\ket{\phi_n}$ are the eigenvectors of the Hamiltonian $H$, i.e., $H \ket{\phi_n} = E_n \ket{\phi_n}$, we have that
+
+\begin{equation}
+    w_{n} = Q^{-1} e^{-\beta E_{n}},
+\end{equation}
+
+where $w_{n}$ is the probability of finding, in the ensemble, a system with energy $E_{n}$, i.e., in the state $\ket{\phi_n}$.
+Also, $Q = \sum_{n} e^{-\beta E_{n}}$ is the well known partition function, and $\beta = \frac{1}{k T}$, where k is the Boltzmann constant and $T$ is the temperature of every system in the ensemble. Therefore, we have that
+
+\begin{equation}
+    \begin{split}
+        \rho & = Q^{-1} \sum_{n} e^{-\beta H} \ket{\phi_n} \bra{\phi_n} = Q^{-1} e^{-\beta H} \sum_{n} \ket{\phi_n} \bra{\phi_n} \\ & = \frac{e^{-\beta H}}{Tr(e^{-\beta H})} \\ & = Q^{-1} e^{-\beta H}.
+    \end{split}
+\end{equation}
+
+Now, we define the non-normalized density matrix $\rho_u$ given by
+
+\begin{equation}
+    \rho_u \equiv e^{-\beta H}.
+\end{equation}
+
+If we take the derivative of this equation with respect to $\beta$, we have
+
+\begin{equation}\label{bloch_eq}
+    - \frac{\partial \rho_u}{\partial \beta} = H \rho_u.
+\end{equation}
+
+Thereby, we can solve this PDF to find $\rho_u$. The initial condition needed to solve this equation is that if we take the limit $\beta \longrightarrow 0$, i.e., $T \longrightarrow \infty$, we have to recover the density matrix of a completely random ensemble, that is
+
+\begin{equation}\label{bloch_eq_initial_cond}
+    \rho_u(0) = 1.
+\end{equation}
+
+From now on, we will omit the sub-index and just write $\rho$ for the non-normalized density matrix. What's more, to write the matrix elements in position space, we will use the following notation
+
+\begin{equation}
+    \bra{x} \rho \ket{x'} \equiv \rho(x, x' | \beta) = \sum_{n} Q^{-1} e^{\beta E_{n}} \phi_n (x) \phi_{n}^{*} (x').
+\end{equation}
+
+Therefore, in position space, the Eqs. \ref{bloch_eq} and \ref{bloch_eq_initial_cond} have the following form
+
+\begin{equation}\label{bloch_eq_pos_space}
+    - \frac{\partial \rho(x, x' | \beta)}{\partial \beta} = H_{x} \rho(x, x' | \beta),
+\end{equation}
+
+and
+
+\begin{equation}\label{bloch_eq_initial_cond_pos_space}
+    \rho(x, x' | 0) = \delta(x-x')
+\end{equation}
+
+Note that $H_{x}$ operates in the $x$-direction.
 
 \subsubsection{The Density Matrix for the 1-D Free Particle}
+Now, we will show how to solve Eqs. \ref{bloch_eq_pos_space} and \ref{bloch_eq_initial_cond_pos_space}
 
 \subsubsection{The Density Matrix for the Harmonic Oscillator}
 
-\subsubsection{Time evolution of the Density Matrix}
+\subsubsection{Time Evolution of the Density Matrix}
 
 \subsubsection{Time Evolution for the Density Matrix of the Harmonic Oscillator Under a Free Particle Hamiltonian}
 
 \subsubsection{Time Evolution for the Density Matrix of the Harmonic Oscillator Under a Free Fall Hamiltonian}
 
 \subsubsection{Optimization of the Atomic Wave Packet Expansion}
+..Now
+
+\begin{equation}
+    \Delta Z(t) = ... \sqrt{h()Coth()}
+\end{equation}
 
 \subsubsection{Minimization of the Expansion of the Wave Packet}
 

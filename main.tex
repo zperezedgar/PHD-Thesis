@@ -19,6 +19,9 @@
 \usepackage{subcaption} % use subfigures see: https://tex.stackexchange.com/questions/200994/environment-subfigure-undefined-on-journal-submission
 \captionsetup{compatibility=false} % use subfigures
 
+% Define inverse trigonometric functions
+\DeclareMathOperator{\sech}{sech}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{titlesec} % use paragraphs with numbers
 \setcounter{secnumdepth}{4}
@@ -1398,7 +1401,7 @@ The solution that satisfies these equations can be easily found to be
 
 This is the equation of a normal distribution and can be written as
 
-\begin{equation}
+\begin{equation}\label{density_matrix_free_particle}
     \rho(x, x' | \beta) = \frac{1}{\sigma \sqrt{2\pi}}\exp\bigg[-\frac{1}{2} \frac{(x-x')^{2}}{\sigma^{2}} \bigg],
 \end{equation}
 
@@ -1419,7 +1422,7 @@ Now, we will solve Eqs. \ref{bloch_eq_pos_space} and \ref{bloch_eq_initial_cond_
 
 With this Hamiltonian, the equation to be solved becomes
 
-\begin{equation}
+\begin{equation}\label{oscillator_pde}
     -\frac{\partial \rho}{\partial \theta} = -\frac{\partial^{2} \rho}{\partial \xi^{2}} + \xi^{2}\rho,
 \end{equation}
 
@@ -1432,7 +1435,150 @@ where we have introduced the non-dimensional quantities
 and
 
 \begin{equation}
-    \theta \equiv \frac{\hbar \omega}{2} \beta
+    \theta \equiv \frac{\hbar \omega}{2} \beta.
+\end{equation}
+
+Similarly, the initial condition can be written using the non-dimensional variable $\xi$ by using the composition property of the Dirac delta function
+
+\begin{equation}
+    \delta[f(x)] = \sum_{i}\frac{1}{|f'(x_{i})|} \delta(x-x_{i}),
+\end{equation}
+
+where $f(x_{i})=0$ and $f'(x_i)\neq0$. Thus, if we write
+
+\begin{equation}
+    f(x)=\xi-\xi'=\sqrt{\frac{m\omega}{\hbar}}(x-x'),
+\end{equation}
+
+we get
+
+\begin{equation}
+    \delta[f(x)] = \delta(\xi-\xi')=\sqrt{\frac{\hbar}{m\omega}}\delta(x-x'),
+\end{equation}
+
+and the initial condition can be written as
+
+\begin{equation}\label{oscillator_pde_initial_condition}
+    \rho(\xi,\xi'|0) = \sqrt{\frac{m\omega}{\hbar}} \delta(\xi-\xi').
+\end{equation}
+
+In order to solve Eq. \ref{oscillator_pde}, we will analyze the solution in the high temperature limit, i.e., when $\theta \longrightarrow 0$. In this limit, the particles have to behave like a free particle so the solution has to be the Gaussian distribution in Eq. \ref{density_matrix_free_particle}. Thus, we suppose a solution of the form
+
+\begin{equation}\label{oscillator_pre_solution}
+    \rho = exp\big[-\big(a(\theta)\xi^{2} + b(\theta)\xi + c(\theta)\big)\big],
+\end{equation}
+
+where $a$, $b$, and $c$ are parameters that depend on $\theta$. If we differentiate this equation and substitute back into Eq. \ref{oscillator_pde}, we reduce the PDE into the following system of ordinary differential equations
+
+\begin{equation}\label{oscillator_system_ode}
+    \begin{split}
+        \frac{d a}{d\theta} = 1 - 4a^{2} \\ \frac{d b}{d\theta}=-4ab \\ \frac{dc}{d\theta}=2a-b^{2}.
+    \end{split}
+\end{equation}
+
+The first of these equations has two possible solutions,
+
+\begin{equation}
+    a = \frac{1}{2} \coth\big(2(\theta - c_{1})\big),
+\end{equation}
+
+and 
+
+\begin{equation}
+    a = \frac{1}{2} \tanh\big(2(\theta - c_{1})\big),
+\end{equation}
+
+where $c_{1}$ is a constant.
+However, if we want to satisfy the initial condition, we have to choose the first solution. Then, we substitute this solution back into the second line of Eq. \ref{oscillator_system_ode}, and solve the resulting ODE to get
+
+\begin{equation}
+    b = c_{2} \coth \big( 2(\theta - c_{1}) \big) \sech \big( 2(\theta - c_{1}) \big),
+\end{equation}
+
+where $c_{2}$ is a constant. Similarly, if we substitute this solution and the solution for $a$ into the last line of Eq. \ref{oscillator_system_ode}, and solve the resulting ODE, we get
+
+\begin{equation}
+    c = \frac{1}{2} \ln \Big(\sinh \big( 2(\theta - c_{1}) \big) \Big) + \frac{c_{2}^{2}}{2} \coth \big( 2(\theta - c_{1}) \big) - \ln (c_{3}),
+\end{equation}
+
+where $c_{3}$ is a constant. Then, we can substitute back the solutions for Eq. \ref{oscillator_system_ode} into Eq. \ref{oscillator_pre_solution} to get
+
+\begin{equation}
+    \rho = \frac{c_{3}}{\sqrt{\sinh(2\theta)}} \exp \bigg[ -\coth \big(2(\theta - c_{1})) \bigg( \frac{\xi^{2}}{2} + c_{2} \sech \big( 2(\theta - c_{1}) \big)\xi + \frac{c_{2}^{2}}{2} \bigg) \bigg]. 
+\end{equation}
+
+Nonetheless, in order to satisfy the initial condition (Eq. \ref{oscillator_pde_initial_condition}), we have to choose $c_{1}=0$, so we have
+
+\begin{equation}
+    \rho = \frac{c_{3}}{\sqrt{\sinh(2\theta)}} \exp \bigg[ -\coth \big(2\theta) \bigg( \frac{\xi^{2}}{2} + c_{2} \sech \big( 2\theta \big)\xi + \frac{c_{2}^{2}}{2} \bigg) \bigg]. 
+\end{equation}
+
+Now, we have to analyze the behavior of our solution in the high temperature limit, i.e, $\theta \longrightarrow 0$. For that reason, we use the following Taylor expansions
+
+\begin{equation}
+    \begin{split}
+        \sinh x = x + \frac{x^{3}}{16} + \cdots \\ \coth x = \frac{1}{x} + \frac{x}{3} + \cdots \\ \sech x = 1 - \frac{x^{2}}{2} + \cdots.
+    \end{split}
+\end{equation}
+
+Then, if we expand at first order the trigonometric functions in the solution for $\rho$, we get
+
+\begin{equation}
+    \rho = \frac{c_{3}}{\sqrt{2\theta}} \exp \big[ -\frac{1}{4\theta}(\xi^{2} + 2c_{2}\xi + c_{2}^{2}) \big].
+\end{equation}
+
+Thus, if we choose $c_{2}=-\xi'$ to complete the square in the exponential, and $c_{3} = \sqrt{\frac{m\omega}{2\pi \hbar}}$, we recover the solution for the free particle (Eq. \ref{density_matrix_free_particle}) as expected. Thereby, the desired solution for the harmonic oscillator potential is
+
+\begin{equation}
+    \rho(\xi, \xi'|\beta) = \sqrt{\frac{m\omega}{2\pi \hbar \sinh(2\theta)}} \exp \Bigg[ -\frac{\coth(2\theta)}{2} \big( \xi^{2} - 2\xi' \xi \sech(2\theta) + \xi'^{2} \big) \Big].
+\end{equation}
+
+Note that when $\theta \approx 0$, we recover the initial condition, i.e.,
+
+\begin{equation}
+    \rho(x, x' | \beta) \approx \sqrt{\frac{m\omega}{2\pi\hbar (2\theta)}} \exp \bigg(- \frac{m\omega}{2\hbar} \frac{(x-x')^{2}}{2\theta} \bigg) \xrightarrow{\theta \longrightarrow 0} \delta(x-x'),
+\end{equation}
+
+where we have used the fact that
+
+\begin{equation}
+    \lim_{a \to 0^{+}} \sqrt{\frac{1}{\pi a}} \exp \bigg(\frac{-(x-x_{0})^{2}}{a} \bigg) = \delta(x-x_{0}).
+\end{equation}
+
+Note that since the partition function is defined as the trace of the density operator, we will only need the diagonal elements to compute average values. Fortunately, the diagonal elements of the density operator can be written in a very simple form by using the following trigonometric identity
+
+\begin{equation}
+    \coth (2\theta) \big[1-\sech(2\theta) \big] = \tanh\theta.
+\end{equation}
+
+Therefore, for the diagonal elements of the density operator, we have 
+
+\begin{equation}
+    \rho(x,x|\beta) = \sqrt{\frac{m\omega}{2\pi\hbar\sinh(2\theta)}} \exp \bigg( -\frac{m\omega}{\hbar}x^{2} \tanh(\theta) \bigg).
+\end{equation}
+
+Thus, we can compute the average value of squared position as follows
+
+\begin{equation}
+    \overline{x^{2}} = \frac{\int x^{2} \rho(x,x|\beta) dx}{\int \rho(x,x|\beta) dx} = \frac{\hbar}{2m\omega} \coth\bigg( \frac{\omega\beta\hbar}{2} \bigg)
+\end{equation}
+
+Notice that we had to normalize the result because the density operator was not normalized. Similarly, for the average of the position, we have
+
+\begin{equation}
+    \overline{x} = \frac{\int x \rho(x,x|\beta) dx}{\int \rho(x,x|\beta) dx} = 0.
+\end{equation}
+
+Therefore, the dispersion of the distribution function in position space can be easily computed as follows
+
+\begin{equation}
+    \sigma_{x}^{2} = \overline{x^{2}} - \overline{x}^{2} = \frac{\hbar}{2m\omega} \coth \bigg( \frac{\hbar\omega}{2kT} \bigg).
+\end{equation}
+
+In the case of $\ce{^{87}_{}Rb}$ atoms, we have $m\approx1.4*10^{-25} Kg$. Besides, a typical temperature value for an atomic trap is $T\approx 1 \mu K$, while a typical frequency value is $\omega = 2\pi *10 kHz$. With these values, the width of the distribution function in position space becomes
+
+\begin{equation}
+    \sigma_{x} \approx 0.1 \mu m.
 \end{equation}
 
 \subsubsection{Time Evolution of the Density Matrix}

@@ -1366,9 +1366,74 @@ and
 Note that $H_{x}$ operates in the $x$-direction.
 
 \subsubsection{The Density Matrix for the 1-D Free Particle}
-Now, we will show how to solve Eqs. \ref{bloch_eq_pos_space} and \ref{bloch_eq_initial_cond_pos_space}
+Now, we will show how to solve Eqs. \ref{bloch_eq_pos_space} and \ref{bloch_eq_initial_cond_pos_space} for the case of the 1-dimensional free particle Hamiltonian, i.e.,
+
+\begin{equation}
+    H = \frac{\hat{p}^{2}}{2m},
+\end{equation}
+
+where $\hat{p}$ is the momentum operator given by
+
+\begin{equation}
+    \hat{p} = -i\hbar \nabla.
+\end{equation}
+
+Therefore, the equations to solve are
+
+\begin{equation}
+    - \frac{\partial \rho(x, x' | \beta)}{\partial \beta} = -\frac{\hbar^{2}}{2m} \frac{\partial^{2}}{\partial x^{2}} \rho(x, x' | \beta),
+\end{equation}
+
+and
+
+\begin{equation}
+    \rho(x, x' | 0) = \delta(x-x').
+\end{equation}
+
+The solution that satisfies these equations can be easily found to be
+
+\begin{equation}
+    \rho(x, x' | \beta) = \sqrt{\frac{m}{2\pi \hbar^{2} \beta}} \exp\bigg[-\bigg(\frac{m}{2 \hbar^{2} \beta}\bigg)(x-x')^{2}\bigg].
+\end{equation}
+
+This is the equation of a normal distribution and can be written as
+
+\begin{equation}
+    \rho(x, x' | \beta) = \frac{1}{\sigma \sqrt{2\pi}}\exp\bigg[-\frac{1}{2} \frac{(x-x')^{2}}{\sigma^{2}} \bigg],
+\end{equation}
+
+where the standard deviation of the distribution is given by
+
+\begin{equation}
+    \sigma = \hbar \sqrt{\frac{\beta}{m}}.
+\end{equation}
+
+This result means that the matrix elements of the density operator in position space follow a normal distribution centered at the diagonal.
 
 \subsubsection{The Density Matrix for the Harmonic Oscillator}
+Now, we will solve Eqs. \ref{bloch_eq_pos_space} and \ref{bloch_eq_initial_cond_pos_space} for the case of an harmonic oscillator Hamiltonian, i.e.,
+
+\begin{equation}
+    H = \frac{\hat{p}^{2}}{2m} + \frac{m \omega^{2} \hat{x}^{2}}{2}.
+\end{equation}
+
+With this Hamiltonian, the equation to be solved becomes
+
+\begin{equation}
+    -\frac{\partial \rho}{\partial \theta} = -\frac{\partial^{2} \rho}{\partial \xi^{2}} + \xi^{2}\rho,
+\end{equation}
+
+where we have introduced the non-dimensional quantities
+
+\begin{equation}
+    \xi \equiv \sqrt{\frac{m \omega}{\hbar}} x,
+\end{equation}
+
+and
+
+\begin{equation}
+    \theta \equiv \frac{\hbar \omega}{2} \beta
+\end{equation}
 
 \subsubsection{Time Evolution of the Density Matrix}
 

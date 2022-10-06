@@ -21,6 +21,7 @@
 
 % Define inverse trigonometric functions
 \DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{titlesec} % use paragraphs with numbers
@@ -1557,7 +1558,7 @@ Therefore, for the diagonal elements of the density operator, we have
     \rho(x,x|\beta) = \sqrt{\frac{m\omega}{2\pi\hbar\sinh(2\theta)}} \exp \bigg( -\frac{m\omega}{\hbar}x^{2} \tanh(\theta) \bigg).
 \end{equation}
 
-Thus, we can compute the average value of squared position as follows
+Thus, we can compute the average value of the squared position as follows
 
 \begin{equation}
     \overline{x^{2}} = \frac{\int x^{2} \rho(x,x|\beta) dx}{\int \rho(x,x|\beta) dx} = \frac{\hbar}{2m\omega} \coth\bigg( \frac{\omega\beta\hbar}{2} \bigg)
@@ -1571,7 +1572,7 @@ Notice that we had to normalize the result because the density operator was not 
 
 Therefore, the dispersion of the distribution function in position space can be easily computed as follows
 
-\begin{equation}
+\begin{equation}\label{dispersion_harmonic_oscillator}
     \sigma_{x}^{2} = \overline{x^{2}} - \overline{x}^{2} = \frac{\hbar}{2m\omega} \coth \bigg( \frac{\hbar\omega}{2kT} \bigg).
 \end{equation}
 
@@ -1657,7 +1658,7 @@ since the are energy eigenkets of the free particle Hamiltonian, i.e,
 
 Thus, using this base, the time evolution of the matrix elements of $\rho$ is given by
 
-\begin{equation}
+\begin{equation}\label{time_evo_energy_eigenkets}
     \rho(p,p',t|\beta) = e^{-i\omega_{p,p'}t} \rho(p,p',t_{0}\beta),
 \end{equation}
 
@@ -1708,10 +1709,63 @@ Therefore, we can compute the evolution of the density matrix as follows, First,
 Then, we use Eq. \ref{density_mat_from_x_to_p} to change the basis from position space to momentum space. The final result after performing the integrals is
 
 \begin{equation}
-    \rho(p, p', t_{0}|\beta)
+    \rho(p, p', t_{0}|\beta) = \sqrt{\frac{\csch(\beta \hbar \omega)}{2\pi \hbar m \omega}} \exp \bigg[ -\frac{\big[ (p^{2}+p'^{2})\coth(\beta \hbar \omega) - 2pp'\csch(\beta \hbar \omega) \big]}{2m\hbar \omega} \bigg].
 \end{equation}
 
+Then, we can use Eq. \ref{time_evo_energy_eigenkets} to compute the time evolution, i.e.,
+
+\begin{multline}
+    \rho(p, p', t|\beta) = \sqrt{\frac{\csch(\beta \hbar \omega)}{2\pi \hbar m \omega}} \exp \bigg[ \frac{-i(p-p')(p+p')\omega t}{2m\hbar \omega} \bigg] \\ \exp \bigg[ \frac{ -(p^{2}+p'^{2})\coth(\beta \hbar \omega) + 2pp'\csch(\beta \hbar \omega) }{2m \hbar \omega} \bigg].
+\end{multline}
+
+Finally, we can use Eq. \ref{density_mat_from_p_to_x} to return the matrix elements to the position base. The result after performing the integrals is
+
+\begin{equation}
+    \rho(x, x', t|\beta) = f(t) \exp \Bigg[ mw \frac{\big[ i\omega t(x^{2}-x'^{2})-(x^{2}+x'^{2})\coth(\beta \hbar \omega) + 2xx' \csch(\beta \hbar \omega) \big]}{2(\hbar + \omega^{2}t^{2}\hbar)} \Bigg],
+\end{equation}
+
+where we have defined the ampltiude $f(t)$ as follows
+
+\begin{equation}
+    f(t)=\frac{1}{2\pi \hbar} \sqrt{ \csch(\beta \hbar \omega) \frac{\big(-2\pi m t \omega^{2} \hbar + 2i\pi m \omega \hbar \coth(\beta \hbar \omega)\big)}{\big( i\omega t + \coth(\beta \hbar \omega) \big) \big( i + i\omega^{2} t^{2} \big)}}.
+\end{equation}
+
+Therefore, the matrix elements at the diagonal are
+
+\begin{equation}
+    \rho(x, x, t|\beta) = f(t) \exp \bigg[\frac{x^{2}mw \big( -\coth(\beta \hbar \omega) + \csch(\beta \hbar \omega) \big)}{\hbar (1+w^{2}t^{2})} \bigg].
+\end{equation}
+
+We can use this result to compute the average value of the squared position, i.e.,
+
+\begin{equation}
+    \overline{x^{2}} = \frac{\int x^{2} \rho(x,x|\beta) dx}{\int \rho(x,x|\beta) dx} =  \frac{\hbar}{2m\omega}(1+\omega^{2}t^{2})\coth \bigg( \frac{\hbar \omega}{2 k T} \bigg).
+\end{equation}
+
+Similarly, the average value of he square position is
+
+\begin{equation}
+    \overline{x^{2}} = \frac{\int x^{2} \rho(x,x|\beta) dx}{\int \rho(x,x|\beta) dx} =  0.
+\end{equation}
+
+Finally, we can use these results to compute the dispersion of the distribution in position space, i.e.,
+
+\begin{equation}\label{atomic_dispersion_no_gravity}
+    \sigma_{x}^{2} = \overline{x^{2}} - \overline{x}^{2} = \frac{\hbar}{2m\omega}(1+\omega^{2}t^{2})\coth\bigg( \frac{\hbar \omega}{2kT} \bigg).
+\end{equation}
+
+The above equation gives the expansion of the atomic distribution in position space for the atoms after they are released from the trap. Note how the expansion depends on the parameters of the trap ($\omega$ and $T$). Besides, for $t=0$ we recover the standard deviation for the harmonic oscillator distribution in position space as expected (Eq. \ref{dispersion_harmonic_oscillator}).
+
 \subsubsection{Time Evolution for the Density Matrix of the Harmonic Oscillator Under a Free Fall Hamiltonian}
+In the previous section, we showed how the atomic distribution in position space expands with time. However, that calculation did not include the gravitational potential. In this section, we will show how to include the potential energy due to gravity in the calculation. We will show that the result in Eq. \ref{atomic_dispersion_no_gravity} holds even if we consider the gravitational potential with the difference that now distribution travels following a free fall trajectory.
+
+In this case, when we turn off instantaneously the atomic trap at $t=t_{0}$, the new Hamiltonian will be given by\footnote{Note that the gravitational potential $U_{g}=mgx$ is the result of taking the negative of the gradient of the gravitational force $F_{g}=-mg$. This means that the acceleration is $a=-g$. Thus, in this convention $g$ is positive. Besides, we have that $x=x_{0}+v_{0}t-\frac{1}{2}gt^{2}$, therefore, the system of coordinates points upwards such that if the atom is falling, its momentum will be negative as we will see later.}
+
+\begin{equation}
+    H = \frac{\hat{p}^{2}}{2m} + mg\hat{x}
+\end{equation}
+
+
 
 \subsubsection{Optimization of the Atomic Wave Packet Expansion}
 ..Now

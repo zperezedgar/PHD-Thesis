@@ -1761,11 +1761,71 @@ In the previous section, we showed how the atomic distribution in position space
 
 In this case, when we turn off instantaneously the atomic trap at $t=t_{0}$, the new Hamiltonian will be given by\footnote{Note that the gravitational potential $U_{g}=mgx$ is the result of taking the negative of the gradient of the gravitational force $F_{g}=-mg$. This means that the acceleration is $a=-g$. Thus, in this convention $g$ is positive. Besides, we have that $x=x_{0}+v_{0}t-\frac{1}{2}gt^{2}$, therefore, the system of coordinates points upwards such that if the atom is falling, its momentum will be negative as we will see later.}
 
-\begin{equation}
-    H = \frac{\hat{p}^{2}}{2m} + mg\hat{x}
+\begin{equation}\label{free_fall_hamiltonian}
+    H = \frac{\hat{p}^{2}}{2m} + mg\hat{x}.
 \end{equation}
 
+We remember that the time evolution of the matrix elements of the density operator are given by
 
+\begin{equation}
+    \bra{n} \rho (t) \ket{n'} = \bra{n} U^{\dagger} \rho (t_{0}) U \ket{n'},
+\end{equation}
+
+and this time, the evolution operator will be given by
+
+\begin{equation}
+    U = \exp \bigg[-\frac{i}{\hbar} \bigg( \frac{\hat{p}^{2}}{2m} + mg\hat{x} \bigg) t \bigg].
+\end{equation}
+
+Last time, it was possible to compute the matrix elements of $\rho (t)$ by using the energy eigenkets. This time is not so trivial to know what are the eigenkets of the Hamiltonian in Eq. \ref{free_fall_hamiltonian}, but let's insist on continue using the momentum eigenkets $\ket{p}$. Thus, using this base, the matrix elements are given by
+
+\begin{equation}
+    \bra{p} \rho (t) \ket{p'} = \bra{p} U^{\dagger} \rho (t_{0}) U \ket{p'}.
+\end{equation}
+
+This means that we need to evaluate
+
+\begin{equation}
+    \ket{p(t)} = \exp \bigg[-\frac{i}{\hbar} \bigg( \frac{\hat{p}^{2}}{2m} + mg\hat{x} \bigg) t \bigg] \ket{p(t_{0})}, 
+\end{equation}
+
+where $\ket{p(t_{0})} \equiv \ket{p}$. In order to do so, we will prove that $\exp \big(\pm \frac{i}{\hbar} mg \hat{x} t \big) \ket{p}$ is an eigenfunction of the operator $\hat{p}$. We begin by using the following commutator relation
+
+\begin{equation}
+    \big[ \hat{p}, f(\hat{x}) \big] = -i \hbar \frac{\partial f}{\partial \hat{x}},
+\end{equation}
+
+where $f$ is a function of the operator $\hat{x}$. If we choose $f(\hat{x})= \exp \big(\pm \frac{i}{\hbar} mg \hat{x} t \big) $, then we have
+
+\begin{equation}
+    \bigg[ \hat{p}, \exp \bigg(\pm \frac{i}{\hbar} mg \hat{x} t \bigg) \bigg] = \pm mgt \exp \bigg(\pm \frac{i}{\hbar} mg \hat{x} t \bigg).
+\end{equation}
+
+Thus, if we multiply this equation by $\ket{p}$ from the right, we get the following relation
+
+\begin{equation}
+    \hat{p} \Bigg( \exp \bigg(\pm \frac{i}{\hbar} mg \hat{x} t \bigg) \ket{p} \Bigg) = (p\pm mgt) \Bigg( \exp \bigg(\pm \frac{i}{\hbar} mg \hat{x} t \bigg) \ket{p} \Bigg).
+\end{equation}
+
+Then, we see that $\exp \big(\pm \frac{i}{\hbar} mg \hat{x} t \big) \ket{p}$ is an eigenfunction of the momentum operator with eigenvalue $(p\pm mgt)$. In other words, the operator $\exp \big(\pm \frac{i}{\hbar} mg \hat{x} t \big)$ is the translation operator in momentum, since it translates $\ket{p}$ into $\ket{p+mgt}$\footnote{Note that the translation operator in momentum has the reversed sign in comparison with the usual translation operator in position space. In that case, a negative sign means a translation $x+dx$, and vice versa}. It is convenient to use a more succinct notation, we define
+
+\begin{equation}
+    k \equiv \frac{mg}{\hbar} t.
+\end{equation}
+
+Thus, we have
+
+\begin{equation}
+    \exp \bigg(\pm \frac{i}{\hbar} mg \hat{x} t \bigg) \equiv \exp \bigg(\pm \frac{i}{\hbar} \hbar k \hat{x} \bigg),
+\end{equation}
+
+so we can see that $\hbar k$ is the generator of translation in momentum space. Hence, we can proceed to compute
+
+\begin{equation}
+    \ket{p(t)} = \exp \bigg[-\frac{i}{\hbar} \bigg( \frac{\hat{p}^{2}}{2m} + \hbar k \hat{x} \bigg) t \bigg] \ket{p(t_{0})}.
+\end{equation}
+
+For that purpose, we will use the split operator method. We begin with the Bakr-... fomrula
 
 \subsubsection{Optimization of the Atomic Wave Packet Expansion}
 ..Now

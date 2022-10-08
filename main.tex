@@ -1670,7 +1670,7 @@ where
 
 and
 
-\begin{equation}
+\begin{equation}\label{freq_omega_no_gravity}
     \omega_{p,p'} = \frac{p^{2}-p'^{2}}{2\hbar m}.
 \end{equation}
 
@@ -1700,7 +1700,7 @@ In the same way, we can show that the inverse transformation is given by
     \rho(x,x'|\beta) = \frac{1}{2\pi \hbar} \int dp' \int dp \exp \bigg[ \frac{i}{\hbar} (px-p'x') \bigg] \rho(p,p'|\beta).
 \end{equation}
 
-Therefore, we can compute the evolution of the density matrix as follows, First, the density matrix at time $t_{0}$ is given by Eq. \ref{harmonic_osc_density_matrix}, i.e.,
+Therefore, we can compute the evolution of the density matrix as follows. First, the density matrix at time $t_{0}$ is given by Eq. \ref{harmonic_osc_density_matrix}, i.e.,
 
 \begin{equation}
     \rho(x, x', t_{0}|\beta) = \sqrt{\frac{m\omega}{2\pi \hbar \sinh(2\theta)}} \exp \Bigg[ - \frac{m\omega}{2\hbar} \coth(2\theta) \big( x^{2} - 2x' x \sech(2\theta) + x'^{2} \big) \Big].
@@ -1708,7 +1708,7 @@ Therefore, we can compute the evolution of the density matrix as follows, First,
 
 Then, we use Eq. \ref{density_mat_from_x_to_p} to change the basis from position space to momentum space. The final result after performing the integrals is
 
-\begin{equation}
+\begin{equation}\label{harmonic_osc_density_mat_momentum_base}
     \rho(p, p', t_{0}|\beta) = \sqrt{\frac{\csch(\beta \hbar \omega)}{2\pi \hbar m \omega}} \exp \bigg[ -\frac{\big[ (p^{2}+p'^{2})\coth(\beta \hbar \omega) - 2pp'\csch(\beta \hbar \omega) \big]}{2m\hbar \omega} \bigg].
 \end{equation}
 
@@ -1739,19 +1739,19 @@ Therefore, the matrix elements at the diagonal are
 We can use this result to compute the average value of the squared position, i.e.,
 
 \begin{equation}
-    \overline{x^{2}} = \frac{\int x^{2} \rho(x,x|\beta) dx}{\int \rho(x,x|\beta) dx} =  \frac{\hbar}{2m\omega}(1+\omega^{2}t^{2})\coth \bigg( \frac{\hbar \omega}{2 k T} \bigg).
+    \overline{x^{2}} (t)= \frac{\int x^{2} \rho(x,x,t|\beta) dx}{\int \rho(x,x,t|\beta) dx} =  \frac{\hbar}{2m\omega}(1+\omega^{2}t^{2})\coth \bigg( \frac{\hbar \omega}{2 k T} \bigg).
 \end{equation}
 
-Similarly, the average value of he square position is
+Similarly, the average value of the position is
 
 \begin{equation}
-    \overline{x^{2}} = \frac{\int x^{2} \rho(x,x|\beta) dx}{\int \rho(x,x|\beta) dx} =  0.
+    \overline{x^{2}} (t)= \frac{\int x \rho(x,x,t|\beta) dx}{\int \rho(x,x,t|\beta) dx} =  0.
 \end{equation}
 
 Finally, we can use these results to compute the dispersion of the distribution in position space, i.e.,
 
 \begin{equation}\label{atomic_dispersion_no_gravity}
-    \sigma_{x}^{2} = \overline{x^{2}} - \overline{x}^{2} = \frac{\hbar}{2m\omega}(1+\omega^{2}t^{2})\coth\bigg( \frac{\hbar \omega}{2kT} \bigg).
+    \sigma_{x}^{2} (t)= \overline{x^{2}}(t) - \overline{x}^{2}(t) = \frac{\hbar}{2m\omega}(1+\omega^{2}t^{2})\coth\bigg( \frac{\hbar \omega}{2kT} \bigg).
 \end{equation}
 
 The above equation gives the expansion of the atomic distribution in position space for the atoms after they are released from the trap. Note how the expansion depends on the parameters of the trap ($\omega$ and $T$). Besides, for $t=0$ we recover the standard deviation for the harmonic oscillator distribution in position space as expected (Eq. \ref{dispersion_harmonic_oscillator}).
@@ -1896,10 +1896,54 @@ Finally, we have for the evolution of the momentum eigenket
 
 Thus, we can use this result to compute the time-evolution of the matrix elements of the density operator
 
+\begin{equation}\label{time_evo_density_op_free_fall_H}
+    \begin{aligned}
+        \rho(p,p',t|\beta) & = \bra{p} \rho (t) \ket{p'} \\ & = \bra{p(t)} \rho (t_{0}) \ket{p'(t)} \\ & = e^{-i\omega_{p,p'} t} \bra{p-mgt} \rho(t_{0}) \ket{p'-mgt} \\ & = e^{-i\omega_{p,p'} t} \rho (p-mgt, p'-mgt,t_{0}|\beta),
+    \end{aligned}
+\end{equation}
+
+where we have defined
+
 \begin{equation}
-    \begin{split}
-        \bra{p} \rho (t) \ket{p'} = \bra{p(t)} \rho (t_{0}) \ket{p'(t)} \\ = aqui
-    \end{split}
+    \omega_{p,p'} = \frac{1}{2m\hbar} \big[ (p^{2}-p'^{2})-(p-p')mgt \big].
+\end{equation}
+
+Note that the matrix elements of the initial density operator appear translated by an amount $-mgt$, and that the frequency $\omega_{p,p'}$ has an extra term in comparison with Eq. \ref{freq_omega_no_gravity}. Thus, the procedure to get the evolution of the matrix elements of the density operator in the position basis is the same as before. First, we use Eq. \ref{density_mat_from_x_to_p} to write the initial density operator (Eq. \ref{harmonic_osc_density_matrix}) in the momentum basis. The result is given in Eq. $\ref{harmonic_osc_density_mat_momentum_base}$. Then, we use this result alongside Eq. \ref{time_evo_density_op_free_fall_H} to compute the time evolution of the density matrix in momentum space, i.e.,
+
+\begin{multline}
+    \rho(p,p',t|\beta) = e^{-i\omega_{p,p'} t} \sqrt{\frac{\csch(\beta \hbar \omega)}{2\pi \hbar m \omega}} \\ 
+    \exp \bigg[ -\frac{\big[ ((p-mgt)^{2}+(p'-mgt)^{2})\coth(\beta \hbar \omega) - 2(p-mgt)(p'-mgt)\csch(\beta \hbar \omega) \big]}{2m\hbar \omega} \bigg]
+\end{multline}
+
+Finally, we use Eq. \ref{density_mat_from_p_to_x} to return the matrix elements to the position base. The final result after we perform the integrals is
+
+\begin{multline}
+    \rho(x,x',t|\beta) = \Delta \exp \bigg(i \frac{mt}{2\hbar} (x-x') \frac{\big[g(2+t^{2}\omega^{2})+\omega^{2}(x+x')\big]}{(1+ \omega^{2}t^{2})} \bigg) \\
+    \exp \bigg( -\frac{\pi}{2} \Delta^{2} \Big[ \big( g^{2} t^{4} - 2g t^{2}(x+x') + 2(x^{2}+x'^{2}) \big)\cosh(\beta \hbar \omega) - (g t^{2} - 2x)(g t^{2} - 2x') \Big] \bigg),
+\end{multline}
+
+where
+
+\begin{equation}
+    \Delta = \sqrt{\frac{m\omega}{2\pi \hbar (1+ \omega^{2}t^{2}) \sinh (\beta \hbar \omega)}}.
+\end{equation}
+
+Therefore, the diagonal elements are given by
+
+\begin{equation}
+    \rho(x,x,t|\beta) = \Delta \exp \bigg( -\frac{\pi}{2} \Delta^{2} \Big[ \big( g^{2} t^{4} - 4g t^{2}x + 4x^{2} \big)\cosh(\beta \hbar \omega) - (g t^{2} - 2x)^{2} \Big] \bigg).
+\end{equation}
+
+Then, as usual, we can compute the average of the squared position and the position itself. After a lot of algebraic manipulation, we get
+
+\begin{equation}
+    \overline{x^{2}} (t)= \frac{\int x^{2} \rho(x,x,t|\beta) dx}{\int \rho(x,x,t|\beta) dx} =  aqui,
+\end{equation}
+
+and
+
+\begin{equation}
+    \overline{x} (t)= \frac{\int x^{2} \rho(x,x,t|\beta) dx}{\int \rho(x,x,t|\beta) dx} =  aqui
 \end{equation}
 
 \subsubsection{Optimization of the Atomic Wave Packet Expansion}

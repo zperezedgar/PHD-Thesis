@@ -1408,11 +1408,27 @@ This is the equation of a normal distribution and can be written as
 
 where the standard deviation of the distribution is given by
 
-\begin{equation}
+\begin{equation}\label{free_particle_density_mat}
     \sigma = \hbar \sqrt{\frac{\beta}{m}}.
 \end{equation}
 
-This result means that the matrix elements of the density operator in position space follow a normal distribution centered at the diagonal.
+This result means that the matrix elements of the density operator in position space follow a normal distribution centered at the diagonal. Then, the diagonal elements are given by
+
+\begin{equation}\label{free_particle_density_mat_diagonal}
+    \rho(x, x | \beta) = \frac{1}{\sigma \sqrt{2\pi}}
+\end{equation}
+
+Observe that this solution is not normalizable. This makes sense since the wave function of a free particle is not normalizable either.
+
+\subsubsection{The Density Matrix for a particle in a box}
+If we have an ensemble of free particles confined in a box, the matrix elements of the density operator are still given by Eqs. \ref{free_particle_density_mat} and \ref{free_particle_density_mat_diagonal}. However, this time the diagonal elements are normalizable. If the box (1-dimensional) has a length $L$, we have that the normalization constant is given by
+
+\begin{equation}
+   \begin{split}
+        N & = \int_{-L/2}^{L/2} \rho(x, x | \beta) dx \\ & = \frac{1}{\sigma \sqrt{2\pi}} \int_{-L/2}^{L/2} dx \\ & = \frac{L}{\sigma \sqrt{2\pi}}
+   \end{split}
+\end{equation}
+
 
 \subsubsection{The Density Matrix for the Harmonic Oscillator}
 Now, we will solve Eqs. \ref{bloch_eq_pos_space} and \ref{bloch_eq_initial_cond_pos_space} for the case of an harmonic oscillator Hamiltonian, i.e.,
@@ -1546,7 +1562,7 @@ where we have used the fact that
     \lim_{a \to 0^{+}} \sqrt{\frac{1}{\pi a}} \exp \bigg(\frac{-(x-x_{0})^{2}}{a} \bigg) = \delta(x-x_{0}).
 \end{equation}
 
-Note that since the partition function is defined as the trace of the density operator, we will only need the diagonal elements to compute average values. Fortunately, the diagonal elements of the density operator can be written in a very simple form by using the following trigonometric identity
+Note that since the partition function is defined as the trace of the density operator, we will only need the diagonal elements to compute average values\footnote{It can be easily shown that the partition function is the trace of the density operator if we use the energy eigenkets. However, when two matrices are similar, their trace is the same, independently of the basis chosen, so this result is general.}. Fortunately, the diagonal elements of the density operator can be written in a very simple form by using the following trigonometric identity
 
 \begin{equation}
     \coth (2\theta) \big[1-\sech(2\theta) \big] = \tanh\theta.
@@ -1937,14 +1953,28 @@ Therefore, the diagonal elements are given by
 Then, as usual, we can compute the average of the squared position and the position itself. After a lot of algebraic manipulation, we get
 
 \begin{equation}
-    \overline{x^{2}} (t)= \frac{\int x^{2} \rho(x,x,t|\beta) dx}{\int \rho(x,x,t|\beta) dx} =  aqui,
+    \overline{x^{2}} (t)= \frac{\int x^{2} \rho(x,x,t|\beta) dx}{\int \rho(x,x,t|\beta) dx} =  \frac{g t^{2} (2+B g t^{2})}{4B},
 \end{equation}
 
-and
+where 
 
 \begin{equation}
-    \overline{x} (t)= \frac{\int x^{2} \rho(x,x,t|\beta) dx}{\int \rho(x,x,t|\beta) dx} =  aqui
+    B = \frac{m \omega g t^{2}}{\hbar (1+w^{2}t^{2})} \tanh \bigg(\frac{\beta}{2} \hbar \omega\bigg),
 \end{equation}
+
+and also
+
+\begin{equation}
+    \overline{x} (t)= \frac{\int x \rho(x,x,t|\beta) dx}{\int \rho(x,x,t|\beta) dx} =  \frac{g t^{2}}{2}.
+\end{equation}
+
+Using these results, we can compute the standard deviation as a function of time
+
+\begin{equation}
+    \sigma_{x} (t) = \sqrt{\frac{\hbar (1+t^{2} \omega^{2})}{2 m \omega} \coth \bigg(\frac{\beta}{2} \hbar \omega \bigg)}.
+\end{equation}
+
+We can see that this results is the same as that in Eq. \ref{atomic_dispersion_no_gravity}. Thus, the only effect of gravity was to introduce a change in the average position. Indeed, the average position of the atom is that of a free-fall particle just as we could have expected.
 
 \subsubsection{Optimization of the Atomic Wave Packet Expansion}
 ..Now

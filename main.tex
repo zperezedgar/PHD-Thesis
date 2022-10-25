@@ -1303,11 +1303,11 @@ Lastly, we show in Fig. \ref{optimization_expansion_width} the optimization of t
     \label{optimization_expansion_width}
 \end{figure}
 
-\subsection{Selection of the Initial Width by Using the Expansion of the Atomic Cloud}
+\subsection{Selection of the Initial Width by Using an Optical Dipole Trap and the Expansion of the Atomic Cloud}
 In this approach, we do not use a selection pulse, instead, we let the atomic cloud expand until the atom's wave function has the desired initial width. Therefore, we will need to compute the expansion of the atomic wave function in position space. Once we have obtained the equation that establishes the expansion of the wave packet, we will consider, as before, that it holds even in the case of a superposition of states of the alkali atom, so we can use it to describe the expansion of the wave packet during all the experiment. Afterward, we will optimize this equation to obtain the maximum time that we have to perform the experiment under this approach. Then, we will show that this approach corresponds to a high-power regime since the initial width of the atom under typical experimental conditions will result to be much smaller than the selection range set by the power of the microwaves used to drive the transition. Finally, it is important to say that in this approach, the expansion of the wave packet will depend on the temperature of the atomic cloud and the frequency of oscillation of the atoms in the initial trap.
 
 \subsubsection{Initial Conditions of the Atomic Cloud}
-The first step before we can initiate the experiment to measure $g$ is to gather the atoms to be used. Therefore, the atoms have to be initially trapped and cooled. For this purpose, an optical dipole trap or a magneto-optical trap can be used. Independently of the type of trap used to cool the atoms, let's assume that the atoms inside this trap oscillate in the z-axis under a harmonic oscillator potential with frequency $\omega$. Furthermore, let's suppose that we keep the atoms trapped until they reach a thermal equilibrium\footnote{The conditions to get a thermal equilibrium will depend on the type of trap chosen.}. Afterward, we turn off the trap and let the cloud of atoms expand. Evidently, after we release the atoms from the trap, every atom will have a different wave function so we will have to rely on statistical methods to know the properties of the ensemble of atoms. For the next computations, we will suppose that the ensemble is kept at temperature $T$ even after we release them from the trap. This is justified because the potential is turned off instantaneously so we can expect that the thermal equilibrium stands for a short period of time since the atoms do not have enough time to reach the walls of the system to interchange kinetic energy. Besides, we suppose that we have a dilute gas where the atoms do not interact between them.
+The first step before we can initiate the experiment to measure $g$ is to gather the atoms to be used. Therefore, the atoms have to be initially trapped and cooled. For this purpose, let's assume that we use an optical dipole trap, and that the atoms inside this trap oscillate in the z-axis under a harmonic oscillator potential with frequency $\omega$. Furthermore, let's suppose that we keep the atoms trapped until they reach a thermal equilibrium\footnote{The conditions to get a thermal equilibrium will depend on the type of trap chosen.}. Afterward, we turn off the trap and let the cloud of atoms expand. Evidently, after we release the atoms from the trap, every atom will have a different wave function so we will have to rely on statistical methods to know the properties of the ensemble of atoms. For the next computations, we will suppose that the ensemble is a canonical ensemble kept at temperature $T$ even after we release them from the trap. This is justified because the potential is turned off instantaneously so we can expect that the thermal equilibrium stands for a short period of time since the atoms do not have enough time to reach the walls of the system to interchange kinetic energy. Besides, we suppose that we have a dilute gas where the atoms do not interact between them. Finally, it is important to mention that for the next results, we will consider that this ensemble follows the Boltzmann statistics. This is justified, since trapping atoms by simply using an optical dipole trap is not enough to produce a Bose-Einstein condensate. In order to achieve the quantum regime of Bose-Einstein statistics, we would need to additionally use evaporative cooling.
 
 \subsubsection{Computation of the Density Matrix}
 If we wish to compute statistic properties for our ensemble, we need to compute the density matrix. The density matrix for non degenerate states is defined as
@@ -1419,16 +1419,6 @@ This result means that the matrix elements of the density operator in position s
 \end{equation}
 
 Observe that this solution is not normalizable. This makes sense since the wave function of a free particle is not normalizable either.
-
-\subsubsection{The Density Matrix for a particle in a box}
-If we have an ensemble of free particles confined in a box, the matrix elements of the density operator are still given by Eqs. \ref{free_particle_density_mat} and \ref{free_particle_density_mat_diagonal}. However, this time the diagonal elements are normalizable. If the box (1-dimensional) has a length $L$, we have that the normalization constant is given by
-
-\begin{equation}
-   \begin{split}
-        N & = \int_{-L/2}^{L/2} \rho(x, x | \beta) dx \\ & = \frac{1}{\sigma \sqrt{2\pi}} \int_{-L/2}^{L/2} dx \\ & = \frac{L}{\sigma \sqrt{2\pi}}
-   \end{split}
-\end{equation}
-
 
 \subsubsection{The Density Matrix for the Harmonic Oscillator}
 Now, we will solve Eqs. \ref{bloch_eq_pos_space} and \ref{bloch_eq_initial_cond_pos_space} for the case of an harmonic oscillator Hamiltonian, i.e.,
@@ -1970,24 +1960,121 @@ and also
 
 Using these results, we can compute the standard deviation as a function of time
 
-\begin{equation}
+\begin{equation}\label{atomic_dispersion_with_gravity}
     \sigma_{x} (t) = \sqrt{\frac{\hbar (1+t^{2} \omega^{2})}{2 m \omega} \coth \bigg(\frac{\beta}{2} \hbar \omega \bigg)}.
 \end{equation}
 
 We can see that this results is the same as that in Eq. \ref{atomic_dispersion_no_gravity}. Thus, the only effect of gravity was to introduce a change in the average position. Indeed, the average position of the atom is that of a free-fall particle just as we could have expected.
 
 \subsubsection{Optimization of the Atomic Wave Packet Expansion}
-..Now
+In this approach, we consider that the expansion of the wave packet is governed by Eq. \ref{atomic_dispersion_with_gravity} which we re-write here as
 
-\begin{equation}
-    \Delta Z(t) = ... \sqrt{h()Coth()}
+\begin{equation}\label{atomic_dispersion_with_gravity_2}
+    \Delta Z (t) = \sqrt{\frac{\hbar (1+t^{2} \omega^{2})}{2 M \omega} \coth \bigg(\frac{\hbar \omega}{2 kT} \bigg)}.
 \end{equation}
 
+Notice that we can re-write this equation as
+
+\begin{equation}\label{atomic_dispersion_with_gravity_3}
+    \Delta Z (t) = \Delta Z(0) \sqrt{1+t^{2}\omega^{2}},
+\end{equation}
+
+where $\Delta Z(0)$ is the initial width just after dipole the trap is turned off, and is given by
+
+\begin{equation}\label{atomic_dispersion_with_gravity_t0}
+    \Delta Z(0) = \sqrt{\frac{\hbar}{2M \omega} \coth \bigg(\frac{\hbar \omega}{2kT} \bigg)}
+\end{equation}
+
+Let's use these equations to get more insight into the experimental values that we can use to get better results. Experimentally, besides of the time $t$, we can only adjust the angular frequency $\omega$ and the temperature of the trap $T$.
+
 \subsubsection{Minimization of the Expansion of the Wave Packet}
+If we fix the time $t$ and the frequency $\omega$, we can try to optimize Eq. \ref{atomic_dispersion_with_gravity_3} to get the initial width that minimizes it. The optimal initial width is trivially $(\Delta Z(0))^{*}=0$. However, according to Eq. \ref{atomic_dispersion_with_gravity_t0}, it is impossible to obtain an initial width of zero. Nonetheless, we can still calculate the minimum possible initial width if we optimize Eq. \ref{atomic_dispersion_with_gravity_t0} with regards to the temperature $T$. The initial width is minimized when the hyperbolic cotangent reaches its minimum value, i.e., when $T= 0$. In that case, the initial width simply becomes
+
+\begin{equation}
+    \Delta Z(0) = \sqrt{\frac{\hbar}{2M \omega} } , \quad (T=0).
+\end{equation}
+
+Obviously, it is not possible to get such temperature experimentally. However, we can still get the behavior for low temperatures by expanding the hyperbolic cotangent around $T=0$, we get
+
+\begin{equation}
+    \Delta Z (0) \approx \sqrt{\frac{ kT}{ M \omega^{2}}  }, \quad (\hbar \omega \gg kT).
+\end{equation}
+
+Therefore, experimentally, this is the optimal initial width that minimizes Eq. \ref{atomic_dispersion_with_gravity_3} to is minimal experimental value, i.e.,
+
+\begin{equation}\label{eq_optimal_initial_width}
+    (\Delta Z (0))^{**} = \sqrt{\frac{ kT}{ M \omega^{2}} }, \quad (\hbar \omega \gg kT),
+\end{equation}
+
+where we have used a double star ($**$) symbol to remark that this is not an optimal value in the usual sense found in calculus textbooks. Indeed, it is an optimal value in an experimental sense. 
+
+aqui continuar hacer calculo de hw >> kT utilizando los valores tipicos de w y T y ver que la aprox anterior es buena
+
+If we substitute this optimal value in Eq. \ref{atomic_dispersion_with_gravity_3}, we get that the minimum expansion is given by
+
+\begin{equation}
+    \big( \Delta Z (t) \big)^{**}_{min} = \sqrt{\frac{ kT}{ M \omega^{2}} } \sqrt{1+t^{2}\omega^{2}}, \quad (\hbar \omega \gg kT) ,
+\end{equation}
+
+
+
+\begin{comment}
+If we fix the time $t$ and $\omega$ in the last equation, and minimize it with regards to the temperature, we will find that the expansion is minimized when the hyperbolic cotangent reaches its minimum value, i.e., when $T= 0$. In that case, the expansion becomes
+
+\begin{equation}
+    \Delta Z (t) = \sqrt{\frac{ (1+t^{2} \omega^{2})}{ 2m \omega^{2}} }, \quad (T=0)
+\end{equation}
+
+Obviously, it is not possible to get such temperature experimentally. However, we can still get the behavior for low temperatures by expanding the hyperbolic cotangent around $T=0$, we get
+
+\begin{equation}
+    \Delta Z (t) \approx \sqrt{\frac{ (1+t^{2} \omega^{2})}{ m \omega^{2}} kT }, \quad (\hbar \omega \gg kT)
+\end{equation}
+
+Now, if we fix $T$ and try to minimize the expansion with respect to the temperature $\omega$ ....
+
+Similarly, if we fix $T$ and try to minimize the expansion with respect to the temperature $\omega$, we will get that the expansion is minimized when the frequency is $\omega=0$. One more time, it is not possible, experimentally, to have $\omega=0$. Thus, let's analyze the behavior of the expansion for low frequencies. If we expand around $\omega=0$, we get
+
+\begin{equation}
+    \Delta Z (t) \approx \sqrt{\frac{kT}{ m \omega^{2}}} \bigg( 1 + \frac{\omega^{2}}{24 k^{2}T^{2}} \big(12 k^{2}T^{2} t^{2} + \hbar^{2}\big) \bigg), \quad (\hbar \omega \ll kT)
+\end{equation}
+\end{comment}
+
+\begin{comment}
+\begin{equation}
+    \Delta Z (t) \approx \sqrt{\frac{kT}{ m \omega^{2}}} \Bigg( 1 + \Bigg[ \frac{\omega^{2} t^{2}}{2} + \frac{1}{24} \bigg(\frac{\hbar \omega}{k T}\bigg)^{2}\Bigg] \Bigg), \quad (\hbar \omega \ll kT)
+\end{equation}
+\end{comment}
 
 \subsubsection{Maximization of Time to Reach a Given Width}
+We can solve Eq. \ref{atomic_dispersion_with_gravity_3} to get the time as a function of the final width $\Delta Z_{f}$, i.e,
+
+\begin{equation}\label{t_atomic_dispersion}
+    t = \frac{1}{\omega} \sqrt{\bigg( \frac{\Delta Z_{f}}{\Delta Z_{0}} \bigg)^{2} - 1},
+\end{equation}
+
+If we try to optimize this last equation to maximize the time to reach the final width given an initial width, we will get again that the optimal initial width is trivially given by $(\Delta Z_{0})^{*} = 0$. However, as we saw in the last section, in practice, the initial width cannot be set to zero experimentally. The best we can do is to use Eq. \ref{eq_optimal_initial_width} as an approximation to the optimal initial width. If we substitute Eq. \ref{eq_optimal_initial_width} into Eq. \ref{t_atomic_dispersion}, we get
+
+\begin{equation}\label{t_dipole_trap_optimized}
+    t^{**}_{max} = \frac{\Delta Z_{f}}{\omega} \sqrt{\frac{M \omega^{2}}{kT} - \bigg(\frac{1}{\Delta Z_{f}}\bigg)^{2}}, \quad (\hbar \omega \gg kT),
+\end{equation}
+
+where the double star ($**$) indicates that this equation was optimized by using the initial width that best approximates the optimal initial width in an experimental sense.
+
+aqui continuar agregar condicion de tiempo menor a distancia de caida de 30cm
 
 \subsubsection{Summary}
+
+\subsection{Selection of the Initial Width by Using a Magneto-optical Trap and a Selection Pulse}
+
+\subsubsection{The Density Matrix for a particle in a box}
+If we have an ensemble of free particles confined in a box, the matrix elements of the density operator are still given by Eqs. \ref{free_particle_density_mat} and \ref{free_particle_density_mat_diagonal}. However, this time the diagonal elements are normalizable. If the box (1-dimensional) has a length $L$, we have that the normalization constant is given by
+
+\begin{equation}
+   \begin{split}
+        N & = \int_{-L/2}^{L/2} \rho(x, x | \beta) dx \\ & = \frac{1}{\sigma \sqrt{2\pi}} \int_{-L/2}^{L/2} dx \\ & = \frac{L}{\sigma \sqrt{2\pi}}
+   \end{split}
+\end{equation}
 
 \subsection{Choosing the Initial Atomic Width}
 In the last sections, we showed how we can select the initial atomic width of the alkali atoms to be used during the measurement process and how this packet expands in each case before the beginning of the experiment to measure $g$. In this section, we will study the constraints that choosing a particular initial atomic width will impose in the time that we can let the atomic wave packet expand without affecting the Rabi transitions due to the detuning, and thus, the gravimetry signal.
@@ -2069,7 +2156,7 @@ so we can write
 
 The above equation gives the maximum selection range set by the power of the microwaves used to drive the transitions. We will decide to work always within this range. Our work range will be proportional to the maximum selection range set by the power of the microwaves according to
 
-\begin{equation}
+\begin{equation}\label{warning_range}
     \Delta Z_{f} = \gamma \Delta Z' \mathrm{,} \quad 0 < \gamma \leq 1,
 \end{equation}
 
@@ -2127,7 +2214,32 @@ and we have written the result in terms of the irradiance of the microwaves\foot
     I = \frac{P}{A}.
 \end{equation}
 
-\subsubsection{Gravimetry Signal Set by the Atomic Trap (The High-Power Regime)}
+\subsubsection{Gravimetry Signal Set by the Optical Dipole Trap (The High-Power Regime)}
+If instead of initializing the initial width using a selection beam, we use the expansion of the dipole trap. We can substitute Eq. \ref{warning_range} into Eq. \ref{t_dipole_trap_optimized} to get
+
+\begin{equation}
+        t^{**}_{max} = \frac{1}{\omega} \sqrt{\frac{M \omega^{2}}{kT} \bigg( \gamma \Delta Z' \bigg)^{2} - 1}, \quad (\hbar \omega \gg kT),
+\end{equation}
+
+and by substituting Eq. \ref{maximum_selection_range} into this equation, we get
+
+\begin{equation}
+        t^{**}_{max} = \frac{1}{\omega} \sqrt{6 \frac{M \omega^{2}}{kT} \frac{\mu_{0} P}{ c A} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} - 1}, \quad (\hbar \omega \gg kT).
+\end{equation}
+
+Thus, using the approximation in Eq. \ref{t_max_vs_T} and the Eq. \ref{gravimetry_signal_T}, we get the gravimetry signal obtained when using the dipole trap to select the initial width, i.e.,
+
+\begin{equation}\label{gravimetry_signal_irradiance_dipole_trap}
+    \Delta \Phi = b_{d} g, 
+\end{equation}
+
+where we have defined the parameter
+
+\begin{equation}
+    b_{d} \equiv \frac{\mu_{B} \eta}{16 \hbar \omega^{3}} \bigg(6 \frac{M \omega^{2}}{kT} \frac{\mu_{0} I}{c} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} - 1\bigg)^{3/2}, \quad (\hbar \omega \gg kT),
+\end{equation}
+
+where $I$ is the irradiance of the microwaves.
 
 \subsection{Interferometer Fringes}
 \subsubsection{Precision in the Measurement of g in the Low-Power Regime}

@@ -1988,7 +1988,7 @@ where $\Delta Z(0)$ is the initial width just after dipole the trap is turned of
 Let's use these equations to get more insight into the experimental values that we can use to get better results. Experimentally, besides of the time $t$, we can only adjust the angular frequency $\omega$ and the temperature of the trap $T$.
 
 \subsubsection{Minimization of the Expansion of the Wave Packet}
-If we fix the time $t$ and the frequency $\omega$, we can try to optimize Eq. \ref{atomic_dispersion_with_gravity_3} to get the initial width that minimizes it. The optimal initial width is trivially $(\Delta Z(0))^{*}=0$. However, according to Eq. \ref{atomic_dispersion_with_gravity_t0}, it is impossible to obtain an initial width of zero. Nonetheless, we can still calculate the minimum possible initial width if we optimize Eq. \ref{atomic_dispersion_with_gravity_t0} with regards to the temperature $T$. The initial width is minimized when the hyperbolic cotangent reaches its minimum value, i.e., when $T= 0$. In that case, the initial width simply becomes
+If we fix the time $t$ and the frequency $\omega$, we can try to optimize Eq. \ref{atomic_dispersion_with_gravity_3} to get the initial width that minimizes it. The optimal initial width is trivially $(\Delta Z(0))^{*}=0$. However, according to Eq. \ref{atomic_dispersion_with_gravity_t0}, it is impossible to obtain an initial width of zero. Nonetheless, we can still calculate the minimum possible initial width if we optimize Eq. \ref{atomic_dispersion_with_gravity_t0} with regards to the temperature $T$. The initial width is minimized when the hyperbolic cotangent reaches its minimum value. However, the hyperbolic cotangent does not have a global or local minimum. Although, this function does not have a minimum, when the $\coth(x)$ function is defined over the interval $[0,\infty)$, it reaches its minimum value at infinity because $\lim_{x^{+} \to 0} \coth(x)=\infty$ and $\lim_{x \to \infty} \coth(x)=1$. Therefore, this function will have its minimum value at infinity even though it cannot be considered a global minimum in the usual sense because infinity is not a number. In our case, this point corresponds to $T= 0$. Thus, at $T=0$ the initial width reaches its minimum value and becomes
 
 \begin{equation}
     \Delta Z(0) = \sqrt{\frac{\hbar}{2M \omega} } , \quad (T=0).
@@ -1996,7 +1996,7 @@ If we fix the time $t$ and the frequency $\omega$, we can try to optimize Eq. \r
 
 Obviously, it is not possible to get such temperature experimentally. However, we can still get the behavior for low temperatures by expanding the hyperbolic cotangent around $T=0$, we get
 
-\begin{equation}
+\begin{equation}\label{delZ0_smallT}
     \Delta Z (0) \approx \sqrt{\frac{ kT}{ M \omega^{2}}  }, \quad (\hbar \omega \gg kT).
 \end{equation}
 
@@ -2008,9 +2008,9 @@ Therefore, experimentally, this is the optimal initial width that minimizes Eq. 
 
 where we have used a double star ($**$) symbol to remark that this is not an optimal value in the usual sense found in calculus textbooks. Indeed, it is an optimal value in an experimental sense. 
 
-aqui continuar hacer calculo de hw >> kT utilizando los valores tipicos de w y T y ver que la aprox anterior es buena
+The above result is a good approximation for low temperatures since the hyperbolic cotangent approaches quickly to its asymptotic value at infinity. For instance, for $T\approx 0.1 \mu K$ and $\omega = 4\pi *10 kHz$, we have that $\hbar \omega \approx 1.3*10^{-29}$ and $2 kT \approx 0.3*10^{-29}$. Thus, the argument of the hyperbolic cotangent in Eq. \ref{atomic_dispersion_with_gravity_3} is $\frac{\hbar \omega}{2kT} \approx 4.8$, and we have that $\coth (4.8) \approx 1.00014$, which is very close to the asymptotic value of $1$. These temperature and frequency values are very close to the typical experimental values that can be obtained using a dipole trap. Then, the approximation used in Eq. \ref{delZ0_smallT} is a good approximation.
 
-If we substitute this optimal value in Eq. \ref{atomic_dispersion_with_gravity_3}, we get that the minimum expansion is given by
+If we substitute the optimal initial width in Eq. \ref{atomic_dispersion_with_gravity_3}, we get that the minimum expansion, when $t$ and $\omega$ are maintained fixed, is given by
 
 \begin{equation}
     \big( \Delta Z (t) \big)^{**}_{min} = \sqrt{\frac{ kT}{ M \omega^{2}} } \sqrt{1+t^{2}\omega^{2}}, \quad (\hbar \omega \gg kT) ,
@@ -2061,9 +2061,8 @@ If we try to optimize this last equation to maximize the time to reach the final
 
 where the double star ($**$) indicates that this equation was optimized by using the initial width that best approximates the optimal initial width in an experimental sense.
 
-aqui continuar agregar condicion de tiempo menor a distancia de caida de 30cm
+aqui continuar agregar condicion de tiempo menor a distancia de caida de 30cm (usar valores tipicos experimentales para ver que se cumple en la distancia de 30cm y por tanto no debemos preocuparnos de ella)
 
-\subsubsection{Summary}
 
 \subsection{Selection of the Initial Width by Using a Magneto-optical Trap and a Selection Pulse}
 

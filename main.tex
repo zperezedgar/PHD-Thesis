@@ -1954,7 +1954,7 @@ where
 
 and also
 
-\begin{equation}
+\begin{equation}\label{average_position_dipole_trap}
     \overline{x} (t)= \frac{\int x \rho(x,x,t|\beta) dx}{\int \rho(x,x,t|\beta) dx} =  \frac{g t^{2}}{2}.
 \end{equation}
 
@@ -2061,8 +2061,23 @@ If we try to optimize this last equation to maximize the time to reach the final
 
 where the double star ($**$) indicates that this equation was optimized by using the initial width that best approximates the optimal initial width in an experimental sense.
 
-aqui continuar agregar condicion de tiempo menor a distancia de caida de 30cm (usar valores tipicos experimentales para ver que se cumple en la distancia de 30cm y por tanto no debemos preocuparnos de ella)
+\subsubsection{Constraint in the Maximum Time Set by the Available Space}
+As we showed in Eq. \ref{average_position_dipole_trap}, the average position of the atoms follows a classical free-fall trajectory. Therefore, there exists a constraint in the maximum time that we can let the atom's wave function expand set by the maximum free-fall distance available to perform the experiment. Let $z_{max}$ be the maximum free-fall distance, thus, the maximum time of free-fall is given by
 
+\begin{equation}
+    t_{max} = \sqrt{\frac{z_{max}}{g}}.
+\end{equation}
+
+This equation sets the minimum value that $T$ can have for a given $\omega$ and $\Delta Z_{f}$, i.e., the minimum initial width that can be chosen. Let's use Eq. \ref{t_dipole_trap_optimized} to establish this condition. In the low temperature limit $(\hbar \omega \gg kT)$, the following condition must be satisfied
+
+\begin{equation}\label{dipole_trap_temperature_length_condition}
+\begin{split}
+    t^{**}_{max} = & \frac{\Delta Z_{f}}{\omega} \sqrt{\frac{M \omega^{2}}{kT} - \bigg(\frac{1}{\Delta Z_{f}}\bigg)^{2}} \le t_{max} = \sqrt{\frac{z_{max}}{g}} \\
+    \frac{1}{T} & \le \bigg( \frac{z_{max}}{g} + \frac{1}{\omega^{2}} \bigg) \frac{k}{M (\Delta Z_{f})^{2}}.
+\end{split}
+\end{equation}
+
+This equation guarantees that the atom will have enough time to expand and reach the desired final width $\Delta Z_{f}$. This condition alongside the low-temperature condition $(\hbar \omega \gg kT)$ must be taken into account when designing the experiment.
 
 \subsection{Selection of the Initial Width by Using a Magneto-optical Trap and a Selection Pulse}
 
@@ -2239,6 +2254,17 @@ where we have defined the parameter
 \end{equation}
 
 where $I$ is the irradiance of the microwaves.
+
+\subsubsection{Selection of the Temperature}
+We have to make sure that the condition in Eq. \ref{dipole_trap_temperature_length_condition} alongside the low-temperature condition $(\hbar \omega \gg kT)$ are satisfied. Let's find out the minimum temperature that can be used if we want to get the final width $\gamma \Delta Z'$. If we substitute Eq. \ref{maximum_selection_range} into Eq. \ref{dipole_trap_temperature_length_condition}, the condition becomes
+
+\begin{equation}
+    continuar aqui 
+\end{equation}
+
+Let's suppose that the maximum free-fall distance is $z_{max}=30cm$, and the trap frequency is $\omega = 4\pi*10kHz$. 
+
+ver que tambien se cumple condicion baja temperature $(\hbar \omega \gg kT)$.
 
 \subsection{Interferometer Fringes}
 \subsubsection{Precision in the Measurement of g in the Low-Power Regime}

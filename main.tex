@@ -1982,10 +1982,12 @@ Notice that we can re-write this equation as
 where $\Delta Z(0)$ is the initial width just after dipole the trap is turned off, and is given by
 
 \begin{equation}\label{atomic_dispersion_with_gravity_t0}
-    \Delta Z(0) = \sqrt{\frac{\hbar}{2M \omega} \coth \bigg(\frac{\hbar \omega}{2kT} \bigg)}
+    \Delta Z(0) = \sqrt{\frac{\hbar}{2M \omega} \coth \bigg(\frac{\hbar \omega}{2kT} \bigg)}.
 \end{equation}
 
-Let's use these equations to get more insight into the experimental values that we can use to get better results. Experimentally, besides of the time $t$, we can only adjust the angular frequency $\omega$ and the temperature of the trap $T$.
+Notice that Eq. \ref{atomic_dispersion_with_gravity_3} has a different form than Eq. \ref{final_width_dimensional}. In this case, choosing a small initial width does not make the expansion happen faster.
+
+Let's use the above equations to get more insight into the experimental values that we can use to get better results. Experimentally, besides of the time $t$, we can only adjust the angular frequency $\omega$ and the temperature of the trap $T$.
 
 \subsubsection{Minimization of the Expansion of the Wave Packet}
 If we fix the time $t$ and the frequency $\omega$, we can try to optimize Eq. \ref{atomic_dispersion_with_gravity_3} to get the initial width that minimizes it. The optimal initial width is trivially $(\Delta Z(0))^{*}=0$. However, according to Eq. \ref{atomic_dispersion_with_gravity_t0}, it is impossible to obtain an initial width of zero. Nonetheless, we can still calculate the minimum possible initial width if we optimize Eq. \ref{atomic_dispersion_with_gravity_t0} with regards to the temperature $T$. The initial width is minimized when the hyperbolic cotangent reaches its minimum value. However, the hyperbolic cotangent does not have a global or local minimum. Although, this function does not have a minimum, when the $\coth(x)$ function is defined over the interval $[0,\infty)$, it reaches its minimum value at infinity because $\lim_{x^{+} \to 0} \coth(x)=\infty$ and $\lim_{x \to \infty} \coth(x)=1$. Therefore, this function will have its minimum value at infinity even though it cannot be considered a global minimum in the usual sense because infinity is not a number. In our case, this point corresponds to $T= 0$. Thus, at $T=0$ the initial width reaches its minimum value and becomes
@@ -2253,7 +2255,7 @@ where we have defined the parameter
     b_{d} \equiv \frac{\mu_{B} \eta}{16 \hbar \omega^{3}} \bigg(6 \frac{M \omega^{2}}{kT} \frac{\mu_{0} I}{c} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} - 1\bigg)^{3/2},
 \end{equation}
 
-where $I$ is the irradiance of the microwaves.
+where $I$ is the irradiance of the microwaves. As we can see from this result, the lower the temperature, the larger the gravimetry signal that is obtained. Similarly, the larger the angular frequency of the trap, the larger the gravimetry signal.
 
 \subsubsection{Selection of the Temperature}
 For the result in Eq. \ref{gravimetry_signal_irradiance_dipole_trap} to be valid, we have to make sure that the condition in Eq. \ref{dipole_trap_temperature_length_condition} alongside the low-temperature condition $(\hbar \omega \gg kT)$ are satisfied. Let's find out the minimum temperature that can be used if we want to get the final width $\gamma \Delta Z'$. If we substitute Eqs. \ref{maximum_selection_range}, and \ref{warning_range} into Eq. \ref{dipole_trap_temperature_length_condition}, the condition becomes
@@ -2262,10 +2264,25 @@ For the result in Eq. \ref{gravimetry_signal_irradiance_dipole_trap} to be valid
     \frac{1}{T} \le \bigg( \frac{z_{max}}{g} + \frac{1}{\omega^{2}} \bigg) \frac{k}{M} \bigg( \frac{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}{\gamma  \bra{e} \mu_{z} \ket{g}} \bigg)^{2}  \frac{c}{6 \mu_{0} I}
 \end{equation}
 
-aqui
-Let's suppose that the maximum free-fall distance is $z_{max}=30cm$, and the trap frequency is $\omega = 4\pi*10kHz$. 
+Let's suppose that the maximum free-fall distance is $z_{max}=30cm$, and the trap frequency is $\omega = 4\pi*10kHz$. Besides, we choose $I=\frac{1W}{100 cm^{2}}$, and $\gamma=0.3$.  For the rest of parameters, let's use the values chosen in Fig. \ref{precision_vs_power_figure}. Therefore, the condition in the temperature becomes
 
-ver que tambien se cumple condicion baja temperature $(\hbar \omega \gg kT)$ y que por lo tanto la temperatura utilizada cae dentro del rango de temperatura permitido.
+\begin{equation}
+    T \ge 3*10^{-13} K.
+\end{equation}
+
+The temperature chosen has to be greater than the value set by the equality in this equation. To find out the upper bound, we have to use the low-temperature condition, i.e., $\frac{\hbar \omega}{k} \gg T$. Thus, using the same angular frequency as before, we get
+
+\begin{equation}
+    T \ll 1 \mu K.
+\end{equation}
+
+Therefore, the temperature has to lie in the range
+
+\begin{equation}
+    0.3 pK \le T < 1 \mu K.
+\end{equation}
+
+As we saw in the discussion after Eq. \ref{eq_optimal_initial_width}, a temperature of $0.1 \mu K$ is a good temperature to fulfill the low-temperature limit when using an angular frequency of $\omega = 4\pi*10kHz$, and it is far away from the limit set by the free-fall distance.
 
 \subsection{Interferometer Fringes}
 \subsubsection{Precision in the Measurement of g in the Low-Power Regime}

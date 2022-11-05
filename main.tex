@@ -48,7 +48,7 @@ Your abstract.
 \subsection{Condition for Atomic Interference Inside an Inhomogeneous Magnetic Field}
 \subsubsection{Semi-classical Picture}
 
-In this section, we review the condition needed to generate atomic interference in a gravimeter within a magnetic gradient. Let's consider an atom with total angular momentum number $F$. We will consider transitions between two hyperfine levels with different magnetic quantum number $m_{F}$. The only requirement is that at least one of the levels has to be sensible to the magnetic field and that the response of each level to the magnetic field has to be different\footnote{For instance, we can choose to work with the stretched states with quantum magnetic number $m_{F}=\pm F$.}. Let's denote the ground state of our system as $\ket{1}$, and the excited state as $\ket{2}$.
+In this section, we review the condition needed to generate atomic interference in a gravimeter within a magnetic gradient. Let's consider an atom with a total angular momentum number $F$. We will consider transitions between two hyperfine levels with different magnetic quantum numbers $m_{F}$. The only requirement is that at least one of the levels has to be sensible to the magnetic field and that the response of each level to the magnetic field has to be different\footnote{For instance, we can choose to work with the stretched states with quantum magnetic number $m_{F}=\pm F$.}. Let's denote the ground state of our system as $\ket{1}$, and the excited state as $\ket{2}$.
 
 The atom is immersed inside a magnetic field of the following form
 
@@ -56,7 +56,7 @@ The atom is immersed inside a magnetic field of the following form
 \textbf{B} = \eta z \hat{\textbf{z}}\
 \end{equation}
 
-where z is the position and $\eta$ is a constant with units of Tesla per meter. The atom will feel a force given by the gradient of the magnetic energy caused by the coupling of the total magnetic moment of the atom $\mu_{z}$ along the z-direction and the magnetic field\footnote{It is important to comment out that in the rest frame of the atom, we would see that there is a magnetic field that changes with time. Therefore, according to Faraday´s law, this changing magnetic field would induce an electric field that would couple with the atom's electric dipole moment giving rise to an electric energy term that would try to hold back the atom from falling down and would need to be considered. Fortunately, we can choose to work with atomic states such that the matrix elements of the position operator vanish at first order.}. The total magnetic moment of the atom depends on its internal state, i.e., the hyperfine level under consideration. For this calculation, we will suppose that the two-level system of our atom is such that the magnetic force for each level is be given by
+where z is the position and $\eta$ is a constant with units of Tesla per meter. The atom will feel a force given by the gradient of the magnetic energy caused by the coupling of the total magnetic moment of the atom $\mu_{z}$ along the z-direction and the magnetic field\footnote{It is important to comment out that in the rest frame of the atom, we would see that there is a magnetic field that changes with time. Therefore, according to Faraday´s law, this changing magnetic field would induce an electric field that would couple with the atom's electric dipole moment giving rise to an electric energy term that would try to hold back the atom from falling down and would need to be considered. Fortunately, we can choose to work with atomic states such that the matrix elements of the position operator vanish at first order.}. The total magnetic moment of the atom depends on its internal state, i.e., the hyperfine level under consideration. For this calculation, we will suppose that the two-level system of our atom is such that the magnetic force for each level is given by
 
 \begin{equation}\label{magnetic_force}
 \textbf{F} = - \nabla (\pm \mu_{z} \eta z ) = \mp \mu_{z} \eta \hat{\textbf{z}},\
@@ -149,7 +149,7 @@ $\frac{\pi}{2}$-pulse followed by a $\pi$-pulse after a time $T$ has elapsed, th
 \boldsymbol{\pi/2} \xrightarrow[]{T} \boldsymbol{\pi} \xrightarrow[]{2T} \boldsymbol{\pi} \xrightarrow[]{T} \boldsymbol{\pi/2}
 \end{equation}
 
-After the first $\frac{\pi}{2}$-pulse is applied, a superposition of states is created. In this semi-classical picture, each state moves independently with a different acceleration, that depends on the hyperfine levels under consideration and the magnitude of the gradient field at the position where each the state is located. Every time that a $\pi$-pulse is applied, the velocity of each state changes as shown in Fig. \ref{velocity_graph}. The final velocity for both states is the same as was required by the interference condition. Similarly, the final position for both states is the same just before the last $\frac{\pi}{2}$-pulse is applied in order to produce interference as can be seen in Fig. \ref{position_graph}. Interestingly, the position curves never cross each other during the lifetime of the superposition, unlike the velocity curves which cross each other once.
+After the first $\frac{\pi}{2}$-pulse is applied, a superposition of states is created. In this semi-classical picture, each state moves independently with a different acceleration, that depends on the hyperfine levels under consideration and the magnitude of the gradient field at the position where each state is located. Every time that a $\pi$-pulse is applied, the velocity of each state changes as shown in Fig. \ref{velocity_graph}. The final velocity for both states is the same as was required by the interference condition. Similarly, the final position for both states is the same just before the last $\frac{\pi}{2}$-pulse is applied in order to produce interference as can be seen in Fig. \ref{position_graph}. Interestingly, the position curves never cross each other during the lifetime of the superposition, unlike the velocity curves which cross each other once.
 
 \begin{figure}
     \centering
@@ -180,7 +180,7 @@ The phase accumulated for each path is given by
 \Phi = \int_{t_{0}}^{t} \omega(\ce{^{}_{}t{'}_{}})d\ce{^{}_{}t{'}_{}}
 \end{equation}
 
-where the angular frequency is proportional to the energy according to the Planck relation\footnote{The reader may be wondering why this semi-classical relation holds instead of a relation with a different proportionality factor of the form $E = \alpha \hbar \omega$ where $\alpha$ is a constant. The reason is that this relation comes from the time dependent solution of the Schrodinger equation when the Hamiltonian is independent of time, i.e., $e^{-i E t/\hbar}$, so it is legal to use it here.}
+where the angular frequency is proportional to the energy according to the Planck relation\footnote{The reader may be wondering why this semi-classical relation holds instead of a relation with a different proportionality factor of the form $E = \alpha \hbar \omega$ where $\alpha$ is a constant. The reason is that this relation comes from the time-dependent solution of the Schrodinger equation when the Hamiltonian is independent of time, i.e., $e^{-i E t/\hbar}$, so it is legal to use it here.}
 
 \begin{equation}\label{planck_relation}
 E = \hbar \omega, 
@@ -454,7 +454,7 @@ Before diving deep into the computation of the phase difference, let's analyze t
 (\rho_{0} - q_{2_{\pm}} \tau),
 \end{equation}
 
-according to Eq. \ref{non_dimensional_definitions}, this term accounts for the increase in momentum of the wave-packet, therefore, it can be interpreted as the difference between the initial momentum $\rho_{0}$ and the final momentum $q_{2_{\pm}} \tau$ acquired due to the acceleration. In the same way, the second term is
+according to Eq. \ref{non_dimensional_definitions}, this term accounts for the increase in momentum of the wave packet, therefore, it can be interpreted as the difference between the initial momentum $\rho_{0}$ and the final momentum $q_{2_{\pm}} \tau$ acquired due to the acceleration. In the same way, the second term is
 
 \begin{equation}\label{position_change}
 (x-\rho_{0} \epsilon \tau),
@@ -462,7 +462,7 @@ according to Eq. \ref{non_dimensional_definitions}, this term accounts for the i
 
 according to Eq. \ref{xi_defs_eq_motion}, the product $\rho_{0} \epsilon$ represents the initial velocity of the wave packet, therefore, the above term represents the difference between the non-dimensional position $x$ and half of the non-dimensional distance acquired due to the initial velocity of the wave packet.
 
-Now, we are in position to compute the signal for gravimetry using Eq. \ref{approx_quantum_phase}, and the sequence of pulses shown in Eq. \ref{pulses}. Also, according to Eq. \ref{approx_quantum_phase}, the phase obtained will depend on the non-dimensional position $x$, thereby, all the contributions to the phase have to be computed with respect to the same $x$ which we will call\footnote{$x_{d}$ can be, for instance, the position of the detector at the end of the experiment.} $x_{d}$.
+Now, we are in a position to compute the signal for gravimetry using Eq. \ref{approx_quantum_phase}, and the sequence of pulses shown in Eq. \ref{pulses}. Also, according to Eq. \ref{approx_quantum_phase}, the phase obtained will depend on the non-dimensional position $x$, thereby, all the contributions to the phase have to be computed with respect to the same $x$ which we will call\footnote{$x_{d}$ can be, for instance, the position of the detector at the end of the experiment.} $x_{d}$.
 
 Let's analyze the first interval. The initial momentum and velocity of the wave packet are respectively $\rho_{0}$ and $v_{0}$. Thereby, the phase acquired during the first interval will be
 
@@ -478,7 +478,7 @@ For the second interval (with period $2\tau$), the initial momentum of the wave-
 \end{equation}
 
 where we have used a sub-index in $a$ to indicate the sign of $\gamma_{1}$ in the definition of $q_{2}$.
-Similarly, the initial momentum of the wave-packet for the third interval will be $(\rho_{0} - q_{2_{\pm}} \tau-2q_{2_{\mp}}\tau)$ and the initial velocity will be $(v_{0}+a_{\pm}\tau + 2 a_{\mp}\tau)$, thus the phase acquired during this interval will be given by
+Similarly, the initial momentum of the wave packet for the third interval will be $(\rho_{0} - q_{2_{\pm}} \tau-2q_{2_{\mp}}\tau)$ and the initial velocity will be $(v_{0}+a_{\pm}\tau + 2 a_{\mp}\tau)$, thus the phase acquired during this interval will be given by
 
 \begin{equation}\label{approx_quantum_phase_3}
 \varphi_{\pm, \tau_{3}}(x) \approx -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + ((\rho_{0} - q_{2_{\pm}} \tau-2q_{2_{\mp}}\tau)-q_{2_{\pm}} \tau)(x-\frac{(v_{0}+a_{\pm}\tau + 2a_{\mp}\tau) \tau}{2})
@@ -508,7 +508,7 @@ Thereby, the total phase difference accumulated during the three intervals at $x
 \Delta \Phi (x_{d}) = \Delta \Phi_{\tau_{1}}(x_{d}) + \Delta \Phi_{\tau_{2}}(x_{d}) + \Delta \Phi_{\tau_{3}}(x_{d})
 \end{equation}
 
-Now, before substituting numerical values, we will make additional approximations. Firstly, we need an approximation for $\kappa$ defined in Eq. \ref{kappa}. The Bohr magneton, and the nuclear magneton are defined as
+Now, before substituting numerical values, we will make additional approximations. Firstly, we need an approximation for $\kappa$ defined in Eq. \ref{kappa}. The Bohr magneton and the nuclear magneton are defined as
 
 \begin{equation}
 \mu_{B} = \frac{\hbar e}{2 m_{e}} \mathrm{,}\quad \mu_{n} = \frac{\hbar e}{2 m_{p}}
@@ -587,7 +587,7 @@ Now, we can expand the first term inside the square brackets and use the same ar
 \frac{\epsilon \tau}{4 [\sigma_{x}(\tau)\sigma_{x}(0)]^{2}} \left[-2x x_{0}+x_{0}^{2} + 2v_{0} x_{0} \tau +a \tau^{2} \bigg(x+x_{0}+ \frac{a}{4} \tau^{2} \bigg)\right].
 \end{equation}
 
-The contribution of these terms to the final signal is not trivial. We will study its contribution to the final result using the Eq. \ref{quantum_phase_ignored_terms_simplified}  because it is easier to manipulate. We will repeat the computation of the last section, however, this time, we will not use the approximation in Eq. \ref{sigma_zero_approx} Therefore, at the end of the first interval, the phase will be given by
+The contribution of these terms to the final signal is not trivial. We will study its contribution to the final result using Eq. \ref{quantum_phase_ignored_terms_simplified}  because it is easier to manipulate. We will repeat the computation of the last section, however, this time, we will not use the approximation in Eq. \ref{sigma_zero_approx} Therefore, at the end of the first interval, the phase will be given by
 
 \begin{multline}\label{quantum_phase_ignored_terms_simplified_t1}
 \varphi_{\pm, \tau_{1}}(x) =-\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + \bigg[\frac{\sigma_{x, \tau_{0}}}{\sigma_{x, \tau_{1}}}\bigg]^{2}(\rho_{0} - q_{2_{\pm}} \tau)(x-\frac{v_{0} \tau}{2}) \\
@@ -617,7 +617,7 @@ where the new standard deviation $\sigma_{x, \tau_{2}}$ will be given in terms o
 \sigma_{x, \tau_{2}} = \sqrt{[\sigma_{x, \tau_{1}}]^{2} + \left[\frac{\epsilon (2\tau)}{\sigma_{x, \tau_{1}}} \right]^{2}}
 \end{equation}
 
-Similarly, for the last interval we will have
+Similarly, for the last interval, we will have
 
 \begin{multline}\label{quantum_phase_ignored_terms_simplified_t3}
 \varphi_{\pm, \tau_{3}}(x) = -\tau \bigg(q_{1} + \frac{\epsilon}{3} q_{2_{\pm}}^{2} \tau^{2}\bigg) + \bigg[\frac{\sigma_{x, \tau_{2}}}{\sigma_{x, \tau_{3}}}\bigg]^{2}((\rho_{0} - q_{2_{\pm}} \tau-2q_{2_{\mp}}\tau)-q_{2_{\pm}} \tau)(x-\frac{(v_{0}+a_{\pm}\tau + 2a_{\mp}\tau) \tau}{2}) \\
@@ -671,7 +671,7 @@ Likewise, for the second interval, the final width (Eq.  \ref{sigma_x_t2}) will 
 [\sigma_{x, \tau_{2}}]^{-2} \approx [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \bigg(\frac{\epsilon (\tau+2\tau)}{[\sigma_{x, \tau_{0}}]^{2}}\bigg)^{2}\right] = [\sigma_{x, \tau_{0}}]^{-2}\left[1 - 9\beta^{2}\right],
 \end{equation}
 
-In the same way, the width at the end of the third interval (Eq. \ref{sigma_x_t3}) will be given at first-order by 
+In the same way, the width at the end of the third interval (Eq. \ref{sigma_x_t3}) will be given in first-order by 
 
 \begin{equation}\label{sigma_x_t3_first_order}
 [\sigma_{x, \tau_{3}}]^{-2} \approx [\sigma_{x, \tau_{0}}]^{-2}\left[1 - \bigg(\frac{\epsilon (\tau+2\tau+\tau)}{[\sigma_{x, \tau_{0}}]^{2}}\bigg)^{2}\right] = [\sigma_{x, \tau_{0}}]^{-2}\left[1 - 16\beta^{2}\right].
@@ -724,7 +724,7 @@ These previous results can be cast into a more illuminating form by expanding th
 where we have used a super-index to indicate that these results correspond to the first-order correction.
 The comparison between the zeroth-order approximation and the first-order correction can be seen in Fig. \ref{phase_graph_first_order}.
 
-The correction given by the first-order approximation goes like $\beta ^2$. Therefore, the error made by considering the first-order approximation will be set by $\beta ^2$ which for the case of typical experimental values (see description of Fig. \ref{phase_graph_first_order}), has a value of $\beta ^2 \approx 3.3 \times 10^{-10}$. As we can see in the Fig. \ref{fig:gravimetry_signal_zeroth_order}, this gravimetry signal could allow us to measure $g$ with $9$ digits of precision, however, according to the Fig. \ref{fig:gravimetry_signal_first_minus_zeroth_order} the error due to the first-order correction would start affecting the eighth digit of the measurement. Therefore, in reality, we should be able to measure $g$ with $8$ digits of precision. This precision is affected principally by the initial width of the wave packet as can be seen in the definition \ref{beta_parameter}. For every order of magnitude that we increase(decrease) the initial width of the wave packet, we gain(lose) $4$ digits of precision in the measurement because the correction goes like $\beta ^2$.
+The correction given by the first-order approximation goes like $\beta ^2$. Therefore, the error made by considering the first-order approximation will be set by $\beta ^2$ which for the case of typical experimental values (see description of Fig. \ref{phase_graph_first_order}), has a value of $\beta ^2 \approx 3.3 \times 10^{-10}$. As we can see in Fig. \ref{fig:gravimetry_signal_zeroth_order}, this gravimetry signal could allow us to measure $g$ with $9$ digits of precision, however, according to the Fig. \ref{fig:gravimetry_signal_first_minus_zeroth_order} the error due to the first-order correction would start affecting the eighth digit of the measurement. Therefore, in reality, we should be able to measure $g$ with $8$ digits of precision. This precision is affected principally by the initial width of the wave packet as can be seen in the definition \ref{beta_parameter}. For every order of magnitude that we increase(decrease) the initial width of the wave packet, we gain(lose) $4$ digits of precision in the measurement because the correction goes like $\beta ^2$.
 
 \begin{figure}
      \centering
@@ -742,7 +742,7 @@ The correction given by the first-order approximation goes like $\beta ^2$. Ther
          \label{fig:gravimetry_signal_first_minus_zeroth_order}
      \end{subfigure}
      \hfill
-     \caption{Comparison of the gravimetry signal obtained by using the zeroth-order approximation ($\Delta \Phi ^{(0)}$) given by Eq. \ref{quantum_gravimetry_signal} versus the first-order correction ($\Delta \Phi ^{(1)}$) given by Eq. \ref{gravimetry_signal_first_order_approx_dimensional}. The period used to produce these graphs was $T=50ms$. Besides, we used $g=9.8m/s^{2}$, $\mu_{B}=9.27\times10^{-24} J/T$ (the Bohr magneton), $\eta=0.05 T/m$. Additionally, we consider $\ce{^{87}_{}Rb}$ atoms, so we have (\cite{Bunge1993}\cite{KAUSHALSK1970}) $M=1.45\times10^{-25}kg$, $\Delta W=2\pi\times6.835\times10^{9}s^{-1}$ ($\hbar \Delta W $ is the field-free ground state hyperfine energy splitting). Also, we use the approximations in Eqs. \ref{kappa_approx} and \ref{gamma_1_approx}. In addition, we take $p_{0}=0$, $z_{0}=0$, $\Delta Z(0)=1000\times10^{-6}m$, and take $z$ to be the final position of the center of the wave packet at the end of the experiment. The center of the wave packet was evaluated by using the Eq. \ref{xi_eq_motion}, where $x=\kappa z$. In this case, $(\sigma_{x, \tau_{0}})^{2} \approx 4.1 \times 10^{-8}$ and $\epsilon \tau \approx 1.5 \times 10^{-11} t$. Thus, for $t=50ms$, we have $\beta \approx 1.8 \times 10^{-5}$ and the expansion used in the Eqs. \ref{sigma_x_t1_first_order}-\ref{sigma_x_t3_first_order} is justified. Moreover, the gap between both approximations will be proportional to $\beta ^2 \approx 3.3 \times 10^{-10}$.}
+     \caption{Comparison of the gravimetry signal obtained by using the zeroth-order approximation ($\Delta \Phi ^{(0)}$) given by Eq. \ref{quantum_gravimetry_signal} versus the first-order correction ($\Delta \Phi ^{(1)}$) given by Eq. \ref{gravimetry_signal_first_order_approx_dimensional}. The period used to produce these graphs was $T=50ms$. Besides, we used $g=9.8m/s^{2}$, $\mu_{B}=9.27\times10^{-24} J/T$ (the Bohr magneton), $\eta=0.05 T/m$. Additionally, we consider $\ce{^{87}_{}Rb}$ atoms, so we have (\cite{Bunge1993}\cite{KAUSHALSK1970}) $M=1.45\times10^{-25}kg$, $\Delta W=2\pi\times6.835\times10^{9}s^{-1}$ ($\hbar \Delta W $ is the field-free ground state hyperfine energy splitting). Also, we use the approximations in Eqs. \ref{kappa_approx} and \ref{gamma_1_approx}. In addition, we take $p_{0}=0$, $z_{0}=0$, $\Delta Z(0)=1000\times10^{-6}m$, and take $z$ to be the final position of the center of the wave packet at the end of the experiment. The center of the wave packet was evaluated by using Eq. \ref{xi_eq_motion}, where $x=\kappa z$. In this case, $(\sigma_{x, \tau_{0}})^{2} \approx 4.1 \times 10^{-8}$ and $\epsilon \tau \approx 1.5 \times 10^{-11} t$. Thus, for $t=50ms$, we have $\beta \approx 1.8 \times 10^{-5}$ and the expansion used in the Eqs. \ref{sigma_x_t1_first_order}-\ref{sigma_x_t3_first_order} is justified. Moreover, the gap between both approximations will be proportional to $\beta ^2 \approx 3.3 \times 10^{-10}$.}
      \label{phase_graph_first_order}
 \end{figure}
 
@@ -760,7 +760,7 @@ where $k$ is the momentum of the state and the rest of the parameters were defin
 \widehat{\phi}_{\pm}(k, \tau) = \widehat{\phi}_{\pm}(k + q_{2_{\pm}}\tau, 0) exp\left[-i q_{1} \tau + i \frac{\epsilon}{3q_{2_{\pm}}} k^{3} - i \frac{\epsilon}{3q_{2_{\pm}}} (k + q_{2_{\pm}} \tau)^{3} \right]
 \end{equation}
 
-where, one more time, the sub-index indicates whether we are considering a plus/minus sign in front of $\gamma_{1}$ in the definition of $q_{2}$ (Eq. \ref{q1_q2}). In the same way, at the end of the second interval the state will be given by
+where, one more time, the sub-index indicates whether we are considering a plus/minus sign in front of $\gamma_{1}$ in the definition of $q_{2}$ (Eq. \ref{q1_q2}). In the same way, at the end of the second interval, the state will be given by
 
 \begin{equation}\label{state_t2_momentum_space}
 \widehat{\phi}_{\pm}(k, \tau+2\tau) = \widehat{\phi}_{\pm}(k + 2q_{2_{\mp}}\tau, \tau) exp\left[-2i q_{1} \tau + i \frac{\epsilon}{3q_{2_{\mp}}} k^{3} - i \frac{\epsilon}{3q_{2_{\mp}}} (k + 2q_{2_{\mp}} \tau)^{3} \right]
@@ -812,7 +812,7 @@ Thus, by using Eqs. \ref{epsilon}-\ref{q1_q2} and the approximations in Eqs. \re
 where we have used $\tau\equiv \Delta W t$. We can notice that this result is independent of the momentum $k$ and that it coincides with the result obtained in position space as expected.
 
 \subsection{A Revision to the Time-Evolution of the Free Wave Packet}
-In this section we review the time-evolution of a free Gaussian wave packet. Then, we use this result to establish a correspondence with some terms of the wave packet of alkali-metal atoms subject to a constant gravitational field and interacting with a magnetic field given by Eq. \ref{wave_packet_non_dimensional_evolution}.
+In this section, we review the time-evolution of a free Gaussian wave packet. Then, we use this result to establish a correspondence with some terms of the wave packet of alkali-metal atoms subject to a constant gravitational field and interacting with a magnetic field given by Eq. \ref{wave_packet_non_dimensional_evolution}.
 
 We begin by considering a superposition of plane waves with different amplitudes, i.e.,
 
@@ -880,7 +880,7 @@ Hence, we can re-write the standard deviation as
 \sigma_{z}(t) = \sqrt{[\sigma_{z}(0)]^{2} + \left[\frac{\beta t}{2 \sigma_{z}(0)} \right]^{2}}.
 \end{equation}
 
-Now, we will re-write the wave packet of alkali atoms (Eq. \ref{wave_packet_non_dimensional_evolution}) but this time, in order to establish the connection with the free wave packet, we will ignore the terms that include $q_{2}$ since this parameter is related with the acceleration of the wave packet (see Eq. \ref{xi_defs_eq_motion}) and for that reason those terms does not have an analogue in the free wave packet. Therefore, the wave packet of alkali atoms (ignoring terms that include $q_{2}$) will be given by
+Now, we will re-write the wave packet of alkali atoms (Eq. \ref{wave_packet_non_dimensional_evolution}) but this time, in order to establish the connection with the free wave packet, we will ignore the terms that include $q_{2}$ since this parameter is related with the acceleration of the wave packet (see Eq. \ref{xi_defs_eq_motion}) and for that reason, those terms do not have an analog in the free wave packet. Therefore, the wave packet of alkali atoms (ignoring terms that include $q_{2}$) will be given by
 
 \begin{multline}\label{alkali_wave_packet_position_space_final_form} 
     \phi (x, \tau) = \left[\frac{1}{2 \pi \big(\sigma_{x}(\tau)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(x - x_{0} - 2\rho_{0} \epsilon \tau \big)^{2}}{\big(\sigma_{x}(\tau)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\epsilon \tau}{\big(\sigma_{x}(0)\big)^{2}}\Bigg) \right] \\ \exp \Bigg[i \bigg(\left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}x - q_{1}\tau + \frac{\big[(x-x_{0})^{2} + 4 x_{0} \rho_{0} \epsilon \tau \big]}{ 4[\sigma_{x}(\tau)\sigma_{x}(0)]^{2}} \epsilon \tau - \left[\frac{\sigma_{x}(0)}{\sigma_{x}(\tau)} \right]^{2} \rho_{0}^{2} \epsilon \tau \Bigg],
@@ -932,7 +932,7 @@ Therefore, by comparing the Eq. \ref{free_wave_packet_width} with the Eq. \ref{a
 \end{tabular}
 \end{center}
 
-Observe that $2 \rho_{0} \epsilon$ is related with the velocity of the center of the wave packet as we already shown in the Eq. \ref{xi_defs_eq_motion}.
+Observe that $2 \rho_{0} \epsilon$ is related to the velocity of the center of the wave packet as we already shown in Eq. \ref{xi_defs_eq_motion}.
 
 On the other hand, by comparing the second row of Eq. \ref{free_wave_packet_position_space_centered_z0_final_form} and the second row of Eq. \ref{alkali_wave_packet_position_space_final_form}, we can see that there exists the following correspondence
 
@@ -958,13 +958,13 @@ Finally, we can see that the term $\rho_{0}$ seems to be related with the initia
 \end{tabular}
 \end{center}
 
-This is not surprising since we already knew that $\rho_{0}=p_{0}/\hbar \kappa$. Although the correspondence is not direct due to the presence of the expansion term in the alkali wave packet.
+This is not surprising since we already knew that $\rho_{0}=p_{0}/\hbar \kappa$. Although the correspondence is not directly due to the presence of the expansion term in the alkali wave packet.
 
-Meanwhile for the rest of terms, we can see that some of them are present in one wave packet but they are not present in the other and vice-versa while other terms look similar in both wave packets but they differ in some way that is not possible to establish a direct connection between them. Incidentally, the terms of the second row in both Eqs. \ref{free_wave_packet_position_space_centered_z0_final_form} and \ref{alkali_wave_packet_position_space_final_form} are the terms that contribute to the phase while the terms in the first rows are those terms that does not contribute to the phase.
+Meanwhile, for the rest of the terms, we can see that some of them are present in one wave packet but they are not present in the other and vice-versa while other terms look similar in both wave packets but they differ in some way that is not possible to establish a direct connection between them. Incidentally, the terms of the second row in both Eqs. \ref{free_wave_packet_position_space_centered_z0_final_form} and \ref{alkali_wave_packet_position_space_final_form} are the terms that contribute to the phase while the terms in the first rows are those terms that do not contribute to the phase.
 
 \subsection{Selection of the Atomic Wave Function's Width in Position Space}
 We demonstrated in Eq. \ref{quantum_gravimetry_signal_momentum_space}, that it is possible to measure $g$ from the phase difference at the port of the proposed interferometer. In an ideal case, we could apply the Rabi pulses using the correct Rabi frequencies to drive the desired transitions. However, in reality, the detuning will not be zero. Furthermore, it will depend on the position of the atom, as we will show in a moment. Thus, we need to establish the conditions within which our result is valid and the gravimetry signal does not depend on the initial position of the atom.
-In order to do so, first, we will establish the theoretical framework to describe the initialization of the atom to be used during the interferometry procedure. Specifically, we will show that inducing Rabi transitions in the hyperfine levels of an atom placed inside an inhomogeneous magnetic field causes its position wave function to have an specific width when the initial width is larger than the selection range set by the power of the microwaves. Then, we will calculate the initial width of the atoms just before measurement process by considering a cloud of alkali atoms in thermal equilibrium. Finally, in the next sections, we will use these results to choose the best possible initial width.
+In order to do so, first, we will establish the theoretical framework to describe the initialization of the atom to be used during the interferometry procedure. Specifically, we will show that inducing Rabi transitions in the hyperfine levels of an atom placed inside an inhomogeneous magnetic field causes its position wave function to have a specific width when the initial width is larger than the selection range set by the power of the microwaves. Then, we will calculate the initial width of the atoms just before the measurement process by considering a cloud of alkali atoms in thermal equilibrium. Finally, in the next sections, we will use these results to choose the best possible initial width.
 
 \subsubsection{Measurement of the Atom's Position Using Microwaves}
 In this section, we will show that applying a microwave pulse to induce transitions in the hyperfine states of an alkali atom placed inside an inhomogeneous magnetic field causes a collapse in the width of its position wave function as long as the initial width was larger than the selection width set by the power of the microwaves used to drive the oscillations. 
@@ -977,7 +977,7 @@ We start by remembering that the experiment takes place inside a magnetic gradie
 
 where $\eta$ is a constant.
 
-We will consider transitions between two hyperfine states levels of the atom with different magnetic quantum number.\footnote{For example, we can choose the ground state to be the state with total angular momentum number $F=0$ and magnetic number $m_{F}=0$ while the excited state could be that with $F=1$ and $m_{F}=1$, i.e.,
+We will consider transitions between two hyperfine state levels of the atom with a different magnetic quantum number.\footnote{For example, we can choose the ground state to be the state with total angular momentum number $F=0$ and the magnetic number $m_{F}=0$ while the excited state could be that with $F=1$ and $m_{F}=1$, i.e.,
 
 \begin{equation}
 \begin{aligned}
@@ -986,7 +986,7 @@ We will consider transitions between two hyperfine states levels of the atom wit
 \end{aligned}
 \end{equation}
 
-The reader can imagine that we are working with these states. Nonetheless, the calculation is general and can be used with the above states or any other pair of states constituting a hyperfine two level system, e.g., stretch states with $m_{F}=\pm F$.}
+The reader can imagine that we are working with these states. Nonetheless, the calculation is general and can be used with the above states or any other pair of states constituting a hyperfine two-level system, e.g., stretch states with $m_{F}=\pm F$.}
 
 \begin{equation}\label{hyperfine_levels}
 \begin{aligned}
@@ -1014,7 +1014,7 @@ where $\mu_{B}$ is the Bohr magneton and $g_{F}$ is the Landé $g_{F}$-factor. M
   \Delta E(z) = \mu_{B} g_{F} m_{F} \eta z,
 \end{equation}
 
-This change in the energy due to the Zeeman effect can be translated into a change in the corresponding frequency of the energy level with magnetic number $m_{F}$ through the Planck relation, i.e.,
+This change in the energy due to the Zeeman effect can be translated into a change in the corresponding frequency of the energy level with the magnetic number $m_{F}$ through the Planck relation, i.e.,
 
 \begin{equation}
   \Delta \omega(z, g_{F}, m_{F}) = \frac{\mu_{B} g_{F} m_{F} \eta}{\hbar} z.
@@ -1034,7 +1034,7 @@ where we have defined an effective product between the quantum magnetic numbers 
 
 Notice that if we choose a level with $m_{F}=0$, then, this state will not have a change in energy due to the Zeeman effect, and we will simply have the product $g_{F} m_{F}$ of the other level\footnote{At least one level has to be sensible to the magnetic field.}.
 
-Now, due to the uncertainty in the position of the atom, its wave function will have a width $\Delta Z$ in position space. Therefore, the probability of finding the atom in a position $z$, different from $z_{0}$, will not be zero, and in that case the frequency of the transition now will be given by
+Now, due to the uncertainty in the position of the atom, its wave function will have a width $\Delta Z$ in position space. Therefore, the probability of finding the atom in a position $z$, different from $z_{0}$, will not be zero, and in that case, the frequency of the transition now will be given by
 
 \begin{equation}
   \omega_{B} =  \omega_{21} + \frac{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}{\hbar} z.
@@ -1053,7 +1053,7 @@ Hence, the detuning of the Rabi oscillations due to the uncertainty in the posit
 \label{atom_wave_func_pos_space}
 \end{figure}
 
-It turns out that this detuning sets a constraint in the width that the atom's wave function in position space can have after the stimulated transition has succesfully occurred. In order to see this, let's consider the wave function of the atom in position space to be a Gaussian like wave packet, initially centered at $z_{0}$. We already worked out the evolution of such wave packet in the last section. We re-write here the time-evolution of the Gaussian free wave packet
+It turns out that this detuning sets a constraint in the width that the atom's wave function in position space can have after the stimulated transition has successfully occurred. In order to see this, let's consider the wave function of the atom in position space to be a Gaussian-like wave packet, initially centered at $z_{0}$. We already worked out the evolution of such wave packet in the last section. We re-write here the time-evolution of the Gaussian free wave packet
 
 \begin{multline}\label{atom_wave_function_position_space}
     \Psi (z, t) = \left[\frac{1}{2 \pi \big(\sigma_{z}(t)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4} \frac{ \big(z - z_{0} - \upsilon_{g} t \big)^{2}}{\big(\sigma_{z}(t)\big)^{2}} \right] \exp \left[-\frac{i}{2} \arctan\Bigg(\frac{\beta t }{\big(\sigma_{z}(0)\big)^{2}}\Bigg) \right] \\ \exp \left[i \bigg(k_{0}(z-z_{0}) - w_{0}t + \frac{ \beta t (z - z_{0} - \upsilon_{g} t)^{2}}{ 4[\sigma_{z}(t)\sigma_{z}(0)]^{2}} \bigg) \right].
@@ -1065,7 +1065,7 @@ The initial wave packet is given by
     \Psi (z, 0) = \left[\frac{1}{2 \pi \big(\sigma_{z}(0)\big)^2} \right]^{1/4} \exp \left[-\frac{1}{4}\bigg(\frac{z-z_{0}}{\sigma_{z}(0)}\bigg)^{2} \right] \exp \left[i \bigg(k_{0}(z-z_{0})\bigg) \right],
 \end{equation}
 
-where $\sigma_{z}(0)$ is the initial standard deviation of the distribution defined in the Eq. \ref{free_wave_packet_width}.
+where $\sigma_{z}(0)$ is the initial standard deviation of the distribution defined in Eq. \ref{free_wave_packet_width}.
 
 The complex modulus of this wave packet is a distribution for the probability of finding the atom in position space, i.e.,
 
@@ -1073,7 +1073,7 @@ The complex modulus of this wave packet is a distribution for the probability of
     |\Psi (z, 0)|^{2} = \frac{1}{\sigma_{z}(0) \sqrt{2 \pi}} \exp \left[-\frac{1}{2}\bigg(\frac{z-z_{0}}{\sigma_{z}(0)}\bigg)^{2} \right].
 \end{equation}
 
-We can define the half width at half maximum of this distribution and name the value of the independent variable $z$ at this point as $Z_{HWHM}$. In the Fig. \ref{atom_wave_func_pos_space}, we can see the initial probability distribution in position space (Eq. \ref{initial_atom_wave_function_position_space_probability_distribution}). Notice that we have defined the width of the atomic wave function as follows.
+We can define the half width at half maximum of this distribution and name the value of the independent variable $z$ at this point as $Z_{HWHM}$. In Fig. \ref{atom_wave_func_pos_space}, we can see the initial probability distribution in position space (Eq. \ref{initial_atom_wave_function_position_space_probability_distribution}). Notice that we have defined the width of the atomic wave function as follows.
 
 \begin{equation}\label{width_atomic_wave_function}
   \Delta Z = |2Z_{HWHM} - z_{0}| = (2Z_{HWHM} - z_{0}),
@@ -1085,7 +1085,7 @@ where we have used the fact that $Z_{HWHM}$ will always be greater than $z_{0}$.
 Z_{FWHM} = 2\sqrt{2ln2} \sigma_{z}(0) = 2 Z_{HWHM}.
 \end{equation}
 
-Let's assume that the atom's wave function is centered at $z_{0}$\footnote{Later, we will establish the condition that allows our method to be independent of the initial position of the atom, so we do not have to worry about the case where the atom has an initial offset from the origin.}, the point were the detuning is zero, and take it as the origin of coordinates, i.e., $z_{0}=0$. Therefore, if we evaluate the detuning at $z = 2Z_{HWHM}$, we get
+Let's assume that the atom's wave function is centered at $z_{0}$\footnote{Later, we will establish the condition that allows our method to be independent of the initial position of the atom, so we do not have to worry about the case where the atom has an initial offset from the origin.}, the point where the detuning is zero, and take it as the origin of coordinates, i.e., $z_{0}=0$. Therefore, if we evaluate the detuning at $z = 2Z_{HWHM}$, we get
 
 \begin{equation}
   \delta (2Z_{HWHM}) = 2\frac{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}{\hbar} Z_{HWHM}
@@ -1155,13 +1155,13 @@ On the other hand, in the case of a $\frac{\pi}{2}$-pulse, we would have
 \Delta Z = \frac{\sqrt{15}}{2} \Omega \frac{\hbar}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}.
 \end{equation}
 
-We remember that the electric field is several order of magnitude larger than the magnetic field, thereby it dominates, and the Rabi flopping frequency is usually taken to be
+We remember that the electric field is several orders of magnitude larger than the magnetic field, thereby it dominates, and the Rabi flopping frequency is usually taken to be
 
 \begin{equation*}
 \Omega = \frac{- e E_{0} \bra{e} r \ket{g}}{\hbar},
 \end{equation*}
 
-where $r$ is the position operator in the direction of the polarization of the electric field, $E_{0}$ is amplitude the electric field, and $e$ is the electron charge. Nonetheless, we will be considering hyperfine levels (Eq. \ref{hyperfine_levels}) for which the matrix elements of the position operator will vanish  \cite{Steck2010}. Therefore, the Rabi flopping frequency will depend solely on the magnetic field, i.e.,
+where $r$ is the position operator in the direction of the polarization of the electric field, $E_{0}$ is the amplitude of the electric field, and $e$ is the electron charge. Nonetheless, we will be considering hyperfine levels (Eq. \ref{hyperfine_levels}) for which the matrix elements of the position operator will vanish  \cite{Steck2010}. Therefore, the Rabi flopping frequency will depend solely on the magnetic field, i.e.,
 
 \begin{equation}\label{rabi_frequency_magnetic_field}
 \Omega = \frac{- B_{0} \bra{e} \mu \ket{g}}{\hbar},
@@ -1175,7 +1175,7 @@ where $\mu$ is the total magnetic moment operator in the direction of the polari
 
 where we have ignored the spatial variation due to the dimensions of the atom. Thereby, the amplitude of the magnetic field will set the width of the position wave function. The more intense the magnetic field, the larger the width that will be selected and vice-versa.
 
-Finally, notice that since the initial wave function was Gaussian like, we can expect the final wave function to continue being a gaussian packet. To see this, we can write down a function that approximately satisfies the conditions in the Eqs. \ref{detuning_condition} and \ref{position_condition}. We will use one more time the Gaussian distribution, but this time the independent variable will be the detuning. We will define as before the full width at half maximum of this distribution
+Finally, notice that since the initial wave function was Gaussian-like, we can expect the final wave function to continue being a gaussian packet. To see this, we can write down a function that approximately satisfies the conditions in the Eqs. \ref{detuning_condition} and \ref{position_condition}. We will use one more time the Gaussian distribution, but this time the independent variable will be the detuning. We will define as before the full width at half maximum of this distribution
 
 \begin{equation}\label{FWHM_normal_distribution}
 \delta_{FWHM} = 2\sqrt{2ln2} \sigma_{\delta}(0)
@@ -1194,7 +1194,7 @@ where we have normalized the distribution such that the probability of transitio
     \sigma_{\delta}(0) = \delta(2Z_{HWHM})
 \end{equation}
 
-This approximation and the exact form of the transition probability versus the detuning can be seen in the Fig. \ref{ce2_VS_detuning}.
+This approximation and the exact form of the transition probability versus the detuning can be seen in Fig. \ref{ce2_VS_detuning}.
 
 \begin{figure}
     \centering
@@ -1323,7 +1323,7 @@ where the probability $w_{n}$ is normalized such that $\sum_{n} w_{n} = 1$. In t
 \end{equation}
 
 where $w_{n}$ is the probability of finding, in the ensemble, a system with energy $E_{n}$, i.e., in the state $\ket{\phi_n}$.
-Also, $Q = \sum_{n} e^{-\beta E_{n}}$ is the well known partition function, and $\beta = \frac{1}{k T}$, where k is the Boltzmann constant and $T$ is the temperature of every system in the ensemble. Therefore, we have that
+Also, $Q = \sum_{n} e^{-\beta E_{n}}$ is the well-known partition function, and $\beta = \frac{1}{k T}$, where k is the Boltzmann constant and $T$ is the temperature of every system in the ensemble. Therefore, we have that
 
 \begin{equation}
     \begin{split}
@@ -1421,7 +1421,7 @@ This result means that the matrix elements of the density operator in position s
 Observe that this solution is not normalizable. This makes sense since the wave function of a free particle is not normalizable either.
 
 \subsubsection{The Density Matrix for the Harmonic Oscillator}
-Now, we will solve Eqs. \ref{bloch_eq_pos_space} and \ref{bloch_eq_initial_cond_pos_space} for the case of an harmonic oscillator Hamiltonian, i.e.,
+Now, we will solve Eqs. \ref{bloch_eq_pos_space} and \ref{bloch_eq_initial_cond_pos_space} for the case of a harmonic oscillator Hamiltonian, i.e.,
 
 \begin{equation}
     H = \frac{\hat{p}^{2}}{2m} + \frac{m \omega^{2} \hat{x}^{2}}{2}.
@@ -1469,13 +1469,13 @@ and the initial condition can be written as
     \rho(\xi,\xi'|0) = \sqrt{\frac{m\omega}{\hbar}} \delta(\xi-\xi').
 \end{equation}
 
-In order to solve Eq. \ref{oscillator_pde}, we will analyze the solution in the high temperature limit, i.e., when $\theta \longrightarrow 0$. In this limit, the particles have to behave like a free particle so the solution has to be the Gaussian distribution in Eq. \ref{density_matrix_free_particle}. Thus, we suppose a solution of the form
+In order to solve Eq. \ref{oscillator_pde}, we will analyze the solution in the high-temperature limit, i.e., when $\theta \longrightarrow 0$. In this limit, the particles have to behave like a free particle so the solution has to be the Gaussian distribution in Eq. \ref{density_matrix_free_particle}. Thus, we suppose a solution of the form
 
 \begin{equation}\label{oscillator_pre_solution}
     \rho = exp\big[-\big(a(\theta)\xi^{2} + b(\theta)\xi + c(\theta)\big)\big],
 \end{equation}
 
-where $a$, $b$, and $c$ are parameters that depend on $\theta$. If we differentiate this equation and substitute back into Eq. \ref{oscillator_pde}, we reduce the PDE into the following system of ordinary differential equations
+where $a$, $b$, and $c$ are parameters that depend on $\theta$. If we differentiate this equation and substitute it back into Eq. \ref{oscillator_pde}, we reduce the PDE into the following system of ordinary differential equations
 
 \begin{equation}\label{oscillator_system_ode}
     \begin{split}
@@ -1520,7 +1520,7 @@ Nonetheless, in order to satisfy the initial condition (Eq. \ref{oscillator_pde_
     \rho = \frac{c_{3}}{\sqrt{\sinh(2\theta)}} \exp \bigg[ -\coth \big(2\theta) \bigg( \frac{\xi^{2}}{2} + c_{2} \sech \big( 2\theta \big)\xi + \frac{c_{2}^{2}}{2} \bigg) \bigg]. 
 \end{equation}
 
-Now, we have to analyze the behavior of our solution in the high temperature limit, i.e, $\theta \longrightarrow 0$. For that reason, we use the following Taylor expansions
+Now, we have to analyze the behavior of our solution in the high-temperature limit, i.e, $\theta \longrightarrow 0$. For that reason, we use the following Taylor expansions
 
 \begin{equation}
     \begin{split}
@@ -1595,7 +1595,7 @@ The calculation of the last section was for the static case where the density ma
     \rho(t_{0}) = \sum_{n} \omega_{n} \ket{n(t_{0})}\bra{n(t_{0})}.
 \end{equation}
 
-In the Schrodinger picture the state vectors evolve in time using the time-evolution operator as
+In the Schrodinger picture, the state vectors evolve in time using the time-evolution operator as
 
 \begin{equation}
     U(t, t_{0}) \ket{t_{0}} = \ket{t},
@@ -1615,13 +1615,13 @@ Then, the density operator at time $t$ is given by
     \end{split}
 \end{equation}
 
-As shown in many Quantum mechanics' textbooks, it can be easily proved from this equation that the density operator evolves according to the following equation
+As shown in many Quantum mechanics textbooks, it can be easily proved from this equation that the density operator evolves according to the following equation
 
 \begin{equation}
     i\hbar \frac{\partial \rho(t)}{\partial t} = - \big[\rho(t), H \big].
 \end{equation}
 
-However, if we could compute $U \ket{n(t_{0})}$, our problem would be solved without the need to solve this PDE. It turns out that if we use as base, the energy eingenkets of the Hamiltonian
+However, if we could compute $U \ket{n(t_{0})}$, our problem would be solved without the need to solve this PDE. It turns out that if we use as our base, the energy eingenkets of the Hamiltonian
 
 \begin{equation}
     H \ket{n} = E_{n} \ket{n}.
@@ -1641,10 +1641,10 @@ where we have defined
     \omega_{n,n'} = \frac{E_{n}-E_{n'}}{\hbar}.
 \end{equation}
 
-Note that this result means that when we use the energy eigenkets as base, and when the Hamiltonian is independent of time, then the matrix elements out of the diagonal oscillate while the elements in the diagonal does not change with time.
+Note that this result means that when we use the energy eigenkets as our base, and when the Hamiltonian is independent of time, then the matrix elements out of the diagonal oscillate while the elements in the diagonal do not change with time.
 
 \subsubsection{Time-Evolution for the Density Matrix of the Harmonic Oscillator Under a Free Particle Hamiltonian}
-Now that we know how to compute the time-evolution of the density matrix, let's compute the evolution of the density matrix when we release the atoms from the trap. When the atoms are trapped, the Hamiltonian is that of the harmonic oscillator. Thus, when the atoms are trapped, the density matrix of our system is given by Eq. \ref{harmonic_osc_density_matrix}. Then, we turn off the trap instantaneously, so we can suppose that the states immediately after we turn off the trap still be the same (sudden approximation). Therefore, we can suppose that at time $t_{0}$ the density matrix is still given by Eq. \ref{harmonic_osc_density_matrix}. Let's suppose that the Hamiltonian after we turn off the trap is given by the free particle Hamiltonian, i.e.,
+Now that we know how to compute the time evolution of the density matrix, let's compute the evolution of the density matrix when we release the atoms from the trap. When the atoms are trapped, the Hamiltonian is that of the harmonic oscillator. Thus, when the atoms are trapped, the density matrix of our system is given by Eq. \ref{harmonic_osc_density_matrix}. Then, we turn off the trap instantaneously, so we can suppose that the states immediately after we turn off the trap still be the same (sudden approximation). Therefore, we can suppose that at time $t_{0}$ the density matrix is still given by Eq. \ref{harmonic_osc_density_matrix}. Let's suppose that the Hamiltonian after we turn off the trap is given by the free particle Hamiltonian, i.e.,
 
 \begin{equation*}
     H = \frac{\hat{p}^{2}}{2m}.
@@ -1656,7 +1656,7 @@ If we want to use Eq. \ref{time_evol_density_h_independent_time} to compute the 
     \hat{p}\ket{p} = p \ket{p},
 \end{equation}
 
-since the are energy eigenkets of the free particle Hamiltonian, i.e,
+since they are energy eigenkets of the free particle Hamiltonian, i.e,
 
 \begin{equation}
    H \ket{p} = \frac{\hat{p}^{2}}{2m} \ket{p} = \frac{p^{2}}{2m} \ket{p}.
@@ -1772,7 +1772,7 @@ In this case, when we turn off instantaneously the atomic trap at $t=t_{0}$, the
 \end{equation}
 
 We will assume that the momentum operator acts in the x-direction, i.e., $\hat{p}_{x}$, but we will continue writing just $\hat{p}$ for simplicity.
-We remember that the time-evolution of the matrix elements of the density operator are given by
+We remember that the time-evolution of the matrix elements of the density operator is given by
 
 \begin{equation}
     \bra{n} \rho (t) \ket{n'} = \bra{n} U^{\dagger} \rho (t_{0}) U \ket{n'},
@@ -1784,7 +1784,7 @@ and this time, the evolution operator will be given by
     U = \exp \bigg[-\frac{i}{\hbar} \bigg( \frac{\hat{p}^{2}}{2m} + mg\hat{x} \bigg) t \bigg].
 \end{equation}
 
-Last time, it was possible to compute the matrix elements of $\rho (t)$ by using the energy eigenkets. This time is not so trivial to know what are the eigenkets of the Hamiltonian in Eq. \ref{free_fall_hamiltonian}, but let's insist on continue using the momentum eigenkets $\ket{p}$. Thus, using this base, the matrix elements are given by
+Last time, it was possible to compute the matrix elements of $\rho (t)$ by using the energy eigenkets. This time is not so trivial to know what are the eigenkets of the Hamiltonian in Eq. \ref{free_fall_hamiltonian}, but let's insist on continuing using the momentum eigenkets $\ket{p}$. Thus, using this base, the matrix elements are given by
 
 \begin{equation}
     \bra{p} \rho (t) \ket{p'} = \bra{p} U^{\dagger} \rho (t_{0}) U \ket{p'}.
@@ -1880,7 +1880,7 @@ Taking $N$ steps we have that
     \ket{p(N \Delta t)} = \exp \bigg(-\frac{i}{\hbar} \frac{1}{2m} \sum_{n=1}^{N} (p- n\hbar \Delta k)^{2} \Delta t \bigg) \ket{p-N\hbar \Delta k}.
 \end{equation}
 
-We can recognize the sum in the exponential as a Riemann sum, thus, ff we now take the limit $N \longrightarrow \infty$, we have that $N \Delta t \longrightarrow t$, and $N\hbar \Delta k \longrightarrow mgt$, so we can write
+We can recognize the sum in the exponential as a Riemann sum, thus, if we now take the limit $N \longrightarrow \infty$, we have that $N \Delta t \longrightarrow t$, and $N\hbar \Delta k \longrightarrow mgt$, so we can write
 
 \begin{equation}
     \ket{p(t)} = \exp \bigg(- \frac{i}{\hbar} \frac{1}{2m} I(t) \bigg) \ket{p-mgt},
@@ -1894,7 +1894,7 @@ where $I(t)$ is a Riemann integral given by
     \end{split}
 \end{equation}
 
-Finally, we have for the evolution of the momentum eigenket
+Finally, we have the evolution of the momentum eigenket
 
 \begin{equation}
     \ket{p(t)} = \bigg( -\frac{i}{\hbar} \frac{1}{2m} \bigg(p^{2}t - pmgt^{2} + \frac{m^{2} g^{2} t^{3}}{3}\bigg) \bigg) \ket{p -mgt}
@@ -1979,7 +1979,7 @@ Notice that we can re-write this equation as
     \Delta Z (t) = \Delta Z(0) \sqrt{1+t^{2}\omega^{2}},
 \end{equation}
 
-where $\Delta Z(0)$ is the initial width just after dipole the trap is turned off, and is given by
+where $\Delta Z(0)$ is the initial width just after the dipole the trap is turned off, and is given by
 
 \begin{equation}\label{atomic_dispersion_with_gravity_t0}
     \Delta Z(0) = \sqrt{\frac{\hbar}{2M \omega} \coth \bigg(\frac{\hbar \omega}{2kT} \bigg)}.
@@ -1987,24 +1987,25 @@ where $\Delta Z(0)$ is the initial width just after dipole the trap is turned of
 
 It is essential to note that Eq. \ref{atomic_dispersion_with_gravity_3} has a different form than Eq. \ref{final_width_dimensional}. In this case, choosing a small initial width does not make the expansion happen faster.
 
-Let's use the above equations to get more insight into the experimental values that we can use to get better results. Experimentally, besides of the time $t$, we can only adjust the angular frequency $\omega$ and the temperature of the trap $T$.
+Let's use the above equations to get more insight into the experimental values that we can use to get better results. Experimentally, besides the time $t$, we can only adjust the angular frequency $\omega$ and the temperature of the trap $T$. Let's consider separately two different cases: the case when the frequency is kept fixed and the case when the temperature is maintained fixed.
 
 \subsubsection{Minimization of the Expansion of the Wave Packet}
+
 \textbf{Frequency Fixed}
 
-If we fix the time $t$ and the frequency $\omega$, we can try to optimize Eq. \ref{atomic_dispersion_with_gravity_3} to get the initial width that minimizes it. The optimal initial width is trivially $(\Delta Z(0))^{*}=0$. However, according to Eq. \ref{atomic_dispersion_with_gravity_t0}, it is impossible to obtain an initial width of zero. Nonetheless, we can still calculate the minimum possible initial width if we optimize Eq. \ref{atomic_dispersion_with_gravity_t0} with regards to the temperature $T$. The initial width is minimized when the hyperbolic cotangent reaches its minimum value. However, the hyperbolic cotangent does not have a global or local minimum. Although, this function does not have a minimum, when the $\coth(x)$ function is defined over the interval $[0,\infty)$, it reaches its minimum value at infinity because $\lim_{x^{+} \to 0} \coth(x)=\infty$ and $\lim_{x \to \infty} \coth(x)=1$. Therefore, this function will have its minimum value at infinity even though it cannot be considered a global minimum in the usual sense because infinity is not a number. In our case, this point corresponds to $T= 0$. Thus, at $T=0$ the initial width reaches its minimum value and becomes
+If we fix the time $t$ and the frequency $\omega$, we can try to optimize Eq. \ref{atomic_dispersion_with_gravity_3} to get the initial width that minimizes it. The optimal initial width is trivially $(\Delta Z(0))^{*}=0$. However, according to Eq. \ref{atomic_dispersion_with_gravity_t0}, it is impossible to obtain an initial width of zero. Nonetheless, we can still calculate the minimum possible initial width if we optimize Eq. \ref{atomic_dispersion_with_gravity_t0} with regards to the temperature $T$. The initial width is minimized when the hyperbolic cotangent reaches its minimum value. However, the hyperbolic cotangent does not have a global or local minimum. Although this function does not have a minimum, when the $\coth(x)$ function is defined over the interval $[0,\infty)$, it reaches its minimum value at infinity because $\lim_{x^{+} \to 0} \coth(x)=\infty$ and $\lim_{x \to \infty} \coth(x)=1$. Therefore, this function will have its minimum value at infinity even though it cannot be considered a global minimum in the usual sense because infinity is not a number. In our case, this point corresponds to $T= 0$. Thus, at $T=0$ the initial width reaches its minimum value and becomes
 
 \begin{equation}
     \Delta Z(0) = \sqrt{\frac{\hbar}{2M \omega} } , \quad (T=0).
 \end{equation}
 
-Obviously, it is not possible to get such temperature experimentally. However, we can still get the behavior for low temperatures by expanding the hyperbolic cotangent around $T=0$, we get
+Obviously, it is not possible to obtain that temperature experimentally. However, we can still get the behavior for low temperatures by expanding the hyperbolic cotangent around $T=0$, we get
 
 \begin{equation}\label{delZ0_smallT}
     \Delta Z (0) \approx \sqrt{\frac{ kT}{ M \omega^{2}}  }, \quad (\hbar \omega \gg kT).
 \end{equation}
 
-Therefore, experimentally, this is the optimal initial width that minimizes Eq. \ref{atomic_dispersion_with_gravity_3} to is minimal experimental value, i.e.,
+Therefore, experimentally, this is the optimal initial width that minimizes Eq. \ref{atomic_dispersion_with_gravity_3} to its minimal experimental value, i.e.,
 
 \begin{equation}\label{eq_optimal_initial_width}
     (\Delta Z (0))^{**} = \sqrt{\frac{ kT}{ M \omega^{2}} }, \quad (\hbar \omega \gg kT),
@@ -2020,40 +2021,10 @@ If we substitute the optimal initial width in Eq. \ref{atomic_dispersion_with_gr
     \big( \Delta Z (t) \big)^{**}_{min} = \sqrt{\frac{ kT}{ M \omega^{2}} } \sqrt{1+t^{2}\omega^{2}}, \quad (\hbar \omega > 2kT) ,
 \end{equation}
 
-
-
-\begin{comment}
-If we fix the time $t$ and $\omega$ in the last equation, and minimize it with regards to the temperature, we will find that the expansion is minimized when the hyperbolic cotangent reaches its minimum value, i.e., when $T= 0$. In that case, the expansion becomes
-
-\begin{equation}
-    \Delta Z (t) = \sqrt{\frac{ (1+t^{2} \omega^{2})}{ 2m \omega^{2}} }, \quad (T=0)
-\end{equation}
-
-Obviously, it is not possible to get such temperature experimentally. However, we can still get the behavior for low temperatures by expanding the hyperbolic cotangent around $T=0$, we get
-
-\begin{equation}
-    \Delta Z (t) \approx \sqrt{\frac{ (1+t^{2} \omega^{2})}{ m \omega^{2}} kT }, \quad (\hbar \omega \gg kT)
-\end{equation}
-
-Now, if we fix $T$ and try to minimize the expansion with respect to the temperature $\omega$ ....
-
-Similarly, if we fix $T$ and try to minimize the expansion with respect to the temperature $\omega$, we will get that the expansion is minimized when the frequency is $\omega=0$. One more time, it is not possible, experimentally, to have $\omega=0$. Thus, let's analyze the behavior of the expansion for low frequencies. If we expand around $\omega=0$, we get
-
-\begin{equation}
-    \Delta Z (t) \approx \sqrt{\frac{kT}{ m \omega^{2}}} \bigg( 1 + \frac{\omega^{2}}{24 k^{2}T^{2}} \big(12 k^{2}T^{2} t^{2} + \hbar^{2}\big) \bigg), \quad (\hbar \omega \ll kT)
-\end{equation}
-\end{comment}
-
-\begin{comment}
-\begin{equation}
-    \Delta Z (t) \approx \sqrt{\frac{kT}{ m \omega^{2}}} \Bigg( 1 + \Bigg[ \frac{\omega^{2} t^{2}}{2} + \frac{1}{24} \bigg(\frac{\hbar \omega}{k T}\bigg)^{2}\Bigg] \Bigg), \quad (\hbar \omega \ll kT)
-\end{equation}
-\end{comment}
-
 \vspace{5mm}
 \textbf{Temperature Fixed}
 
-Experimentally, it makes more sense to fix the temperature and adjust the frequency as needed. However, it is not possible to find analytically the value for $\omega$ that minimizes the width in Eq. \ref{atomic_dispersion_with_gravity_2}, although, from a plot of the initial width it can be easily seen that there exists a minimum. Therefore, the value for $\omega$ that minimizes the expansion of the width will have to be found numerically. However, the optimal frequency will depend on the time. For example, for a $\ce{^{87}_{}Rb}$ atom and a temperature of $T=1\mu K$, the frequency that minimizes the width at $t=100ms$ is given by
+Experimentally, it makes more sense to fix the temperature and adjust the frequency as needed. However, it is not possible to find analytically the value for $\omega$ that minimizes the width in Eq. \ref{atomic_dispersion_with_gravity_2}, although, from a plot of the initial width it can be easily seen that there exists a minimum. Therefore, the value for $\omega$ that minimizes the expansion of the width will have to be found numerically, and it  will depend on the time. For example, for a $\ce{^{87}_{}Rb}$ atom and a temperature of $T=1\mu K$, the frequency that minimizes the width at $t=100ms$ is given by
 
 \begin{equation}
     \omega^{*} \approx 2129.8 Hz.
@@ -2089,15 +2060,15 @@ where the double star ($**$) indicates that this equation was optimized by using
 
 Now, we will maintain the temperature fixed, and we will try to maximize the time to reach the final width $\Delta Z_{f}$. The Eq. \ref{t_atomic_dispersion} can be re-written as
 
-\begin{equation}
+\begin{equation}\label{t_dipole_trap_general}
     t = \frac{1}{\omega} \sqrt{\frac{2 M \omega}{\hbar} \tanh \bigg( \frac{\hbar \omega}{2 K T} \bigg) (\Delta Z_{f})^{2} -1 }.
 \end{equation}
 
 As before, this equation cannot be maximized analytically as a function of $\omega$. Thus, we will have to find the frequency that maximizes this equation numerically. For instance, for a $\ce{^{87}_{}Rb}$ atom and a temperature of $T=1\mu K$, the frequency that maximizes the expansion time to reach a final width of $\Delta Z_{f} = 100 \mu m$ is given by
 
-\begin{equation}
+\begin{equation*}
     \omega^{*} \approx 6660.8 Hz.
-\end{equation}
+\end{equation*}
 
 In Fig. \ref{fig:optimal_frequency_vs_final_width}, we can see a plot of the optimal frequency versus the final width. In conclusion, the optimal frequency will depend on the final width.
 
@@ -2112,16 +2083,16 @@ In Fig. \ref{fig:optimal_frequency_vs_final_width}, we can see a plot of the opt
 
 As we showed in Eq. \ref{average_position_dipole_trap}, the average position of the atoms follows a classical free-fall trajectory. Therefore, there exists a constraint in the maximum time that we can let the atom's wave function expand set by the maximum free-fall distance available to perform the experiment. Let $z_{max}$ be the maximum free-fall distance, thus, the maximum time of free-fall is given by
 
-\begin{equation}
-    t_{max} = \sqrt{\frac{z_{max}}{g}}.
+\begin{equation}\label{max_time_free_fall}
+    t_{max} = \sqrt{\frac{ 2 z_{max}}{g}}.
 \end{equation}
 
 This equation sets the minimum value that $T$ can have for a given $\omega$ and $\Delta Z_{f}$, i.e., the minimum initial width that can be chosen. Let's use Eq. \ref{t_dipole_trap_optimized} to establish this condition. In the low temperature limit $(\hbar \omega \gg kT)$, the following condition must be satisfied
 
 \begin{equation}\label{dipole_trap_temperature_length_condition}
 \begin{split}
-    t^{**}_{max} = & \frac{\Delta Z_{f}}{\omega} \sqrt{\frac{M \omega^{2}}{kT} - \bigg(\frac{1}{\Delta Z_{f}}\bigg)^{2}} \le t_{max} = \sqrt{\frac{z_{max}}{g}} \\
-    \frac{1}{T} & \le \bigg( \frac{z_{max}}{g} + \frac{1}{\omega^{2}} \bigg) \frac{k}{M (\Delta Z_{f})^{2}}.
+    t^{**}_{max} = & \frac{\Delta Z_{f}}{\omega} \sqrt{\frac{M \omega^{2}}{kT} - \bigg(\frac{1}{\Delta Z_{f}}\bigg)^{2}} \le t_{max} = \sqrt{\frac{2 z_{max}}{g}} \\
+    \frac{1}{T} & \le \bigg( \frac{2 z_{max}}{g} + \frac{1}{\omega^{2}} \bigg) \frac{k}{M (\Delta Z_{f})^{2}}.
 \end{split}
 \end{equation}
 
@@ -2129,7 +2100,12 @@ This equation guarantees that the atom will have enough time to expand and reach
 
 \vspace{5mm}
 \textbf{Temperature Fixed}
-aqui
+
+Similarly, Eq. \ref{max_time_free_fall} establishes a condition in the frequency that can be used to optimize Eq. \ref{t_dipole_trap_general} when the temperature is maintained fixed. The condition is the following
+
+\begin{equation}\label{dipole_trap_frequency_length_condition}
+    \frac{1}{\omega^{2}} \bigg( \frac{2 M \omega}{\hbar} \tanh \bigg( \frac{\hbar \omega}{2 K T} \bigg) (\Delta Z_{f})^{2} -1 \bigg) \leq \frac{2 z_{max}}{g}.
+\end{equation}
 
 \subsection{Selection of the Initial Width by Using a Magneto-optical Trap and a Selection Pulse}
 
@@ -2146,7 +2122,7 @@ If we have an ensemble of free particles confined in a box, the matrix elements 
 In the last sections, we showed how we can select the initial atomic width of the alkali atoms to be used during the measurement process and how this packet expands in each case before the beginning of the experiment to measure $g$. In this section, we will study the constraints that choosing a particular initial atomic width will impose in the time that we can let the atomic wave packet expand without affecting the Rabi transitions due to the detuning, and thus, the gravimetry signal.
 
 \subsubsection{Working Frequency}
-As we showed in Eq. \ref{rabi_frequency_magnetic_field}, the intensity of the magnetic field used to drive the Rabi oscillations will set a selection range. This selection range defines the maximum uncertainty in position space that the wave function can have after a successful transition to the desired state has occurred. Furthermore, it also defines the range in position space within which the atom can successfully perform the desired transition. In order to guarantee that the transition happens with a high probability of success, the wave function's width has to lie inside this selection range. As the width of the wave function is reduced, the detuning decreases , and thus, the probability of success in the transition increases. For that reason, we would like to choose the smallest possible initial width, and the largest possible selection range. Let's suppose that the selection range $\Delta Z'$ is set by a frequency $\Omega'$ according to Eq. \ref{rabi_frequency_magnetic_field}.
+As we showed in Eq. \ref{rabi_frequency_magnetic_field}, the intensity of the magnetic field used to drive the Rabi oscillations will set a selection range. This selection range defines the maximum uncertainty in position space that the wave function can have after a successful transition to the desired state has occurred. Furthermore, it also defines the range in position space within which the atom can successfully perform the desired transition. In order to guarantee that the transition happens with a high probability of success, the wave function's width has to lie inside this selection range. As the width of the wave function is reduced, the detuning decreases, and thus, the probability of success in the transition increases. For that reason, we would like to choose the smallest possible initial width and the largest possible selection range. Let's suppose that the selection range $\Delta Z'$ is set by a frequency $\Omega'$ according to Eq. \ref{rabi_frequency_magnetic_field}.
 Typically, the frequency $\Omega'$ will be set as the maximum frequency that could be obtained in the laboratory. According to Eq. \ref{rabi_frequency_magnetic_field}, the Rabi frequency will be directly proportional to the magnitude of the magnetic field of the microwaves used to drive the transition. This magnetic field can be measured by using a power meter to measure the power of the radiation according to
 
 \begin{equation}
@@ -2295,37 +2271,66 @@ and by substituting Eq. \ref{maximum_selection_range} into this equation, we get
         t^{**}_{max} = \frac{1}{\omega} \sqrt{6 \frac{M \omega^{2}}{kT} \frac{\mu_{0} P}{ c A} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} - 1}, \quad (\hbar \omega > 2kT).
 \end{equation}
 
-Thus, using the approximation in Eq. \ref{t_max_vs_T} and the Eq. \ref{gravimetry_signal_T}, we get the gravimetry signal obtained when using the dipole trap to select the initial width, i.e.,
+Thus, using the approximation in Eq. \ref{t_max_vs_T} and Eq. \ref{gravimetry_signal_T}, we get the gravimetry signal obtained when using the dipole trap to select the initial width, i.e.,
 
 \begin{equation}\label{gravimetry_signal_irradiance_dipole_trap}
-    \Delta \Phi = b_{d} g, 
+    \Delta \Phi = b_{d_{T}} g, 
 \end{equation}
 
 where we have defined the parameter
 
 \begin{equation}
-    b_{d} \equiv \frac{\mu_{B} \eta}{16 \hbar \omega^{3}} \bigg(6 \frac{M \omega^{2}}{kT} \frac{\mu_{0} I}{c} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} - 1\bigg)^{3/2},
+    b_{d_{T}} \equiv \frac{\mu_{B} \eta}{16 \hbar \omega^{3}} \bigg(6 \frac{M \omega^{2}}{kT} \frac{\mu_{0} I}{c} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} - 1\bigg)^{3/2},
 \end{equation}
 
 where $I$ is the irradiance of the microwaves. As we can see from this result, the lower the temperature, the larger the gravimetry signal that is obtained. Similarly, the larger the angular frequency of the trap, the larger the gravimetry signal.
 
 \vspace{5mm}
 \textbf{Temperature Fixed}
-aqui
 
-\subsubsection{Selection of the Temperature}
+In the same way, if we choose to keep the temperature fixed instead of the frequency, we can use Eq. \ref{t_dipole_trap_general} as the equation that sets the available time to perform the experiment. If we substitute Eq. \ref{warning_range} into Eq. \ref{t_dipole_trap_general}, we get
+
+\begin{equation}\label{expansion_time_dipole_trap_general}
+    t = \frac{1}{\omega} \sqrt{\frac{12 M \omega}{\hbar} \tanh \bigg( \frac{\hbar \omega}{2 K T} \bigg) \frac{\mu_{0} P}{ c A} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} -1 }.
+\end{equation}
+
+This equation can be maximized by choosing the optimal frequency. However, as we saw earlier, this equation has to be maximized numerically. For example, choosing a microwave power of $1W$, a temperature of $1\mu K$, and using the same values chosen in Fig. \ref{precision_vs_power_figure}, we get that the dipole trap frequency that maximizes this equation is
+
+\begin{equation*}
+    w^{*} \approx 21.6 kHz.
+\end{equation*}
+
+This frequency gives an expansion time of
+
+\begin{equation}\label{optimal_expansion_time_temperature_fixed}
+    t^{*} \approx 0.97 ms.
+\end{equation}
+
+We can use Eq. \ref{expansion_time_dipole_trap_general} alongside the approximation in Eq. \ref{t_max_vs_T} and Eq. \ref{gravimetry_signal_T}, to get gravimetry signal, i.e.,
+
+\begin{equation}\label{gravimetry_signal_irradiance_dipole_trap_general}
+    \Delta \Phi = b_{d_{\omega}} g, 
+\end{equation}
+
+where we have defined the parameter
+
+\begin{equation}
+    b_{d_{\omega}} \equiv \frac{\mu_{B} \eta}{16 \hbar \omega^{3}} \bigg(\frac{12 M \omega}{\hbar} \tanh \bigg( \frac{\hbar \omega}{2 K T} \bigg) \frac{\mu_{0} P}{ c A} \bigg(\frac{ \gamma  \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}\bigg)^{2} -1 \bigg)^{3/2},
+\end{equation}
+
+\subsubsection{Selection of the Temperature and Frequency for the Dipole Trap}
 \textbf{Frequency Fixed}
 
 For the result in Eq. \ref{gravimetry_signal_irradiance_dipole_trap} to be valid, we have to make sure that the condition in Eq. \ref{dipole_trap_temperature_length_condition} alongside the low-temperature condition $(\hbar \omega > 2kT)$ are satisfied. Let's find out the minimum temperature that can be used if we want to get the final width $\gamma \Delta Z'$. If we substitute Eqs. \ref{maximum_selection_range}, and \ref{warning_range} into Eq. \ref{dipole_trap_temperature_length_condition}, the condition becomes
 
 \begin{equation}
-    \frac{1}{T} \le \bigg( \frac{z_{max}}{g} + \frac{1}{\omega^{2}} \bigg) \frac{k}{M} \bigg( \frac{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}{\gamma  \bra{e} \mu_{z} \ket{g}} \bigg)^{2}  \frac{c}{6 \mu_{0} I}
+    \frac{1}{T} \le \bigg( \frac{2 z_{max}}{g} + \frac{1}{\omega^{2}} \bigg) \frac{k}{M} \bigg( \frac{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}{\gamma  \bra{e} \mu_{z} \ket{g}} \bigg)^{2}  \frac{c}{6 \mu_{0} I}
 \end{equation}
 
-Let's suppose that the maximum free-fall distance is $z_{max}=30cm$, and the trap frequency is $\omega = 4\pi*10kHz$. Besides, we choose $I=\frac{1W}{100 cm^{2}}$, and $\gamma=0.3$.  For the rest of parameters, let's use the values chosen in Fig. \ref{precision_vs_power_figure}. Therefore, the condition in the temperature becomes
+Let's suppose that the maximum free-fall distance is $z_{max}=30cm$, and the trap frequency is $\omega = 4\pi*10kHz$. Besides, we choose $I=\frac{1W}{100 cm^{2}}$, and $\gamma=0.3$.  For the rest of the parameters, let's use the values chosen in Fig. \ref{precision_vs_power_figure}. Therefore, the condition in the temperature becomes
 
 \begin{equation}
-    T \ge 3*10^{-13} K.
+    T \ge 1.5*10^{-13} K.
 \end{equation}
 
 The temperature chosen has to be greater than the value set by the equality in this equation. To find out the upper bound, we have to use the low-temperature condition, i.e., $\frac{\hbar \omega}{2k} > T$. Thus, using the same angular frequency as before, we get
@@ -2334,17 +2339,30 @@ The temperature chosen has to be greater than the value set by the equality in t
     T < 0.5 \mu K.
 \end{equation}
 
-Therefore, the temperature has to lie in the range
+Therefore, the solution in Eq. \ref{gravimetry_signal_irradiance_dipole_trap} is valid when the temperature lies in the range
 
 \begin{equation}
-    0.3 pK \le T < 0.5 \mu K.
+    0.15 pK \le T < 0.5 \mu K.
 \end{equation}
 
 As we saw in the discussion after Eq. \ref{eq_optimal_initial_width}, a temperature of $0.1 \mu K$ is a good temperature to fulfill the low-temperature limit when using an angular frequency of $\omega = 4\pi*10kHz$, and it is far away from the limit set by the maximum free-fall distance.
 
 \vspace{5mm}
 \textbf{Temperature Fixed}
-aqui
+
+The result in Eq. \ref{gravimetry_signal_irradiance_dipole_trap_general} is valid for any frequency and temperature values. Nonetheless, we still have to make sure that the condition in Eq. \ref{dipole_trap_frequency_length_condition} is satisfied when choosing the final width $\gamma \Delta Z'$ in Eq. \ref{expansion_time_dipole_trap_general}. We already found in Eq. \ref{optimal_expansion_time_temperature_fixed} the optimal expansion time when choosing this final width. Thus, the condition becomes
+
+\begin{equation}
+    0.9ms \leq \sqrt{\frac{2 z_{max}}{g}} = t_{max}.
+\end{equation}
+
+If we choose a maximum free-fall distance of $z_{max}=30cm$, then, we have
+
+\begin{equation}
+    t_{max} = 78ms.
+\end{equation}
+
+Thus, the condition is satisfied without any problem.
 
 \subsection{Interferometer Fringes}
 \subsubsection{Precision in the Measurement of g in the Low-Power Regime}
@@ -2385,7 +2403,7 @@ Now, we take the product of the Eqs. \ref{gravimetry_signal_irradiance} and \ref
 \end{equation}
 
 This equation is the sensitivity in the measurement of the gravimetry signal but we would like to have the sensitivity in the measurement of $g$. Thus,
-we have to notice that since there exists a linear relation between $g$ and $\Delta \phi$ (Eq. \ref{gravimetry_signal_irradiance}), there also exists a linear relation between the uncertainty $\sigma_{g}$ and the uncertainty $\sigma_{_{\Delta \Phi}}$, i.e.,
+we have to notice that since there exists a linear relation between $g$ and $\Delta \phi$ (Eq. \ref{gravimetry_signal_irradiance}), there also exists a linear relationship between the uncertainty $\sigma_{g}$ and the uncertainty $\sigma_{_{\Delta \Phi}}$, i.e.,
 
 \begin{equation}
     \sigma_{_{\Delta \Phi}} = b \sigma_{g} I^3,
@@ -2414,16 +2432,19 @@ A plot of the theoretical sensitivity versus the power of the microwaves obtaine
 \begin{figure}
     \centering
     \includesvg[width=1\textwidth]{precision_vs_power_plot.svg}
-    \caption{A plot of the theoretical sensitivity in the measurement of $g$ as a function of the power of the microwaves used to drive the transitions (Eq. \ref{sensitivity_eq}). The legends on the right represent the value of the parameter $\gamma$. The power is assumed to be measured in an area of $100cm^2$. The signal-to-noise-ratio is taken to be $SNR=20$. The magnetic field is considered to have a value of $\eta = 500 \frac{G}{m}$. We are considering a $\ce{^{87}_{}Rb}$ atom with mass $M=1.443*10^{-25}kg$ and supposing a transition in the $5^{2}S_{1/2}$ level between the hyperfine levels $\ket{F=1, m_{F}=1}$ and $\ket{F=2, m_{F}=1}$ with approximate Landé $g_{F}$-Factors $g_{F}=-1/2$ and $g_{F}=1/2$ respectively \cite{Steck2010}. We approximate $\bra{e} \mu_{z} \ket{g}$ as being equal to the Bohr magneton with value $\mu_{B}=9.274*10^{-24}J/T$. Finally, we take $g=9.81 m/s^2$. With all these values, the parameter $b$ in Eq. \ref{sensitivity_eq} has a value of $719.046 \frac{s^{11}}{kg^{3}m}$.}
+    \caption{A plot of the theoretical sensitivity in the measurement of $g$ as a function of the power of the microwaves used to drive the transitions (Eq. \ref{sensitivity_eq}). The legends on the right represent the value of the parameter $\gamma$. The power is assumed to be measured in an area of $100cm^2$. The signal-to-noise ratio is taken to be $SNR=20$. The magnetic field is considered to have a value of $\eta = 500 \frac{G}{m}$. We are considering a $\ce{^{87}_{}Rb}$ atom with mass $M=1.443*10^{-25}kg$ and supposing a transition in the $5^{2}S_{1/2}$ level between the hyperfine levels $\ket{F=1, m_{F}=1}$ and $\ket{F=2, m_{F}=1}$ with approximate Landé $g_{F}$-Factors $g_{F}=-1/2$ and $g_{F}=1/2$ respectively \cite{Steck2010}. We approximate $\bra{e} \mu_{z} \ket{g}$ as being equal to the Bohr magneton with value $\mu_{B}=9.274*10^{-24}J/T$. Finally, we take $g=9.81 m/s^2$. With all these values, the parameter $b$ in Eq. \ref{sensitivity_eq} has a value of $719.046 \frac{s^{11}}{kg^{3}m}$.}
     \label{precision_vs_power_figure}
 \end{figure}
 
 \subsubsection{Precision in the Measurement of g in the High-Power Regime}
-We can use Eq. \ref{gravimetry_signal_irradiance_dipole_trap} to compute the sensitivity in the measurement of $g$ as we did before. The result has the exact same form, i.e.,
+If we use the expansion of the atomic wave function from the dipole trap, the precision can be computed using Eq. \ref{gravimetry_signal_irradiance_dipole_trap} or Eq. \ref{gravimetry_signal_irradiance_dipole_trap_general}. Thus, we can compute the sensitivity in the measurement of $g$ as we did before. The result has the exact same form, i.e.,
 
 \begin{equation}\label{sensitivity_eq_dipole}
-    \frac{\sigma_{g}}{g} = \frac{1}{b_{d} g SNR}.
+    \frac{\sigma_{g}}{g} = \frac{1}{b_{d_{\omega, T}} g SNR}.
 \end{equation}
+
+where the parameter $b_{d_{\omega, T}}$ will be $b_{d_{\omega}}$ when the frequency is kept fixed (Eq. \ref{gravimetry_signal_irradiance_dipole_trap}) or $b_{d_{T}}$ when the temperature is maintained fixed (Eq. \ref{gravimetry_signal_irradiance_dipole_trap_general}).
+
 
 aqui graficas
 
@@ -2440,7 +2461,7 @@ This phase chirp will help to fit a curve to the interferometry signal from whic
     b g  - 2\pi \alpha_{0} = 0
 \end{equation}
 
-From which we can derive
+From this, we can derive
 
 \begin{equation}
     g = \frac{2\pi \alpha_{0}}{b}
@@ -2472,7 +2493,7 @@ where $\sigma_{\alpha_{0}}$ is the uncertainty of $\alpha_{0}$.
 
 \subsubsection{Condition to Have a Gravimetry Signal Independent of the Initial Position of the Atom}
 Now, we establish the conditions that allow our method to be independent of the initial position of the atom.
-Suppose that we have successfully initialized our Alkali atom with a initial width $\Delta Z_{0}$. Once we have initialized the width of our atom, we can proceed applying the first $\frac{\pi}{2}$-pulse. However, as we saw in the last sections, the transitions will occur only if the atom's width is much less than the width $\Delta Z'$ set by the power of the microwaves used to drive the oscillations between the hyperfine states. Otherwise, the detuning will be considerably large such that the probability of transition will be almost null. According to Eq. \ref{initial_width}, if we use a Rabi frequency $\Omega'$ to drive the transitions\footnote{Eq. \ref{initial_width} was obtained by considering a $\pi$-pulse. Nonetheless, the sequence of pulses includes $\frac{\pi}{2}$-pulses at the end and beginning of the experiment. We will continue using Eq. \ref{initial_width} during all the calculations without loss of generality since in any case the order of magnitude is the same and we will always stay far from the limit of the selection range $\Delta Z'$.}, the atom will experience the transition if and only if its width is less or equal than the width selected by $\Omega'$, i.e.,
+Suppose that we have successfully initialized our Alkali atom with an initial width $\Delta Z_{0}$. Once we have initialized the width of our atom, we can proceed to apply the first $\frac{\pi}{2}$-pulse. However, as we saw in the last sections, the transitions will occur only if the atom's width is much less than the width $\Delta Z'$ set by the power of the microwaves used to drive the oscillations between the hyperfine states. Otherwise, the detuning will be considerably large such that the probability of transition will be almost null. According to Eq. \ref{initial_width}, if we use a Rabi frequency $\Omega'$ to drive the transitions\footnote{Eq. \ref{initial_width} was obtained by considering a $\pi$-pulse. Nonetheless, the sequence of pulses includes $\frac{\pi}{2}$-pulses at the end and beginning of the experiment. We will continue using Eq. \ref{initial_width} during all the calculations without loss of generality since in any case, the order of magnitude is the same and we will always stay far from the limit of the selection range $\Delta Z'$.}, the atom will experience the transition if and only if its width is less or equal than the width selected by $\Omega'$, i.e.,
 
 \begin{equation}\label{maximum_width_rabi_frequency}
     \Delta Z' = \sqrt{3} \Omega' \frac{\hbar}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}.
@@ -2484,7 +2505,7 @@ Furthermore, if we want to guarantee a high probability of success in the transi
     \Delta Z' >> \Delta Z_{0}.
 \end{equation}
 
-According to this condition, we could think that choosing a very small width could be a good idea. However, after applying the first pulse, the atom must experience a time-evolution of free fall before we can apply the next pulse. During this period, the width of the atom will expand according to Eq. \ref{final_width_dimensional}. Thereby, if we chose a very small initial width, the final width will increase rapidly and the condition in Eq. \ref{condition_Dz'>>Dz0} will not hold for the rest of pulses. This means that we have to choose an appropriate initial width such that Eq. \ref{condition_Dz'>>Dz0} holds at any time. More specifically, immediately after all the sequence of pulses is applied, the final width of the atom $\Delta Z_{f}$ must be such that
+According to this condition, we could think that choosing a very small width could be a good idea. However, after applying the first pulse, the atom must experience a time evolution of free fall before we can apply the next pulse. During this period, the width of the atom will expand according to Eq. \ref{final_width_dimensional}. Thereby, if we chose a very small initial width, the final width will increase rapidly and the condition in Eq. \ref{condition_Dz'>>Dz0} will not hold for the rest of the pulses. This means that we have to choose an appropriate initial width such that Eq. \ref{condition_Dz'>>Dz0} holds at any time. More specifically, immediately after all the sequence of pulses is applied, the final width of the atom $\Delta Z_{f}$ must be such that
 
 \begin{equation}\label{condition_transition_width1}
     \Delta Z' > \Delta Z_{f} \ge \Delta Z_{0},
@@ -2497,7 +2518,7 @@ and, in order to guarantee transitions with a high probability of success, the c
 \end{equation}
 
 The above conditions mean, that in order to have a high probability of success when inducing the transition, we have to make sure that $\Delta Z_{f}$ is still much less than $\Delta Z'$, i.e.,  $\Delta Z_{f}$ should not have increased considerably from $\Delta Z_{0}$. In the extreme case that $\Delta Z_{f} \ge \Delta Z'$, the probability of success in the transition will be so small that we will consider it to be zero. 
-In summary, if we stay during all the experiment in a narrow region within the region set by $\Delta Z'$ (see Fig. \ref{selection_range_figure}), then, our method will not depend on the initial position of the atom, so we can neglect the error introduced by the detuning at least at first order.
+In summary, if we stay during the experiment in a narrow region within the region set by $\Delta Z'$ (see Fig. \ref{selection_range_figure}), then, our method will not depend on the initial position of the atom, so we can neglect the error introduced by the detuning at least at first order.
 therefore, when designing the experiment, we have to make sure that the above constraints hold at any time that we apply a pulse to induce Rabi transitions after we let the wave packet expand. For that reason, it is important to choose wisely the initial width of our wave packet so we can make sure that the transition between levels will occur always. Finally, notice that both Eqs. \ref{ration_optimial_initial_width_vs_final_width} and 
 \ref{ratio_optimial_initial_width_vs_final_width_time_max} satisfied the condition in Eq. \ref{condition_transition_width2}.
 
@@ -2549,123 +2570,5 @@ Therefore, the value $\Omega'$ is around one order of magnitude larger than the 
 
 \bibliographystyle{plain}
 \bibliography{cites.bib}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{comment}
-\section{Some examples to get started}
-
-Your introduction goes here! Simply start writing your document and use the Recompile button to view the updated PDF preview. Examples of commonly used commands and features are listed below, to help you get started.
-
-Once you're familiar with the editor, you can find various project setting in the Overleaf menu, accessed via the button in the very top left of the editor. To view tutorials, user guides, and further documentation, please visit our \href{https://www.overleaf.com/learn}{help library}, or head to our plans page to \href{https://www.overleaf.com/user/subscription/plans}{choose your plan}.
-
-\subsection{How to create Sections and Subsections}
-
-Simply use the section and subsection commands, as in this example document! With Overleaf, all the formatting and numbering is handled automatically according to the template you've chosen. If you're using Rich Text mode, you can also create new section and subsections via the buttons in the editor toolbar.
-
-\subsection{How to include Figures}
-
-First you have to upload the image file from your computer using the upload link in the file-tree menu. Then use the include graphics command to include it in your document. Use the figure environment and the caption command to add a number and a caption to your figure. See the code for Figure \ref{fig:frog} in this section for an example.
-
-Note that your figure will automatically be placed in the most appropriate place for it, given the surrounding text and taking into account other figures or tables that may be close by. You can find out more about adding images to your documents in this help article on \href{https://www.overleaf.com/learn/how-to/Including_images_on_Overleaf}{including images on Overleaf}.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.3\textwidth]{frog.jpg}
-\caption{\label{fig:frog}This frog was uploaded via the file-tree menu.}
-\end{figure}
-
-\subsection{How to add Tables}
-
-Use the table and tabular environments for basic tables --- see Table~\ref{tab:widgets}, for example. For more information, please see this help article on \href{https://www.overleaf.com/learn/latex/tables}{tables}. 
-
-\begin{table}
-\centering
-\begin{tabular}{l|r}
-Item & Quantity \\\hline
-Widgets & 42 \\
-Gadgets & 13
-\end{tabular}
-\caption{\label{tab:widgets}An example table.}
-\end{table}
-
-\subsection{How to add Comments and Track Changes}
-
-Comments can be added to your project by highlighting some text and clicking ``Add comment'' in the top right of the editor pane. To view existing comments, click on the Review menu in the toolbar above. To reply to a comment, click on the Reply button in the lower right corner of the comment. You can close the Review pane by clicking its name on the toolbar when you're done reviewing for the time being.
-
-Track changes are available on all our \href{https://www.overleaf.com/user/subscription/plans}{premium plans}, and can be toggled on or off using the option at the top of the Review pane. Track changes allow you to keep track of every change made to the document, along with the person making the change. 
-
-\subsection{How to add Lists}
-
-You can make lists with automatic numbering \dots
-
-\begin{enumerate}
-\item Like this,
-\item and like this.
-\end{enumerate}
-\dots or bullet points \dots
-\begin{itemize}
-\item Like this,
-\item and like this.
-\end{itemize}
-
-\subsection{How to write Mathematics}
-
-\LaTeX{} is great at typesetting mathematics. Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
-\[S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
-      = \frac{1}{n}\sum_{i}^{n} X_i\]
-denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
-
-
-\subsection{How to change the margins and paper size}
-
-Usually the template you're using will have the page margins and paper size set correctly for that use-case. For example, if you're using a journal article template provided by the journal publisher, that template will be formatted according to their requirements. In these cases, it's best not to alter the margins directly.
-
-If however you're using a more general template, such as this one, and would like to alter the margins, a common way to do so is via the geometry package. You can find the geometry package loaded in the preamble at the top of this example file, and if you'd like to learn more about how to adjust the settings, please visit this help article on \href{https://www.overleaf.com/learn/latex/page_size_and_margins}{page size and margins}.
-
-\subsection{How to change the document language and spell check settings}
-
-Overleaf supports many different languages, including multiple different languages within one document. 
-
-To configure the document language, simply edit the option provided to the babel package in the preamble at the top of this example project. To learn more about the different options, please visit this help article on \href{https://www.overleaf.com/learn/latex/International_language_support}{international language support}.
-
-To change the spell check language, simply open the Overleaf menu at the top left of the editor window, scroll down to the spell check setting, and adjust accordingly.
-
-\subsection{How to add Citations and a References List}
-
-You can simply upload a \verb|.bib| file containing your BibTeX entries, created with a tool such as JabRef. You can then cite entries from it, like this: \cite{greenwade93}. Just remember to specify a bibliography style, as well as the filename of the \verb|.bib|. You can find a \href{https://www.overleaf.com/help/97-how-to-include-a-bibliography-using-bibtex}{video tutorial here} to learn more about BibTeX.
-
-If you have an \href{https://www.overleaf.com/user/subscription/plans}{upgraded account}, you can also import your Mendeley or Zotero library directly as a \verb|.bib| file, via the upload menu in the file-tree.
-
-\subsection{Good luck!}
-
-We hope you find Overleaf useful, and do take a look at our \href{https://www.overleaf.com/learn}{help library} for more tutorials and user guides! Please also let us know if you have any feedback using the Contact Us link at the bottom of the Overleaf menu --- or use the contact form at \url{https://www.overleaf.com/contact}.
-
-\bibliographystyle{alpha}
-\bibliography{sample}
-
-\end{comment}
 
 \end{document}

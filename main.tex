@@ -1987,44 +1987,72 @@ where $\Delta Z(0)$ is the initial width just after the dipole the trap is turne
 
 It is essential to note that Eq. \ref{atomic_dispersion_with_gravity_3} has a different form than Eq. \ref{final_width_dimensional}. In this case, choosing a small initial width does not make the expansion happen faster.
 
-Let's use the above equations to get more insight into the experimental values that we can use to get better results. Experimentally, besides the time $t$, we can only adjust the angular frequency $\omega$ and the temperature of the trap $T$. Let's consider separately two different cases: the case when the frequency is kept fixed and the case when the temperature is maintained fixed.
-
 \subsubsection{Minimization of the Expansion of the Wave Packet}
 
-\textbf{Frequency Fixed}
+Let's use the above equations to get more insight into the experimental values that we can use to get the best results. Experimentally, besides the time $t$, we can only adjust the angular frequency $\omega$ and the temperature of the trap $T$. However, for an experimental point of view, it makes more sense to fix the temperature and adjust the frequency as needed. Let's analyze what happens with the expansion in different temperature regimes.
 
-If we fix the time $t$ and the frequency $\omega$, we can try to optimize Eq. \ref{atomic_dispersion_with_gravity_3} to get the initial width that minimizes it. The optimal initial width is trivially $(\Delta Z(0))^{*}=0$. However, according to Eq. \ref{atomic_dispersion_with_gravity_t0}, it is impossible to obtain an initial width of zero. Nonetheless, we can still calculate the minimum possible initial width if we optimize Eq. \ref{atomic_dispersion_with_gravity_t0} with regards to the temperature $T$. The initial width is minimized when the hyperbolic cotangent reaches its minimum value. However, the hyperbolic cotangent does not have a global or local minimum. Although this function does not have a minimum, when the $\coth(x)$ function is defined over the interval $[0,\infty)$, it reaches its minimum value at infinity because $\lim_{x^{+} \to 0} \coth(x)=\infty$ and $\lim_{x \to \infty} \coth(x)=1$. Therefore, this function will have its minimum value at infinity even though it cannot be considered a global minimum in the usual sense because infinity is not a number. In our case, this point corresponds to $T= 0$. Thus, at $T=0$ the initial width reaches its minimum value and becomes
+\vspace{5mm}
+\textbf{Low-Temperature Regime}
+
+If we try to optimize Eq. \ref{atomic_dispersion_with_gravity_3} to get the initial width that minimizes it. The optimal initial width is trivially $(\Delta Z(0))^{*}=0$. However, according to Eq. \ref{atomic_dispersion_with_gravity_t0}, obtaining an initial width of zero is impossible. Nonetheless, we can still calculate the minimum possible initial width if we optimize Eq. \ref{atomic_dispersion_with_gravity_t0}. The initial width is minimized when the hyperbolic cotangent reaches its minimum value. However, the hyperbolic cotangent does not have a global or local minimum. Although this function does not have a minimum, when the $\coth(x)$ function is defined over the interval $[0,\infty)$, it reaches its minimum value at infinity because $\lim_{x^{+} \to 0} \coth(x)=\infty$ and $\lim_{x \to \infty} \coth(x)=1$. Therefore, this function will have its minimum value at infinity even though it cannot be considered a global minimum in the usual sense because infinity is not a number. In our case, this point corresponds to $T= 0$. Thus, at $T=0$ the initial width reaches its minimum value and becomes
 
 \begin{equation}
     \Delta Z(0) = \sqrt{\frac{\hbar}{2M \omega} } , \quad (T=0).
 \end{equation}
 
-Obviously, it is not possible to obtain that temperature experimentally. However, we can still get the behavior for low temperatures by expanding the hyperbolic cotangent around $T=0$, we get
+Obviously, it is not possible to obtain that temperature experimentally. However, we can still use this result as an approximation for the low-temperature regime, as we will see later. Thus, we have that for low temperatures, the initial width is approximately given by
 
 \begin{equation}\label{delZ0_smallT}
-    \Delta Z (0) \approx \sqrt{\frac{ kT}{ M \omega^{2}}  }, \quad (\hbar \omega \gg kT).
+    \Delta Z (0) \approx \sqrt{\frac{\hbar}{2M \omega} } , \quad (\hbar \omega \gg kT).
 \end{equation}
-
-Therefore, experimentally, this is the optimal initial width that minimizes Eq. \ref{atomic_dispersion_with_gravity_3} to its minimal experimental value, i.e.,
-
-\begin{equation}\label{eq_optimal_initial_width}
-    (\Delta Z (0))^{**} = \sqrt{\frac{ kT}{ M \omega^{2}} }, \quad (\hbar \omega \gg kT),
-\end{equation}
-
-where we have used a double star ($**$) symbol to remark that this is not an optimal value in the usual sense found in calculus textbooks. Indeed, it is an optimal value in an experimental sense. 
 
 The above result is a good approximation for low temperatures since the hyperbolic cotangent approaches quickly to its asymptotic value at infinity. For instance, for $T\approx 0.1 \mu K$ and $\omega = 4\pi *10 kHz$, we have that $\hbar \omega \approx 1.3*10^{-29}$ and $2 kT \approx 0.3*10^{-29}$. Thus, the argument of the hyperbolic cotangent in Eq. \ref{atomic_dispersion_with_gravity_3} is $\frac{\hbar \omega}{2kT} \approx 4.8$, and we have that $\coth (4.8) \approx 1.00014$, which is very close to the asymptotic value of $1$. These temperature and frequency values are very close to the typical experimental values that can be obtained using a dipole trap. Then, the approximation used in Eq. \ref{delZ0_smallT} is a good approximation. Even in the case that $\hbar \omega= 2kT$, the hyperbolic cotangent has a value of $1.313$, thus, we could relax our low-temperature condition to $\hbar \omega > 2kT$.
 
-If we substitute the optimal initial width in Eq. \ref{atomic_dispersion_with_gravity_3}, we get that the minimum expansion, when $t$ and $\omega$ are maintained fixed, is given by
+If we substitute the initial width for the low-temperature regime in Eq. \ref{atomic_dispersion_with_gravity_3}, we get that the expansion is given by
+
+\begin{equation}\label{expansion_low_temp}
+    \Delta Z (t) = \sqrt{\frac{\hbar}{2M \omega} }  \sqrt{1+t^{2}\omega^{2}}, \quad (\hbar \omega > 2kT) ,
+\end{equation}
+
+Notice that in this low-temperature regime, the expansion is independent of the temperature. This last equation can be optimized as a function of $\omega$. The frequency that minimizes the previous equation is given by
+
+\begin{equation}\label{optimal_freq_low_temp}
+    \omega^{*} = \frac{1}{t}.
+\end{equation}
+
+For example, for a total time of $t=100ms$, the optimal frequency is $\omega^{*}=10 Hz$. If we substitute Eq. \ref{optimal_freq_low_temp} into Eq. \ref{expansion_low_temp}, we obtain the expansion for the optimal frequency, i.e.,
+
+\begin{equation}\label{minimal_expansion_low_temp}
+    \Delta Z_{min}  (t)= \sqrt{\frac{\hbar t}{M} } , \quad (\hbar \omega > 2kT , \quad \omega = 1/t).
+\end{equation}
+
+For a typical experimental temperature of $T\approx 1 \mu K$ and an optimal frequency of $\omega^{*}=10 Hz$ ($t=100ms$), this result is an excellent approximation for the expansion in the low-temperature limit.
+
+\vspace{5mm}
+\textbf{High-temperature Regime}
+
+In the high-temperature regime ($\hbar \omega \gg kT$), we can expand the hyperbolic cotangent in Eq. \ref{atomic_dispersion_with_gravity_t0} using a Maclaurin series. Thus, in this limit, the initial width can be written as
 
 \begin{equation}
-    \big( \Delta Z (t) \big)^{**}_{min} = \sqrt{\frac{ kT}{ M \omega^{2}} } \sqrt{1+t^{2}\omega^{2}}, \quad (\hbar \omega > 2kT) ,
+    \Delta Z (0) \approx \sqrt{\frac{ kT}{ M \omega^{2}}  }, \quad (\hbar \omega \ll kT).
+\end{equation}
+
+We can use this approximation to rewrite the expansion in Eq. \ref{atomic_dispersion_with_gravity_3} as
+
+\begin{equation}\label{minimal_expansion_high_temp}
+    \Delta Z (t) = \sqrt{\frac{ kT}{ M \omega^{2}} } \sqrt{1+t^{2}\omega^{2}}, \quad (\hbar \omega \ll kT).
+\end{equation}
+
+This equation does not have a minimum with respect to $\omega$. Indeed, the largest the frequency, the smaller the expansion. Therefore, in this regime, to get a minimal expansion, the frequency has to have the largest possible value. Note that for long expansion times, we can approximate the last result as
+
+\begin{equation}\label{minimal_expansion_high_temp_long_time}
+    \Delta Z (t) \approx \sqrt{\frac{ kT}{ M } }t, \quad (\hbar \omega \ll kT \quad and \quad 1 \ll \omega t ).
 \end{equation}
 
 \vspace{5mm}
-\textbf{Temperature Fixed}
+\textbf{General Result}
 
-Experimentally, it makes more sense to fix the temperature and adjust the frequency as needed. However, it is not possible to find analytically the value for $\omega$ that minimizes the width in Eq. \ref{atomic_dispersion_with_gravity_2}, although, from a plot of the initial width it can be easily seen that there exists a minimum. Therefore, the value for $\omega$ that minimizes the expansion of the width will have to be found numerically, and it  will depend on the time. For example, for a $\ce{^{87}_{}Rb}$ atom and a temperature of $T=1\mu K$, the frequency that minimizes the width at $t=100ms$ is given by
+The result in Eq. \ref{atomic_dispersion_with_gravity_2} is general and valid for all temperatures. Anyways, we can still try to optimize it. As we mentioned before, experimentally, it makes more sense to fix the temperature and adjust the frequency as needed. However, it is not possible to find analytically, the value for $\omega$ that minimizes the expansion in Eq. \ref{atomic_dispersion_with_gravity_2}, although, from a plot, it can be easily seen that there exists a minimum. Therefore, the value for $\omega$ that minimizes the expansion of the width will have to be found numerically, and it  will depend on the total time. For example, for a $\ce{^{87}_{}Rb}$ atom and a temperature of $T=1\mu K$, the frequency that minimizes the width at $t=100ms$ is given by
 
 \begin{equation}
     \omega^{*} \approx 2129.8 Hz.
@@ -2039,26 +2067,56 @@ A plot of the $\omega$ that minimizes the expansion of the width with respect to
 \end{figure}
 
 \subsubsection{Maximization of Time to Reach a Given Width}
-\textbf{Frequency Fixed}
+We can use the results of the last section, to get the total time needed to reach a given width.
+
+\vspace{5mm}
+\textbf{Low-Temperature Regime}
+
+The more general result, valid for any frequency in the low-temperature regime, can be obtained by solving Eq. \ref{expansion_low_temp}, i.e.,
+
+\begin{equation}\label{dipole_trap_total_time_low_temp}
+    t = \frac{1}{\omega}\sqrt{\frac{2M \omega}{\hbar} \Delta Z ^{2} - 1}, \quad (\hbar \omega > 2kT).
+\end{equation}
+
+For typical experimental values $\omega \sim 10kHz$. Thus, we can approximate the last equation for high-frequency values as\footnote{For a $\ce{^{87}_{}Rb}$ atom, $\omega = 10kHz$, and $\Delta Z=100\mu m$, we have that $\frac{2M \omega}{\hbar} \Delta Z ^{2} \approx 27*10^{3}$.}
+
+\begin{equation}\label{dipole_trap_total_time_low_temp_high_freq}
+    t \approx \sqrt{\frac{2M}{\hbar \omega} }  \Delta Z, \quad (\hbar \omega > 2kT).
+\end{equation}
+
+Note that, if the frequency is chosen according to Eq. \ref{optimal_freq_low_temp}, the total time needed to reach a  width $\Delta Z$ can be obtained by solving Eq. \ref{minimal_expansion_low_temp}, i.e.,
+
+\begin{equation}
+    t_{max} = \frac{M}{\hbar} \Delta Z ^{2}, \quad (\hbar \omega > 2kT , \quad \omega = 1/t).
+\end{equation}
+
+This is the maximum expansion time that could be obtained in the low-temperature regime. For example, for a $\ce{^{87}_{}Rb}$ atom and a final width of $\Delta Z=10\mu m$, the total time would be around $t=137ms$. However, according to Eq.  \ref{optimal_freq_low_temp}, this means that the trap would have to have a frequency value of around $\omega \sim 10Hz$. This frequency value is two orders of magnitudes smaller than the usual frequency values used in dipole traps so, in the next sections, we will prefer to use Eq. \ref{dipole_trap_total_time_low_temp_high_freq} as the equation that describes the total expansion time in the low-temperature regime. Lately, we will see how to optimize the expansion time in the low-temperature and high-frequency regimes.
+
+\vspace{5mm}
+\textbf{High-temperature Regime}
+
+In this limit, we have to solve Eq. \label{minimal_expansion_high_temp} for $t$. In this case, the total time to reach a width $\Delta Z$ is given by
+
+\begin{equation}
+    t = \frac{1}{\omega}\sqrt{\frac{M \omega^{2}}{kT} \Delta Z ^{2} - 1}, \quad (\hbar \omega \ll kT).
+\end{equation}
+
+As before, the largest the frequency, the largest the total time to reach the width $\Delta Z$. Therefore, we have to choose the largest possible frequency to get the largest possible expansion time. For long expansion times, we can approximate the total time by solving Eq. \ref{minimal_expansion_high_temp_long_time}, i.e.,
+
+\begin{equation}
+    t \approx \sqrt{\frac{M}{k T}} \Delta Z, \quad (\hbar \omega \ll kT, \quad 1 \ll \omega t ).
+\end{equation}
+
+\vspace{5mm}
+\textbf{General Result}
 
 We can solve Eq. \ref{atomic_dispersion_with_gravity_3} to get the time as a function of the final width $\Delta Z_{f}$, i.e,
 
 \begin{equation}\label{t_atomic_dispersion}
-    t = \frac{1}{\omega} \sqrt{\bigg( \frac{\Delta Z_{f}}{\Delta Z_{0}} \bigg)^{2} - 1},
+    t = \frac{1}{\omega} \sqrt{\bigg( \frac{\Delta Z_{f}}{\Delta Z_{0}} \bigg)^{2} - 1}.
 \end{equation}
 
-If we try to optimize this last equation to maximize the time to reach the final width given an initial width, we will get again that the optimal initial width is trivially given by $(\Delta Z_{0})^{*} = 0$. However, as we saw in the last section, in practice, the initial width cannot be set to zero experimentally. The best we can do is to use Eq. \ref{eq_optimal_initial_width} as an approximation to the optimal initial width. If we substitute Eq. \ref{eq_optimal_initial_width} into Eq. \ref{t_atomic_dispersion}, we get
-
-\begin{equation}\label{t_dipole_trap_optimized}
-    t^{**}_{max} = \frac{\Delta Z_{f}}{\omega} \sqrt{\frac{M \omega^{2}}{kT} - \bigg(\frac{1}{\Delta Z_{f}}\bigg)^{2}}, \quad (\hbar \omega > 2kT),
-\end{equation}
-
-where the double star ($**$) indicates that this equation was optimized by using the initial width that best approximates the optimal initial width in an experimental sense.
-
-\vspace{5mm}
-\textbf{Temperature Fixed}
-
-Now, we will maintain the temperature fixed, and we will try to maximize the time to reach the final width $\Delta Z_{f}$. The Eq. \ref{t_atomic_dispersion} can be re-written as
+The initial width can be written explicitly, i.e.,
 
 \begin{equation}\label{t_dipole_trap_general}
     t = \frac{1}{\omega} \sqrt{\frac{2 M \omega}{\hbar} \tanh \bigg( \frac{\hbar \omega}{2 K T} \bigg) (\Delta Z_{f})^{2} -1 }.
@@ -2079,33 +2137,64 @@ In Fig. \ref{fig:optimal_frequency_vs_final_width}, we can see a plot of the opt
 \end{figure}
 
 \subsubsection{Constraint in the Maximum Time Set by the Available Space}
-\textbf{Frequency Fixed}
-
 As we showed in Eq. \ref{average_position_dipole_trap}, the average position of the atoms follows a classical free-fall trajectory. Therefore, there exists a constraint in the maximum time that we can let the atom's wave function expand set by the maximum free-fall distance available to perform the experiment. Let $z_{max}$ be the maximum free-fall distance, thus, the maximum time of free-fall is given by
 
 \begin{equation}\label{max_time_free_fall}
     t_{max} = \sqrt{\frac{ 2 z_{max}}{g}}.
 \end{equation}
 
-This equation sets the minimum value that $T$ can have for a given $\omega$ and $\Delta Z_{f}$, i.e., the minimum initial width that can be chosen. Let's use Eq. \ref{t_dipole_trap_optimized} to establish this condition. In the low temperature limit $(\hbar \omega \gg kT)$, the following condition must be satisfied
+For our purposes, we are interested in the low-temperature regime. Thus, in order to find out the constraint in the frequency that can be chosen for the trap, we use Eqs. \ref{dipole_trap_total_time_low_temp_high_freq} and \ref{max_time_free_fall} Eq. to get the following inequality
 
-\begin{equation}\label{dipole_trap_temperature_length_condition}
-\begin{split}
-    t^{**}_{max} = & \frac{\Delta Z_{f}}{\omega} \sqrt{\frac{M \omega^{2}}{kT} - \bigg(\frac{1}{\Delta Z_{f}}\bigg)^{2}} \le t_{max} = \sqrt{\frac{2 z_{max}}{g}} \\
-    \frac{1}{T} & \le \bigg( \frac{2 z_{max}}{g} + \frac{1}{\omega^{2}} \bigg) \frac{k}{M (\Delta Z_{f})^{2}}.
-\end{split}
+\begin{equation}\label{frequency_condition_dipole_trap}
+    \begin{split}
+        \sqrt{\frac{2M}{\hbar \omega}} \Delta Z &\leq \sqrt{\frac{ 2 z_{max}}{g}}, \\
+    \omega&\geq g \frac{M}{\hbar} \frac{\Delta Z ^{2}}{z_{max}}.
+    \end{split}
 \end{equation}
 
-This equation guarantees that the atom will have enough time to expand and reach the desired final width $\Delta Z_{f}$. It also sets a lower bound for the temperature that can be used in the dipole trap. This condition alongside the low-temperature condition $(\hbar \omega > 2kT)$ must be taken into account when designing the experiment.
+For example, for a $\ce{^{87}_{}Rb}$ atom, a final width of $\Delta Z=100\mu m$, and a maximum free-fall distance of $z_{max}=30cm$, we get that the frequency has to be such that $\omega \geq 447 Hz$.
 
-\vspace{5mm}
-\textbf{Temperature Fixed}
+Note that Eq. \ref{frequency_condition_dipole_trap} does not only represent the constraint in the frequency value that can be chosen but also gives a way to choose the frequency such that the expansion time is maximized with respect to the maximum free-fall distance. Indeed, if we take the equality in Eq. \ref{frequency_condition_dipole_trap}, the optimized expansion time in the low-temperature and high-frequency regime will be given by Eq. \ref{max_time_free_fall}, i.e.,
 
-Similarly, Eq. \ref{max_time_free_fall} establishes a condition in the frequency that can be used to optimize Eq. \ref{t_dipole_trap_general} when the temperature is maintained fixed. The condition is the following
-
-\begin{equation}\label{dipole_trap_frequency_length_condition}
-    \frac{1}{\omega^{2}} \bigg( \frac{2 M \omega}{\hbar} \tanh \bigg( \frac{\hbar \omega}{2 K T} \bigg) (\Delta Z_{f})^{2} -1 \bigg) \leq \frac{2 z_{max}}{g}.
+\begin{equation}\label{dipole_trap_total_time_low_temp_high_freq_optimized}
+    t_{max} = \sqrt{\frac{2M}{\hbar \omega^{*}}} \Delta Z
 \end{equation}
+
+where the optimal frequency as a function of the maximum free-fall distance is given by
+
+\begin{equation}\label{optimal_frequency_low_temp_high_freq_dipole_trap}
+    \omega^{*} = g \frac{M}{\hbar} \frac{\Delta Z ^{2}}{z_{max}}.
+\end{equation}
+
+\begin{comment}
+For our purposes, we are interested in the low-temperature regime. Thus, in order to find out the constraint in the frequency that can be chosen for the trap, we use Eqs. \ref{dipole_trap_total_time_low_temp} and \ref{max_time_free_fall} Eq. to get the following inequality
+
+\begin{equation}
+    \begin{split}
+        \frac{1}{\omega}\sqrt{\frac{2M \omega}{\hbar} \Delta Z ^{2} - 1} &< \sqrt{\frac{ 2 z_{max}}{g}}, \\
+    \omega^{2} -\omega \frac{Mg}{\hbar z_{max}} \Delta Z ^{2} + \frac{g}{2 z_{max}}&>0.
+    \end{split}
+\end{equation}
+
+The solution to this inequality is an interval given by the following inequalities
+
+\begin{align}
+    \omega > \omega_{+}, \\
+    \omega < \omega_{-}.
+\end{align}
+
+Or using interval notation and taking into account that $\omega>0$, the solution is
+
+\begin{equation}
+    \omega \in (0, \omega_{-}) \cup (\omega_{+}, \infty)
+\end{equation}
+
+where $\omega_{\pm}$ is given by
+
+\begin{equation}
+    \omega_{\pm} =  \frac{Mg}{\hbar z_{max}} \Delta Z ^{2} \pm \sqrt{\bigg( \frac{Mg}{\hbar z_{max}} \Delta Z ^{2} \bigg)^{2} - \frac{2g}{z_{max}}}
+\end{equation}
+\end{comment}
 
 \subsection{Selection of the Initial Width by Using a Magneto-optical Trap and a Selection Pulse}
 
@@ -2257,9 +2346,46 @@ and we have written the result in terms of the irradiance of the microwaves\foot
 \end{equation}
 
 \subsubsection{Gravimetry Signal Set by the Optical Dipole Trap (The High-Power Regime)}
+If instead of initializing the initial width using a selection beam, we use the expansion of the dipole trap. We can substitute Eq. \ref{warning_range} into Eq. \ref{dipole_trap_total_time_low_temp_high_freq} to get
+
+\begin{equation}
+    t_{max} = \sqrt{\frac{2M}{\hbar \omega}} \gamma \Delta Z',
+\end{equation}
+
+If we substitute Eq. \ref{maximum_selection_range} into this last equation, we get\footnote{We have taken the absolute value of Eq. \ref{maximum_selection_range}.}
+
+\begin{equation}
+    t_{max} = \sqrt{\frac{12M \mu_{0} P}{\hbar \omega c A}} \frac{ \gamma \bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta}.
+\end{equation}
+
+Thus, using the approximation in Eq. \ref{t_max_vs_T} and Eq. \ref{gravimetry_signal_T}, we get the gravimetry signal obtained when using the dipole trap to select the initial width, i.e.,
+
+\begin{equation}\label{gravimetry_signal_irradiance_dipole_trap}
+    \Delta \Phi = b_{d} g I^{3/2}, 
+\end{equation}
+
+where $I$ is the irradiance of the microwaves, and we have defined the parameter
+
+\begin{equation}
+    b_{d} \equiv \frac{4}{\hbar} \frac{\mu_{B} \gamma^{3}}{\eta^{2}} \bigg( \frac{\bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}}} \sqrt{\frac{3}{4} \frac{M}{\hbar \omega} \frac{\mu_{0}}{c} } \bigg)^{3}.
+\end{equation}
+
+The above result is general, however, we can opt to use the optimal frequency value ($\omega^{*}$) so the expansion time is as large as possible. Once we have decided on the experimental parameters (except for the frequency of the dipole trap), we can use Eq. \ref{optimal_frequency_low_temp_high_freq_dipole_trap} to compute the optimal frequency. In this case, $\Delta Z$ is given by Eq. \ref{warning_range}, thus, we will have that
+
+\begin{equation}
+    \omega^{*} = g \frac{M}{\hbar} \frac{(\gamma \Delta Z') ^{2}}{z_{max}},
+\end{equation}
+
+and by using \ref{maximum_selection_range}, we get that the optimal frequency is given by
+
+\begin{equation}
+    \omega^{*} = g \frac{M}{\hbar} \frac{\gamma^{2}}{z_{max}} \frac{6 \mu_{0} I}{c} \bigg(\frac{\bra{e} \mu_{z} \ket{g}}{\mu_{B} g_{F_{eff}} m_{F_{eff}} \eta} \bigg)^{2}.
+\end{equation}
+
+\begin{comment}
 \textbf{Frequency Fixed}
 
-If instead of initializing the initial width using a selection beam, we use the expansion of the dipole trap. We can substitute Eq. \ref{warning_range} into Eq. \ref{t_dipole_trap_optimized} to get
+If instead of initializing the initial width using a selection beam, we use the expansion of the dipole trap in the low-temperature and high-frequency regimes. We can substitute Eq. \ref{warning_range} into Eq. \ref{t_dipole_trap_optimized} to get
 
 \begin{equation}
         t^{**}_{max} = \frac{1}{\omega} \sqrt{\frac{M \omega^{2}}{kT} \bigg( \gamma \Delta Z' \bigg)^{2} - 1}, \quad (\hbar \omega > 2kT),
@@ -2363,6 +2489,7 @@ If we choose a maximum free-fall distance of $z_{max}=30cm$, then, we have
 \end{equation}
 
 Thus, the condition is satisfied without any problem.
+\end{comment}
 
 \subsection{Interferometer Fringes}
 \subsubsection{Precision in the Measurement of g in the Low-Power Regime}
@@ -2427,7 +2554,7 @@ Thus, the precision in the measurement is given by
     \sigma_{g} = \frac{1}{b I^3 SNR}.
 \end{equation}
 
-A plot of the theoretical sensitivity versus the power of the microwaves obtained using typical experimental values can be seen in Fig. \ref{precision_vs_power_figure}. It can be seen that for a microwaves' power of $1W$ and a value of $\gamma=0.2$, we could get around 7 digits of precision in a single shot. This precision can be improved even more by repeating the measurement and remembering that the precision improves as the square root of the number of measurements\cite{Bevington_Robinson_Blair_Mallinckrodt_McKay_1993}. Thus, if we want to improve the precision by two orders of magnitude, we could average $10^{4}$ measurements. If each measurement takes around $1s$, then, we would require around $3$ hours to reach the desired precision.
+A plot of the theoretical sensitivity versus the power of the microwaves obtained using typical experimental values can be seen in Fig. \ref{precision_vs_power_figure}. It can be seen that for a microwave's power of $1W$ and a value of $\gamma=0.2$, we could get around 7 digits of precision in a single shot. This precision can be improved even more by repeating the measurement and remembering that the precision improves as the square root of the number of measurements\cite{Bevington_Robinson_Blair_Mallinckrodt_McKay_1993}. Thus, if we want to improve the precision by two orders of magnitude, we could average $10^{4}$ measurements. If each measurement takes around $1s$, then, we would require around $3$ hours to reach the desired precision.
 
 \begin{figure}
     \centering
@@ -2437,6 +2564,8 @@ A plot of the theoretical sensitivity versus the power of the microwaves obtaine
 \end{figure}
 
 \subsubsection{Precision in the Measurement of g in the High-Power Regime}
+cont... aqui 
+
 If we use the expansion of the atomic wave function from the dipole trap, the precision can be computed using Eq. \ref{gravimetry_signal_irradiance_dipole_trap} or Eq. \ref{gravimetry_signal_irradiance_dipole_trap_general}. Thus, we can compute the sensitivity in the measurement of $g$ as we did before. The result has the exact same form, i.e.,
 
 \begin{equation}\label{sensitivity_eq_dipole}
